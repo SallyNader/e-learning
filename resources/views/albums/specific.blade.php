@@ -15,13 +15,7 @@
                         <div class="wm-mini-title">
                             <h1> صور {{$album->b_name}}</h1> 
                         </div>
-                        <div class="wm-breadcrumb">
-                            <ul>
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><a href="index-2.html">Pages</a></li>
-                                <li>Events</li>
-                            </ul>
-                        </div>      
+                           
                     </div>
                 </div>
             </div>    
@@ -47,7 +41,7 @@
 
                                         @foreach($album->images as $image)
                                                                         <li class="col-md-3 wordpress">
-                                        <figure><img src="../../public/extra-images/{{$image->path}}" alt="" style="width: 300px;height:250px" > <span class="wm-event-transparent-hover wm-bgcolor"></span></figure>
+                                        <figure><img src="../../public/extra-images/{{$image->path}}" alt="" style="width: 300px;height:250px" > </figure>
 
 
                                        

@@ -27,13 +27,7 @@
 				        <div class="wm-mini-title">
 				       		<h1>المحكمين و الخبراء</h1> 
 				        </div>
-				        <div class="wm-breadcrumb">
-				          	<ul>
-				          	 	<li><a href="index-2.html">Home</a></li>
-				          	 	<li><a href="#">Pages</a></li>
-				           		<li>Our Professors</li>
-				          	</ul>
-				        </div>      
+				            
 				    </div>
 			    </div>
 			</div>    
@@ -83,7 +77,7 @@
 									<div class="wm-team-info" style="text-align: left;">
 										<h5><a href="#"></a>{{$t->t_name}}</h5>										
 										<br>
-										<p style="color:#ffb84d" >{{$t->type->t_title}}</p>
+										<p style="color:#ffb84d" ><b>{{$t->type->t_title}}</b></p>
 										
 										
 									</div>

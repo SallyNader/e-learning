@@ -19,6 +19,10 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+    protected $redirectPath="/home";
+
+    protected $loginPath="/auth/login";
+   protected $redirectAfterLogout = "home";
 
     /**
      * Where to redirect users after login.
@@ -34,6 +38,24 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+       $this->middleware('guest', ['except' => ['logout', 'getLogout']]);
     }
+
+
+
+
+
+
+
+
+
+
+
+//     public function getLogout() {
+
+//     auth()->logout();
+
+//     return redirect()->route('home');
+// }
+
 }

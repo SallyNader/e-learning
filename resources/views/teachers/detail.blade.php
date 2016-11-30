@@ -26,14 +26,7 @@
 			      		   <div class="wm-mini-title">
 						   		<h1>المحكمين و الخبراء</h1>	
 			      		   </div>
-					       <div class="wm-breadcrumb">
-						        <ul>
-							         <li><a href="index-2.html">Home</a></li>
-                                     <li><a href="index-2.html">Pages</a></li>
-                                     <li><a href="index-2.html">Our Professors</a></li>
-							         <li>Detailed</li>
-						        </ul>
-					       </div>      
+					          
 				      </div>
 			     </div>
 		    </div>    
@@ -59,7 +52,10 @@
                                             <a href="#"><img src="../../public/extra-images/{{$teacher->profile_image}}" alt=""></a>
                                             <figcaption>
                                                 <a href="#" style="text-align: right;" >{{$teacher->t_name}}</a>
-                                                <span>{{$teacher->type->t_title}}</span>
+
+
+                                                <p style="color:#ffb84d" ><b>{{$teacher->type->t_title}}</b></p>
+                                                <span></span>
                                             </figcaption>
                                         </figure>
                                         <ul>
@@ -155,14 +151,17 @@
                                             <li class="col-md-6">Strategies & interventions </li>                
                                         </ul>-->
                                     </div>
-                                    <div class="wm-rich-aditor"> <h3> الدورات التي يدرسها &nbsp{{$teacher->t_name}}</h3> </div>
-                                    <div class="wm-courses wm-courses-popular wm-courses-mediumsec">
+
+                                    <div class="wm-rich-aditor" style="text-align: right;">
+
+                                    <br/><br/><br/> <h3> الدورات التي يدرسها &nbsp{{$teacher->t_name}}</h3> </div>
+                                    <div class="wm-courses wm-courses-popular wm-courses-mediumsec"  style="text-align: center;">
                                         <ul class="row">
                                     
                                       
                                          @foreach($teacher->courses as $c)
                                             <li class="col-md-12">
-                                                <div class="wm-courses-popular-wrap" >
+                                                <div class="wm-courses-popular-wrap" style="text-align: right;" >
                                                     <figure> <a href="{{route('course.show',$c->c_id)}}"><img src="../{{$c->image}}" alt=""> <span class="wm-popular-hover"> <small>تفاصيل الدورة</small> </span> </a>
                                                         <figcaption>
                                                             <img style="width: 50px;height: 50px" src="../extra-images/{{$c->teacher->profile_image}}" alt="">
@@ -170,14 +169,17 @@
                                                         </figcaption>
                                                     </figure>
                                                     <div class="wm-popular-courses-text" style="text-align: right;">
-                                                        <h6><a href="#">{{$c->c_name}}</a></h6>
+                                                        <h6 style="text-align: right;"><a href="#">{{$c->c_name}}</a></h6>
                                                         <p>{{$c->disc}}</p>
                                                         <div class="wm-courses-price"> <span>${{$c->price}}</span> </div>
                                                         <ul>
                                                             <li><a href="#" class="wm-color"><i class="wmicon-social7"></i> 298</a></li>
                                                             <li><a href="#" class="wm-color"><i class="wmicon-clock2"></i> 1hr 45</a></li>
+                                                            <!--
                                                             <li><a href="#" class="wm-color"><i class="wmicon-location"></i> Campus L3</a></li>
                                                             <li><div class="wm-rating"><span style="width:100%" class="rating-box"></span></div> Intermediate</li>
+
+                                                            -->
                                                         </ul>
                                                     </div>
                                                 </div>

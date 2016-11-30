@@ -22,6 +22,11 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
+    protected $redirectPath="/home";
+
+    protected $loginPath="/auth/login";
+  protected $redirectAfterLogout = "home";
+
     /**
      * Where to redirect users after login / registration.
      *
@@ -68,4 +73,13 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+
+
+    public function getLogout() {
+
+    auth()->logout();
+
+    return redirect()->route('home');
+}
 }

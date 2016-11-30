@@ -13,7 +13,7 @@ protected $primaryKey="c_id";
 
 
 
-    	return $this->belongsToMany('App/User','course_user','course_id','user_id');
+    	return $this->belongsToMany('App\User','course_user','course_id','user_id');
     }
 
 

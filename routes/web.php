@@ -1,4 +1,6 @@
 <?php
+use App\Image;
+use App\Course;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,6 +13,14 @@
 |
 */
 // Route::get('image/{$id}','ImagesController@index');
+
+Route::get('o','CoursesController@o');
+
+Route::get('/',function(){
+$courses=Course::limit(4)->get();
+ $images=Image::limit(4)->get();
+    return view('home',compact('images','courses'));
+});
 
 Route::resource('album','AlbumsController');
 Route::resource('course','CoursesController');
@@ -28,6 +38,34 @@ Route::get('agraya','AboutController@agraya');
 Route::get('momyzat','AboutController@momyzat');
 
 
+Route::get('signup',function(){
+
+	return view('signup');
+});
 
 
 
+Auth::routes();
+// Route::get('logout', 'AuthController@getLogout');
+// Route::get('logout', 'LoginController@getLogout');
+//Route::get('/home', 'HomeController@index');
+
+
+Route::get('profile',function(){
+
+
+	return view('profile.profile');
+});
+
+
+
+//add course to account
+
+
+
+Route::get('addcourse/{userid}/{courseid}','ProfileController@addCourseToAccount');
+
+
+
+
+Route::get('profile','ProfileController@myCourses');

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Course;
 use App\Category;
+use DB;
+use Auth;
+use App\User;
 class CoursesController extends Controller
 {
     /**
@@ -13,13 +16,13 @@ class CoursesController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function s(){
+ //    public function s(){
 
- $ID=Course::select('c_id')->pluck('c_id');
- $lastIndex=count($ID)-1;
- echo $ID[$lastIndex];
+ // $ID=Course::select('c_id')->pluck('c_id');
+ // $lastIndex=count($ID)-1;
+ // echo $ID[$lastIndex];
 
-    }
+ //    }
     public function index()
     {
       $categories=Category::all();
@@ -57,9 +60,59 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function o(){
+         $userID=Auth::user()->id;
+$user=User::find($userID);
+
+$accepted=$user->accepted;
+echo $accepted;
+
+    }
     public function show($id)
     {
-        
+        // $Boolean=true;
+
+
+
+          
+          $course=Course::find($id);
+
+        $userID=Auth::user()->id;
+
+        $checkedCourseID=$course->c_id;
+
+
+        $result=DB::table('course_user')->where('user_id',$userID)->where('course_id',$checkedCourseID)->get();
+
+
+
+       
+
+
+
+
+
+$user=User::find($userID);
+
+$accepted=$user->accepted;
+
+
+
+
+        if($result->count() > 0 ){
+
+       $Boolean='false';
+
+        }else{
+
+
+            $Boolean='true';
+        }
+
+
+        // echo $Boolean;
+
       $ID=Course::select('c_id')->pluck('c_id');
 
 
@@ -80,7 +133,7 @@ $syllabus=explode(",", $sy);
 $ce=$course->certificates;
 
 $certificates=explode(',', $ce);
-    return view('courses.coursedetail',compact('course','syllabus','certificates','lastID','firstID'));
+    return view('courses.coursedetail',compact('course','syllabus','certificates','lastID','firstID','Boolean','accepted'));
 
 // }else{
 

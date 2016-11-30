@@ -54,6 +54,7 @@ return view('albums.all',compact('albums'));
     public function show($id)
     {
         $album=Album::find($id);
+        
         return view('albums.specific',compact('album'));
     }
 

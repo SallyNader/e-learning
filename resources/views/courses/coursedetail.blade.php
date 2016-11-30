@@ -36,11 +36,19 @@
 					<div class="row">
 						<aside class="col-md-3">
 							<div class="widget widget_course-price">
-								<div class="wm-widget-heading">
-									<h4>Course Price</h4>
+							@if(Auth::check())
+								<div class="wm-widget-heading" style="text-align: center;" >
+
+								
+									<h4>سعر الدورة</h4>
 								</div>
 								<span><small></small>${{$course->price}}</span>
-								<a href="#">enroll this course</a>
+
+								@if($Boolean=='true' and $accepted==1)
+								<a href="{{url('addcourse/'.Auth::user()->id.'/'.$course->c_id)}}">الأشتراك في الدورة</a>
+								@endif
+
+								@endif
 								<ul>
 									<li><a href="#"><i class=" wmicon-social7"></i>234 Students</a></li>
 									<li><a href="#"><i class=" wmicon-clock2"></i><time datetime="2017-02-14">Duration: 2hr30mins</time></a></li>
@@ -386,6 +394,7 @@
 									</ul>																		
 								</div>	
 							</div>
+								@if($Boolean=='false')
 							<div class="wm-courses-getting-started">
 								<div class="wm-title-full">
 									<h2>جميع الدروس المتعلقة بالدورة</h2>
@@ -416,6 +425,7 @@
 								</div>
 							
 							</div>
+							@endif
 							<div class="wm-title-full">
 								<h2>Reviews</h2>
 							</div>

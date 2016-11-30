@@ -27,13 +27,7 @@
                         <div class="wm-mini-title">
                             <h1>جميع الألبومات</h1> 
                         </div>
-                        <div class="wm-breadcrumb">
-                            <ul>
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><a href="#">Pages</a></li>
-                                <li>Our Professors</li>
-                            </ul>
-                        </div>      
+                            
                     </div>
                 </div>
             </div>    

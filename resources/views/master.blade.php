@@ -49,17 +49,35 @@
                                 <li><i class="wmicon-technology4"></i> 22903214 - 002</li>
                                 <li><i class="wmicon-clock2"></i> فاكس: 22903416 - 002 </li>
                             </ul>
+
+                            @if(Auth::check())
+<ul class="wm-adminuser-section">
+                                <li>
+                                <form action="{{url('logout')}}" method="POST">
+                                {!! csrf_field() !!}
+                                    <input type="submit" name="" value="لتسجيل الخروج" style="background-color: #00004d;color: white "> 
+
+                                    </form>
+                                </li>
+                                 <li>
+                                    <a href="{{url('profile')}}">{{Auth::user()->name}}</a>
+                                </li>
+                               
+                            </ul>
+                            @else
                             <ul class="wm-adminuser-section">
                                 <li>
-                                    <a href="#" data-toggle="modal" data-target="#ModalLogin">تسجيل الدخول</a>
+                                    <a href="{{url('login')}}" >تسجيل الدخول</a>
                                 </li>
                                 <li>
-                                    <a href="#">للتسجيل في الموقع</a>
+                                    <a href="{{url('register')}}">للتسجيل في الموقع</a>
                                 </li>
                                 <li>
                                     <!--<a href="#" class="wm-search-btn" data-toggle="modal" data-target="#ModalSearch"><i class="wmicon-search"></i></a>-->
                                 </li>
                             </ul>
+
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -90,9 +108,8 @@
 
                                     <li><a href="#">الدوبلومات و الدورات</a>
                                         <ul class="wm-dropdown-menu">
-                                            <li><a href="courses-grid.html">Courses Grid</a></li>
-                                            <li><a href="courses-list.html">Courses List</a></li>
-                                            <li><a href="courses-detail.html">Courses Detail</a></li>
+                                            <li><a href="{{route('course.index')}}">جميع الدورات</a></li>
+                                            
                                         </ul>
                                     </li>
                                     <li><a href="#">عن المركز</a>
@@ -164,7 +181,7 @@
                                         </ul>
                                         -->
                                     </li>
-                                    <li class="wm-megamenu-li"><a href="{{route('home.index')}}">الرئيسية  </a>
+                                    <li class="wm-megamenu-li"><a href="">الرئيسية  </a>
   <!--
                                         <ul class="wm-megamenu">
                                             <li class="row">
