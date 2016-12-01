@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Video;
-use App\Course;
-class VideosController extends Controller
+use App\User;
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,10 @@ class VideosController extends Controller
      */
     public function index()
     {
-      $videos=Video::all();
+       
 
-      return view('control.videos.videos',compact('videos'));
+$users=User::all();
+       return view('control.users.users',compact('users'));
     }
 
     /**
@@ -48,37 +48,7 @@ class VideosController extends Controller
      */
     public function show($id)
     {
-       
-
-
-       $video=Video::find($id);
-       $courseID=$video->course_id;
-
-  $otherVideos=Video::where('v_id',"<>",$id)->where('course_id','=',$courseID)->get();
-
-$courseName=$video->course->c_name;
-
-$course=Course::where('c_name',$courseName)->get();
-
-foreach ($course as $key => $value) {
-    # code...
-   $sy=  $value->syllabus;
-   $ce=$value->certificates;
-
-}
-
-
-      // $sy=$course->syllabus;
-
-
-  $syllabus=explode(",", $sy);
-
-  // $ce=$course->certificates;
-
-   $certificates=explode(',', $ce);
-
-       return view('videos.session',compact('video','syllabus','certificates','course','otherVideos'));
-
+        //
     }
 
     /**
@@ -89,10 +59,12 @@ foreach ($course as $key => $value) {
      */
     public function edit($id)
     {
-        $video=Video::find($id);
+      $user=User::find($id);
 
-        return view('control.videos.editvideo',compact('video'));
-    }
+
+
+    return view('control.users.edituser',compact('user'));
+          }
 
     /**
      * Update the specified resource in storage.
@@ -103,17 +75,23 @@ foreach ($course as $key => $value) {
      */
     public function update(Request $request, $id)
     {
-         $video=Video::find($id);
+        
 
-         $video->v_name=$request->get('name');
 
-         $video->course_id=$request->get('course');
-         $video->v_disc=$request->get('disc');
-         $video->startDate=$request->get('date');
-         $video->duration=$request->get('duration');
-         $video->save();
 
-         return redirect('video');
+        $name=$request->get('name');
+        $email=$request->get('email');
+        $accepted=$request->get('accepted');
+
+        $user=User::find($id);
+
+        $user->name=$name;
+        $user->email=$email;
+        $user->accepted=$accepted;
+        $user->save();
+
+
+        return redirect('user');
     }
 
     /**
@@ -124,11 +102,11 @@ foreach ($course as $key => $value) {
      */
     public function destroy($id)
     {
-        $video=Video::find($id);
+        
 
-        $video->delete();
+        $user=User::find($id);
+        $user->delete();
 
-              return redirect()->back();
-
-            }
+    return redirect()->back();
+    }
 }

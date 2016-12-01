@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Video;
-use App\Course;
-class VideosController extends Controller
+use  App\Course;
+class CoursescontrolController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,10 @@ class VideosController extends Controller
      */
     public function index()
     {
-      $videos=Video::all();
+        $courses=Course::all();
 
-      return view('control.videos.videos',compact('videos'));
+
+        return view('control.courses.courses',compact('courses'));
     }
 
     /**
@@ -48,37 +48,7 @@ class VideosController extends Controller
      */
     public function show($id)
     {
-       
-
-
-       $video=Video::find($id);
-       $courseID=$video->course_id;
-
-  $otherVideos=Video::where('v_id',"<>",$id)->where('course_id','=',$courseID)->get();
-
-$courseName=$video->course->c_name;
-
-$course=Course::where('c_name',$courseName)->get();
-
-foreach ($course as $key => $value) {
-    # code...
-   $sy=  $value->syllabus;
-   $ce=$value->certificates;
-
-}
-
-
-      // $sy=$course->syllabus;
-
-
-  $syllabus=explode(",", $sy);
-
-  // $ce=$course->certificates;
-
-   $certificates=explode(',', $ce);
-
-       return view('videos.session',compact('video','syllabus','certificates','course','otherVideos'));
-
+        //
     }
 
     /**
@@ -89,9 +59,9 @@ foreach ($course as $key => $value) {
      */
     public function edit($id)
     {
-        $video=Video::find($id);
+      $course=Course::find($id);
 
-        return view('control.videos.editvideo',compact('video'));
+      return view('control.courses.editcourse',compact('course'));
     }
 
     /**
@@ -103,17 +73,38 @@ foreach ($course as $key => $value) {
      */
     public function update(Request $request, $id)
     {
-         $video=Video::find($id);
+        
 
-         $video->v_name=$request->get('name');
 
-         $video->course_id=$request->get('course');
-         $video->v_disc=$request->get('disc');
-         $video->startDate=$request->get('date');
-         $video->duration=$request->get('duration');
-         $video->save();
+$name=$request->get('name');
+$teacher=$request->get('teacher');
+$category=$request->get('department');
 
-         return redirect('video');
+$price=$request->get('price');
+$disc=$request->get('disc');
+$sy=$request->get('sy');
+$certificates=$request->get('certificates');
+
+
+
+$course=Course::find($id);
+$course->c_name=$name;
+$course->teacher_id=$teacher;
+$course->category_id=$category;
+$course->price=$price;
+$course->disc=$disc;
+$course->syllabus=$sy;
+$course->certificates=$certificates;
+
+
+$course->save();
+
+return redirect('coursecontrol');
+
+
+
+
+
     }
 
     /**
@@ -124,11 +115,10 @@ foreach ($course as $key => $value) {
      */
     public function destroy($id)
     {
-        $video=Video::find($id);
+        $course=Course::find($id);
 
-        $video->delete();
+        $course->delete();
 
-              return redirect()->back();
-
-            }
+        return redirect()->back();
+    }
 }

@@ -50,34 +50,7 @@
                                 <li><i class="wmicon-clock2"></i> فاكس: 22903416 - 002 </li>
                             </ul>
 
-                            @if(Auth::check())
-<ul class="wm-adminuser-section">
-                                <li>
-                                <form action="{{url('logout')}}" method="POST">
-                                {!! csrf_field() !!}
-                                    <input type="submit" name="" value="لتسجيل الخروج" style="background-color: #00004d;color: white "> 
-
-                                    </form>
-                                </li>
-                                 <li>
-                                    <a href="{{url('profile')}}">{{Auth::user()->name}}</a>
-                                </li>
-                               
-                            </ul>
-                            @else
-                            <ul class="wm-adminuser-section">
-                                <li>
-                                    <a href="{{url('login')}}" >تسجيل الدخول</a>
-                                </li>
-                                <li>
-                                    <a href="{{url('register')}}">للتسجيل في الموقع</a>
-                                </li>
-                                <li>
-                                    <!--<a href="#" class="wm-search-btn" data-toggle="modal" data-target="#ModalSearch"><i class="wmicon-search"></i></a>-->
-                                </li>
-                            </ul>
-
-                            @endif
+                            
                         </div>
                     </div>
                 </div>
@@ -173,7 +146,7 @@
                                             </li>
                                         </ul>-->
                                     </li>
-                                    <li><a href="{{route('teacher.index')}}">قوائم المحكمين و الخبراء</a>
+                                    <li><a href="{{route('teachercontrol.index')}}">المدربين</a>
                                           <!--<ul class="wm-dropdown-menu">
                                             <li><a href="shop-grid.html">Shop Grid</a></li>
                                             <li><a href="shop-list.html">Shop List</a></li>
@@ -181,7 +154,7 @@
                                         </ul>
                                         -->
                                     </li>
-                                    <li class="wm-megamenu-li"><a href="">الرئيسية  </a>
+                                    <li class="wm-megamenu-li"><a href="{{route('user.index')}}">الطلاب  </a>
   <!--
                                         <ul class="wm-megamenu">
                                             <li class="row">

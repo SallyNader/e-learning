@@ -1,6 +1,7 @@
 <?php
 use App\Image;
 use App\Course;
+use App\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,9 @@ Route::get('o','CoursesController@o');
 Route::get('/',function(){
 $courses=Course::limit(4)->get();
  $images=Image::limit(4)->get();
-    return view('home',compact('images','courses'));
+
+ $category=Category::limit(2)->get();
+    return view('home',compact('images','courses','category'));
 });
 
 Route::resource('album','AlbumsController');
@@ -69,3 +72,21 @@ Route::get('addcourse/{userid}/{courseid}','ProfileController@addCourseToAccount
 
 
 Route::get('profile','ProfileController@myCourses');
+
+
+
+
+//admin pannel routes
+
+
+
+Route::resource('user','UsersController');
+
+Route::resource('teachercontrol','TeacherscontrolController');
+Route::resource('coursecontrol','CoursescontrolController');
+
+Route::resource('articlecontrol','ArticlescontrolController');
+
+Route::resource('typecontrol','TypscontrolController');
+
+Route::resource('albumcontrol','AlbumscontrolController');

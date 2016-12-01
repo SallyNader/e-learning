@@ -155,61 +155,65 @@
 
 
 
-
-
-            <div class="wm-main-section wm-ourhistory-full">
-                <span class="wm-light-transparent"></span>
+      <div class="wm-main-section wm-latestevents-full">
                 <div class="container">
                     <div class="row">
                         
-                        <div class="col-md-5">
-                            <div class="wm-history-list">
-                                <h2>Our History</h2>
-                                <ul>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2016</time>
-                                        <span>Released the Arctic Collection the Perennial Collection of handknotted luxury area rugs.</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2015</time>
-                                        <span>Installed our first custom floorcovering for a museum at the Aga Khan Museum in Toronto</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2014</time>
-                                        <span>Designed our first wallcovering for all these healthcare sector at the Toronto Centre.</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2013</time>
-                                        <span>Celebrated 25 years in business with “The Art Day Project” – a partnership.</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2016</time>
-                                        <span>Released the Arctic Collection the Perennial Collection of handknotted luxury area rugs.</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2015</time>
-                                        <span>Installed our first custom floorcovering for a museum at the Aga Khan Museum in Toronto</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2014</time>
-                                        <span>Designed our first wallcovering for all these healthcare sector at the Toronto Centre.</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2013</time>
-                                        <span>Celebrated 25 years in business with “The Art Day Project” – a partnership.</span>
-                                    </li>
-                                </ul>
+                        <div class="col-md-9 wm-top-spacer">
+                            <h2 class="wm-simple-title" style="text-align: right;">دوراتنا تضم أقسام عديدة</h2>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="wm-event-latest-slider">
+                                        <div class="wm-event-latest-layer">
+                                            <h6 class="wm-color">دوراتنل تؤهلك لسوق العمل فهي تشمل جميع المنهج المخصصة للعمل</h6>
+                                           <!-- <a href="#" class="wm-banner-btn">about us</a>-->
+                                        </div>
+                                        <div class="wm-event-latest-layer">
+                                            <h6 class="wm-color">نحن نحرص في دورتنا على أن يكون الطالب قد أستفاد بشكل كبير و فهم الدرس</h6>
+                                         <!--   <a href="#" class="wm-banner-btn">about us</a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                               @unless(empty($category))
+
+                               @foreach($category as $c)
+                                <div class="col-md-4">
+                                    <div class="wm-event wm-latest-event">
+                                        <ul class="row">
+                                            <li class="col-md-12">
+                                                <figure><a href="#"><img src="{!!asset('extra-images/latest-event-2.png')!!}" alt=""></a></figure>
+                                                <div class="wm-latest-event-text">
+                                                    <h6 style="text-align: right;"><a href="#" class="wm-color">{{$c->ca_name}}</a></h6>
+                                                    <time datetime="2008-02-14 20:00" style="text-align: right;">{{ date('F d, Y', strtotime($c->created_at)) }}</time>
+                                                    <p></p>
+                                                    <a href="{{route('category.show',$c->ca_id)}}" class="wm-banner-btn" style="text-align: center;">دورات القسم</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                @endforeach
+
+@endunless
                             </div>
                         </div>
-                        <div class="col-md-7">
-                            <div class="wm-subscribe-form">
-                                <h2>Still not convinced? We can help you!</h2>
-                                <p>Fill out the form below and we will contact you.</p>
-                                <form>
-                                    <input type="text" value="Name:" onblur="if(this.value == '') { this.value ='Name:'; }" onfocus="if(this.value =='Name:') { this.value = ''; }">
-                                    <input type="email" value="E-mail:" onblur="if(this.value == '') { this.value ='E-mail:'; }" onfocus="if(this.value =='E-mail:') { this.value = ''; }">
-                                    <input type="submit" value="Get Advice">
-                                </form>
+                        <div class="col-md-3">
+                            <div class="wm-counter wm-counter-simple">
+                                <ul class="row">
+                                    <li class="col-md-12">
+                                        <span class="word-count">5</span>
+                                        <h6>مركزنا يحتل المركز الخامس على مستوى الشرق الأوسط</h6>
+                                    </li>
+                                    <li class="col-md-12">
+                                        <span class="word-count">50</span>
+                                        <h6>طلبنا من مختلف أنحاء الدول العربية حوالي 50 دولة</h6>
+                                    </li>
+                                    <li class="col-md-12">
+                                        <span class="word-count">91</span>
+                                        <h6>نضم أمهر الخبراء علي مستوى الشرق الأوسط حوالي 91 خبير</h6>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
@@ -222,7 +226,115 @@
 
 
 
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="wm-main-section wm-ourhistory-full">
+                <span class="wm-light-transparent"></span>
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-md-5">
+                            <div class="wm-history-list">
+                                <h2>تاريخ مركزنا</h2>
+                                <ul>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2016</time>
+                                        <span>أصدرت مجموعة القطب الشمالي مجموعة معمرة من منطقة السجاجيد الفاخرة معقود
+</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2015</time>
+                                        <span>تصميم أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2014</time>
+                                        <span>وضعت أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2013</time>
+                                        <span>تثبيت لدينا أول floorcovering مخصصة للمتحف في متحف الآغا خان في تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2016</time>
+                                        <span>وضعت أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2015</time>
+                                        <span>تثبيت لدينا أول floorcovering مخصصة للمتحف في متحف الآغا خان في تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2014</time>
+                                        <span>تصميم أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2013</time>
+                                        <span>تصميم أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="wm-subscribe-form">
+                                <h2>من نحن ؟ و ماذا نقدم</h2>
+                                <p>نحن نساعد الطلاب ليس فقط الحصول على رسالة القبول </p>
+                                <p>يعمل لأكثر من 10 أعوام في مجال توظيف الطلاب الأجانب الذين يتوقون للدراسة في الجامعات الروسية والتحق أكثر من 11000 طالب من جميع أنحاء العالم. البعض منهم قد أنجزوا بالفعل دراستهم ويعملون في مجالات مختلفة مثل المتخصصين المؤهلين تأهيلا عاليا، والبعض الآخر ما زالوا يدرسون في الجامعةيعمل لأكثر من 10 أعوام في مجال توظيف الطلاب الأجانب الذين يتوقون للدراسة في الجامعات الروسية والتحق أكثر من 11000 طالب من جميع أنحاء العالم. البعض منهم قد أنجزوا بالفعل دراستهم ويعملون في مجالات مختلفة مثل المتخصصين المؤهلين تأهيلا عاليا، والبعض الآخر ما زالوا يدرسون في الجامعة</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <!--// Main Section \\-->
             <div class="wm-main-section wm-courses-popular-full">
@@ -342,79 +454,7 @@
             <!--// Main Section \\-->
 
             <!--// Main Section \\-->
-            <div class="wm-main-section wm-latestevents-full">
-                <div class="container">
-                    <div class="row">
-                        
-                        <div class="col-md-9 wm-top-spacer">
-                            <h2 class="wm-simple-title">Our Latest Events</h2>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="wm-event-latest-slider">
-                                        <div class="wm-event-latest-layer">
-                                            <h6 class="wm-color">Enjoy the best experience for you with the choice of our campus - a truly international university campus in Barcelona.</h6>
-                                            <a href="#" class="wm-banner-btn">about us</a>
-                                        </div>
-                                        <div class="wm-event-latest-layer">
-                                            <h6 class="wm-color">Enjoy the best experience for you with the choice of our campus - a truly international university campus in Barcelona.</h6>
-                                            <a href="#" class="wm-banner-btn">about us</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="wm-event wm-latest-event">
-                                        <ul class="row">
-                                            <li class="col-md-12">
-                                                <figure><a href="#"><img src="{!!asset('extra-images/latest-event-1.png')!!}" alt=""></a></figure>
-                                                <div class="wm-latest-event-text">
-                                                    <h6><a href="#" class="wm-color">Out of This World: The Family Fun Day</a></h6>
-                                                    <time datetime="2008-02-14 20:00">21/04/2016</time>
-                                                    <p>Join us for outer-space themed games, prizes, science & talks about careers in the UK.</p>
-                                                    <a href="#" class="wm-banner-btn">check event</a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="wm-event wm-latest-event">
-                                        <ul class="row">
-                                            <li class="col-md-12">
-                                                <figure><a href="#"><img src="{!!asset('extra-images/latest-event-2.png')!!}" alt=""></a></figure>
-                                                <div class="wm-latest-event-text">
-                                                    <h6><a href="#" class="wm-color">Shakespeare at Balliol in those five acts</a></h6>
-                                                    <time datetime="2008-02-14 20:00">19/04/2016</time>
-                                                    <p>A.C. Bradley and J.C. Maxwell get down to serious criticism; another Balliol writer launches the.</p>
-                                                    <a href="#" class="wm-banner-btn">check event</a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="wm-counter wm-counter-simple">
-                                <ul class="row">
-                                    <li class="col-md-12">
-                                        <span class="word-count">5</span>
-                                        <h6>th best University in Europe (Youth Inc. 2015 ranking)</h6>
-                                    </li>
-                                    <li class="col-md-12">
-                                        <span class="word-count">68</span>
-                                        <h6>% International students especially from Asia, Africa & Europe</h6>
-                                    </li>
-                                    <li class="col-md-12">
-                                        <span class="word-count">91</span>
-                                        <h6>Student Nationalities</h6>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+      
             <!--// Main Section \\-->
 
             <!--// Main Section \\-->

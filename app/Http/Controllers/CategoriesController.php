@@ -13,7 +13,11 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+       
+
+       $cats=Category::all();
+
+       return view('control.categories.categories',compact('cats'));
     }
 
     /**
@@ -59,7 +63,10 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $cat=Category::find($id);
+
+        return view('control.categories.editcategory',compact('cat'));
     }
 
     /**
@@ -71,7 +78,13 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $category=Category::find($id);
+
+        $category->ca_name=$request->get('name');
+        $category->save();
+
+        return redirect('category');
     }
 
     /**
@@ -82,6 +95,8 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cat=Category::find($id);
+  $cat->delete();
+        return redirect()->back();
     }
 }

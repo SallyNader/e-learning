@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Video;
-use App\Course;
-class VideosController extends Controller
+use App\Type;
+class TypscontrolController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,12 @@ class VideosController extends Controller
      */
     public function index()
     {
-      $videos=Video::all();
+        $types=Type::all();
 
-      return view('control.videos.videos',compact('videos'));
+
+        return view('control.types.types',compact('types'));
+
+
     }
 
     /**
@@ -48,37 +50,7 @@ class VideosController extends Controller
      */
     public function show($id)
     {
-       
-
-
-       $video=Video::find($id);
-       $courseID=$video->course_id;
-
-  $otherVideos=Video::where('v_id',"<>",$id)->where('course_id','=',$courseID)->get();
-
-$courseName=$video->course->c_name;
-
-$course=Course::where('c_name',$courseName)->get();
-
-foreach ($course as $key => $value) {
-    # code...
-   $sy=  $value->syllabus;
-   $ce=$value->certificates;
-
-}
-
-
-      // $sy=$course->syllabus;
-
-
-  $syllabus=explode(",", $sy);
-
-  // $ce=$course->certificates;
-
-   $certificates=explode(',', $ce);
-
-       return view('videos.session',compact('video','syllabus','certificates','course','otherVideos'));
-
+        //
     }
 
     /**
@@ -89,9 +61,10 @@ foreach ($course as $key => $value) {
      */
     public function edit($id)
     {
-        $video=Video::find($id);
+       
 
-        return view('control.videos.editvideo',compact('video'));
+       $type=Type::find($id);
+       return view('control.types.edittype',compact('type'));
     }
 
     /**
@@ -103,17 +76,13 @@ foreach ($course as $key => $value) {
      */
     public function update(Request $request, $id)
     {
-         $video=Video::find($id);
+       
 
-         $video->v_name=$request->get('name');
+       $type=Type::find($id);
 
-         $video->course_id=$request->get('course');
-         $video->v_disc=$request->get('disc');
-         $video->startDate=$request->get('date');
-         $video->duration=$request->get('duration');
-         $video->save();
-
-         return redirect('video');
+       $type->t_title=$request->get('name');
+ $type->save();
+       return redirect('typecontrol');
     }
 
     /**
@@ -124,11 +93,12 @@ foreach ($course as $key => $value) {
      */
     public function destroy($id)
     {
-        $video=Video::find($id);
+       
+       $type=Type::find($id);
 
-        $video->delete();
+       $type->delete();
 
-              return redirect()->back();
 
-            }
+       return redirect()->back();
+    }
 }

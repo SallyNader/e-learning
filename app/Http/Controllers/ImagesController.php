@@ -16,7 +16,10 @@ class ImagesController extends Controller
     {
     
 
+$images=Image::all();
 
+
+return view('control.images.images',compact('images'));
     
     }
 
@@ -67,7 +70,9 @@ class ImagesController extends Controller
      */
     public function edit($id)
     {
-        //
+         $image=Image::find($id);
+
+         return view('control.images.editimage',compact('image'));
     }
 
     /**
@@ -79,7 +84,15 @@ class ImagesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $image=Image::find($id);
+        $image->i_name=$request->get('name');
+
+        $image->i_disc=$request->get('disc');
+        $image->album_id=$request->get('album');
+        $image->save();
+
+        return redirect('image');
+
     }
 
     /**
@@ -90,6 +103,11 @@ class ImagesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+
+        $image=Image::find($id);
+        $image->delete();
+
+        return redirect()->back();
     }
 }
