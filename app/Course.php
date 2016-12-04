@@ -9,6 +9,9 @@ class Course extends Model
     
 protected $primaryKey="c_id";
 
+
+protected $fillable=['category_id','certificates','c_name','disc','image','price','syllabus','teacher_id'];
+
     public function users(){
 
 

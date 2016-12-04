@@ -26,7 +26,7 @@ class AlbumscontrolController extends Controller
      */
     public function create()
     {
-        //
+    return view('control.albums.create');
     }
 
     /**
@@ -37,7 +37,32 @@ class AlbumscontrolController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+
+$path=public_path().'/extra-images/';
+$file=$request->file('file');
+
+$filename=time().rand(1111,9999).'.'.$file->getClientOriginalName();
+if($file->move($path,$filename)){
+
+
+
+
+     Album::create([
+
+'b_name'=>$request->get('name'),
+
+'b_disc'=>$request->get('disc'),
+'b_cover'=>$filename
+
+
+        ]);
+}
+
+
+      return redirect('albumcontrol');
+
     }
 
     /**

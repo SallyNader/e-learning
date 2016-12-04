@@ -6,7 +6,7 @@
     
                             <div class="wm-event-register-list" style="width:1100px;margin-left: 70px">
                                 <div class="wm-register-title">
-                                    <h6 style="text-align: center;"></h6>
+                                    <h6 style="text-align: center;"></h6><a href="{{route('image.create')}}" class="btn btn-info">أضافة صورة جديدة</a>
                                    
                                 </div>
                                 <div class="event-register-wrap">

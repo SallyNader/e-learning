@@ -30,7 +30,9 @@ return view('control.images.images',compact('images'));
      */
     public function create()
     {
-        //
+        
+
+        return view('control.images.create');
     }
 
     /**
@@ -41,7 +43,29 @@ return view('control.images.images',compact('images'));
      */
     public function store(Request $request)
     {
-        //
+       $path=public_path().'/extra-images/';
+$file=$request->file('file');
+
+$filename=time().rand(1111,9999).'.'.$file->getClientOriginalName();
+if($file->move($path,$filename)){
+
+Image::create([
+
+'i_name'=>$request->get('name'),
+'i_disc'=>$request->get('disc'),
+'album_id'=>$request->get('album'),
+'path'=>$filename
+
+
+
+
+
+
+    ]);
+
+}
+
+return redirect('image');
     }
 
     /**

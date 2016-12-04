@@ -6,7 +6,7 @@
     
                             <div class="wm-event-register-list" style="width:900px;margin-left: 90px">
                                 <div class="wm-register-title"  style="margin-left: 90px">
-                                    <h6 style="text-align: center;">بيانات الألبومات</h6>
+                                    <h6 style="text-align: center;"></h6><a href="{{route('albumcontrol.create')}}" class="btn btn-info">أضافة ألبوم</a>
                                    
                                 </div>
                                 <div class="event-register-wrap"  style="margin-left: 90px">

@@ -26,7 +26,10 @@ class CoursescontrolController extends Controller
      */
     public function create()
     {
-        //
+        
+
+
+        return view('control.courses.create');
     }
 
     /**
@@ -37,7 +40,37 @@ class CoursescontrolController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $file=$request->file('file');
+        $path=public_path().'/extra-images/';
+
+        $filename=time().rand(1111,9999).'.'.$file->getClientOriginalName();
+
+        if($file->move($path,$filename)){
+Course::create([
+'category_id'=>$request->get('department'),
+
+'certificates'=>$request->get('certificates'),
+
+'c_name'=>$request->get('name'),
+'disc'=>$request->get('disc'),
+
+'image'=>'extra-images/'.$filename,
+'price'=>$request->get('price'),
+'syllabus'=>$request->get('sy'),
+'teacher_id'=>$request->get('teacher')
+
+
+
+
+
+            ]);
+
+
+        }
+
+        return redirect('coursecontrol');
+        
     }
 
     /**
@@ -73,7 +106,30 @@ class CoursescontrolController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
+$course=Course::find($id);
         
+$file=$request->file('file');
+
+        if(!empty($file)){
+
+
+
+
+            $path=public_path().'/extra-images/';
+
+            $filename=time().rand(1111,9999).'.'.$file->getClientOriginalName();
+
+
+            if($file->move($path,$filename)){
+
+
+               $course->image= 'extra-images/' .$filename;
+
+
+            }
+        }
 
 
 $name=$request->get('name');
@@ -87,7 +143,6 @@ $certificates=$request->get('certificates');
 
 
 
-$course=Course::find($id);
 $course->c_name=$name;
 $course->teacher_id=$teacher;
 $course->category_id=$category;

@@ -47,21 +47,7 @@ return view('control.teachers.teachers',compact('teachers'));
 $cover=$request->file('cover');
 $profile=$request->file('profile');
 
- $path=public_path().'/extra-images';
-
-if(!empty($cover) ){
-
-
-
-
-
-
-      $filename=rand(1111,9999).time().'.'.$file->getClientOriginalName();
-
-
-        if($file->move($path,$filename)){
-
-         $image->path=$filename;
+ $path=public_path().'/extra-images/';
 
 
 
@@ -70,14 +56,57 @@ if(!empty($cover) ){
 
 
 
-  
-}
+      $image_cover=rand(1111,9999).time().'.'.$cover->getClientOriginalName();
+      $image_profile=rand(1111,9999).time().'.'.$profile->getClientOriginalName();
+
+
+      if($cover->move($path,$image_cover) and $profile->move($path,$image_profile)){
+
+
+
+
+Teacher::create([
+
+'experience_years'=>$request->get('years')
+
+
+,'path'=>$image_cover
+
+
+
+,'profile_image'=>$image_profile
+
+
+,'type_id'=>$request->get('title')
+
+
+,'t_branch'=>$request->get('branch')
+
+
+,'t_email'=>$request->get('email')
+
+,'t_experience'=>$request->get('experience')
+
+
+,'t_name'=>$request->get('name')
+
+,'t_phone'=>$request->get('phone')
 
 
 
 
 
 
+    ]);
+
+
+      }
+
+
+       
+
+
+return redirect('teachercontrol');
     }
 
     /**

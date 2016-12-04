@@ -5,7 +5,7 @@
 									<div class="wm-full-title ">
 										<h2 style="text-align: center;">تعديل بيانات الدورة</h2>
 									</div>
-									<form  action="{{route('coursecontrol.update',$course->c_id)}}" method="POST" style="margin-left:  280px;width: 1000px;text-align: right;">
+									<form  action="{{route('coursecontrol.update',$course->c_id)}}" method="POST" style="margin-left:  280px;width: 1000px;text-align: right;"  files="true"  enctype="multipart/form-data" >
 
 
 									{!! method_field('PUT') !!} 
@@ -14,6 +14,10 @@
 
                                                   
 										<ul>
+
+
+<li><img src="../../{{$course->image}}" style="width: 200px;height:200px;margin-right: 90px"></li>
+
 											<li>
 <label>الأسم</label>
 											<input type="text" name="name" value="{{$course->c_name}}" onblur="if(this.value == '') { this.value ='Old Password'; }" onfocus="if(this.value =='Old Password') { this.value = ''; }">
@@ -83,6 +87,14 @@
 <li>
 <label>المؤهلات</label>
 											<input name="certificates" type="text" value="{{$course->certificates}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>
+
+
+
+
+
+<li>
+<label>صورة الدورة</label>
+											<input  type="file"  name="file"></li>
 
 
 

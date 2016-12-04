@@ -3,7 +3,7 @@
 
 <div class="wm-student-dashboard-form" style="margin-left: 40px;width: 1000px">
 									<div class="wm-full-title ">
-										<h2 style="text-align: center;">ضافة مدرب خديد</h2>
+										<h2 style="text-align: center;">أضافة مدرب جديد</h2>
 									</div>
 									<form  action="{{url('teachercontrol')}}" files="true" method="POST" enctype="multipart/form-data"  style="margin-left:  280px;width: 1000px;text-align: right;">
 
@@ -99,7 +99,7 @@
 
 
 
-												<label>تحميل صورة شخية</label>
+												<label>تحميل صورة شخصية</label>
 
 <input type="file" name="profile">
 
@@ -116,7 +116,7 @@
 
 																													 
 		                                </ul>
-		                                <input class="btn btn-primary" type="submit" value="تعديل" name="">
+		                                <input class="btn btn-primary" type="submit" value="أضافة" name="">
 									</form>
 								</div>
 
