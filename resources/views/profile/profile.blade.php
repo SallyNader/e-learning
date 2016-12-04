@@ -23,13 +23,7 @@
 				        <div class="wm-mini-title">
 				       		<h1>الصفحة الشخصية</h1> 
 				        </div>
-				        <div class="wm-breadcrumb">
-				          	<ul>
-				          	 	<li><a href="index-2.html">Home</a></li>
-				          	 	<li><a href="#">Student Dashboard</a></li>
-				           		<li>My Courses</li>
-				          	</ul>
-				        </div>      
+				             
 				    </div>
 			    </div>
 			</div>    
@@ -51,45 +45,29 @@
 									</figure>
 									<div class="wm-student-nav-text">
 										<h6>{{Auth::user()->name}}</h6>
-										<a href="#">update image</a>
+										<a href="#">لتحميل صورة جديدة</a>
 									</div>
 									<ul>
 										<li>
 											<a href="#">
 												<i class="wmicon-avatar"></i>
-												Profile Details
+												تفاصيل الصفحة الشخصية
 											</a>
 										</li>
 										<li class="active">
 											<a href="#">
 												<i class="wmicon-book"></i>
-												My Courses
+												دوراتي
 											</a>
 										</li>
 										<li>
 											<a href="#">
 												<i class="wmicon-favorite"></i>
-												Favorites
+												المفضلات
 											</a>
 										</li>
-										<li>
-											<a href="#">
-												<i class="wmicon-paper"></i>
-												Statement
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<i class="wmicon-three"></i>
-												Settings
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<i class="wmicon-arrow"></i>
-												Logout
-											</a>
-										</li>
+										
+									
 									</ul>
 								</div>
 							</div>						

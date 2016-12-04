@@ -8,10 +8,17 @@
 									<form  action="{{route('albumcontrol.update',$album->b_id)}}" method="POST" style="margin-left:  280px;width: 1000px;text-align: right;"  files="true"  enctype="multipart/form-data">
 
 
+
+
+
+                                  
 									{!! method_field('PUT') !!} 
 
                                                   {{ csrf_field() }}
 										<ul>
+
+<li><img src="../../extra-images/{{$album->b_cover}}" style="width: 200px;height:200px;margin-right: 90px"></li>
+										
 											<li>
 <label>أسم الألبوم</label>
 											<input type="text" name="name" value="{{$album->b_name}}" onblur="if(this.value == '') { this.value ='Old Password'; }" onfocus="if(this.value =='Old Password') { this.value = ''; }">
@@ -31,7 +38,11 @@
 
 											</li>
 
+<li>
+<label>تحميل صورة جديدة</label>
+											<input type="file"   name="file"   >
 
+											</li>
 
 
 

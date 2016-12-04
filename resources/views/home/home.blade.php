@@ -10,8 +10,8 @@
 
 
 
-		<!--// Main Banner \\-->
-		<div class="wm-main-banner">
+        <!--// Main Banner \\-->
+        <div class="wm-main-banner">
             
             <div class="wm-banner-one">
                 <div class="wm-banner-one-for">
@@ -37,19 +37,19 @@
                 </div>
             </div>
 
-		</div>
-		<!--// Main Banner \\-->
+        </div>
+        <!--// Main Banner \\-->
 
-		<!--// Main Content \\-->
-		<div class="wm-main-content">
+        <!--// Main Content \\-->
+        <div class="wm-main-content">
 
-			<!--// Main Section \\-->
-			<div class="wm-main-section">
-				<div class="container">
-					<div class="row">
-						
-						<div class="col-md-4">
-							<div class="wm-search-course">
+            <!--// Main Section \\
+            <div class="wm-main-section">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-md-4">
+                            <div class="wm-search-course">
                                 <h3 class="wm-short-title wm-color">Find Your Course</h3>
                                 <p>Fill in the form below to find your course:</p>
                                 <form>
@@ -81,7 +81,7 @@
                                     </ul>
                                 </form>
                             </div>
-						</div>
+                        </div>
                         <div class="col-md-8">
                             <div class="wm-service wm-box-service">
                                 <ul>
@@ -137,239 +137,158 @@
                             </div>
                         </div>
 
-					</div>
-				</div>
-			</div>
-			<!--// Main Section \\-->
-
+                    </div>
+                </div>
+            </div>-->
             <!--// Main Section \\-->
-            <div class="wm-main-section wm-courses-popular-full">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <div class="wm-main-section wm-ourhistory-full">
+                <span class="wm-light-transparent"></span>
                 <div class="container">
                     <div class="row">
                         
-                        <div class="col-md-12">
-                            <div class="wm-fancy-title"> <h2>Popular <span>Courses</span></h2> </div>
-                            <div class="wm-courses wm-courses-popular">
-                                <ul class="row">
-                                    <li class="col-md-3">
-                                        <div class="wm-courses-popular-wrap">
-                                            <figure> <a href="#"><img src="{!!asset('extra-images/papular-courses-1.jpg')!!}" alt=""> <span class="wm-popular-hover"> <small>see course</small> </span> </a>
-                                                <figcaption>
-                                                    <img src="{!!asset('extra-images/papular-courses-thumb-1.jpg')!!}" alt="">
-                                                    <h6><a href="#">Shelly T. Forrester</a></h6>
-                                                </figcaption>
-                                            </figure>
-                                            <div class="wm-popular-courses-text">
-                                                <h6><a href="#">Advanced Architectural Research</a></h6>
-                                                <div class="wm-courses-price"> <span>$32</span> </div>
-                                                <ul>
-                                                    <li><a href="#" class="wm-color"><i class="wmicon-social7"></i> 342</a></li>
-                                                    <li><a href="#" class="wm-color"><i class="wmicon-social6"></i> 10</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                        <div class="col-md-5">
+                            <div class="wm-history-list">
+                                <h2>تاريخ مركزنا</h2>
+                                <ul>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2016</time>
+                                        <span>أصدرت مجموعة القطب الشمالي مجموعة معمرة من منطقة السجاجيد الفاخرة معقود
+</span>
                                     </li>
-                                    <li class="col-md-3">
-                                        <div class="wm-courses-popular-wrap">
-                                            <figure> <a href="#"><img src="{!!asset('extra-images/papular-courses-2.jpg')!!}" alt=""> <span class="wm-popular-hover"> <small>see course</small> </span> </a>
-                                                <figcaption>
-                                                    <img src="{!!asset('extra-images/papular-courses-thumb-2.jpg')!!}" alt="">
-                                                    <h6><a href="#">Sam K. Harrington</a></h6>
-                                                </figcaption>
-                                            </figure>
-                                            <div class="wm-popular-courses-text">
-                                                <h6><a href="#">Advanced Landscape & Urbanism</a></h6>
-                                                <div class="wm-courses-price"> <span>Free</span> </div>
-                                                <ul>
-                                                    <li><a href="#" class="wm-color"><i class="wmicon-social7"></i> 438</a></li>
-                                                    <li><a href="#" class="wm-color"><i class="wmicon-social6"></i> 28</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2015</time>
+                                        <span>تصميم أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
                                     </li>
-                                    <li class="col-md-3">
-                                        <div class="wm-courses-popular-wrap">
-                                            <figure> <a href="#"><img src="{!!asset('extra-images/papular-courses-3.jpg')!!}" alt=""> <span class="wm-popular-hover"> <small>see course</small> </span> </a>
-                                                <figcaption>
-                                                    <img src="{!!asset('extra-images/papular-courses-thumb-3.jpg')!!}" alt="">
-                                                    <h6><a href="#">Sara A. Shirley</a></h6>
-                                                </figcaption>
-                                            </figure>
-                                            <div class="wm-popular-courses-text">
-                                                <h6><a href="#">Transdisciplinary Design</a></h6>
-                                                <div class="wm-courses-price"> <span>$79</span> </div>
-                                                <ul>
-                                                    <li><a href="#" class="wm-color"><i class="wmicon-social7"></i> 309</a></li>
-                                                    <li><a href="#" class="wm-color"><i class="wmicon-social6"></i> 19</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2014</time>
+                                        <span>وضعت أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
                                     </li>
-                                    <li class="col-md-3">
-                                        <div class="wm-courses-popular-wrap">
-                                            <figure> <a href="#"><img src="{!!asset('extra-images/papular-courses-4.jpg')!!}" alt=""> <span class="wm-popular-hover"> <small>see course</small> </span> </a>
-                                                <figcaption>
-                                                    <img src="{!!asset('extra-images/papular-courses-thumb-4.jpg')!!}" alt="">
-                                                    <h6><a href="#">Julius M. Lepage</a></h6>
-                                                </figcaption>
-                                            </figure>
-                                            <div class="wm-popular-courses-text">
-                                                <h6><a href="#">Financial Information Systems</a></h6>
-                                                <div class="wm-courses-price"> <span>$50</span> </div>
-                                                <ul>
-                                                    <li><a href="#" class="wm-color"><i class="wmicon-social7"></i> 298</a></li>
-                                                    <li><a href="#" class="wm-color"><i class="wmicon-social6"></i> 11</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2013</time>
+                                        <span>تثبيت لدينا أول floorcovering مخصصة للمتحف في متحف الآغا خان في تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2016</time>
+                                        <span>وضعت أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2015</time>
+                                        <span>تثبيت لدينا أول floorcovering مخصصة للمتحف في متحف الآغا خان في تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2014</time>
+                                        <span>تصميم أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2013</time>
+                                        <span>تصميم أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="wm-subscribe-form">
+                                <h2>من نحن ؟ و ماذا نقدم</h2>
+                                <p>نحن نساعد الطلاب ليس فقط الحصول على رسالة القبول </p>
+                                <p>يعمل لأكثر من 10 أعوام في مجال توظيف الطلاب الأجانب الذين يتوقون للدراسة في الجامعات الروسية والتحق أكثر من 11000 طالب من جميع أنحاء العالم. البعض منهم قد أنجزوا بالفعل دراستهم ويعملون في مجالات مختلفة مثل المتخصصين المؤهلين تأهيلا عاليا، والبعض الآخر ما زالوا يدرسون في الجامعةيعمل لأكثر من 10 أعوام في مجال توظيف الطلاب الأجانب الذين يتوقون للدراسة في الجامعات الروسية والتحق أكثر من 11000 طالب من جميع أنحاء العالم. البعض منهم قد أنجزوا بالفعل دراستهم ويعملون في مجالات مختلفة مثل المتخصصين المؤهلين تأهيلا عاليا، والبعض الآخر ما زالوا يدرسون في الجامعة</p>
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
-            <!--// Main Section \\-->
 
-            <!--// Main Section \\-->
-            <div class="wm-main-section wm-whychooseus-full">
-                <div class="container">
-                    <div class="row">
-                        
-                        <div class="col-md-8">
-                            <div class="whychooseus-list">
-                                <div class="wm-fancy-title"> <h2>Why <span>Choose Us</span></h2> </div>
-                                <ul class="row">
-                                    <li class="col-md-4">
-                                        <span>209</span>
-                                        <h6>of our trainees have got a prestigious job</h6>
-                                    </li>
-                                    <li class="col-md-4">
-                                        <span>91%</span>
-                                        <h6>students have established successful business</h6>
-                                    </li>
-                                    <li class="col-md-4">
-                                        <span>35%</span>
-                                        <h6>have already earned their first million</h6>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="wm-questions-studying">
-                                <img src="{!!asset('extra-images/ask-questoin-bg.png')!!}" alt="">
-                                <h3 class="wm-color">Questions about studying with us?</h3>
-                                <p>We have a team of student advisers & officers to answer any questions:</p>
-                                <a class="wm-banner-btn" href="#">ask us now</a>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-            </div>
-            <!--// Main Section \\-->
 
-            <!--// Main Section \\-->
-            <div class="wm-main-section wm-learn-listing-full">
-                <div class="container">
-                    <div class="row">
-                        
-                        <div class="col-md-12">
-                            <div class="wm-fancy-title"> <h2>You Can <span>Learn</span></h2> </div>
-                            <div class="wm-learn-listing">
-                                <ul class="row">
-                                    <li class="col-md-6">
-                                        <figure><a href="#"><img src="{!!asset('extra-images/learn-listing-1.png')!!}" alt=""></a>
-                                            <figcaption>
-                                                <h2>Research</h2>
-                                                <a href="#" class="wm-banner-btn">Read More</a>
-                                            </figcaption>
-                                        </figure>
-                                    </li>
-                                    <li class="col-md-6">
-                                        <figure><a href="#"><img src="{!!asset('extra-images/learn-listing-2.png')!!}" alt=""></a>
-                                            <figcaption>
-                                                <h2>Academics</h2>
-                                                <a href="#" class="wm-banner-btn">Read More</a>
-                                            </figcaption>
-                                        </figure>
-                                    </li>
-                                    <li class="col-md-6">
-                                        <figure><a href="#"><img src="{!!asset('extra-images/learn-listing-3.png')!!}" alt=""></a>
-                                            <figcaption>
-                                                <h2>Admissions</h2>
-                                                <a href="#" class="wm-banner-btn">Read More</a>
-                                            </figcaption>
-                                        </figure>
-                                    </li>
-                                    <li class="col-md-6">
-                                        <figure><a href="#"><img src="{!!asset('extra-images/learn-listing-4.png')!!}" alt=""></a>
-                                            <figcaption>
-                                                <h2>Student Life</h2>
-                                                <a href="#" class="wm-banner-btn">Read More</a>
-                                            </figcaption>
-                                        </figure>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-            </div>
-            <!--// Main Section \\-->
 
-            <!--// Main Section \\-->
-            <div class="wm-main-section wm-latestevents-full">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="wm-main-section wm-latestevents-full">
                 <div class="container">
                     <div class="row">
                         
                         <div class="col-md-9 wm-top-spacer">
-                            <h2 class="wm-simple-title">Our Latest Events</h2>
+                            <h2 class="wm-simple-title" style="text-align: right;">دوراتنا تضم أقسام عديدة</h2>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="wm-event-latest-slider">
                                         <div class="wm-event-latest-layer">
-                                            <h6 class="wm-color">Enjoy the best experience for you with the choice of our campus - a truly international university campus in Barcelona.</h6>
-                                            <a href="#" class="wm-banner-btn">about us</a>
+                                            <h6 class="wm-color">دوراتنل تؤهلك لسوق العمل فهي تشمل جميع المنهج المخصصة للعمل</h6>
+                                           <!-- <a href="#" class="wm-banner-btn">about us</a>-->
                                         </div>
                                         <div class="wm-event-latest-layer">
-                                            <h6 class="wm-color">Enjoy the best experience for you with the choice of our campus - a truly international university campus in Barcelona.</h6>
-                                            <a href="#" class="wm-banner-btn">about us</a>
+                                            <h6 class="wm-color">نحن نحرص في دورتنا على أن يكون الطالب قد أستفاد بشكل كبير و فهم الدرس</h6>
+                                         <!--   <a href="#" class="wm-banner-btn">about us</a>-->
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="wm-event wm-latest-event">
-                                        <ul class="row">
-                                            <li class="col-md-12">
-                                                <figure><a href="#"><img src="{!!asset('extra-images/latest-event-1.png')!!}" alt=""></a></figure>
-                                                <div class="wm-latest-event-text">
-                                                    <h6><a href="#" class="wm-color">Out of This World: The Family Fun Day</a></h6>
-                                                    <time datetime="2008-02-14 20:00">21/04/2016</time>
-                                                    <p>Join us for outer-space themed games, prizes, science & talks about careers in the UK.</p>
-                                                    <a href="#" class="wm-banner-btn">check event</a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                               
+                               @unless(empty($category))
+
+                               @foreach($category as $c)
                                 <div class="col-md-4">
                                     <div class="wm-event wm-latest-event">
                                         <ul class="row">
                                             <li class="col-md-12">
                                                 <figure><a href="#"><img src="{!!asset('extra-images/latest-event-2.png')!!}" alt=""></a></figure>
                                                 <div class="wm-latest-event-text">
-                                                    <h6><a href="#" class="wm-color">Shakespeare at Balliol in those five acts</a></h6>
-                                                    <time datetime="2008-02-14 20:00">19/04/2016</time>
-                                                    <p>A.C. Bradley and J.C. Maxwell get down to serious criticism; another Balliol writer launches the.</p>
-                                                    <a href="#" class="wm-banner-btn">check event</a>
+                                                    <h6 style="text-align: right;"><a href="#" class="wm-color">{{$c->ca_name}}</a></h6>
+                                                    <time datetime="2008-02-14 20:00" style="text-align: right;">{{ date('F d, Y', strtotime($c->created_at)) }}</time>
+                                                    <p></p>
+                                                    <a href="{{route('category.show',$c->ca_id)}}" class="wm-banner-btn" style="text-align: center;">دورات القسم</a>
                                                 </div>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
+                                @endforeach
+
+@endunless
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -377,15 +296,15 @@
                                 <ul class="row">
                                     <li class="col-md-12">
                                         <span class="word-count">5</span>
-                                        <h6>th best University in Europe (Youth Inc. 2015 ranking)</h6>
+                                        <h6>مركزنا يحتل المركز الخامس على مستوى الشرق الأوسط</h6>
                                     </li>
                                     <li class="col-md-12">
-                                        <span class="word-count">68</span>
-                                        <h6>% International students especially from Asia, Africa & Europe</h6>
+                                        <span class="word-count">50</span>
+                                        <h6>طلبنا من مختلف أنحاء الدول العربية حوالي 50 دولة</h6>
                                     </li>
                                     <li class="col-md-12">
                                         <span class="word-count">91</span>
-                                        <h6>Student Nationalities</h6>
+                                        <h6>نضم أمهر الخبراء علي مستوى الشرق الأوسط حوالي 91 خبير</h6>
                                     </li>
                                 </ul>
                             </div>
@@ -394,6 +313,135 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+            <!--// Main Section \\-->
+    <div class="wm-main-section wm-whychooseus-full wm-minus-spacer" style="margin-left: 170px">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-md-8">
+                            <div class="whychooseus-list">
+                                <div class="wm-fancy-title"> <h2>لماذا <span> تختارنا</span></h2> </div>
+                                <ul class="row">
+                                    <li class="col-md-4">
+                                        <span>98%</span>
+                                        <h6>من المتدربين لدينا حصلت على وظيفة مرموقة</h6>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <span>91%</span>
+                                        <h6> افادة العضو بكافة الاصدارات للمركز سواء الشهرية او السنوية مجانا</h6>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <span>35%</span>
+                                        <h6>الحصول بشكل دوري على معلومات حول آخر المستجدات وقائمة بالمؤتمرات الدولية التي تعقد في أنحاء العالم في مجال التحكيم التجاري الدولي</h6>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+            <!--// Main Section \\-->
+
+            <!--// Main Section \\-->
+                 <div class="wm-main-section wm-studentslove-full">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-md-12"> <div class="wm-fancy-title"> <h2>لماذا يفضلنا <span>الطلاب</span></h2> </div> </div>
+                        <div class="col-md-6"> <video src="build/echo-hereweare.mp4" poster="build/echo-hereweare.jpg" controls="controls" preload="none"></video> </div>
+                        <div class="col-md-6">
+                            <div class="wm-recent-list-slider wm-recent-list-slider-color">
+                                <div class="wm-recent-list-layer">
+                                    <figure><a href="#"><img src="extra-images/recent-list-1.jpg" alt=""></a></figure>
+                                    <div class="wm-recent-list-text">
+                                        <p>“الذين يدرسون في يا رفاق جلب قيمة مضافة لحياتي المهنية وكانت الدورات مثيرة للاهتمام للغاية وكان الأساتذة”</p>
+                                        <a href="#" class="wm-color-three">أحمد علي</a>
+                                    </div>
+                                </div>
+                                <div class="wm-recent-list-layer">
+                                    <figure><a href="#"><img src="extra-images/recent-list-2.jpg" alt=""></a></figure>
+                                    <div class="wm-recent-list-text">
+                                        <p>“تسجل هي فريدة من نوعها للغاية من حيث البيئة الأكاديمية الاجتماعية”</p>
+                                        <a href="#" class="wm-color-three">محمد تامر</a>
+                                    </div>
+                                </div>
+                                <div class="wm-recent-list-layer">
+                                    <figure><a href="#"><img src="extra-images/recent-list-3.jpg" alt=""></a></figure>
+                                    <div class="wm-recent-list-text">
+                                        <p>“المعرفة المكتسبة في العديد من الدورات يمكن بسهولة أن تستخدم في مسؤولياتي وظيفة جديدة”</p>
+                                        <a href="#" class="wm-color-three">مجدي زين</a>
+                                    </div>
+                                </div>
+                                <div class="wm-recent-list-layer">
+                                    <figure><a href="#"><img src="extra-images/recent-list-2.jpg" alt=""></a></figure>
+                                    <div class="wm-recent-list-text">
+                                        <p>“تسجل هي فريدة من نوعها للغاية من حيث البيئة الأكاديمية الاجتماعية”</p>
+                                        <a href="#" class="wm-color-three">سالي نادر</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--// Main Section \\-->
+
+            <!--// Main Section \\-->
+      
             <!--// Main Section \\-->
 
             <!--// Main Section \\-->
@@ -470,7 +518,7 @@
                     <div class="row">
                         
                         <div class="col-md-12">
-                            <div class="wm-fancy-title-four wm-fancy-title-left" style="text-align: center;" > <h2><small>صور داخل المركز</small></h2> <div class="clearfix"></div> <span>صور دوراتنا داخل المركز </span> </div>
+                            <div class="wm-fancy-title-four wm-fancy-title-left" style="text-align: center;" > <h2><small>صور ف المركز</small></h2> <div class="clearfix"></div> <span>صور دوراتنا داخل المركز </span> </div>
                             <div class="wm-ourprofessors-slider">
 
 
@@ -478,7 +526,7 @@
 @unless(empty($images))
                             @foreach($images as $image)
                                 <div class="wm-ourprofessors-slider-layer" style="text-align: right">
-                                    <figure><a href="#"><img src="extra-images/{{$image->path}}" alt=""  style="width:364px;height:186px  "></a> <figcaption><a href="{{route('image.show',$image->album_id)}}" class="wm-color-four">مشاهدة الألبوم كاملا</a></figcaption> </figure>
+                                    <figure><a href="#"><img src="extra-images/{{$image->path}}" alt=""  style="width:364px;height:186px  "></a> <figcaption><a href="{{url('album/'.$image->album->b_id)}}" class="wm-color-four">مشاهدة الألبوم كاملا</a></figcaption> </figure>
                                     <div class="wm-ourprofessors-text">
                                         <a href="#"><h3>{{$image->i_name}}</h3></a>
                                         <span>{{$image->i_disc}}</span>
@@ -507,65 +555,6 @@
 
 
 
-            <div class="wm-main-section wm-ourhistory-full">
-                <span class="wm-light-transparent"></span>
-                <div class="container">
-                    <div class="row">
-                        
-                        <div class="col-md-5">
-                            <div class="wm-history-list">
-                                <h2>Our History</h2>
-                                <ul>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2016</time>
-                                        <span>Released the Arctic Collection the Perennial Collection of handknotted luxury area rugs.</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2015</time>
-                                        <span>Installed our first custom floorcovering for a museum at the Aga Khan Museum in Toronto</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2014</time>
-                                        <span>Designed our first wallcovering for all these healthcare sector at the Toronto Centre.</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2013</time>
-                                        <span>Celebrated 25 years in business with “The Art Day Project” – a partnership.</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2016</time>
-                                        <span>Released the Arctic Collection the Perennial Collection of handknotted luxury area rugs.</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2015</time>
-                                        <span>Installed our first custom floorcovering for a museum at the Aga Khan Museum in Toronto</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2014</time>
-                                        <span>Designed our first wallcovering for all these healthcare sector at the Toronto Centre.</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2013</time>
-                                        <span>Celebrated 25 years in business with “The Art Day Project” – a partnership.</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="wm-subscribe-form">
-                                <h2>Still not convinced? We can help you!</h2>
-                                <p>Fill out the form below and we will contact you.</p>
-                                <form>
-                                    <input type="text" value="Name:" onblur="if(this.value == '') { this.value ='Name:'; }" onfocus="if(this.value =='Name:') { this.value = ''; }">
-                                    <input type="email" value="E-mail:" onblur="if(this.value == '') { this.value ='E-mail:'; }" onfocus="if(this.value =='E-mail:') { this.value = ''; }">
-                                    <input type="submit" value="Get Advice">
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
             <!--// Main Section \\-->
 
             <!--// Main Section \\-->
@@ -577,63 +566,34 @@
                             <div class="wm-fancy-title"> <h2>أشهر<span>المقالات</span></h2> <p></p> </div>
                             <div class="wm-news wm-news-grid">
                                 <ul class="row">
-                                    <li class="col-md-4">
-                                        <figure>
-                                            <a href="#"><img src="{!!asset('extra-images/news-grid-1.png')!!}" alt=""></a>
-                                            <figcaption class="wm-bgcolor">
-                                                <img src="{!!asset('extra-images/news-grid-thumb-1.png')!!}" alt="">
-                                                <h6>الناشر: <a href="#">أحمد الأنصاري</a></h6>
-                                            </figcaption>
-                                        </figure>
-                                        <div class="wm-newsgrid-text">
-                                            <ul class="wm-post-options">
-                                                <li>7/4/2016</li>
-                                                
-                                               
-                                            </ul>
-                                            <h5><a href="#" class="wm-color">سبع كليات إدارة الأعمال في المملكة المتحدة تجعل من أعلى 10</a></h5>
-                                            <p>وقد تم الإفراج عن أكبر من أي وقت مضى QS القطر على الانترنت ماجستير في إدارة الأعمال ترتيب بواسطة العالي والمحللين تعليم إدارة الأعمال QS.</p>
-                                            <a class="wm-banner-btn" href="#">لقرأة المقال كاملا</a>
-                                        </div>
-                                    </li>
-                                    <li class="col-md-4">
-                                        <figure>
-                                            <a href="#"><img src="{!!asset('extra-images/news-grid-2.png')!!}" alt=""></a>
-                                            <figcaption class="wm-bgcolor">
-                                                <img src="{!!asset('extra-images/news-grid-thumb-2.png')!!}" alt="">
-                                                <h6>لناشر: <a href="#">محمد السعودي</a></h6>
-                                            </figcaption>
-                                        </figure>
-                                        <div class="wm-newsgrid-text">
-                                            <ul class="wm-post-options">
-                                                <li>6/4/2016</li>
-                                         
-                                            </ul>
-                                            <h5><a href="#" class="wm-color">مركز كلية إدارة الأعمال جامعة للتميز</a></h5>
-                                            <p>أعلنت جامعة إطلاق أول دورة مجانية موقعها على الانترنت كجزء. هؤلاء الأفراد أو الجماعات يمكن على نحو أكثر فعالية.
-</p>
-                                            <a class="wm-banner-btn" href="#">لقرأة المقال كاملا</a>
-                                        </div>
-                                    </li>
+                                   
+                                    @unless(empty($articles))
+
+                                    @foreach($articles as $a)
                                     <li class="col-md-4">
                                         <figure>
                                             <a href="#"><img src="{!!asset('extra-images/news-grid-3.png')!!}" alt=""></a>
                                             <figcaption class="wm-bgcolor">
-                                                <img src="{!!asset('extra-images/news-grid-thumb-3.png')!!}" alt="">
-                                                <h6>الناشر: <a href="#">رفاء محمد</a></h6>
+                                                
+                                                <h6 style="text-align: right;">الناشر: <a href="#">{{$a->a_publisher}}</a></h6>
                                             </figcaption>
                                         </figure>
                                         <div class="wm-newsgrid-text">
                                             <ul class="wm-post-options">
-                                                <li>5/4/2016</li>
+                                                <li>{{ date('F d, Y', strtotime($a->created_at)) }}
+</li>
                                                 
                                             </ul>
-                                            <h5><a href="#" class="wm-color">حثنا يمكن خفض فواتير الطاقة في ميلتون</a></h5>
-                                            <p>الجامعة تعمل على تطوير المجتمع في المملكة المتحدة أول موقع على الانترنت من شأنها أن تسمح للناس في ميلتون كينز.
+                                            <h5><a href="#" class="wm-color">{{$a->a_title}}</a></h5>
+                                            <p>..{{substr($a->a_article,0,99)}}
 </p>
-                                            <a class="wm-banner-btn" href="#">لقرأة المقال كاملا</a>
+                                            <a class="wm-banner-btn" href="{{route('article.show',$a->a_id)}}">لقرأة المقال كاملا</a>
                                         </div>
                                     </li>
+
+
+                                    @endforeach
+                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -759,7 +719,7 @@
             </div>
             <!--// Main Section \\-->
 
-		</div>
+        </div>
 
 
 

@@ -27,7 +27,9 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+       
+
+       return view('control.categories.create');
     }
 
     /**
@@ -38,7 +40,15 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        Category::create([
+
+'ca_name'=>$request->get('name')
+
+
+            ]);
+        return redirect('category');
     }
 
     /**

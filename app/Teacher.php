@@ -10,6 +10,9 @@ class Teacher extends Model
     protected $table='teachers';
 
 
+    protected $fillable=['experience_years','path','profile_image','type_id','t_branch','t_email','t_experience','t_name','t_phone'];
+
+
     public function type(){
 
 

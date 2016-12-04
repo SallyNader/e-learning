@@ -2,6 +2,7 @@
 use App\Image;
 use App\Course;
 use App\Category;
+use App\Article;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,9 @@ $courses=Course::limit(4)->get();
  $images=Image::limit(4)->get();
 
  $category=Category::limit(2)->get();
-    return view('home',compact('images','courses','category'));
+$articles=Article::limit(3)->get();
+ $cat=Category::all();
+    return view('home',compact('images','courses','category','cat','articles'));
 });
 
 Route::resource('album','AlbumsController');
@@ -36,9 +39,10 @@ Route::resource('teacher','TeachersController');
 Route::resource('video','VideosController');
 
 
-
+//about
 Route::get('agraya','AboutController@agraya');
 Route::get('momyzat','AboutController@momyzat');
+Route::get('branches','AboutController@branches');
 
 
 Route::get('signup',function(){

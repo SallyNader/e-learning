@@ -5,7 +5,7 @@
 									<div class="wm-full-title ">
 										<h2 style="text-align: center;">تعديل الفيديو</h2>
 									</div>
-									<form  action="{{route('video.update',$video->v_id)}}" method="POST" style="margin-left:  280px;width: 1000px;text-align: right;">
+									<form  action="{{route('video.update',$video->v_id)}}"  files="true" method="POST" enctype="multipart/form-data"  style="margin-left:  280px;width: 1000px;text-align: right;">
 
 
 									{!! method_field('PUT') !!} 
@@ -51,7 +51,13 @@
 											<input name="duration" type="text" value="{{$video->duration}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>	
 
 
+<li>
+<label>تحميل فيديو جديد</label>
 
+
+
+		<input type="file"   name="file"   >
+</li>	
 
 
 

@@ -12,15 +12,9 @@
 			    <div class="row">
 				    <div class="col-md-12">
 				        <div class="wm-mini-title">
-				       		<h1>Our Courses</h1> 
+				       		<h1>{{$course->c_name}}</h1> 
 				        </div>
-				        <div class="wm-breadcrumb">
-				          	<ul>
-				          	 	<li><a href="index-2.html">Home</a></li>
-				          	 	<li><a href="#">Courses</a></li>
-				           		<li>Single Course</li>
-				          	</ul>
-				        </div>      
+				          
 				    </div>
 			    </div>
 			</div>    
@@ -337,13 +331,7 @@
 								</div>								
 							</div>
 							<div class="wm-courses-reviewes">
-								<div class="wm-ourcourses-left">
-									<h6>Reviews</h6>
-									<div class="wm-rating">
-										<span class="rating-box" style="width:100%"></span>																				
-									</div>
-									<a href="#">3 Reviews</a>
-								</div>
+								
 								<div class="wm-ourcourses-right">
 								@unless($course->c_id == $firstID)
 									<a class="wm-previous-icon" href="{{route('course.show',$course->c_id-1)}}"><i class="fa fa-angle-left" ></i>الدورة السابقة</a>

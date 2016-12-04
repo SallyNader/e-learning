@@ -25,7 +25,9 @@ class ArticlescontrolController extends Controller
      */
     public function create()
     {
-        //
+       
+
+       return view('control.articles.create');
     }
 
     /**
@@ -36,7 +38,20 @@ class ArticlescontrolController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+
+
+
+       Article::create([
+'a_title'=>$request->get('title'),
+'a_article'=>$request->get('article'),
+
+'a_publisher'=>$request->get('name')
+
+
+        ]);
+
+       return redirect('articlecontrol');
     }
 
     /**

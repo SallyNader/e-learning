@@ -6,7 +6,7 @@
     
                             <div class="wm-event-register-list" style="width:900px;margin-left: 160px">
                                 <div class="wm-register-title">
-                                    <h6 >بيانات أقسام الدورات</h6>
+                                    <h6 ></h6><a href="{{route('category.create')}}" class="btn btn-info">أضافة قسم</a>
                                    
                                 </div>
                                 <div class="event-register-wrap" >

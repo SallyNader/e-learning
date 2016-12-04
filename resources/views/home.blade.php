@@ -155,6 +155,99 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <div class="wm-main-section wm-ourhistory-full">
+                <span class="wm-light-transparent"></span>
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-md-5">
+                            <div class="wm-history-list">
+                                <h2>تاريخ مركزنا</h2>
+                                <ul>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2016</time>
+                                        <span>أصدرت مجموعة القطب الشمالي مجموعة معمرة من منطقة السجاجيد الفاخرة معقود
+</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2015</time>
+                                        <span>تصميم أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2014</time>
+                                        <span>وضعت أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2013</time>
+                                        <span>تثبيت لدينا أول floorcovering مخصصة للمتحف في متحف الآغا خان في تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2016</time>
+                                        <span>وضعت أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2015</time>
+                                        <span>تثبيت لدينا أول floorcovering مخصصة للمتحف في متحف الآغا خان في تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2014</time>
+                                        <span>تصميم أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
+                                    </li>
+                                    <li>
+                                        <time datetime="2008-02-14 20:00">2013</time>
+                                        <span>تصميم أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="wm-subscribe-form">
+                                <h2>من نحن ؟ و ماذا نقدم</h2>
+                                <p>نحن نساعد الطلاب ليس فقط الحصول على رسالة القبول </p>
+                                <p>يعمل لأكثر من 10 أعوام في مجال توظيف الطلاب الأجانب الذين يتوقون للدراسة في الجامعات الروسية والتحق أكثر من 11000 طالب من جميع أنحاء العالم. البعض منهم قد أنجزوا بالفعل دراستهم ويعملون في مجالات مختلفة مثل المتخصصين المؤهلين تأهيلا عاليا، والبعض الآخر ما زالوا يدرسون في الجامعةيعمل لأكثر من 10 أعوام في مجال توظيف الطلاب الأجانب الذين يتوقون للدراسة في الجامعات الروسية والتحق أكثر من 11000 طالب من جميع أنحاء العالم. البعض منهم قد أنجزوا بالفعل دراستهم ويعملون في مجالات مختلفة مثل المتخصصين المؤهلين تأهيلا عاليا، والبعض الآخر ما زالوا يدرسون في الجامعة</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div class="wm-main-section wm-latestevents-full">
                 <div class="container">
                     <div class="row">
@@ -245,62 +338,7 @@
 
 
 
-            <div class="wm-main-section wm-ourhistory-full">
-                <span class="wm-light-transparent"></span>
-                <div class="container">
-                    <div class="row">
-                        
-                        <div class="col-md-5">
-                            <div class="wm-history-list">
-                                <h2>تاريخ مركزنا</h2>
-                                <ul>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2016</time>
-                                        <span>أصدرت مجموعة القطب الشمالي مجموعة معمرة من منطقة السجاجيد الفاخرة معقود
-</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2015</time>
-                                        <span>تصميم أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2014</time>
-                                        <span>وضعت أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2013</time>
-                                        <span>تثبيت لدينا أول floorcovering مخصصة للمتحف في متحف الآغا خان في تورونتو</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2016</time>
-                                        <span>وضعت أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2015</time>
-                                        <span>تثبيت لدينا أول floorcovering مخصصة للمتحف في متحف الآغا خان في تورونتو</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2014</time>
-                                        <span>تصميم أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
-                                    </li>
-                                    <li>
-                                        <time datetime="2008-02-14 20:00">2013</time>
-                                        <span>تصميم أول الكوفيرينج لدينا كل هذه قطاع الرعاية الصحية في مركز تورونتو</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="wm-subscribe-form">
-                                <h2>من نحن ؟ و ماذا نقدم</h2>
-                                <p>نحن نساعد الطلاب ليس فقط الحصول على رسالة القبول </p>
-                                <p>يعمل لأكثر من 10 أعوام في مجال توظيف الطلاب الأجانب الذين يتوقون للدراسة في الجامعات الروسية والتحق أكثر من 11000 طالب من جميع أنحاء العالم. البعض منهم قد أنجزوا بالفعل دراستهم ويعملون في مجالات مختلفة مثل المتخصصين المؤهلين تأهيلا عاليا، والبعض الآخر ما زالوا يدرسون في الجامعةيعمل لأكثر من 10 أعوام في مجال توظيف الطلاب الأجانب الذين يتوقون للدراسة في الجامعات الروسية والتحق أكثر من 11000 طالب من جميع أنحاء العالم. البعض منهم قد أنجزوا بالفعل دراستهم ويعملون في مجالات مختلفة مثل المتخصصين المؤهلين تأهيلا عاليا، والبعض الآخر ما زالوا يدرسون في الجامعة</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+         
 
 
 
@@ -324,58 +362,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-            <!--// Main Section \\-->
-            <div class="wm-main-section wm-courses-popular-full">
-                <div class="container">
-                    <div class="row">
-                        
-                        <div class="col-md-12">
-                            <div class="wm-fancy-title"> <h2>أشهر <span>الدورات</span></h2> </div>
-                            <div class="wm-courses wm-courses-popular">
-                                <ul class="row">
-                                    
-                                    @unless(empty($courses))
-                                    @foreach($courses as $c)
-                                    <li class="col-md-3">
-                                        <div class="wm-courses-popular-wrap">
-                                            <figure> <a href="#"><img src="{{$c->image}}" alt=""> <span class="wm-popular-hover"> <small>see course</small> </span> </a>
-                                                <figcaption>
-                                                    <img src="extra-images/{{$c->teacher->profile_image}}" alt="" style="width: 50px;height: 50px">
-                                                    <h6><a href="#">{{$c->teacher->t_name}}</a></h6>
-                                                </figcaption>
-                                            </figure>
-                                            <div class="wm-popular-courses-text">
-                                                <h6><a href="#">{{$c->c_name}}</a></h6>
-                                                <div class="wm-courses-price"><!-- <span>$50</span>--> </div>
-                                                <ul>
-                                                    <li><a href="#" class="wm-color"><i class="wmicon-social7"></i> 298</a></li>
-                                                    
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    @endforeach
-                                    @endunless
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!--// Main Section \\-->
+          
 
             <!--// Main Section \\-->
     <div class="wm-main-section wm-whychooseus-full wm-minus-spacer" style="margin-left: 170px">
@@ -531,7 +518,7 @@
                     <div class="row">
                         
                         <div class="col-md-12">
-                            <div class="wm-fancy-title-four wm-fancy-title-left" style="text-align: center;" > <h2><small>صور داخل المركز</small></h2> <div class="clearfix"></div> <span>صور دوراتنا داخل المركز </span> </div>
+                            <div class="wm-fancy-title-four wm-fancy-title-left" style="text-align: center;" > <h2><small>صور ف المركز</small></h2> <div class="clearfix"></div> <span>صور دوراتنا داخل المركز </span> </div>
                             <div class="wm-ourprofessors-slider">
 
 
@@ -539,7 +526,7 @@
 @unless(empty($images))
                             @foreach($images as $image)
                                 <div class="wm-ourprofessors-slider-layer" style="text-align: right">
-                                    <figure><a href="#"><img src="extra-images/{{$image->path}}" alt=""  style="width:364px;height:186px  "></a> <figcaption><a href="{{route('image.show',$image->album_id)}}" class="wm-color-four">مشاهدة الألبوم كاملا</a></figcaption> </figure>
+                                    <figure><a href="#"><img src="extra-images/{{$image->path}}" alt=""  style="width:364px;height:186px  "></a> <figcaption><a href="{{url('album/'.$image->album->b_id)}}" class="wm-color-four">مشاهدة الألبوم كاملا</a></figcaption> </figure>
                                     <div class="wm-ourprofessors-text">
                                         <a href="#"><h3>{{$image->i_name}}</h3></a>
                                         <span>{{$image->i_disc}}</span>
@@ -579,63 +566,34 @@
                             <div class="wm-fancy-title"> <h2>أشهر<span>المقالات</span></h2> <p></p> </div>
                             <div class="wm-news wm-news-grid">
                                 <ul class="row">
-                                    <li class="col-md-4">
-                                        <figure>
-                                            <a href="#"><img src="{!!asset('extra-images/news-grid-1.png')!!}" alt=""></a>
-                                            <figcaption class="wm-bgcolor">
-                                                <img src="{!!asset('extra-images/news-grid-thumb-1.png')!!}" alt="">
-                                                <h6>الناشر: <a href="#">أحمد الأنصاري</a></h6>
-                                            </figcaption>
-                                        </figure>
-                                        <div class="wm-newsgrid-text">
-                                            <ul class="wm-post-options">
-                                                <li>7/4/2016</li>
-                                                
-                                               
-                                            </ul>
-                                            <h5><a href="#" class="wm-color">سبع كليات إدارة الأعمال في المملكة المتحدة تجعل من أعلى 10</a></h5>
-                                            <p>وقد تم الإفراج عن أكبر من أي وقت مضى QS القطر على الانترنت ماجستير في إدارة الأعمال ترتيب بواسطة العالي والمحللين تعليم إدارة الأعمال QS.</p>
-                                            <a class="wm-banner-btn" href="#">لقرأة المقال كاملا</a>
-                                        </div>
-                                    </li>
-                                    <li class="col-md-4">
-                                        <figure>
-                                            <a href="#"><img src="{!!asset('extra-images/news-grid-2.png')!!}" alt=""></a>
-                                            <figcaption class="wm-bgcolor">
-                                                <img src="{!!asset('extra-images/news-grid-thumb-2.png')!!}" alt="">
-                                                <h6>لناشر: <a href="#">محمد السعودي</a></h6>
-                                            </figcaption>
-                                        </figure>
-                                        <div class="wm-newsgrid-text">
-                                            <ul class="wm-post-options">
-                                                <li>6/4/2016</li>
-                                         
-                                            </ul>
-                                            <h5><a href="#" class="wm-color">مركز كلية إدارة الأعمال جامعة للتميز</a></h5>
-                                            <p>أعلنت جامعة إطلاق أول دورة مجانية موقعها على الانترنت كجزء. هؤلاء الأفراد أو الجماعات يمكن على نحو أكثر فعالية.
-</p>
-                                            <a class="wm-banner-btn" href="#">لقرأة المقال كاملا</a>
-                                        </div>
-                                    </li>
+                                   
+                                    @unless(empty($articles))
+
+                                    @foreach($articles as $a)
                                     <li class="col-md-4">
                                         <figure>
                                             <a href="#"><img src="{!!asset('extra-images/news-grid-3.png')!!}" alt=""></a>
                                             <figcaption class="wm-bgcolor">
-                                                <img src="{!!asset('extra-images/news-grid-thumb-3.png')!!}" alt="">
-                                                <h6>الناشر: <a href="#">رفاء محمد</a></h6>
+                                                
+                                                <h6 style="text-align: right;">الناشر: <a href="#">{{$a->a_publisher}}</a></h6>
                                             </figcaption>
                                         </figure>
                                         <div class="wm-newsgrid-text">
                                             <ul class="wm-post-options">
-                                                <li>5/4/2016</li>
+                                                <li>{{ date('F d, Y', strtotime($a->created_at)) }}
+</li>
                                                 
                                             </ul>
-                                            <h5><a href="#" class="wm-color">حثنا يمكن خفض فواتير الطاقة في ميلتون</a></h5>
-                                            <p>الجامعة تعمل على تطوير المجتمع في المملكة المتحدة أول موقع على الانترنت من شأنها أن تسمح للناس في ميلتون كينز.
+                                            <h5><a href="#" class="wm-color">{{$a->a_title}}</a></h5>
+                                            <p>..{{substr($a->a_article,0,99)}}
 </p>
-                                            <a class="wm-banner-btn" href="#">لقرأة المقال كاملا</a>
+                                            <a class="wm-banner-btn" href="{{route('article.show',$a->a_id)}}">لقرأة المقال كاملا</a>
                                         </div>
                                     </li>
+
+
+                                    @endforeach
+                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -651,7 +609,7 @@
                     <div class="row">
                         
                         <div class="col-md-12">
-                            <div class="wm-simple-section-title wm-partners-title"> <h2>University <span>Partners</span></h2> </div>
+                            <div class="wm-simple-section-title wm-partners-title"> <h2> <span></span></h2> </div>
                             <div class="wm-partners-slider gallery">
                                 <div class="wm-partners-layer"> <a title="" data-rel="prettyPhoto[gallery1]" href="{!!asset('extra-images/university-partners-1.png')!!}"> <img src="{!!asset('extra-images/university-partners-1.png')!!}" alt=""> </a> </div>
                                 <div class="wm-partners-layer"> <a title="" data-rel="prettyPhoto[gallery1]" href="{!!asset('extra-images/university-partners-2.png')!!}"> <img src="{!!asset('extra-images/university-partners-2.png')!!}" alt=""> </a> </div>

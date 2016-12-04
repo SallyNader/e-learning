@@ -105,6 +105,36 @@ foreach ($course as $key => $value) {
     {
          $video=Video::find($id);
 
+
+
+
+$file=$request->file('file');
+
+
+           if( !empty($file)){
+
+
+
+
+         $path=public_path().'/videos';
+          $filename=rand(1111,9999).time().'.'.$file->getClientOriginalName();
+
+
+          if($file->move($path,$filename)){
+
+          $video->v_path="videos/".$filename;
+
+
+
+}
+
+
+
+
+
+        }
+
+
          $video->v_name=$request->get('name');
 
          $video->course_id=$request->get('course');

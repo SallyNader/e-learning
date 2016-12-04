@@ -85,6 +85,50 @@ return view('control.images.images',compact('images'));
     public function update(Request $request, $id)
     {
         $image=Image::find($id);
+
+
+
+
+
+
+
+
+
+
+
+
+        $file=$request->file('file');
+
+
+           if( !empty($file)){
+
+
+
+
+        $path=public_path().'/extra-images';
+
+
+      $filename=rand(1111,9999).time().'.'.$file->getClientOriginalName();
+
+
+        if($file->move($path,$filename)){
+
+         $image->path=$filename;
+
+
+
+}
+
+
+
+
+
+        }
+
+
+
+
+
         $image->i_name=$request->get('name');
 
         $image->i_disc=$request->get('disc');

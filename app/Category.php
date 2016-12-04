@@ -8,6 +8,7 @@ class Category extends Model
 {
   
   protected $primaryKey='ca_id';
+  protected $fillable=["ca_name"];
 
   public function courses(){
 

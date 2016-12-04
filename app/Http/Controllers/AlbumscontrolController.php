@@ -79,9 +79,43 @@ class AlbumscontrolController extends Controller
        
         $album=Album::find($id);
 
+
+
+        $file=$request->file('file');
+
+
+           if( !empty($file)){
+
+
+
+
+$path=public_path().'/extra-images';
+$filename=rand(1111,9999).time().'.'.$file->getClientOriginalName();
+
+
+if($file->move($path,$filename)){
+
+ $album->b_cover=$filename;
+
+
+
+}
+
+
+
+
+
+        }
+
 $album->b_name=$request->get('name');
 
 $album->b_disc=$request->get('disc');
+
+
+
+
+
+
 $album->save();
 
 

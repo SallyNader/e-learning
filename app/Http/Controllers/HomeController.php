@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Image;
 use App\Album;
+use App\Course;
+use App\Category;
+use App\Article;
 class HomeController extends Controller
 {
     /**
@@ -24,7 +27,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $images=Image::limit(4)->get();
-        return view('home.home',compact('images'));
+
+       $courses=Course::limit(4)->get();
+       $images=Image::limit(4)->get();
+
+        $category=Category::limit(2)->get();
+        $cat=Category::all();
+        $articles=Article::limit(3)->get();
+
+        return view('home.home',compact('images','courses','category','cat','articles'));
     }
 }

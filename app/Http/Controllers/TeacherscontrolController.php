@@ -28,7 +28,9 @@ return view('control.teachers.teachers',compact('teachers'));
      */
     public function create()
     {
-        //
+       
+
+       return view('control.teachers.create');
     }
 
     /**
@@ -39,7 +41,43 @@ return view('control.teachers.teachers',compact('teachers'));
      */
     public function store(Request $request)
     {
-        //
+        
+
+
+$cover=$request->file('cover');
+$profile=$request->file('profile');
+
+ $path=public_path().'/extra-images';
+
+if(!empty($cover) ){
+
+
+
+
+
+
+      $filename=rand(1111,9999).time().'.'.$file->getClientOriginalName();
+
+
+        if($file->move($path,$filename)){
+
+         $image->path=$filename;
+
+
+
+
+
+
+
+
+  
+}
+
+
+
+
+
+
     }
 
     /**

@@ -77,7 +77,9 @@
 									<div class="wm-team-info" style="text-align: left;">
 										<h5><a href="#"></a>{{$t->t_name}}</h5>										
 										<br>
+										@unless(empty($t->type))
 										<p style="color:#ffb84d" ><b>{{$t->type->t_title}}</b></p>
+										@endunless
 										
 										
 									</div>

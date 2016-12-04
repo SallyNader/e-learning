@@ -19,13 +19,7 @@
                         <div class="wm-mini-title">
                             <h1>دورات قسم {{$category->ca_name}}</h1> 
                         </div>
-                        <div class="wm-breadcrumb">
-                            <ul>
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><a href="index-2.html">Courses</a></li>
-                                <li>List</li>
-                            </ul>
-                        </div>      
+                          
                     </div>
                 </div>
             </div>    
@@ -294,45 +288,7 @@
                         </aside>
                         
                         <div class="col-md-9">
-                            <div class="wm-filter-box">
-                                <div class="wm-apply-select" >
-                                    
-                                    <select style="text-align: right;" name="cat" id="cat" >
-                                       @unless(empty($categories))
-
-                                       @foreach($categories as  $c)
-                                        <option  value="{{$c->ca_id}}">{{$c->ca_name}}</option>
-
-
-                                        
-                                        @endforeach
-                                        @endunless
-
-                                    </select>
-                                    <script >
-
-
-                                    $( document ).ready(function() {
-
-
-                                    $("#cat").on('change',function(){
-                                var id=$(this).val();
-                                 console.log('hi!');
-                                    window.location.href ="{{route('category.show','id')}}";    
-                                    });
-
-
-});
-
-                                </script>
-                                </div>            
-
-                                <div class="wm-normal-btn">
-                                    <a href="" class="active" >بحث</a>
-                                    
-                                </div>
-                                
-                            </div>
+                        
                             <div class="wm-courses wm-courses-popular wm-courses-mediumsec">
                                 <ul class="row">
                                 @unless(empty($category))

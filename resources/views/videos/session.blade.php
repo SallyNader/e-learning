@@ -25,15 +25,9 @@
 			    <div class="row">
 				    <div class="col-md-12">
 				        <div class="wm-mini-title">
-				       		<h1>Our Courses</h1> 
+				       		<h1>{{$video->v_name}}</h1> 
 				        </div>
-				        <div class="wm-breadcrumb">
-				          	<ul>
-				          	 	<li><a href="index-2.html">Home</a></li>
-				          	 	<li><a href="#">Courses</a></li>
-				           		<li>Single Course</li>
-				          	</ul>
-				        </div>      
+				            
 				    </div>
 			    </div>
 			</div>    
@@ -324,17 +318,11 @@
 											
 							</div>
 							<div class="wm-courses-reviewes">
-								<div class="wm-ourcourses-left">
-									<h6>Reviews</h6>
-									<div class="wm-rating">
-										<span class="rating-box" style="width:100%"></span>																				
-									</div>
-									<a href="#">3 Reviews</a>
-								</div>
-								<div class="wm-ourcourses-right">
+								
+								<!--<div class="wm-ourcourses-right">
 									<a class="wm-previous-icon" href="#"><i class="fa fa-angle-left" ></i>الدرس السابق</a>
 									<a class="wm-Next-icon" href="#">الدرس التالي<i class="fa fa-angle-right" ></i></a>
-								</div>
+								</div>-->
 							</div>
 							<div class="wm-our-course-detail">
 								<div class="wm-title-full" style="text-align: right;">
