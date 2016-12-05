@@ -14,7 +14,8 @@
 										<ul>
 											<li>
 <label>اللقب</label>
-											<input type="text" name="name" value="{{$type->t_title}}" onblur="if(this.value == '') { this.value ='Old Password'; }" onfocus="if(this.value =='Old Password') { this.value = ''; }">
+											<input type="text" name="name" value="{{$type->t_title}}" >
+											<p style="color:blue">{{$errors->first('name')}}</p>
 
 											</li>
 																													 

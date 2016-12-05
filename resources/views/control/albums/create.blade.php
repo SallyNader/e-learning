@@ -23,6 +23,8 @@
 <label>أسم الألبوم</label>
 											<input type="text" name="name" value="{{old('name')}}" >
 
+											  <p style="color:blue">{{$errors->first('name')}}</p>
+
 											</li>
 
 
@@ -35,6 +37,7 @@
 											<li>
 <label>نبذة عن الألبوم</label>
 											<input type="text" name="disc" value="{{old('disc')}}" >
+											  <p style="color:blue">{{$errors->first('disc')}}</p>
 
 											</li>
 
@@ -42,6 +45,8 @@
 <label>تحميل صورة غلاف الألبوم</label>
 											<input type="file"   name="file"   >
 
+
+  <p style="color:blue">{{$errors->first('file')}}</p>
 											</li>
 
 

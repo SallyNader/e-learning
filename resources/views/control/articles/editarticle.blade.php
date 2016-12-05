@@ -14,20 +14,32 @@
 										<ul>
 											<li>
 <label>صاحب المقال</label>
-											<input type="text" name="name" value="{{$article->a_publisher}}" onblur="if(this.value == '') { this.value ='Old Password'; }" onfocus="if(this.value =='Old Password') { this.value = ''; }">
-
+											<input type="text" name="name" value="{{$article->a_publisher}}" >
+<p style="color:blue">{{$errors->first('name')}}</p>
 											</li>
 											<li>
 <label>عنوان المقال</label>
-											<input name="title" type="text" value="{{$article->a_title}}" onblur="if(this.value == '') { this.value ='New Password'; }" onfocus="if(this.value =='New Password') { this.value = ''; }"></li>
+											<input name="title" type="text" value="{{$article->a_title}}" >
+
+
+
+<p style="color:blue">{{$errors->first('title')}}</p>
+											</li>
 											<li>
 <label>المقال</label>
-											<input name="article" type="text" value="{{$article->a_article}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>	
+											<input name="article" type="text" value="{{$article->a_article}}" >
+
+<p style="color:blue">{{$errors->first('article')}}</p>
+											</li>	
 
 
 											<li>
 <label>تاريخ النشر</label>
-											<input name="date" type="text" value="{{$article->created_at}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>																			 
+											<input name="date" type="text" value="{{$article->created_at}}" >
+
+
+<p style="color:blue">{{$errors->first('date')}}</p>
+											</li>																			 
 		                                </ul>
 		                                <input class="btn btn-primary" type="submit" value="تعديل" name="">
 									</form>

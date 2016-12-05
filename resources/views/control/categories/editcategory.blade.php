@@ -14,8 +14,8 @@
 										<ul>
 											<li>
 <label>القسم</label>
-											<input type="text" name="name" value="{{$cat->ca_name}}" onblur="if(this.value == '') { this.value ='Old Password'; }" onfocus="if(this.value =='Old Password') { this.value = ''; }">
-
+											<input type="text" name="name" value="{{$cat->ca_name}}" >
+<p style="color:blue">{{$errors->first('name')}}</p>
 											</li>
 																													 
 		                                </ul>

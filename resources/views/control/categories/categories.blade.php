@@ -34,7 +34,7 @@
  {!! method_field('DELETE') !!} 
 
                                                   {{ csrf_field() }}
-                                                   <input type="submit" style="background-color: 	 #d2143a;color: white" name="delete" value="خذف" class="btn btn-danger">
+                                                   <input type="submit" style="background-color: 	 #d2143a;color: white" name="delete" value="حذف" class="btn btn-danger">
 
                                             </form>
                                               

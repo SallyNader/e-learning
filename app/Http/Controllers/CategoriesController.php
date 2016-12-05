@@ -40,7 +40,12 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
+ $this->validate($request,[
 
+
+'name'=>'required|unique:categories,ca_name'
+
+            ]);
 
         Category::create([
 
@@ -88,7 +93,12 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $this->validate($request,[
+
+
+'name'=>'required|unique:categories,ca_name'
+
+            ]);
         $category=Category::find($id);
 
         $category->ca_name=$request->get('name');
@@ -106,6 +116,8 @@ class CategoriesController extends Controller
     public function destroy($id)
     {
         $cat=Category::find($id);
+               
+
   $cat->delete();
         return redirect()->back();
     }

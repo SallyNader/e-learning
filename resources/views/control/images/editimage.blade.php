@@ -27,18 +27,37 @@
 
 											<li>
 <label>أسم الصورة</label>
-											<input type="text" name="name" value="{{$image->i_name}}" onblur="if(this.value == '') { this.value ='Old Password'; }" onfocus="if(this.value =='Old Password') { this.value = ''; }">
-
+											<input type="text" name="name" value="{{$image->i_name}}" >
+<p style="color:blue">{{$errors->first('name')}}</p>
 											</li>
 											<li>
 <label>نبذة عن الصورة</label>
-											<input name="disc" type="text" value="{{$image->i_disc}}" onblur="if(this.value == '') { this.value ='New Password'; }" onfocus="if(this.value =='New Password') { this.value = ''; }"></li>
+											<input name="disc" type="text" value="{{$image->i_disc}}" >
+
+
+<p style="color:blue">{{$errors->first('disc')}}</p>
+											</li>
 											<li>
-<label>الألبم التابع له</label>
+<label>الألبوم التابع له</label>
 
 
 
-											<input name="album" type="text" value="{{$image->album_id}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>	
+											
+											<select name="album" style="text-align: right; width: 150px">
+												
+
+@unless(empty($albums))
+
+@foreach($albums as $t)
+
+<option value="{{$t->b_name}}">{{$t->b_name}}</option>
+
+
+@endforeach
+@endunless
+
+											</select>
+											</li>	
 
 
 

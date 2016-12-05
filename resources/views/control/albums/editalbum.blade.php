@@ -21,8 +21,11 @@
 										
 											<li>
 <label>أسم الألبوم</label>
-											<input type="text" name="name" value="{{$album->b_name}}" onblur="if(this.value == '') { this.value ='Old Password'; }" onfocus="if(this.value =='Old Password') { this.value = ''; }">
+											<input type="text" name="name" value="{{$album->b_name}}" >
 
+
+
+											  <p style="color:blue">{{$errors->first('name')}}</p>
 											</li>
 
 
@@ -34,8 +37,10 @@
 
 											<li>
 <label>نبذة عن الألبوم</label>
-											<input type="text" name="disc" value="{{$album->b_disc}}" onblur="if(this.value == '') { this.value ='Old Password'; }" onfocus="if(this.value =='Old Password') { this.value = ''; }">
+											<input type="text" name="disc" value="{{$album->b_disc}}" >
 
+
+  <p style="color:blue">{{$errors->first('disc')}}</p>
 											</li>
 
 <li>

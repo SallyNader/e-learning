@@ -42,6 +42,20 @@ class ArticlescontrolController extends Controller
 
 
 
+
+$this->validate($request,[
+
+'name'=>'required',
+'title'=>'required',
+'article'=>'required'
+
+
+
+
+
+    ]);
+
+
        Article::create([
 'a_title'=>$request->get('title'),
 'a_article'=>$request->get('article'),
@@ -91,7 +105,19 @@ class ArticlescontrolController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $this->validate($request,[
+
+'name'=>'required',
+'title'=>'required',
+'article'=>'required',
+'date'=>'required'
+
+
+
+
+
+    ]);
+
 
 $article=Article::find($id);
 

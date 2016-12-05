@@ -26,7 +26,9 @@ class VideosController extends Controller
      */
     public function create()
     {
-        //
+
+        $courses=Course::all();
+        return view('control.videos.create',compact('courses'));
     }
 
     /**
@@ -37,7 +39,55 @@ class VideosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+$this->validate($request,[
+
+'name'=>'required',
+
+'duration'=>'required',
+'date'=>'required|date',
+'disc'=>'required',
+'file'=>'required',
+
+
+
+
+    ]);
+
+$course=$request->get('course');
+
+$course_id=Course::where('c_name',$course)->first();
+
+$cID=$course_id->c_id;
+
+
+       $path=public_path().'/videos/';
+      $file=$request->file('file');
+
+    $filename=time().rand(1111,9999).'.'.$file->getClientOriginalName();
+if($file->move($path,$filename)){
+
+Video::create([
+
+'course_id'=>$cID,
+
+'duration'=>$request->get('duration'),
+'startDate'=>$request->get('date'),
+'v_disc'=>$request->get('disc'),
+'v_name'=>$request->get('name'),
+'v_path'=>'videos/'.$filename
+
+
+
+
+
+    ]);
+
+
+return redirect('video');
+
+}
     }
 
     /**
@@ -91,7 +141,9 @@ foreach ($course as $key => $value) {
     {
         $video=Video::find($id);
 
-        return view('control.videos.editvideo',compact('video'));
+         $courses=Course::all();
+
+        return view('control.videos.editvideo',compact('video','courses'));
     }
 
     /**
@@ -103,6 +155,29 @@ foreach ($course as $key => $value) {
      */
     public function update(Request $request, $id)
     {
+
+
+        $this->validate($request,[
+
+'name'=>'required',
+
+'duration'=>'required',
+'date'=>'required|date',
+'disc'=>'required',
+
+
+
+
+
+    ]);
+
+        $course=$request->get('course');
+
+$course_id=Course::where('c_name',$course)->first();
+
+$cID=$course_id->c_id;
+
+
          $video=Video::find($id);
 
 
@@ -137,7 +212,7 @@ $file=$request->file('file');
 
          $video->v_name=$request->get('name');
 
-         $video->course_id=$request->get('course');
+         $video->course_id=$cID;
          $video->v_disc=$request->get('disc');
          $video->startDate=$request->get('date');
          $video->duration=$request->get('duration');
@@ -155,6 +230,9 @@ $file=$request->file('file');
     public function destroy($id)
     {
         $video=Video::find($id);
+
+                unlink(public_path()."/". $video->v_path);
+
 
         $video->delete();
 

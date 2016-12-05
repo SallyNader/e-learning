@@ -15,7 +15,7 @@
 											<li>
 <label>القسم</label>
 											<input type="text" name="name" value="{{old('name')}}" >
-
+<p style="color:blue">{{$errors->first('name')}}</p>
 											</li>
 																													 
 		                                </ul>

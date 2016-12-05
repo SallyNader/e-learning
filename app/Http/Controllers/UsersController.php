@@ -77,6 +77,16 @@ $users=User::all();
     {
         
 
+$this->validate($request,[
+
+
+'name'=>'required',
+'email'=>'required|email|unique:users,email',
+'accepted'=>'required'
+
+
+
+    ]);
 
 
         $name=$request->get('name');

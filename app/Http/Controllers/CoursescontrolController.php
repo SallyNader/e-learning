@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use  App\Course;
+
+use App\Category;
+
+use App\Teacher;
 class CoursescontrolController extends Controller
 {
     /**
@@ -27,9 +31,12 @@ class CoursescontrolController extends Controller
     public function create()
     {
         
+$teachers=Teacher::all();
+
+$categories=Category::all();
 
 
-        return view('control.courses.create');
+        return view('control.courses.create',compact('teachers','categories'));
     }
 
     /**
@@ -41,6 +48,39 @@ class CoursescontrolController extends Controller
     public function store(Request $request)
     {
 
+
+
+
+
+
+
+$this->validate($request,[
+
+'name'=>'required|unique:courses,c_name',
+
+'price'=>'required',
+'disc'=>'required',
+'sy'=>'required',
+'certificates'=>'required',
+'file'=>'required',
+
+
+
+    ]);
+
+$teacher=$request->get('teacher');
+$teacher_id=Teacher::where('t_name',$teacher)->first();
+
+
+$category=$request->get('category');
+
+$category_id=Category::where('ca_name',$category)->first();
+$tID= $teacher_id->t_id;
+
+$caID=$category_id->ca_id;
+
+
+
         $file=$request->file('file');
         $path=public_path().'/extra-images/';
 
@@ -48,7 +88,7 @@ class CoursescontrolController extends Controller
 
         if($file->move($path,$filename)){
 Course::create([
-'category_id'=>$request->get('department'),
+'category_id'=>$caID,
 
 'certificates'=>$request->get('certificates'),
 
@@ -58,7 +98,7 @@ Course::create([
 'image'=>'extra-images/'.$filename,
 'price'=>$request->get('price'),
 'syllabus'=>$request->get('sy'),
-'teacher_id'=>$request->get('teacher')
+'teacher_id'=>$tID
 
 
 
@@ -94,7 +134,11 @@ Course::create([
     {
       $course=Course::find($id);
 
-      return view('control.courses.editcourse',compact('course'));
+      $teachers=Teacher::all();
+
+$categories=Category::all();
+
+      return view('control.courses.editcourse',compact('course','teachers','categories'));
     }
 
     /**
@@ -106,7 +150,19 @@ Course::create([
      */
     public function update(Request $request, $id)
     {
+$this->validate($request,[
 
+'name'=>'required|unique:courses,c_name',
+
+'price'=>'required',
+'disc'=>'required',
+'sy'=>'required',
+'certificates'=>'required',
+
+
+
+
+    ]);
 
 $course=Course::find($id);
         
@@ -131,10 +187,20 @@ $file=$request->file('file');
             }
         }
 
+$teacher=$request->get('teacher');
+$teacher_id=Teacher::where('t_name',$teacher)->first();
+
+
+$category=$request->get('category');
+
+$category_id=Category::where('ca_name',$category)->first();
+$tID= $teacher_id->t_id;
+
+$caID=$category_id->ca_id;
 
 $name=$request->get('name');
-$teacher=$request->get('teacher');
-$category=$request->get('department');
+$teacher=$tID;
+$category=$caID;
 
 $price=$request->get('price');
 $disc=$request->get('disc');
@@ -171,7 +237,7 @@ return redirect('coursecontrol');
     public function destroy($id)
     {
         $course=Course::find($id);
-
+ unlink(public_path()."/".$course->image);
         $course->delete();
 
         return redirect()->back();

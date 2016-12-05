@@ -14,15 +14,26 @@
 										<ul>
 											<li>
 <label>الأسم</label>
-											<input type="text" name="name" value="{{$user->name}}" onblur="if(this.value == '') { this.value ='Old Password'; }" onfocus="if(this.value =='Old Password') { this.value = ''; }">
+											<input type="text" name="name" value="{{$user->name}}">
+											<p style="color:blue">{{$errors->first('name')}}</p>
 
 											</li>
 											<li>
 <label>البريد الألكتورني</label>
-											<input name="email" type="text" value="{{$user->email}}" onblur="if(this.value == '') { this.value ='New Password'; }" onfocus="if(this.value =='New Password') { this.value = ''; }"></li>
+											<input name="email" type="text" value="{{$user->email}}">
+
+
+											<p style="color:blue">{{$errors->first('email')}}</p>
+
+											</li>
 											<li>
 <label>مقبول/غير مقبول</label>
-											<input name="accepted" type="text" value="{{$user->accepted}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>																			 
+											<input name="accepted" type="text" value="{{$user->accepted}}" >
+
+
+											<p style="color:blue">{{$errors->first('accepted')}}</p>
+
+											</li>																			 
 		                                </ul>
 		                                <input class="btn btn-primary" type="submit" value="تعديل" name="">
 									</form>

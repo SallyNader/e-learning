@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Teacher;
+use App\Type;
 class TeacherscontrolController extends Controller
 {
     /**
@@ -28,9 +29,10 @@ return view('control.teachers.teachers',compact('teachers'));
      */
     public function create()
     {
+        $types=Type::all();
        
 
-       return view('control.teachers.create');
+       return view('control.teachers.create',compact('types'));
     }
 
     /**
@@ -41,8 +43,36 @@ return view('control.teachers.teachers',compact('teachers'));
      */
     public function store(Request $request)
     {
-        
+        $this->validate($request,[
 
+
+'name'=>'required',
+'email'=>'required|email',
+
+'experience'=>'required',
+
+'phone'=>'required',
+
+'branch'=>'required',
+
+
+'years'=>'required',
+
+'cover'=>'required',
+
+
+'profile'=>'required',
+
+
+
+
+            ]);
+
+
+$type=$request->get('type');
+$type_id=Type::where('t_title',$type)->first();
+
+$tID=$type_id->t_id;
 
 $cover=$request->file('cover');
 $profile=$request->file('profile');
@@ -77,7 +107,7 @@ Teacher::create([
 ,'profile_image'=>$image_profile
 
 
-,'type_id'=>$request->get('title')
+,'type_id'=>$tID
 
 
 ,'t_branch'=>$request->get('branch')
@@ -130,13 +160,13 @@ return redirect('teachercontrol');
     {
         
 
-
+ $types=Type::all();
 
 
 $teacher=Teacher::find($id);
 
 
-return view('control.teachers.editteacher',compact('teacher'));
+return view('control.teachers.editteacher',compact('teacher','types'));
 
     }
 
@@ -149,10 +179,75 @@ return view('control.teachers.editteacher',compact('teacher'));
      */
     public function update(Request $request, $id)
     {
+
+
         
+          $this->validate($request,[
+
+
+'name'=>'required',
+'email'=>'required|email',
+
+'experience'=>'required',
+
+'phone'=>'required',
+
+'branch'=>'required',
+
+
+'years'=>'required',
+
+
+
+
+
+
+            ]);
+
+$type=$request->get('type');
+$type_id=Type::where('t_title',$type)->first();
+
+$tID=$type_id->t_id;
+
+
 
 
 $teacher=Teacher::find($id);
+          $cover=$request->get('cover');
+          $profile=$request->get('profile');
+
+          if(!empty($cover)){
+      $path=public_path().'/extra-images';
+       $covername=time().rand(1111,9999).'.'.$cover->getClientOriginalName();
+
+     if($cover->move($path,$covername)){
+
+       $teacher->path=$covername;
+
+
+}
+
+
+
+return"done";
+          }
+
+
+
+          if(!empty($profile)){
+$path=public_path().'/extra-images';
+$profilename=time().rand(1111,9999).'.'.$profile->getClientOriginalName();
+
+if($profile->move($path,$profilename)){
+
+
+
+    $teacher->profile_image=$profilename;
+}
+
+         return"done"; }
+
+
 
 $name=$request->get('name');
 
@@ -160,7 +255,7 @@ $email=$request->get('email');
 $experience=$request->get('experience');
 $phone=$request->get('phone');
 $branch=$request->get('branch');
-$title=$request->get('title');
+$title=$tID;
 $years=$request->get('years');
 
 $teacher->t_name=$name;
@@ -199,6 +294,11 @@ return redirect('teachercontrol');
        
 
        $teacher=Teacher::find($id);
+
+               unlink(public_path()."/extra-images/".$teacher->path);
+
+        unlink(public_path()."/extra-images/".$teacher->profile_image);
+
        $teacher->delete();
 
        return redirect()->back();

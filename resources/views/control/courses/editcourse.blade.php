@@ -20,18 +20,47 @@
 
 											<li>
 <label>الأسم</label>
-											<input type="text" name="name" value="{{$course->c_name}}" onblur="if(this.value == '') { this.value ='Old Password'; }" onfocus="if(this.value =='Old Password') { this.value = ''; }">
+											<input type="text" name="name" value="{{$course->c_name}}" >
+											<p style="color:blue">{{$errors->first('name')}}</p>
 
 											</li>
 											<li>
 <label>المدرب</label>
-											<input name="teacher" type="text" value="{{$course->teacher_id}}" onblur="if(this.value == '') { this.value ='New Password'; }" onfocus="if(this.value =='New Password') { this.value = ''; }"></li>
+
+<select name="teacher" style="text-align: right; width: 150px">
+												
+
+@unless(empty($teachers))
+
+@foreach($teachers as $t)
+
+<option value="{{$t->t_name}}">{{$t->t_name}}</option>
+
+
+@endforeach
+@endunless
+
+											</select>
+										
+											</li>
 											<li>
 <label>القسم</label>
 
+<select name="category" style="text-align: right; width: 150px">
+@unless(empty($categories))
+
+@foreach($categories as $t)
+
+<option value="{{$t->ca_name}}">{{$t->ca_name}}</option>
 
 
-											<input name="department" type="text" value="{{$course->category_id}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>	
+@endforeach
+@endunless
+
+			</select>	
+
+											
+											</li>	
 
 
 
@@ -43,7 +72,12 @@
 
 											<li>
 <label>السعر</label>
-											<input name="price" type="text" value="{{$course->price}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>
+											<input name="price" type="text" value="{{$course->price}}" >
+
+
+
+<p style="color:blue">{{$errors->first('price')}}</p>
+											</li>
 
 
 
@@ -55,7 +89,12 @@
 
 											<li>
 <label>وصف الدورة</label>
-											<input name="disc" type="text" value="{{$course->disc}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>
+											<input name="disc" type="text" value="{{$course->disc}}" >
+
+
+
+<p style="color:blue">{{$errors->first('disc')}}</p>
+											</li>
 
 
 
@@ -80,13 +119,21 @@
 
 											<li>
 <label>المنهج</label>
-											<input name="sy" type="text" value="{{$course->syllabus}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>
+											<input name="sy" type="text" value="{{$course->syllabus}}" >
+
+
+<p style="color:blue">{{$errors->first('sy')}}</p>
+											</li>
 
 
 
 <li>
 <label>المؤهلات</label>
-											<input name="certificates" type="text" value="{{$course->certificates}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>
+											<input name="certificates" type="text" value="{{$course->certificates}}" >
+
+
+<p style="color:blue">{{$errors->first('certificates')}}</p>
+											</li>
 
 
 

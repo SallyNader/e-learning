@@ -14,18 +14,38 @@
 										<ul>
 											<li>
 <label>أسم الفيديو</label>
-											<input type="text" name="name" value="{{$video->v_name}}" onblur="if(this.value == '') { this.value ='Old Password'; }" onfocus="if(this.value =='Old Password') { this.value = ''; }">
-
+											<input type="text" name="name" value="{{$video->v_name}}" >
+<p style="color:blue">{{$errors->first('name')}}</p>
 											</li>
 											<li>
 <label>الدورة التابعة له</label>
-											<input name="course" type="text" value="{{$video->course_id}}" onblur="if(this.value == '') { this.value ='New Password'; }" onfocus="if(this.value =='New Password') { this.value = ''; }"></li>
+											<select name="course" style="text-align: right; width: 150px">
+												
+
+@unless(empty($courses))
+
+@foreach($courses as $t)
+
+<option value="{{$t->c_name}}">{{$t->c_name}}</option>
+
+
+@endforeach
+@endunless
+
+											</select>
+
+
+											</li>
 											<li>
 <label>نبذة عن الفيديو</label>
 
 
 
-											<input name="disc" type="text" value="{{$video->v_disc}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>	
+											<input name="disc" type="text" value="{{$video->v_disc}}" >
+
+
+<p style="color:blue">{{$errors->first('disc')}}</p>
+											</li>	
 
 
 
@@ -37,7 +57,11 @@
 
 
 
-											<input name="date" type="text" value="{{$video->startDate}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>	
+											<input name="date" type="text" value="{{$video->startDate}}">
+
+
+<p style="color:blue">{{$errors->first('date')}}</p>
+											</li>	
 
 
 
@@ -48,7 +72,11 @@
 
 
 
-											<input name="duration" type="text" value="{{$video->duration}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>	
+											<input name="duration" type="text" value="{{$video->duration}}" >
+
+
+<p style="color:blue">{{$errors->first('duration')}}</p>
+											</li>	
 
 
 <li>

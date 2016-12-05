@@ -14,18 +14,30 @@
 										<ul>
 											<li>
 <label>الأسم</label>
-											<input type="text" name="name" value="{{old('name')}}" onblur="if(this.value == '') { this.value ='Old Password'; }" onfocus="if(this.value =='Old Password') { this.value = ''; }">
+											<input type="text" name="name" value="{{old('name')}}" >
+											<p style="color:blue">{{$errors->first('name')}}</p>
+
 
 											</li>
 											<li>
 <label>البريد الألكترني</label>
-											<input name="email" type="text" value="{{old('email')}}" onblur="if(this.value == '') { this.value ='New Password'; }" onfocus="if(this.value =='New Password') { this.value = ''; }"></li>
+											<input name="email" type="text" value="{{old('email')}}" >
+
+
+<p style="color:blue">{{$errors->first('email')}}</p>
+
+											</li>
 											<li>
 <label>خبرات المدرب</label>
 
 
 
-											<input name="experience" type="text" value="{{old('experience')}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>	
+											<input name="experience" type="text" value="{{old('experience')}}" >
+
+
+<p style="color:blue">{{$errors->first('experience')}}</p>
+
+											</li>	
 
 
 
@@ -37,7 +49,18 @@
 
 											<li>
 <label>التليفون</label>
-											<input name="phone" type="text" value="{{old('phone')}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>
+											<input name="phone" type="text" value="{{old('phone')}}">
+
+
+
+
+
+
+<p style="color:blue">{{$errors->first('phone')}}</p>
+
+
+
+											</li>
 
 
 
@@ -49,7 +72,13 @@
 
 											<li>
 <label>الفرع</label>
-											<input name="branch" type="text" value="{{old('branch')}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>
+											<input name="branch" type="text" value="{{old('branch')}}" >
+
+
+
+<p style="color:blue">{{$errors->first('branch')}}</p>
+
+											</li>
 
 
 
@@ -62,7 +91,23 @@
 
 											<li>
 <label>اللقب</label>
-											<input name="title" type="text" value="{{old('title')}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>
+											
+											<select name="type" style="text-align: right; width: 150px">
+												
+
+@unless(empty($types))
+
+@foreach($types as $t)
+
+<option value="{{$t->t_title}}">{{$t->t_title}}</option>
+
+
+@endforeach
+@endunless
+
+											</select>
+
+											</li>
 
 
 
@@ -77,7 +122,13 @@
 
 											<li>
 <label>عدد سنين الخبرة</label>
-											<input name="years" type="text" value="{{old('years')}}" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>
+											<input name="years" type="text" value="{{old('years')}}" >
+
+
+
+<p style="color:blue">{{$errors->first('years')}}</p>
+
+											</li>
 
 
 
@@ -88,6 +139,8 @@
 <label>تحميل صورة الغلاف</label>
 
 <input type="file" name="cover">
+<p style="color:blue">{{$errors->first('cover')}}</p>
+
 
 											</li>
 
@@ -102,6 +155,8 @@
 												<label>تحميل صورة شخصية</label>
 
 <input type="file" name="profile">
+<p style="color:blue">{{$errors->first('profile')}}</p>
+
 
 											</li>
 

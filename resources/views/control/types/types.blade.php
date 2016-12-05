@@ -6,7 +6,9 @@
     
                             <div class="wm-event-register-list" style="width:900px;margin-left: 160px">
                                 <div class="wm-register-title">
-                                    <h6 >بيانات اللقاب المدربين</h6>
+                                    <h6 >
+                                        
+                                    </h6><a href="{{route('typecontrol.create')}}" class="btn btn-info">أضافة لقب جديد</a>
                                    
                                 </div>
                                 <div class="event-register-wrap" >
@@ -34,7 +36,7 @@
  {!! method_field('DELETE') !!} 
 
                                                   {{ csrf_field() }}
-                                                   <input type="submit" style="background-color: 	 #d2143a;color: white" name="delete" value="خذف" class="btn btn-danger">
+                                                   <input type="submit" style="background-color: 	 #d2143a;color: white" name="delete" value="حذف" class="btn btn-danger">
 
                                             </form>
                                               

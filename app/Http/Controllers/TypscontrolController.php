@@ -28,7 +28,9 @@ class TypscontrolController extends Controller
      */
     public function create()
     {
-        //
+       
+
+       return view('control.types.create');
     }
 
     /**
@@ -39,7 +41,19 @@ class TypscontrolController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $this->validate($request,[
+
+
+'name'=>'required|unique:types,t_title'
+        ]);
+
+       Type::create([
+
+'t_title'=>$request->get('name')
+
+        ]);
+
+       return redirect('typecontrol');
     }
 
     /**
@@ -76,6 +90,12 @@ class TypscontrolController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $this->validate($request,[
+
+
+'name'=>'required|unique:types,t_title'
+        ]);
        
 
        $type=Type::find($id);

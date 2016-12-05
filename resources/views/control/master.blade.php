@@ -75,23 +75,20 @@
                                 </div>
                                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
                                   <ul class="nav navbar-nav">
-                                    <li class="active"><a href="#">فروعنا</a>
+                                    <li class="active"><a href="{{route('image.index')}}">صور المركز</a>
                                         
                                     </li>
 
-                                    <li><a href="#">الدوبلومات و الدورات</a>
+                                    <li><a href="{{route('coursecontrol.index')}}">الدوبلومات و الدورات</a>
                                         <ul class="wm-dropdown-menu">
-                                            <li><a href="{{route('course.index')}}">جميع الدورات</a></li>
+                                            <li><a href="{{route('video.index')}}">فديوهات الدورات</a></li>
                                             
                                         </ul>
                                     </li>
-                                    <li><a href="#">عن المركز</a>
-                                        <ul class="wm-dropdown-menu">
-                                            <li><a href="{{url('agraya')}}">اللائحة اللأجرائية</a></li>
-                                            <li><a href="{{url('momyzat')}}">مميزات العضوية</a></li>
-                                        </ul>
+                                    <li><a href="{{route('category.index')}}">أقسام الدورات</a>
+                                        
                                     </li>
-                                    <li ><a href="#">العضويات الدولية</a>
+                                    <li ><a href="{{route('articlecontrol.index')}}">المقالات</a><!--
                                         <ul class="wm-dropdown-menu">
                                             <li><a href="dashboard-courses.html">Courses</a></li>
                                             <li><a href="student-dashboard-favourite.html">Favourite</a></li>
@@ -99,9 +96,9 @@
                                             <li><a href="student-dashboard-profile.html">Profile Settings</a></li>
                                             <li><a href="student-dashboard-settings.html">Settings</a></li>
                                             <li><a href="student-dashboard-statement.html">Statement</a></li>
-                                        </ul>
+                                        </ul>-->
                                     </li>
-                                    <li class="wm-megamenu-li"><a href="{{route('album.index')}}">ألبوم صور المركز</a>
+                                    <li class="wm-megamenu-li"><a href="{{route('albumcontrol.index')}}">ألبومات </a>
 <!--
 
                                         <ul class="wm-megamenu">
@@ -147,12 +144,11 @@
                                         </ul>-->
                                     </li>
                                     <li><a href="{{route('teachercontrol.index')}}">المدربين</a>
-                                          <!--<ul class="wm-dropdown-menu">
-                                            <li><a href="shop-grid.html">Shop Grid</a></li>
-                                            <li><a href="shop-list.html">Shop List</a></li>
-                                            <li><a href="shop-single-product.html">Shop Detail</a></li>
+                                          <ul class="wm-dropdown-menu">
+                                            <li><a href="{{route('typecontrol.index')}}">اللقاب المدربين</a></li>
+                                            
                                         </ul>
-                                        -->
+                                       
                                     </li>
                                     <li class="wm-megamenu-li"><a href="{{route('user.index')}}">الطلاب  </a>
   <!--
@@ -201,18 +197,14 @@
 
     @yield('content')
 
-    <footer id="wm-footer" class="wm-footer-one">
+     <footer id="wm-footer" class="wm-footer-one">
             
             <!--// FooterNewsLatter \\-->
             <div class="wm-footer-newslatter">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <form>
-                                <i class="wmicon-interface2"></i>
-                                <input type="text" value="Enter your e-mail address" onblur="if(this.value == '') { this.value ='Enter your e-mail address'; }" onfocus="if(this.value =='Enter your e-mail address') { this.value = ''; }">
-                                <input type="submit" value="Subscribe to our newsletter">
-                            </form>
+                           
                         </div>
                     </div>
                 </div>
@@ -224,9 +216,18 @@
                 <div class="container">
                     <div class="row">
                         <aside class="widget widget_contact_info col-md-3">
-                            <a href="index-2.html" class="wm-footer-logo"><img src="{!!asset('images/logo-1.png')!!}" alt=""></a>
+                            <a href="index-2.html" class="wm-footer-logo"><img src="{!!asset('images/crc.jpg')!!}" alt="" ></a>
                             <ul>
-                                <li><i class="wm-color wmicon-pin"></i> 195 Cooks Mine Road Espanola, NM 87532</li>
+                                <li>14 شارع الدوحة - المنطقة الخامسة النسيم <i class="wm-color wmicon-pin"></i></li>
+
+
+                                <li> 24 شارع فهد الوسري - العبيكان الدولي<i class="wm-color wmicon-pin"></i></li>
+
+                                <li> 22 شارع محمود حسن - الميرغني مصر الجديدة<i class="wm-color wmicon-pin"></i></li>
+
+                                <li> 22-شارع أحمد-شارع تونس <i class="wm-color wmicon-pin"></i></li>
+
+
                                 <li><i class="wm-color wmicon-phone"></i> +1 505-753-5656 <br> +1 505-753-4437</li>
                                 <li><i class="wm-color wmicon-letter"></i> <a href="mailto:name@email.com">info@university.com</a> <a href="mailto:name@email.com">support@university.com</a></li>
                             </ul>
@@ -237,19 +238,18 @@
                                 <a href="#" class="wmicon-vimeo"></a>
                             </div>
                         </aside>
-                        <aside class="widget widget_archive col-md-2">
-                            <div class="wm-footer-widget-title"> <h5>Quick Links</h5> </div>
+                        <aside class="widget widget_archive col-md-2" style="margin-top: 150px">
+                            <div class="wm-footer-widget-title"> <h5>بعض الروابط</h5> </div>
                             <ul>
-                                <li><a href="#">Our Latest Events</a></li>
-                                <li><a href="#">Our Courses</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">404 Page</a></li>
-                                <li><a href="#">Gallery</a></li>
-                                <li><a href="#">All Instructors</a></li>
+                                <li><a href="{{route('album.index')}}">الألبومات</a></li>
+                                <li><a href="{{route('course.index')}}">الدورات و الدبلومات</a></li>
+                                <li><a href="{{url('agraya')}}">الائحة الأجرائية</a></li>
+                               
+                                <li><a href="{{route('teacher.index')}}">خبرائنا و مدربينا</a></li>
+                               
                             </ul>
                         </aside>
-                        <aside class="widget widget_twitter col-md-4">
+                        <aside class="widget widget_twitter col-md-4"  style="margin-top: 150px">
                             <div class="wm-footer-widget-title"> <h5><i class="wmicon-social2"></i> @enrollcampus</h5> </div>
                             <ul>
                                 <li>
@@ -266,8 +266,8 @@
                                 </li>
                             </ul>
                         </aside>
-                        <aside class="widget widget_gallery col-md-3">
-                            <div class="wm-footer-widget-title"> <h5>Our Instructors</h5> </div>
+                        <aside class="widget widget_gallery col-md-3" style="margin-top: 150px">
+                            <div class="wm-footer-widget-title"> <h5 style="text-align: center;">أهم خبرائنا</h5> </div>
                             <ul class="gallery">
                                 <li><a title="" data-rel="prettyPhoto[gallery1]" href="{!!asset('extra-images/widget-galleryfull-1.jpg')!!}"><img src="{!!asset('extra-images/widget-gallery-1.jpg')!!}" alt=""></a></li>
                                 <li><a title="" data-rel="prettyPhoto[gallery1]" href="{!!asset('extra-images/widget-galleryfull-2.jpg')!!}"><img src="{!!asset('extra-images/widget-gallery-2.jpg')!!}" alt=""></a></li>
@@ -289,8 +289,9 @@
             <div class="wm-copyright">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6"> <span><i class="wmicon-nature"></i> Barcelona, Spain 2°F / -17°C</span> </div>
-                        <div class="col-md-6"> <p>© 2016, All Right Reserved - by <a href="index-2.html" class="wm-color">WebMarce</a></p> </div>
+                        <div class="col-md-6"> <span> </span> </div>
+                        <!--
+                        <div class="col-md-6"> <p>© 2016, جميع الحقوق محفوظة -من <a href="index-2.html" class="wm-color">daleel marketing solutiom</a></p> </div>-->
                     </div>
                 </div>
             </div>

@@ -40,6 +40,19 @@ class AlbumscontrolController extends Controller
 
 
 
+
+$this->validate($request,[
+
+'name'=>'required|unique:albums,b_name',
+'disc'=>'required',
+'file'=>'required'
+
+
+
+
+    ]);
+
+
 $path=public_path().'/extra-images/';
 $file=$request->file('file');
 
@@ -102,6 +115,19 @@ if($file->move($path,$filename)){
     public function update(Request $request, $id)
     {
        
+
+
+$this->validate($request,[
+
+'name'=>'required|unique:albums,b_name',
+'disc'=>'required',
+
+
+
+    ]);
+
+
+
         $album=Album::find($id);
 
 
@@ -158,6 +184,7 @@ return redirect('albumcontrol');
     {  
 
         $album=Album::find($id);
+        unlink(public_path()."/extra-images/".$album->b_cover);
         $album->delete();
         return redirect()->back();
     }

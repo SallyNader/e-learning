@@ -29,17 +29,34 @@
 											<li>
 <label>أسم الصورة</label>
 											<input type="text" name="name" value="{{old('name')}}" >
-
+<p style="color:blue">{{$errors->first('name')}}</p>
 											</li>
 											<li>
 <label>نبذة عن الصورة</label>
-											<input name="disc" type="text" value="{{old('disc')}}" ></li>
+											<input name="disc" type="text" value="{{old('disc')}}" >
+
+<p style="color:blue">{{$errors->first('disc')}}</p>
+											</li>
 											<li>
 <label>الألبوم التابع له</label>
 
 
 
-											<input name="album" type="text" value="{{old('album')}}" ></li>	
+											<select name="album" style="text-align: right; width: 150px">
+												
+
+@unless(empty($albums))
+
+@foreach($albums as $t)
+
+<option value="{{$t->b_name}}">{{$t->b_name}}</option>
+
+
+@endforeach
+@endunless
+
+											</select>
+											</li>	
 
 
 
@@ -51,6 +68,8 @@
 <li>
 <label>تحميل صورة </label>
 												<input type="file"   name="file"   >
+
+												<p style="color:blue">{{$errors->first('file')}}</p>
 
 											</li>
 

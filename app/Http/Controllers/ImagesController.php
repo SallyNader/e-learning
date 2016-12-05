@@ -30,9 +30,8 @@ return view('control.images.images',compact('images'));
      */
     public function create()
     {
-        
-
-        return view('control.images.create');
+$albums=Album::all();
+        return view('control.images.create',compact('albums'));
     }
 
     /**
@@ -43,6 +42,27 @@ return view('control.images.images',compact('images'));
      */
     public function store(Request $request)
     {
+
+
+
+$this->validate($request,[
+
+
+
+'name'=>'required|unique:images,i_name',
+'disc'=>'required',
+
+'file'=>'required',
+
+
+    ]);
+
+
+$album=$request->get('album');
+
+$album_id=Album::where('b_name',$album)->first();
+$aID=$album_id->b_id;
+
        $path=public_path().'/extra-images/';
 $file=$request->file('file');
 
@@ -53,7 +73,7 @@ Image::create([
 
 'i_name'=>$request->get('name'),
 'i_disc'=>$request->get('disc'),
-'album_id'=>$request->get('album'),
+'album_id'=>$aID,
 'path'=>$filename
 
 
@@ -95,8 +115,9 @@ return redirect('image');
     public function edit($id)
     {
          $image=Image::find($id);
+         $albums=Album::all();
 
-         return view('control.images.editimage',compact('image'));
+         return view('control.images.editimage',compact('image','albums'));
     }
 
     /**
@@ -108,12 +129,39 @@ return redirect('image');
      */
     public function update(Request $request, $id)
     {
+
+
+
+
+
+
+$this->validate($request,[
+
+
+
+'name'=>'required|unique:images,i_name',
+'disc'=>'required',
+
+    ]);
+
+
+
+
+
+
+
+
+
+
         $image=Image::find($id);
 
 
 
 
+$album=$request->get('album');
 
+$album_id=Album::where('b_name',$album)->first();
+$aID=$album_id->b_id;
 
 
 
@@ -156,7 +204,7 @@ return redirect('image');
         $image->i_name=$request->get('name');
 
         $image->i_disc=$request->get('disc');
-        $image->album_id=$request->get('album');
+        $image->album_id=$aID;
         $image->save();
 
         return redirect('image');
@@ -174,6 +222,7 @@ return redirect('image');
         
 
         $image=Image::find($id);
+        unlink(public_path()."/extra-images/".$image->path);
         $image->delete();
 
         return redirect()->back();
