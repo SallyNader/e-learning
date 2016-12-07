@@ -8,6 +8,7 @@ use App\Category;
 use DB;
 use Auth;
 use App\User;
+use App\Video;
 class CoursesController extends Controller
 {
     /**
@@ -25,6 +26,9 @@ class CoursesController extends Controller
  //    }
     public function index()
     {
+
+
+        
       $categories=Category::all();
 
 
@@ -62,11 +66,19 @@ class CoursesController extends Controller
      */
 
     public function o(){
-         $userID=Auth::user()->id;
-$user=User::find($userID);
+        
 
-$accepted=$user->accepted;
-echo $accepted;
+$videos=Course::find(3)->videos->sortBy('episode');
+
+
+foreach ($videos as $key => $value) {
+
+
+    echo $value->v_name."<br/>";
+    # code...
+}
+
+
 
     }
     public function show($id)
@@ -74,7 +86,7 @@ echo $accepted;
         // $Boolean=true;
 
 
-
+if(Auth::check()){
           
           $course=Course::find($id);
 
@@ -85,11 +97,12 @@ echo $accepted;
 
         $result=DB::table('course_user')->where('user_id',$userID)->where('course_id',$checkedCourseID)->get();
 
+$student=DB::table('course_user')->where('course_id',$checkedCourseID)->count();
 
-
+$sessions=Video::where('course_id',$checkedCourseID)->count();
        
 
-
+$videos=Course::find($id)->videos->sortBy('episode');
 
 
 
@@ -133,12 +146,71 @@ $syllabus=explode(",", $sy);
 $ce=$course->certificates;
 
 $certificates=explode(',', $ce);
-    return view('courses.coursedetail',compact('course','syllabus','certificates','lastID','firstID','Boolean','accepted'));
+    return view('courses.coursedetail',compact('course','syllabus','certificates','lastID','firstID','Boolean','accepted','videos','student','sessions'));
+}
+else{
 
-// }else{
+   $course=Course::find($id);
 
-//     echo "ops";
-// }
+        // $userID=Auth::user()->id;
+
+        // $checkedCourseID=$course->c_id;
+
+
+        // $result=DB::table('course_user')->where('user_id',$userID)->where('course_id',$checkedCourseID)->get();
+
+// $student=DB::table('course_user')->where('course_id',$checkedCourseID)->count();
+
+// $sessions=Video::where('course_id',$checkedCourseID)->count();
+       $student=DB::table('course_user')->where('course_id',$id)->count();
+
+
+$videos=Course::find($id)->videos->sortBy('episode');
+
+
+
+// $user=User::find($userID);
+
+// $accepted=$user->accepted;
+
+
+
+
+//         if($result->count() > 0 ){
+
+//        $Boolean='false';
+
+//         }else{
+
+
+//             $Boolean='true';
+//         }
+
+
+        // echo $Boolean;
+
+      $ID=Course::select('c_id')->pluck('c_id');
+
+
+         $lastIndex=count($ID)-1;//7
+
+         $lastID=$ID[$lastIndex];
+
+         $firstID=$ID[0];
+
+ // if (!($id ==0 and $id >= $ID[$lastIndex])){
+
+    $course=Course::find($id);
+
+
+$sy=$course->syllabus;
+$syllabus=explode(",", $sy);
+
+$ce=$course->certificates;
+
+$certificates=explode(',', $ce);
+    return view('courses.coursedetail',compact('course','syllabus','certificates','lastID','firstID','Boolean','videos','student','sessions'));
+}
 
     }
 

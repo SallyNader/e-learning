@@ -94,7 +94,7 @@ class TypscontrolController extends Controller
         $this->validate($request,[
 
 
-'name'=>'required|unique:types,t_title'
+'name'=>'required'
         ]);
        
 

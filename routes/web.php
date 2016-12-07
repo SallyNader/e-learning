@@ -14,6 +14,20 @@ use App\Article;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('tryy',"VideosController@tryy");
+
+
+//next video
+
+
+
+Route::get('next/{id}/{episode}',"VideosController@next");
+
+//pervious video
+
+
+
+Route::get('pervious/{id}/{episode}',"VideosController@pervious");
 // Route::get('image/{$id}','ImagesController@index');
 
 Route::get('o','CoursesController@o');
@@ -76,7 +90,6 @@ Route::get('addcourse/{userid}/{courseid}','ProfileController@addCourseToAccount
 
 
 Route::get('profile','ProfileController@myCourses');
-
 
 
 

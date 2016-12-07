@@ -59,22 +59,23 @@
                                     <a href="casestudy-single-post.html" data-filter=".jquery">History</a>
                                 </li>
                             </ul>-->
-                        </div>  
+                        </div> 
+                        <center> 
                         <div class="wm-our-professors">
-                            <ul class="row">
+                            <ul class="row" >
 
 
                             @unless(empty($albums))
 
                             @foreach($albums as $t)
-                                <li class="col-md-4 wordpress">
-                                    <figure>
-                                        <a href="#"><img src="{{$t->b_cover}} " alt=""></a>
+                                <li class="col-md-4 wordpress"  >
+                                    <figure  style=";margin-right: 170px">
+                                        <a href="#"><img src="extra-images/{{$t->b_cover}} " alt=""></a>
                                         <figcaption>
                                             <a href="{{route('album.show',$t->b_id)}}">لمشاهدة صور الألبوم</a>                                         
                                         </figcaption>                                           
                                     </figure>
-                                    <div class="wm-latest-event-text">
+                                    <div class="wm-latest-event-text" style=";margin-right: 170px">
                                            
                                        
                                     <div class="wm-team-info" style="text-align: left;">
@@ -96,7 +97,7 @@
                                 
                                 
                             </ul>
-                        </div>  
+                        </div>  </center>
                         <div class="wm-pagination">
                             <ul>
                                 <li>

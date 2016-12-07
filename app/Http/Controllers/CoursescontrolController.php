@@ -152,7 +152,7 @@ $categories=Category::all();
     {
 $this->validate($request,[
 
-'name'=>'required|unique:courses,c_name',
+'name'=>'required',
 
 'price'=>'required',
 'disc'=>'required',
@@ -171,7 +171,7 @@ $file=$request->file('file');
         if(!empty($file)){
 
 
-
+ unlink(public_path()."/".$course->image);
 
             $path=public_path().'/extra-images/';
 

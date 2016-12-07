@@ -248,12 +248,80 @@
 
 
 
+
+
+
+
+
+
+            <div class="wm-main-section wm-courses-popular-full">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-md-12">
+                            <div class="wm-fancy-title"> <h2>أشهر <span>الدورات</span></h2> </div>
+                            <div class="wm-courses wm-courses-popular">
+                                <ul class="row">
+                                    
+                                    @unless(empty($courses))
+                                    @foreach($courses as $c)
+                                    <li class="col-md-3">
+                                        <div class="wm-courses-popular-wrap">
+                                            <figure> <a href="{{route('course.show',$c->c_id)}}"><img src="{{$c->image}}" alt=""> <span class="wm-popular-hover"> <small>تفاصيل الدورة</small> </span> </a>
+                                                <figcaption>
+                                                    <img src="extra-images/{{$c->teacher->profile_image}}" alt="" style="width: 50px;height: 50px">
+                                                    <h6><a href="#">{{$c->teacher->t_name}}</a></h6>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="wm-popular-courses-text">
+                                                <h6><a href="#">{{$c->c_name}}</a></h6>
+                                                <div class="wm-courses-price"><!-- <span>$50</span>--> </div>
+                                                <ul>
+                                                    
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    @endforeach
+                                    @endunless
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+      
+
+      <!--// Main Section \\-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div class="wm-main-section wm-latestevents-full">
                 <div class="container">
                     <div class="row">
                         
                         <div class="col-md-9 wm-top-spacer">
-                            <h2 class="wm-simple-title" style="text-align: right;">دوراتنا تضم أقسام عديدة</h2>
+                            <h2 class="wm-simple-title" style="text-align: right;">أشهر أقسام الدورات</h2>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="wm-event-latest-slider">
@@ -277,10 +345,10 @@
                                             <li class="col-md-12">
                                                 <figure><a href="#"><img src="{!!asset('extra-images/latest-event-2.png')!!}" alt=""></a></figure>
                                                 <div class="wm-latest-event-text">
-                                                    <h6 style="text-align: right;"><a href="#" class="wm-color">{{$c->ca_name}}</a></h6>
-                                                    <time datetime="2008-02-14 20:00" style="text-align: right;">{{ date('F d, Y', strtotime($c->created_at)) }}</time>
+                                                    <h6 style="text-align: center;"><a href="#" class="wm-color">{{$c->ca_name}}</a></h6>
+                                                    <time datetime="2008-02-14 20:00" style="text-align: center;">{{ date('F d, Y', strtotime($c->created_at)) }}</time>
                                                     <p></p>
-                                                    <a href="{{route('category.show',$c->ca_id)}}" class="wm-banner-btn" style="text-align: center;">دورات القسم</a>
+                                                    <a href="{{route('category.show',$c->ca_id)}}" class="wm-banner-btn" style="text-align: center; margin-left: 60px">دورات القسم</a>
                                                 </div>
                                             </li>
                                         </ul>
@@ -518,7 +586,7 @@
                     <div class="row">
                         
                         <div class="col-md-12">
-                            <div class="wm-fancy-title-four wm-fancy-title-left" style="text-align: center;" > <h2><small>صور ف المركز</small></h2> <div class="clearfix"></div> <span>صور دوراتنا داخل المركز </span> </div>
+                            <div class="wm-fancy-title-four wm-fancy-title-left" style="text-align: center;" > <h2><small>&nbsp &nbsp صور المركز &nbsp &nbsp &nbsp </small></h2> <div class="clearfix"></div> <span>صور دوراتنا داخل المركز </span> </div>
                             <div class="wm-ourprofessors-slider">
 
 
@@ -654,24 +722,24 @@
                                                     <ul>
                                                         <li>
                                                             <i class="wmicon-black"></i>
-                                                            <input type="text" placeholder="الاسم" name="name" >
+                                                            <input type="text" placeholder="الاسم" name="name" style="text-align: right;" >
                                                         </li>
 
                                                         <li>
                                                             <i class="wmicon-black"></i>
-                                                            <input type="text" placeholder="العنوان" name="address"  >
+                                                            <input type="text" placeholder="العنوان" name="address" style="text-align: right;"  >
                                                         </li>
                                                         <li>
                                                             <i class="wmicon-symbol3"></i>
-                                                            <input type="text" placeholder="البريد" name="email" >
+                                                            <input type="text" placeholder="البريد" name="email" style="text-align: right;" >
                                                         </li>
                                                         <li>
                                                             <i class="wmicon-technology4"></i>
-                                                            <input type="text" placeholder="المحمول" name="mobile"  >
+                                                            <input type="text" placeholder="المحمول" name="mobile" style="text-align: right;"  >
                                                         </li>
                                                         <li>
                                                             <i class="wmicon-web2"></i>
-                                                            <textarea placeholder="المقال" name="article"  ></textarea>
+                                                            <textarea placeholder="المقال" name="article" style="text-align: right;" ></textarea>
                                                         </li>
                                                         <li> <input type="submit" value="أرسال"> </li>
                                                     </ul>

@@ -123,14 +123,7 @@
                                         </ul>
                                     </li>
                                     <li ><a href="#">العضويات الدولية</a>
-                                        <ul class="wm-dropdown-menu">
-                                            <li><a href="dashboard-courses.html">Courses</a></li>
-                                            <li><a href="student-dashboard-favourite.html">Favourite</a></li>
-                                            <li><a href="student-dashboard-my-courses.html">My Courses</a></li>
-                                            <li><a href="student-dashboard-profile.html">Profile Settings</a></li>
-                                            <li><a href="student-dashboard-settings.html">Settings</a></li>
-                                            <li><a href="student-dashboard-statement.html">Statement</a></li>
-                                        </ul>
+                                        
                                     </li>
                                     <li class="wm-megamenu-li"><a href="{{route('album.index')}}">ألبوم صور المركز</a>
 <!--
@@ -185,7 +178,7 @@
                                         </ul>
                                         -->
                                     </li>
-                                    <li class="wm-megamenu-li"><a href="{{route('home.index')}}">الرئيسية  </a>
+                                    <li class="wm-megamenu-li"><a href="{{url('/')}}">الرئيسية  </a>
   <!--
                                         <ul class="wm-megamenu">
                                             <li class="row">

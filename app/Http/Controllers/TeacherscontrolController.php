@@ -213,10 +213,12 @@ $tID=$type_id->t_id;
 
 
 $teacher=Teacher::find($id);
-          $cover=$request->get('cover');
-          $profile=$request->get('profile');
+          $cover=$request->file('cover');
+          $profile=$request->file('profile');
 
           if(!empty($cover)){
+
+             unlink(public_path()."/extra-images/".$teacher->path);
       $path=public_path().'/extra-images';
        $covername=time().rand(1111,9999).'.'.$cover->getClientOriginalName();
 
@@ -229,12 +231,14 @@ $teacher=Teacher::find($id);
 
 
 
-return"done";
+
           }
 
 
 
           if(!empty($profile)){
+
+            unlink(public_path()."/extra-images/".$teacher->profile_image);
 $path=public_path().'/extra-images';
 $profilename=time().rand(1111,9999).'.'.$profile->getClientOriginalName();
 
@@ -245,7 +249,9 @@ if($profile->move($path,$profilename)){
     $teacher->profile_image=$profilename;
 }
 
-         return"done"; }
+        
+
+         }
 
 
 

@@ -119,7 +119,7 @@ if($file->move($path,$filename)){
 
 $this->validate($request,[
 
-'name'=>'required|unique:albums,b_name',
+'name'=>'required',
 'disc'=>'required',
 
 
@@ -137,7 +137,7 @@ $this->validate($request,[
 
            if( !empty($file)){
 
-
+  unlink(public_path()."/extra-images/".$album->b_cover);
 
 
 $path=public_path().'/extra-images';

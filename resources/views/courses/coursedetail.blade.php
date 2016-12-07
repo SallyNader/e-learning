@@ -36,6 +36,7 @@
 								
 									<h4>سعر الدورة</h4>
 								</div>
+								
 								<span><small></small>${{$course->price}}</span>
 
 								@if($Boolean=='true' and $accepted==1)
@@ -44,9 +45,11 @@
 
 								@endif
 								<ul>
-									<li><a href="#"><i class=" wmicon-social7"></i>234 Students</a></li>
+								@unless(empty($student))
+									<li><a href="#"><i class=" wmicon-social7"></i>{{$student}} طالب</a></li>@endunless
 									<li><a href="#"><i class=" wmicon-clock2"></i><time datetime="2017-02-14">Duration: 2hr30mins</time></a></li>
-									<li><a href="#"><i class=" wmicon-book2"></i>14 Lectures</a></li>
+									@unless(empty($sessions))
+									<li><a href="#"><i class=" wmicon-book2"></i>{{$sessions}} محاضرة</a></li>@endunless
 									<li><a href="#"><i class=" wmicon-location"></i>Campus L2</a></li>
 									<li><a href="#">
 										<div class="wm-levelrating">
@@ -316,16 +319,16 @@
 										<a class="wm-authorpost" href="#">{{$course->teacher->t_name}}</a>
 									</div>
 									<div class="wm-our-courses">
-										<ul>
+										<ul><!--
 											<li>
-												<a href="#"><i class="wmicon-tool2"></i>328 Viewers</a>
+												<a href="#"><i class="wmicon-tool2"></i> Viewers</a>
 											</li>
 											<li>
 												<a href="#"><i class="wmicon-diploma"></i>Certificate: No</a>
 											</li>
 											<li>
 												<a href="#"><i class="wmicon-symbol"></i>Assesments: Yes</a>
-											</li>
+											</li>-->
 										</ul>
 									</div>
 								</div>								
@@ -382,6 +385,7 @@
 									</ul>																		
 								</div>	
 							</div>
+							@unless(empty($Boolean))
 								@if($Boolean=='false')
 							<div class="wm-courses-getting-started">
 								<div class="wm-title-full">
@@ -390,8 +394,8 @@
 								<div class="wm-courses-started">
 									<span></span>
 									<ul class="wm-courses-started-listing">
-										@if(!empty($course->videos))
-										@foreach($course->videos as $v)
+										@if(!empty($videos))
+										@foreach($videos as $v)
 										<li>
 											<a href="#" class=" wmicon-interface"></a>
 											<div class="wm-courses-started-text">
@@ -409,11 +413,13 @@
 										@else
 										<div>لا يوجد دروس</div>
 										@endif
+
 									</ul>
 								</div>
 							
 							</div>
 							@endif
+							@endunless
 							<div class="wm-title-full">
 								<h2>Reviews</h2>
 							</div>

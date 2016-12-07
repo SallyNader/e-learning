@@ -37,7 +37,7 @@
                         <aside class="col-md-3">
                       
                             <div class="widget widget_check-box widget_scroll-box" style="text-align: center;">
-                                <h5>القسم</h5>
+                                <h5><strong>القسم</strong> </h5>
                                 <ul>
                                     <li>
                                         
@@ -57,7 +57,7 @@
                                     
                                    @unless(empty($categories))
                                    @foreach($categories as $c)
-                                    <li>
+                                    <li >
                                         
                                         <label for="type13">
                                             <span></span>
@@ -287,7 +287,7 @@
                             </div>
                         </aside>
                         
-                        <div class="col-md-9">
+                        <div class="col-md-9" style="text-align: right;">
                     
                             <div class="wm-courses wm-courses-popular wm-courses-mediumsec">
                                 <ul class="row">
@@ -308,15 +308,18 @@
                                                 </figcaption>
                                             </figure>
                                             <div class="wm-popular-courses-text">
-                                                <h6><a href="#">{{$c->c_name}}</a></h6>
+                                                <h6 style="text-align: right;"><a href="#"><strong>{{$c->c_name}}</strong></a></h6>
                                                 <p>{{$c->disc,0,90}}...</p>
+                                              
+                                        @if(Auth::check())
                                                 <div class="wm-courses-price"> <span>${{$c->price}}</span> </div>
-                                                <ul>
+                                                @endif
+                                               <!-- <ul>
                                                     <li><a href="#" class="wm-color"><i class="wmicon-social7"></i> 342</a></li>
                                                     <li><a href="#" class="wm-color"><i class="wmicon-social6"></i> 10</a></li>
                                                     <li><a href="#" class="wm-color"><i class="wmicon-time2"></i> 1 year</a></li>
                                                     <li><a href="#" class="wm-color"><i class="wmicon-location"></i> Campus L2</a></li>
-                                                </ul>
+                                                </ul>-->
                                             </div>
                                         </div>
                                     </li>

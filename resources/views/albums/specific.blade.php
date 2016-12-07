@@ -34,14 +34,14 @@
                             <div class="wm-filterable-link">
                                 
                             </div>
-                            <div class="wm-event wm-latest-event wm-filter-event" style="text-align: right">
+                            <div class="wm-event wm-latest-event wm-filter-event" style="text-align: right;margin-left: 470px">
                                 <ul class="row">
                                     
                                      @unless(empty($album))
 
                                         @foreach($album->images as $image)
                                                                         <li class="col-md-3 wordpress">
-                                        <figure><img src="../../public/extra-images/{{$image->path}}" alt="" style="width: 300px;height:250px" > </figure>
+                                        <figure><img src="../../public/extra-images/{{$image->path}}" alt="" style="width: 1000px;height:250px" > </figure>
 
 
                                        

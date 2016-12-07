@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Video;
 use App\Course;
+use DB;
 class VideosController extends Controller
 {
     /**
@@ -12,9 +13,148 @@ class VideosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+public function tryy(){
+
+
+
+    $all=Video::where('course_id',1)->get();
+
+    $first=$all[0]->episode;
+    $last=$all->max('episode');
+
+    return $first."   ".$last;
+}
+
+
+    public function next($id,$episode){
+
+ $video=Video::where('course_id',$id)->where('episode',$episode+1)->first();
+
+
+
+
+$student=DB::table('course_user')->where('course_id',$video->course_id)->count();
+
+$sessions=Video::where('course_id',$video->course_id)->count();
+
+
+
+
+
+
+$all=Video::where('course_id',$id)->get();
+
+    $first=$all[0]->episode;
+    $last=$all->max('episode');
+
+
+
+     
+       $courseID=$video->course_id;
+
+       $vid=$video->v_id;
+
+  $otherVideos=Video::where('v_id',"<>",$vid)->where('course_id','=',$courseID)->orderBy('episode')->get();
+
+$courseName=$video->course->c_name;
+
+$course=Course::where('c_name',$courseName)->get();
+
+foreach ($course as $key => $value) {
+    # code...
+   $sy=  $value->syllabus;
+   $ce=$value->certificates;
+
+}
+
+
+      // $sy=$course->syllabus;
+
+
+  $syllabus=explode(",", $sy);
+
+  // $ce=$course->certificates;
+
+   $certificates=explode(',', $ce);
+
+       return view('videos.session',compact('video','syllabus','certificates','course','otherVideos','first','last','sessions','student'));
+
+       
+
+       
+
+
+    }
+
+
+     public function pervious($id,$episode){
+
+
+
+
+
+
+
+
+
+
+$student=DB::table('course_user')->where('course_id',$video->course_id)->count();
+
+$sessions=Video::where('course_id',$video->course_id)->count();
+
+
+
+
+
+        $video=Video::where('course_id',$id)->where('episode',$episode-1)->first();
+
+  $vid=$video->v_id;
+
+$all=Video::where('course_id',$id)->get();
+
+    $first=$all[0]->episode;
+    $last=$all->max('episode');
+     
+       $courseID=$video->course_id;
+
+  $otherVideos=Video::where('v_id',"<>",$vid)->where('course_id','=',$courseID)->orderBy('episode')->get();
+
+$courseName=$video->course->c_name;
+
+$course=Course::where('c_name',$courseName)->get();
+
+foreach ($course as $key => $value) {
+    # code...
+   $sy=  $value->syllabus;
+   $ce=$value->certificates;
+
+}
+
+
+      // $sy=$course->syllabus;
+
+
+  $syllabus=explode(",", $sy);
+
+  // $ce=$course->certificates;
+
+   $certificates=explode(',', $ce);
+
+       return view('videos.session',compact('video','syllabus','certificates','course','otherVideos','first','last','sessions','student'));
+
+       
+
+
+    }
     public function index()
     {
       $videos=Video::all();
+
+      
+
+
 
       return view('control.videos.videos',compact('videos'));
     }
@@ -104,7 +244,21 @@ return redirect('video');
        $video=Video::find($id);
        $courseID=$video->course_id;
 
-  $otherVideos=Video::where('v_id',"<>",$id)->where('course_id','=',$courseID)->get();
+  $otherVideos=Video::where('v_id',"<>",$id)->where('course_id','=',$courseID)->orderBy('episode')->get();
+
+
+$student=DB::table('course_user')->where('course_id',$video->course_id)->count();
+
+$sessions=Video::where('course_id',$video->course_id)->count();
+
+
+$all=Video::where('course_id',$video->course_id)->get();
+
+    $first=$all[0]->episode;
+    $last=$all->max('episode');
+
+
+
 
 $courseName=$video->course->c_name;
 
@@ -127,7 +281,7 @@ foreach ($course as $key => $value) {
 
    $certificates=explode(',', $ce);
 
-       return view('videos.session',compact('video','syllabus','certificates','course','otherVideos'));
+       return view('videos.session',compact('video','syllabus','certificates','course','otherVideos','first','last','sessions','student'));
 
     }
 
@@ -140,10 +294,16 @@ foreach ($course as $key => $value) {
     public function edit($id)
     {
         $video=Video::find($id);
+        $course_id_in_video=$video->course_id;
+
+        $course_name=Course::where('c_id',$course_id_in_video)->first()->pluck('c_name');
+
+
+$courseNameRelated=$course_name[0];
 
          $courses=Course::all();
 
-        return view('control.videos.editvideo',compact('video','courses'));
+        return view('control.videos.editvideo',compact('video','courses','courseNameRelated'));
     }
 
     /**
@@ -188,6 +348,7 @@ $file=$request->file('file');
 
            if( !empty($file)){
 
+ unlink(public_path()."/". $video->v_path);
 
 
 

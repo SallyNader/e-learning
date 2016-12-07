@@ -139,7 +139,7 @@ $this->validate($request,[
 
 
 
-'name'=>'required|unique:images,i_name',
+'name'=>'required',
 'disc'=>'required',
 
     ]);
@@ -175,7 +175,7 @@ $aID=$album_id->b_id;
            if( !empty($file)){
 
 
-
+ unlink(public_path()."/extra-images/".$image->path);
 
         $path=public_path().'/extra-images';
 

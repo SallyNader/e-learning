@@ -26,9 +26,14 @@
 
 @foreach($courses as $t)
 
+
+@if($t->c_name == $courseNameRelated)
+<option selected value="{{$t->c_name}}" selected >{{$t->c_name}}</option>
+@else
+
 <option value="{{$t->c_name}}">{{$t->c_name}}</option>
 
-
+@endif
 @endforeach
 @endunless
 

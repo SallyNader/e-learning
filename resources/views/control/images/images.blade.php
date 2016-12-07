@@ -43,7 +43,7 @@
                                               
                                             </li> 
                                            
-                                            <li>{{$u->album_id}}</li>
+                                            <li>{{$u->album->b_name}}</li>
                                             <li>..{{substr($u->i_disc,0,10)}}</li>
                                             <li>{{$u->i_name}}</li>
                                               <br/><hr/>

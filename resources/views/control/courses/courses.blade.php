@@ -43,8 +43,8 @@
                                               
                                             </li> 
                                            
-                                            <li>{{$u->category_id}}</li>
-                                            <li>{{$u->teacher_id}}</li>
+                                            <li>{{$u->category->ca_name}}</li>
+                                            <li>{{$u->teacher->t_name}}</li>
                                             <li>{{$u->c_name}}</li>
                                               <br/><hr/>
                                         </ul>

@@ -47,9 +47,9 @@
 								
 								
 								<ul>
-									<li><a href="#"><i class=" wmicon-social7"></i>234 Students</a></li>
+									<li><a href="#"><i class=" wmicon-social7"></i>{{$student}} طالب</a></li>
 									<li><a href="#"><i class=" wmicon-clock2"></i><time datetime="2017-02-14">Duration: 2hr30mins</time></a></li>
-									<li><a href="#"><i class=" wmicon-book2"></i>14 Lectures</a></li>
+									<li><a href="#"><i class=" wmicon-book2"></i>{{$sessions}} محاضرة</a></li>
 									<li><a href="#"><i class=" wmicon-location"></i>Campus L2</a></li>
 									<li><a href="#">
 										<div class="wm-levelrating">
@@ -319,10 +319,18 @@
 							</div>
 							<div class="wm-courses-reviewes">
 								
-								<!--<div class="wm-ourcourses-right">
-									<a class="wm-previous-icon" href="#"><i class="fa fa-angle-left" ></i>الدرس السابق</a>
-									<a class="wm-Next-icon" href="#">الدرس التالي<i class="fa fa-angle-right" ></i></a>
-								</div>-->
+								<div class="wm-ourcourses-right">
+
+
+								@unless($video->episode == $first)
+									<a class="wm-previous-icon" href="{{url('pervious/'.$video->course_id.'/'.$video->episode)}}"><i class="fa fa-angle-left" ></i>الدرس السابق</a>
+									@endunless
+
+									@unless($video->episode == $last)
+									<a class="wm-Next-icon" href="{{url('next/'.$video->course_id.'/'.$video->episode)}}">الدرس التالي<i class="fa fa-angle-right" ></i></a>
+
+									@endunless
+								</div>
 							</div>
 							<div class="wm-our-course-detail">
 								<div class="wm-title-full" style="text-align: right;">

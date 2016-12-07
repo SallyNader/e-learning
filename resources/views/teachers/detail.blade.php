@@ -63,7 +63,7 @@
                                              <li><a href="#"><i class="wmicon-social4" aria-hidden="true"></i></a></li>
                                              <li><a href="#"><i class="wmicon-logo" aria-hidden="true"></i></a></li>
                                         </ul>
-                                    </div>
+                                    </div><!--
                                     <div class="widget widget_contact-form">
                                         <h6>Contact Chester</h6>
                                         <form>
@@ -82,22 +82,11 @@
                                                     </li>
                                                </ul> 
                                         </form>
-                                    </div>
+                                    </div>-->
                                     <div class="widget widget_twittwe-feed">
-                                         <h5>Twitter Feed <span>@cgraham</span></h5>  
+                                         <h5> <span></span></h5>  
                                          <ul>
-                                            <li>    
-                                                <p>thanks @designrive, @Roman08, @diadea3007, @Codeanywhere, for following us. Check us out on<a href="#">FB http://buff.ly/1rbmal7</a></p>
-                                                <span>2 days ago</span>
-                                            </li>
-                                            <li>    
-                                                <p>thanks @designrive, @Roman08, @diadea3007, @Codeanywhere, for following us. Check us out on<a href="#">FB http://buff.ly/1rbmal7</a></p>
-                                                <span>2 days ago</span>
-                                            </li> 
-                                            <li>    
-                                                <p>thanks @designrive, @Roman08, @diadea3007, @Codeanywhere, for following us. Check us out on<a href="#">FB http://buff.ly/1rbmal7</a></p>
-                                                <span>2 days ago</span>
-                                            </li>    
+                                            
                                          </ul> 
                                     </div>             
                                 </aside>
@@ -110,7 +99,7 @@
                                                     <div class="wm-professor-icon">
                                                        <a href="#" class="icon-hidden"><i class="wmicon-technology4" aria-hidden="true"></i></a>
                                                     </div>
-                                                    <h6>التليفون</h6>
+                                                    <h6><strong>التليفون</strong></h6>
                                                     <span>{{$teacher->t_phone}}</span>
                                                 </div>
                                             </li>
@@ -119,7 +108,7 @@
                                                     <div class="wm-professor-icon">
                                                        <a href="#"><i class="wmicon-web2" aria-hidden="true"></i></a>
                                                     </div>
-                                                    <h6>البريد الالكتروني</h6>
+                                                    <h6> <strong>البريد الالكتروني</strong></h6>
                                                     <span>{{$teacher->t_email}}</span>
                                                 </div>
                                             </li>
@@ -128,7 +117,7 @@
                                                     <div class="wm-professor-icon">
                                                        <a href="#"><i class="wmicon-pen" aria-hidden="true"></i></a>
                                                     </div>
-                                                    <h6>مدة الخبرة</h6>
+                                                    <h6><strong>عدد سنين الخبرة</strong></h6>
                                                     <span>{{$teacher->experience_years}}</span>
                                                 </div>
                                             </li>
@@ -165,15 +154,15 @@
                                                     <figure> <a href="{{route('course.show',$c->c_id)}}"><img src="../{{$c->image}}" alt=""> <span class="wm-popular-hover"> <small>تفاصيل الدورة</small> </span> </a>
                                                         <figcaption>
                                                             <img style="width: 50px;height: 50px" src="../extra-images/{{$c->teacher->profile_image}}" alt="">
-                                                            <h6><a href="#">{{$c->teacher->t_name}}</a></h6>
+                                                            <h6><b><a href="#">{{$c->teacher->t_name}}</a></b></h6>
                                                         </figcaption>
                                                     </figure>
                                                     <div class="wm-popular-courses-text" style="text-align: right;">
-                                                        <h6 style="text-align: right;"><a href="#">{{$c->c_name}}</a></h6>
+                                                        <h6 style="text-align: right;"><a href="#"><strong>{{$c->c_name}}</strong></a></h6>
                                                         <p>{{$c->disc}}</p>
-                                                        <div class="wm-courses-price"> <span>${{$c->price}}</span> </div>
+                                                        <div class="wm-courses-price"> <span></span> </div>
                                                         <ul>
-                                                            <li><a href="#" class="wm-color"><i class="wmicon-social7"></i> 298</a></li>
+                                                           <!-- <li><a href="#" class="wm-color"><i class="wmicon-social7"></i> 298</a></li>-->
                                                             <li><a href="#" class="wm-color"><i class="wmicon-clock2"></i> 1hr 45</a></li>
                                                             <!--
                                                             <li><a href="#" class="wm-color"><i class="wmicon-location"></i> Campus L3</a></li>

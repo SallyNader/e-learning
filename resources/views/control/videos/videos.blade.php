@@ -45,7 +45,7 @@
                                            
                                             <li>{{ date('F d, Y', strtotime($u->startDate)) }}
 </li>
-                                            <li>{{$u->course_id}}</li>
+                                            <li>{{$u->course->c_name}}</li>
                                             <li>{{$u->v_name}}</li>
                                               <br/><hr/>
                                         </ul>

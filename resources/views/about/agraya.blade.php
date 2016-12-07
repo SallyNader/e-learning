@@ -177,7 +177,7 @@
                                                 <a class="wmicon-social4" href="#"></a>
                                                 <a class="wmicon-logo" href="#"></a>
                                             </div>
-                                            <span>{{$teacher->type->t_title}}</span>
+                                            <span><p style="color:#ffb84d">{{$teacher->type->t_title}}</p></span>
                                         </div>
                                     </li>
                                     
