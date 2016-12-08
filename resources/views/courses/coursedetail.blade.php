@@ -46,20 +46,22 @@
 								@endif
 								<ul>
 								@unless(empty($student))
-									<li><a href="#"><i class=" wmicon-social7"></i>{{$student}} طالب</a></li>@endunless
-									<li><a href="#"><i class=" wmicon-clock2"></i><time datetime="2017-02-14">Duration: 2hr30mins</time></a></li>
+									<li><a href="#"><i class=" wmicon-social7" ></i>{{$student}}</a></li>@endunless
+									<li><a href="#"><i class=" wmicon-clock2"></i><time datetime="2017-02-14"> 2hr30mins</time></a></li>
 									@unless(empty($sessions))
 									<li><a href="#"><i class=" wmicon-book2"></i>{{$sessions}} محاضرة</a></li>@endunless
+									
+<!--
 									<li><a href="#"><i class=" wmicon-location"></i>Campus L2</a></li>
 									<li><a href="#">
 										<div class="wm-levelrating">
 											<span class="rating-box" style="width:70%"></span>
 										</div>
 										Intermediate</a></li>
-									<li><a href="#"><i class=" wmicon-technology"></i>English Language</a></li>
+									<li><a href="#"><i class=" wmicon-technology"></i>English Language</a></li>-->
 								</ul>
 							</div>
-							<div class="widget widget_futurecourse">
+							<!--<div class="widget widget_futurecourse">
                                <div class="wm-widget-title">
 									<h2>Featured Articles</h2>
 								</div>
@@ -183,9 +185,9 @@
                                     <li><a href="#">Theology & Religion</a></li>
                                     <li><a href="#">Law</a></li>
 								</ul>
-							</div>
+							</div>-->
 							<div class="widget widget_archive">
-								<div class="wm-widget-title">
+								<!--<div class="wm-widget-title">
 									<h2>Archive</h2>
 								</div>
 								<div class="wm-select-two">
@@ -195,23 +197,27 @@
 										<option>Select Month2</option>
 										<option>Select Month3</option>
 									</select>
-								</div>
+								</div>-->
 							</div>
-							<div class="widget widget_professor-info">
-								<div class="wm-widget-title">
-									<h2>About Professor</h2>
+							<div class="widget widget_professor-info" style="text-align: right;">
+								<div class="wm-widget-title" style="text-align: right;">
+									<h2 style="text-align: right;margin-left: 70px"><strong>عن المدرب</strong></h2>
 								</div>
 								<figure>
-									<a href="#"><img src="extra-images/our-courses-author.jpg" alt=""></a>
+									<a href="#"><img src="../extra-images/{{$course->teacher->path}}" alt=""></a>
 								</figure>
 								<div class="wm-Professor-info">
-									<h6><a href="#">Shelly T. Forrester</a></h6>
-									<span>15 yrs. experience</span>
+									<h6><a href="#"><strong>{{$course->teacher->t_name}}</strong></a></h6>
+									<p></p>
+									<span>  <strong></strong></span>
 								</div>
-								<p>Shelly T. accompanied Dr. Stephen Harnish to SC12, an international supercomputing conference in Salt Lake City, Utah. At the conference.</p>
-								<a class="wm-read-more" href="#">Read More</a>
+								
+								<p>{{$course->teacher->t_experience}}..</p>
+								<a class="wm-read-more" href="{{route('teacher.show',$course->teacher->t_id)}}">تفاصيل عن المدرب</a>
 							</div>
-							<div class="widget widget_courses-program">
+
+
+						<!--	<div class="widget widget_courses-program">
 								<div class="wm-widget-title">
 									<h2>Course Program</h2>
 								</div>
@@ -259,52 +265,43 @@
 									<a href="blog-detail.html">Professor</a>
 									<a href="blog-detail.html">Finance</a>															
 								</div>								
-							</div>
+							</div>-->
 							<div class="widget widget_add">
 								<figure>
 									<a href="blog-detail.html">
-										<img alt="" src="extra-images/widget-add.jpg">
+										
 									</a>
 								</figure>
 							</div>
 							<div class="widget widget_latestnews">
 								<div class="wm-widget-title">
-									<h2>Latest News</h2>
+									<h2 style="text-align: right;"> <strong style="text-align: right;margin-left: 60px">أشهر المقالات</strong></h2>
 								</div>
 								<ul>
+									@unless(empty($articles))
+
+									@foreach($articles  as $a)
 									<li>
 										<figure>
-											<a href="#"><img src="extra-images/widget-latestnews-1.jpg" alt=""></a>
+											<a href="#"></a>
 										</figure>
-										<div class="wm-latestnews">
-											<h5><a href="#">Reality check for all openings</a></h5>
-											<p>The open and distance learning vision of...</p>
-											<time datetime="2008-02-14 20:00">6/4/2016</time>
-											<a href="#"><i class="wmicon-social"></i>21</a>
+										<div class="wm-latestnews" style="margin-left: 20px">
+											<h5><a href="{{route('article.show',$a->a_id)}}"><strong>{{$a->a_title}}</strong></a></h5>
+											<p>...<?php
+											 echo substr($a->a_article,0,90) 
+
+
+											?></p>
+											<time datetime="2008-02-14 20:00">{{ date('F d, Y', strtotime($a->created_at)) }}
+</time>
+											
 										</div>										
 									</li>
-									<li>
-										<figure>
-											<a href="#"><img src="extra-images/widget-latestnews-2.jpg" alt=""></a>
-										</figure>
-										<div class="wm-latestnews">
-											<h5><a href="#">Research – Creative responses</a></h5>
-											<p>We need a very realistic acknowledgement...</p>											
-											<time datetime="2008-02-14 20:00">5/4/2016</time>
-											<a href="#"><i class="wmicon-social"></i>24</a>
-										</div>										
-									</li>
-									<li>
-										<figure>
-											<a href="#"><img src="extra-images/widget-latestnews-3.jpg" alt=""></a>
-										</figure>
-										<div class="wm-latestnews">
-											<h5><a href="#">Learning lessons abroad on funding</a></h5>
-											<p>Faced with all donors fatigue and declining...</p>
-											<time datetime="2008-02-14 20:00">3/4/2016</time>
-											<a href="#"><i class="wmicon-social"></i>29</a>
-										</div>										
-									</li>
+
+
+
+@endforeach
+									@endunless
 								</ul>
 							</div>
 						</aside>
@@ -402,7 +399,7 @@
 												<h6><a href="#">{{$v->v_name}}</a></h6><br/><br/>
 
 												<span><a href="#" class="wmicon-time2"></a><time datetime="2017-02-14">{{$v->startDate}}</time></span>
-												<span><a href="#" class=" wmicon-clock2"></a><time datetime="2017-02-14">Duration: {{$v->duration}}</time></span>													
+												<span><a href="#" class=" wmicon-clock2"></a><time datetime="2017-02-14"> {{$v->duration}}</time></span>													
 											</div>
 											<div class="wm-courses-preview">
 												<a href="{{route('video.show',$v->v_id)}}">لمشاهدة الدرس</a>
@@ -420,6 +417,7 @@
 							</div>
 							@endif
 							@endunless
+							<!--
 							<div class="wm-title-full">
 								<h2>Reviews</h2>
 							</div>
@@ -666,66 +664,44 @@
                                         </div>    
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div></div>
+                              @unless(empty($relatedCourses))
                             <div class="wm-title-full">
-                                <h2>Related Courses</h2>
+                                <h2>دورات تابعة للقسم</h2>
                             </div>
                             <div class="wm-courses wm-courses-popular">
                                 <ul class="row">
+                                    
+                          
+
+                            @foreach($relatedCourses as $r)
                                     <li class="col-md-4">
                                         <div class="wm-courses-popular-wrap">
-                                            <figure> <a href="#"><img src="extra-images/papular-courses-1.jpg" alt=""> <span class="wm-popular-hover"> <small>see course</small> </span> </a>
+                                            <figure> <a href="{{route('course.show',$r->c_id)}}"><img src="../{{$r->image}}" alt=""> <span class="wm-popular-hover"> <small>تفاصيل الدورة</small> </span> </a>
                                                 <figcaption>
-                                                    <img src="extra-images/papular-courses-thumb-1.jpg" alt="">
-                                                    <h6><a href="#">Shelly T. Forrester</a></h6>
+                                                    <img src="../extra-images/{{$r->teacher->profile_image}}" alt="" style="height: 60px;width: 64px">
+                                                    <h6><a href="#">{{$r->teacher->t_name}}</a></h6>
                                                 </figcaption>
                                             </figure>
                                             <div class="wm-popular-courses-text">
-                                                <h6><a href="#">Advanced Architectural Research</a></h6>
-                                                <div class="wm-courses-price"> <span>$32</span> </div>
-                                                <ul>
-                                                    <li><a href="#" class="wm-color"><i class="wmicon-social7"></i> 342</a></li>
-                                                    <li><a href="#" class="wm-color"><i class="wmicon-social6"></i> 10</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-md-4">
-                                        <div class="wm-courses-popular-wrap">
-                                            <figure> <a href="#"><img src="extra-images/papular-courses-2.jpg" alt=""> <span class="wm-popular-hover"> <small>see course</small> </span> </a>
-                                                <figcaption>
-                                                    <img src="extra-images/papular-courses-thumb-2.jpg" alt="">
-                                                    <h6><a href="#">Sam K. Harrington</a></h6>
-                                                </figcaption>
-                                            </figure>
-                                            <div class="wm-popular-courses-text">
-                                                <h6><a href="#">Advanced Landscape & Urbanism</a></h6>
-                                                <div class="wm-courses-price"> <span>Free</span> </div>
-                                                <ul>
-                                                    <li><a href="#" class="wm-color"><i class="wmicon-social7"></i> 438</a></li>
-                                                    <li><a href="#" class="wm-color"><i class="wmicon-social6"></i> 28</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-md-4">
-                                        <div class="wm-courses-popular-wrap">
-                                            <figure> <a href="#"><img src="extra-images/papular-courses-3.jpg" alt=""> <span class="wm-popular-hover"> <small>see course</small> </span> </a>
-                                                <figcaption>
-                                                    <img src="extra-images/papular-courses-thumb-3.jpg" alt="">
-                                                    <h6><a href="#">Sara A. Shirley</a></h6>
-                                                </figcaption>
-                                            </figure>
-                                            <div class="wm-popular-courses-text">
-                                                <h6><a href="#">Transdisciplinary Design</a></h6>
-                                                <div class="wm-courses-price"> <span>$79</span> </div>
-                                                <ul>
+                                                <h6><a href="#">{{$r->c_name}}</a></h6>
+                                                @if(Auth::check())
+                                                <div class="wm-courses-price"> <span>${{$r->price}}</span> </div>
+                                                @endif
+                                                <ul><!--
                                                     <li><a href="#" class="wm-color"><i class="wmicon-social7"></i> 309</a></li>
-                                                    <li><a href="#" class="wm-color"><i class="wmicon-social6"></i> 19</a></li>
+                                                    <li><a href="#" class="wm-color"><i class="wmicon-social6"></i> 19</a></li>-->
                                                 </ul>
                                             </div>
                                         </div>
                                     </li>
+@endforeach
+
+                                    @endunless
                                 </ul>
                             </div>						
 						</div>

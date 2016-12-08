@@ -67,7 +67,7 @@
                                                 <a href="#"><img src="extra-images/author-blog-2.jpg" alt=""></a>
                                             </figure>-->
                                             <div class="wm-author-text">
-                                                <h5><a href="#">     فرع تونس  </a></h5>
+                                                <h5><a href="#">   <strong> فرع تونس </strong>  </a></h5>
                                                 <span>مدير : أحمد محمد خالد </span>
                                                 <p>22-شارع أحمد-شارع تونس</p>
                                             </div>                              
@@ -79,7 +79,7 @@
                                                 <a href="#"><img src="extra-images/author-blog-7.jpg" alt=""></a>
                                             </figure>-->
                                             <div class="wm-author-text">
-                                                <h5><a href="#">فرع القاهرة   </a></h5>
+                                                <h5><a href="#"> <strong>فرع القاهرة</strong>    </a></h5>
                                                 <span>مديرة : سارة أحمد علي</span>
                                                 <p>22 شارع محمود حسن - الميرغني مصر الجديدة </p>
                                             </div>                              
@@ -92,8 +92,8 @@
                                                 <a href="#"><img src="extra-images/lesson-list2.jpg" alt=""></a>
                                             </figure>-->
                                             <div class="wm-author-text">
-                                                <h5><a href="#">فرع الأردن</a></h5>
-                                                <span>مديرة : محمد جمال علي</span>
+                                                <h5><a href="#"><strong>فرع الأردن</strong></a></h5>
+                                                <span>مدير : محمد جمال علي</span>
                                                 <p>24 شارع فهد الوسري - العبيكان الدولي </p>
                                             </div>                              
                                         </div>
@@ -108,8 +108,8 @@
                                                 <a href="#"><img src="extra-images/news-grid-thumb-1.png" alt=""></a>
                                             </figure>-->
                                             <div class="wm-author-text">
-                                                <h5><a href="#"> فرع السعودية   </a></h5>
-                                                <span>مديرة : تامر علي المهدي </span>
+                                                <h5><a href="#"><strong> فرع السعودية </strong>  </a></h5>
+                                                <span>مدير : تامر علي المهدي </span>
                                                 <p>14 شارع الدوحة - المنطقة الخامسة النسيم </p>
                                             </div>                              
                                         </div>

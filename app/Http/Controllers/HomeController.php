@@ -28,6 +28,9 @@ class HomeController extends Controller
     public function index()
     {
 
+
+        
+
        $courses=Course::limit(4)->get();
        $images=Image::limit(4)->get();
 

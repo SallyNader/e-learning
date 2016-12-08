@@ -9,6 +9,7 @@ use DB;
 use Auth;
 use App\User;
 use App\Video;
+use App\Article;
 class CoursesController extends Controller
 {
     /**
@@ -146,7 +147,11 @@ $syllabus=explode(",", $sy);
 $ce=$course->certificates;
 
 $certificates=explode(',', $ce);
-    return view('courses.coursedetail',compact('course','syllabus','certificates','lastID','firstID','Boolean','accepted','videos','student','sessions'));
+$articles=Article::limit(3)->get();
+
+
+$relatedCourses=Course::where('c_id','<>',$id)->where('category_id',$course->category_id)->get();
+    return view('courses.coursedetail',compact('course','syllabus','certificates','lastID','firstID','Boolean','accepted','videos','student','sessions','articles','relatedCourses'));
 }
 else{
 
@@ -162,6 +167,8 @@ else{
 // $student=DB::table('course_user')->where('course_id',$checkedCourseID)->count();
 
 // $sessions=Video::where('course_id',$checkedCourseID)->count();
+
+   $articles=Article::limit(3)->get();
        $student=DB::table('course_user')->where('course_id',$id)->count();
 
 
@@ -200,8 +207,13 @@ $videos=Course::find($id)->videos->sortBy('episode');
 
  // if (!($id ==0 and $id >= $ID[$lastIndex])){
 
-    $course=Course::find($id);
 
+
+
+
+
+    $course=Course::find($id);
+$relatedCourses=Course::where('c_id','<>',$id)->where('category_id',$course->category_id)->get();
 
 $sy=$course->syllabus;
 $syllabus=explode(",", $sy);
@@ -209,7 +221,7 @@ $syllabus=explode(",", $sy);
 $ce=$course->certificates;
 
 $certificates=explode(',', $ce);
-    return view('courses.coursedetail',compact('course','syllabus','certificates','lastID','firstID','Boolean','videos','student','sessions'));
+    return view('courses.coursedetail',compact('course','syllabus','certificates','lastID','firstID','Boolean','videos','student','sessions','articles','relatedCourses'));
 }
 
     }

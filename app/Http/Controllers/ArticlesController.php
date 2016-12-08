@@ -53,7 +53,8 @@ class ArticlesController extends Controller
 
 Mail::send('template.email', ['name' => $name,'address'=>$address,'mobile'=>$mobile,'email'=>$email,'article'=>$article], function($message) use($name,$address,$mobile,$email,$article)
 {
-    $message->to('SALLY.NADER.AHMED@hotmail.com', 'sally')->subject('مقال منشر');
+    $message->from('articles@info.com','Publisher');
+    $message->to('SALLY.NADER.AHMED@hotmail.com', 'sally')->subject('مقال جديد');
 });
 
 

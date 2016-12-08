@@ -44,7 +44,7 @@
 										<a href="#"><img src="extra-images/students-setting-1.jpg" alt=""></a>
 									</figure>
 									<div class="wm-student-nav-text">
-										<h6>{{Auth::user()->name}}</h6>
+										<h6><strong>{{Auth::user()->name}}</strong></h6>
 										<a href="#">لتحميل صورة جديدة</a>
 									</div>
 									<ul>

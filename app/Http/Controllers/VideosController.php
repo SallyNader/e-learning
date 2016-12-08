@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Video;
 use App\Course;
 use DB;
+use App\Article;
 class VideosController extends Controller
 {
     /**
@@ -78,8 +79,9 @@ foreach ($course as $key => $value) {
   // $ce=$course->certificates;
 
    $certificates=explode(',', $ce);
+   $articles=Article::limit(3)->get();
 
-       return view('videos.session',compact('video','syllabus','certificates','course','otherVideos','first','last','sessions','student'));
+       return view('videos.session',compact('video','syllabus','certificates','course','otherVideos','first','last','sessions','student','articles'));
 
        
 
@@ -100,15 +102,19 @@ foreach ($course as $key => $value) {
 
 
 
-$student=DB::table('course_user')->where('course_id',$video->course_id)->count();
 
-$sessions=Video::where('course_id',$video->course_id)->count();
+
 
 
 
 
 
         $video=Video::where('course_id',$id)->where('episode',$episode-1)->first();
+
+
+$sessions=Video::where('course_id',$video->course_id)->count();
+
+        $student=DB::table('course_user')->where('course_id',$video->course_id)->count();
 
   $vid=$video->v_id;
 
@@ -141,8 +147,8 @@ foreach ($course as $key => $value) {
   // $ce=$course->certificates;
 
    $certificates=explode(',', $ce);
-
-       return view('videos.session',compact('video','syllabus','certificates','course','otherVideos','first','last','sessions','student'));
+ $articles=Article::limit(3)->get();
+       return view('videos.session',compact('video','syllabus','certificates','course','otherVideos','first','last','sessions','student','articles'));
 
        
 
@@ -240,7 +246,7 @@ return redirect('video');
     {
        
 
-
+$articles=Article::limit(3)->get();
        $video=Video::find($id);
        $courseID=$video->course_id;
 
@@ -281,7 +287,7 @@ foreach ($course as $key => $value) {
 
    $certificates=explode(',', $ce);
 
-       return view('videos.session',compact('video','syllabus','certificates','course','otherVideos','first','last','sessions','student'));
+       return view('videos.session',compact('video','syllabus','certificates','course','otherVideos','first','last','sessions','student','articles'));
 
     }
 

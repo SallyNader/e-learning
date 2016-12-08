@@ -69,7 +69,7 @@
                                     @endunless                                </ul>
                             </div>
                             <div class="widget widget_check-box">
-                                <h5>Search By Price</h5>
+                             <!--   <h5>Search By Price</h5>
                                 <div class="wm-range-slider">
                                     <div id="slider-range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
                                         <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 60%;"></div>
@@ -80,9 +80,11 @@
                                           <input id="amount" type="text" readonly="" value="$59">
                                           <input type="submit" value="Clear Filters">
                                     </form>
-                                </div>
+                                </div>-->
                             </div>
                             <div class="widget widget_check-box">
+
+                            <!--
                                     <h5>Search By Availability</h5>
                                 <ul>    
                                     <li>
@@ -113,9 +115,11 @@
                                             Arhived
                                         </label>
                                     </li>
-                                </ul>
+                                </ul>-->
                             </div>
                             <div class="widget widget_check-box">
+
+                            <!--
                                     <h5>Search By Level</h5>
                                 <ul>
                                     <li>
@@ -154,10 +158,10 @@
                                             <span class="rating-box" style="width:100%"></span>
                                         </div>
                                     </li>
-                                </ul>
+                                </ul>-->
                             </div>
                             <div class="widget widget_check-box widget_scroll-box">
-                                    <h5>Search By Language</h5>
+                                  <!--  <h5>Search By Language</h5>
                                 <ul>    
                                     <li>
                                         <input id="land1" type="checkbox">
@@ -250,10 +254,10 @@
                                             Arabic / Egyptian Spoken
                                         </label>
                                     </li>
-                                </ul>
+                                </ul>-->
                             </div>
                             <div class="widget widget_check-box">
-                                    <h5>Search By Duration</h5>
+                                  <!--  <h5>Search By Duration</h5>
                                 <ul>    
                                     <li>
                                         <input id="duration1" type="checkbox">
@@ -283,7 +287,7 @@
                                             2 hrs - 3hrs
                                         </label>
                                     </li>
-                                </ul>
+                                </ul>-->
                             </div>
                         </aside>
                         
@@ -332,13 +336,13 @@
                             </div>
                             <div class="wm-pagination">
                                 <ul>
-                                    <li><a href="#" aria-label="Previous"> <i class="wmicon-arrows4"></i> Previous</a></li>
+                                    <li><a href="#" aria-label="Previous"> <i class="wmicon-arrows4"></i> السابق</a></li>
                                     <li class="active"><a href="#">1</a></li>
                                     <li><a href="#">2</a></li>
                                     <li><a href="#">3</a></li>
                                     <li>...</li>
                                     <li><a href="#">18</a></li>
-                                    <li><a href="#" aria-label="Next"> <i class="wmicon-arrows4"></i> Next</a></li>
+                                    <li><a href="#" aria-label="Next"> <i class="wmicon-arrows4"></i>التالي</a></li>
                                 </ul>
                             </div>
                         </div>
