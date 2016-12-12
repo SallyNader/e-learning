@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wm-mini-title">
-                            <h1>دورات فرع {{$offlines->branch}}</h1> 
+                            <h1>دورات الفرع </h1> 
                         </div>
                        
                     </div>
@@ -61,7 +61,7 @@
                                         
                                         <label for="type13">
                                             <span></span>
-                                        <a href=""> {{$c->ca_name}}</a>   
+                                        <a href="{{url('category/offline/'.$c->ca_id)}}"> {{$c->ca_name}}</a>   
                                         </label>
                                     </li>
 
@@ -299,10 +299,10 @@
                                 @foreach($offlines as $c)
                                     <li class="col-md-12">
                                         <div class="wm-courses-popular-wrap">
-                                            <figure> <a href="{{route('course.show',$c->c_id)}}"><img src="{{$c->image}}" alt=""> <span class="wm-popular-hover"> <small>تفاصيل الدورة</small> </span> </a>
+                                            <figure> <a href="{{route('offline.show',$c->c_id)}}"><img src="../../{{$c->image}}" alt=""> <span class="wm-popular-hover"> <small>تفاصيل الدورة</small> </span> </a>
                                                 <figcaption>
                                                    @unless(empty($c->teacher))
-                                                    <img style="width: 67px;height: 65px" src="extra-images/{{$c->teacher->path}}" alt="">
+                                                    <img style="width: 67px;height: 65px" src="../../extra-images/{{$c->teacher->profile_image}}" alt="">
                                                     @endunless
 
                                                     @unless(empty($c->teacher))

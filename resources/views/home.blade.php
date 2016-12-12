@@ -390,7 +390,7 @@
 
                                         <div class="wm-box-service-wrap wm-bgcolor">
                                             <i class="wmicon-suitcase"></i>
-                                            <h6><a href="{{route('offline.show',$f->c_id)}}">{{$f->branch}}</a></h6>
+                                            <h6><a href="{{url('branch/'.$f->branch.'/test')}}">{{$f->branch}}</a></h6>
                                         </div>
                                     </li>
                                     @endforeach
@@ -810,8 +810,8 @@
                               <div class="tab-content">
                                 <div class="tab-pane active" id="home">
                                     <div class="row" >
-                                        <div class="col-md-4"> <div class="wm-map"> <div id="map"></div> </div> </div>
-                                        <div class="col-md-8" >
+                                        
+                                        <div class="col-md-8" style="margin-left:170px" >
                                                                <div class="wm-contact-form">
                                                 <span>أرسل مقالك و سيتم نشره</span>
                                                 <form style="text-align: right;" action="{{route('article.store')}}" method="POST"  >

@@ -69,7 +69,13 @@ class CategoriesController extends Controller
       $categories=Category::all();
       return view('courses.listcategory',compact('category','categories'));
     }
-
+public function showOffline($id)
+    {
+      
+      $category=Category::find($id);
+      $categories=Category::all();
+      return view('courses.listcategoryoffline',compact('category','categories'));
+    }
     /**
      * Show the form for editing the specified resource.
      *

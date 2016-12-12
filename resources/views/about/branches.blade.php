@@ -70,7 +70,8 @@
                                                 <h5><a href="#">   <strong> فرع تونس </strong>  </a></h5>
                                                 <span>مدير : أحمد محمد خالد </span>
                                                 <p>22-شارع أحمد-شارع تونس</p>
-                                            </div>                              
+                                            </div> 
+                                            <div class="col-md-4" style="margin-left:230px" > <div class="wm-map" > <div id="map" style="width:190%;height:300px"></div> </div> </div>                             
                                         </div>
                                     </li>
                                     <li>
@@ -82,7 +83,8 @@
                                                 <h5><a href="#"> <strong>فرع القاهرة</strong>    </a></h5>
                                                 <span>مديرة : سارة أحمد علي</span>
                                                 <p>22 شارع محمود حسن - الميرغني مصر الجديدة </p>
-                                            </div>                              
+                                            </div> 
+                                             <div class="col-md-4" style="margin-left:230px" > <div class="wm-map" > <div id="map" style="width:190%;height:300px"></div> </div> </div>                                                          
                                         </div>
                                     </li>
 
@@ -95,7 +97,8 @@
                                                 <h5><a href="#"><strong>فرع الأردن</strong></a></h5>
                                                 <span>مدير : محمد جمال علي</span>
                                                 <p>24 شارع فهد الوسري - العبيكان الدولي </p>
-                                            </div>                              
+                                            </div>  
+                                             <div class="col-md-4" style="margin-left:230px" > <div class="wm-map" > <div id="map" style="width:190%;height:300px"></div> </div> </div>                                                         
                                         </div>
                                     </li>
 
@@ -111,7 +114,8 @@
                                                 <h5><a href="#"><strong> فرع السعودية </strong>  </a></h5>
                                                 <span>مدير : تامر علي المهدي </span>
                                                 <p>14 شارع الدوحة - المنطقة الخامسة النسيم </p>
-                                            </div>                              
+                                            </div>   
+                                             <div class="col-md-4" style="margin-left:230px" > <div class="wm-map" > <div id="map" style="width:190%;height:300px"></div> </div> </div>                                                        
                                         </div>
                                     </li>
                                 </ul>                       

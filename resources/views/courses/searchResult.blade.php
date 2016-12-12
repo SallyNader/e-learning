@@ -38,7 +38,7 @@
 
                           
                                 <ul class="tabs-nav" role="tablist">
-                                    <li role="presentation" class="active"><a href="#day1" aria-controls="day1" role="tab" data-toggle="tab">دورات الفرع</a></li>
+                                    <li role="presentation" class="active"><a href="#day1" aria-controls="day1" role="tab" data-toggle="tab">نتائج البحث</a></li>
                                     <li role="presentation"><a href="#day2" aria-controls="day2" role="tab" data-toggle="tab">نتائج ذات صلة</a></li>
                                     <!--<li role="presentation"><a href="#day3" aria-controls="day3" role="tab" data-toggle="tab">Day3</a></li>-->
                                 </ul>
@@ -54,7 +54,7 @@
                                             <li role="presentation"><a href="#halld" aria-controls="halld" role="tab" data-toggle="tab">Hall d</a></li>-->
                                         </ul>
                                         <div role="tabpanel" class="tab-lesson active" id="halla">
-                                        @if(!empty($getCourse))
+                                        @if(count($getCourse)>0)
                                 @foreach($getCourse as $c)
                                             <div class="wm-lesson-list">
                                                 <figure><img src="extra-images/{{$c->teacher->profile_image}}" alt="">
@@ -64,14 +64,33 @@
                                                     </figcaption>
                                                 </figure>
                                                 <div class="wm-lesson-text">
-                                                    <h2><a href="#">{{$c->c_name}}</a></h2>
+                                                    <h2><a href="{{route('offline.show',$c->c_id)}}">{{$c->c_name}}</a></h2>
                                                     <time datetime="2008-02-14 20:00"><i class="fa fa-clock-o"></i> {{$c->startClock}} - {{$c->endClock}}</time>
                                                     <p>{{$c->disc}}</p>
                                                     <span><i class="fa fa-bullhorn"></i> {{$c->branch}}</span>
                                                 </div>
                                             </div>
                                               @endforeach
-                                      @endif
+
+
+                                             @else
+
+
+                                              <div class="wm-lesson-list">
+                                                <figure><img src="extra-images/404-image.jpg" alt="">
+                                                    <figcaption>
+                                                        <a href="#"></a>
+                                                        <span></span>
+                                                    </figcaption>
+                                                </figure>
+                                                <div class="wm-lesson-text">
+                                                    <h2><a href="">لا يوجد نتائج</a></h2>
+                                                    <time datetime="2008-02-14 20:00"><i class="fa fa-clock-o"></i> </time>
+                                                    <p></p>
+                                                    <span><i class="fa fa-bullhorn"></i> </span>
+                                                </div>
+                                            </div>
+                                    @endif
                                 
                                         </div>
                                         <div role="tabpanel" class="tab-lesson" id="hallb">
@@ -120,7 +139,7 @@
                                         <div role="tabpanel" class="tab-lesson active" id="hall1">  
                                     
                                      
-                                         @unless(empty($related))
+                                         @if(count($related)>0)
 @foreach($related as $r)
                                             <div class="wm-lesson-list">
                                                 <figure><img src="extra-images/{{$r->teacher->profile_image}}" alt="">
@@ -130,14 +149,33 @@
                                                     </figcaption>
                                                 </figure>
                                                 <div class="wm-lesson-text">
-                                                    <h2><a href="#">{{$r->c_name}}</a></h2>
+                                                    <h2><a href="{{route('offline.show',$r->c_id)}}">{{$r->c_name}}</a></h2>
                                                     <time datetime="2008-02-14 20:00"><i class="fa fa-clock-o"></i> {{$r->startClock}} - {{$r->endClock}}</time>
                                                     <p>{{$r->disc}}</p>
                                                     <span><i class="fa fa-bullhorn"></i> {{$r->branch}}</span>
                                                 </div>
                                             </div>
 @endforeach
-                                    @endunless
+
+
+ @else
+
+
+                                              <div class="wm-lesson-list">
+                                                <figure><img src="extra-images/404-image.jpg" alt="">
+                                                    <figcaption>
+                                                        <a href="#"></a>
+                                                        <span></span>
+                                                    </figcaption>
+                                                </figure>
+                                                <div class="wm-lesson-text">
+                                                    <h2><a href="">لا يوجد نتائج</a></h2>
+                                                    <time datetime="2008-02-14 20:00"><i class="fa fa-clock-o"></i> </time>
+                                                    <p></p>
+                                                    <span><i class="fa fa-bullhorn"></i> </span>
+                                                </div>
+                                            </div>
+                                    @endif
 
 
                                         </div>

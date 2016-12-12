@@ -17,13 +17,12 @@ use App\Offline;
 |
 */
 
-Route::get('sss',function(){
+//category of offline courses
 
+Route::get('category/offline/{id}','CategoriesController@showOffline');
 
-
-	return view('courses.offlinesDetails');
-});
-Route::get('tryy',"VideosController@tryy");
+//offline courses in certain branch
+Route::get('branch/{branch}/test',"OfflinesController@inBranch");
 
 //saerch for offline courses
 
@@ -58,7 +57,7 @@ $articles=Article::limit(3)->get();
     return view('home',compact('images','courses','category','cat','articles','offlines','offlineCourse'));
 });
 
-Route::resource('offline','OfflinesController');
+Route::resource('offline','OfflinesController', ['except' => ['index']]);
 
 Route::resource('album','AlbumsController');
 Route::resource('course','CoursesController');

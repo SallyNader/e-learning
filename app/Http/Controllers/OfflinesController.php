@@ -15,7 +15,9 @@ class OfflinesController extends Controller
      */
     public function index()
     {
-        return "tfo";
+     
+      // $categories=Category::all();
+      // return view('courses.listcategoryoffline',compact('categories'));
     }
 
     /**
@@ -49,7 +51,15 @@ class OfflinesController extends Controller
 
 
 
+public function inBranch($branch){
 
+    $offlines=Offline::where('branch',$branch)->get();
+    $categories=Category::all();
+
+    return view('courses.offlinesinBranch',compact('offlines','categories'));
+
+
+}
 
 public function search(Request $request){
 
@@ -72,6 +82,15 @@ if(count($getCourse)>0)
                       ->orWhere('c_name',$course);
             })
             ->get();
+        }elseif(!count($getCourse)>0){
+
+
+            $related=Offline::where('branch',$branch)->orWhere('c_name',$course)->get();
+
+
+
+
+
         }
 
 
