@@ -16,17 +16,17 @@ class VideosController extends Controller
      */
 
 
-public function tryy(){
+// public function tryy(){
 
 
 
-    $all=Video::where('course_id',1)->get();
+//     $all=Video::where('course_id',1)->get();
 
-    $first=$all[0]->episode;
-    $last=$all->max('episode');
+//     $first=$all[0]->episode;
+//     $last=$all->max('episode');
 
-    return $first."   ".$last;
-}
+//     return $first."   ".$last;
+// }
 
 
     public function next($id,$episode){

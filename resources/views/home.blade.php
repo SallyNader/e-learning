@@ -243,7 +243,14 @@
 
 
 
+<style type="text/css">
+    
 
+    .font{
+    
+    font-size:110%;
+}
+</style>
 
 
 
@@ -259,8 +266,15 @@
                     <div class="row">
                         
                         <div class="col-md-12">
-                            <div class="wm-fancy-title"> <h2>أشهر <span>الدورات</span></h2> </div>
-                            <div class="wm-courses wm-courses-popular">
+                            <div class="wm-fancy-title"><a href="{{route('course.index')}}"><h2>أشهر <span>الدورات</span> الاون لاين</h2></a>
+
+<p></p>
+
+<h3 class="font"><strong>لدينا العديد من الدورات المناسبة لجميع الأعضاء دوراتنل تؤهلك لسوق العمل فهي تشمل جميع المنهج المخصصة للعمل</strong>
+
+<a href="{{route('course.index')}}" style="color:#b37400"><strong>لمشاهدة دوراتنا </strong>  لمشاهدة دوراتنا الاون لاين</a></h3>
+                              </div>
+                            <div class="wm-courses wm-courses-popular" style="font-size: 110% ">
                                 <ul class="row">
                                     
                                     @unless(empty($courses))
@@ -307,7 +321,93 @@
 
 
 
+    <!--// Main Section \\-->
+            <div class="wm-main-section">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-md-4">
+                            <div class="wm-search-course" style="text-align: center;">
+                                <h3 class="wm-short-title wm-color">أبحث عن دورتك في فروعنا</h3>
+                                <p><strong>: أدخل أسم الدورة و أسم الفرع الذي تبحث عنه</strong>  </p>
+                               
+                                    <ul><!--
+                                        <li>
+                                            <div class="wm-radio">
+                                                <div class="wm-radio-partition">
+                                                    <input id="male" type="radio" name="gender" value="male">
+                                                    <label for="male">by ID</label>
+                                                </div>
+                                                <div class="wm-radio-partition">
+                                                    <input id="female" type="radio" name="gender" value="female">
+                                                    <label for="female">by name</label>
+                                                </div>
+                                            </div>
+                                        </li>-->
+                                        <li> 
 
+<div class="wm-apply-select"> 
+<form action="{{url('search')}}">
+
+
+                                                  @unless(empty($offlines))
+                                                <select name="branch" >
+
+
+                                                @foreach($offlines as $f)
+                                                    <option >{{$f->branch}}</option>
+                                                    @endforeach
+                                                </select>
+
+                                                @endunless
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="wm-apply-select">
+                                            @unless(empty($offlineCourse))
+                                                <select name="course">
+                                                @foreach($offlineCourse as $c)
+                                                    <option  value="{{$c->c_name}}" >{{$c->c_name}}</option>
+                                                   
+                                                   @endforeach
+                                                </select>
+
+                                                @endunless
+                                            </div>
+                                        </li>
+                                        <li> <input type="submit" value="بحت"> </li>
+                                    </ul>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="wm-service wm-box-service">
+                                <ul>
+                                @unless(empty($offlines))
+
+                                @foreach($offlines as $f)
+                                    <li>
+
+                                        <div class="wm-box-service-wrap wm-bgcolor">
+                                            <i class="wmicon-suitcase"></i>
+                                            <h6><a href="{{route('offline.show',$f->c_id)}}">{{$f->branch}}</a></h6>
+                                        </div>
+                                    </li>
+                                    @endforeach
+                                    
+                                    @endunless
+                                   
+                                   
+                                    
+                                   
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--// Main Section \\-->
 
 
 
@@ -348,7 +448,7 @@
                                                     <h6 style="text-align: center;"><a href="#" class="wm-color">{{$c->ca_name}}</a></h6>
                                                     <time datetime="2008-02-14 20:00" style="text-align: center;">{{ date('F d, Y', strtotime($c->created_at)) }}</time>
                                                     <p></p>
-                                                    <a href="{{route('category.show',$c->ca_id)}}" class="wm-banner-btn" style="text-align: center; margin-left: 60px">دورات القسم</a>
+                                                    <a href="{{route('category.index')}}" class="wm-banner-btn" style="text-align: center; margin-left: 60px">دورات القسم</a>
                                                 </div>
                                             </li>
                                         </ul>

@@ -3,6 +3,8 @@ use App\Image;
 use App\Course;
 use App\Category;
 use App\Article;
+use App\Offline;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +16,19 @@ use App\Article;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('sss',function(){
+
+
+
+	return view('courses.offlinesDetails');
+});
 Route::get('tryy',"VideosController@tryy");
 
+//saerch for offline courses
 
+
+Route::get('search','OfflinesController@search');
 //next video
 
 
@@ -33,14 +45,20 @@ Route::get('pervious/{id}/{episode}',"VideosController@pervious");
 Route::get('o','CoursesController@o');
 
 Route::get('/',function(){
+
+
+	$offlines=Offline::distinct()->select('branch')->get();
+	$offlineCourse=Offline::all();
 $courses=Course::limit(4)->get();
  $images=Image::limit(4)->get();
 
  $category=Category::limit(2)->get();
 $articles=Article::limit(3)->get();
  $cat=Category::all();
-    return view('home',compact('images','courses','category','cat','articles'));
+    return view('home',compact('images','courses','category','cat','articles','offlines','offlineCourse'));
 });
+
+Route::resource('offline','OfflinesController');
 
 Route::resource('album','AlbumsController');
 Route::resource('course','CoursesController');

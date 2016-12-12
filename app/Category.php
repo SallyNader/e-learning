@@ -16,4 +16,11 @@ class Category extends Model
 
   	return $this->hasMany('App\Course');
   }
+
+
+  public function offlines(){
+
+
+  	return $this->hasMany('App\Offline');
+  }
 }

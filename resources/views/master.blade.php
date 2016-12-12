@@ -55,12 +55,13 @@
                                 <li>
                                 <form action="{{url('logout')}}" method="POST">
                                 {!! csrf_field() !!}
-                                    <input type="submit" name="" value="لتسجيل الخروج" style="background-color: #00004d;color: white "> 
+                                    <input type="submit" name="" value="لتسجيل الخروج" style="background-color: #2d2d53;color: white;border-color:  #2d2d53;font-size: 120%  "> 
 
                                     </form>
                                 </li>
+                                <li style="color: white">|</li>
                                  <li>
-                                    <a href="{{url('profile')}}">{{Auth::user()->name}}</a>
+                                    <a href="{{url('profile')}}" style="font-size: 120%">{{Auth::user()->name}}</a>
                                 </li>
                                
                             </ul>
@@ -100,15 +101,15 @@
                                     <span class="icon-bar"></span>
                                   </button>
                                 </div>
-                                <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                                  <ul class="nav navbar-nav">
-                                    <li class="active"><a href="{{url('branches')}}">فروعنا</a>
+                                <div class="collapse navbar-collapse" id="navbar-collapse-1" >
+                                  <ul class="nav navbar-nav" >
+                                    <li class="active"><a href="{{url('branches')}}" style="font-size: 110%">فروعنا</a>
                                         
                                     </li>
 
-                                    <li style="text-align: right;"><a href="#">الدوبلومات و الدورات</a>
+                                    <li style="text-align: right;"><a href="#" style="font-size: 110%" >الدوبلومات و الدورات</a>
                                         <ul class="wm-dropdown-menu">
-                                            <li><a href="{{route('course.index')}}">جميع الدورات</a></li>
+                                            <li><a href="{{route('course.index')}}" style="font-size: 110%">جميع الدورات</a></li>
 
 
                                            
@@ -116,16 +117,16 @@
                                             
                                         </ul>
                                     </li>
-                                    <li><a href="#">عن المركز</a>
+                                    <li><a href="#" style="font-size: 110%">عن المركز</a>
                                         <ul class="wm-dropdown-menu">
-                                            <li><a href="{{url('agraya')}}">اللائحة اللأجرائية</a></li>
-                                            <li><a href="{{url('momyzat')}}">مميزات العضوية</a></li>
+                                            <li><a href="{{url('agraya')}}" style="font-size: 110%">اللائحة اللأجرائية</a></li>
+                                            <li><a href="{{url('momyzat')}}" style="font-size: 110%">مميزات العضوية</a></li>
                                         </ul>
                                     </li>
-                                    <li ><a href="#">العضويات الدولية</a>
+                                    <li ><a href="#" style="font-size: 110%">العضويات الدولية</a>
                                         
                                     </li>
-                                    <li class="wm-megamenu-li"><a href="{{route('album.index')}}">ألبوم صور المركز</a>
+                                    <li class="wm-megamenu-li"><a href="{{route('album.index')}}" style="font-size: 110%">ألبوم صور المركز</a>
 <!--
 
                                         <ul class="wm-megamenu">
@@ -170,7 +171,7 @@
                                             </li>
                                         </ul>-->
                                     </li>
-                                    <li><a href="{{route('teacher.index')}}">قوائم المحكمين و الخبراء</a>
+                                    <li><a href="{{route('teacher.index')}}" style="font-size: 110%">قوائم المحكمين و الخبراء</a>
                                           <!--<ul class="wm-dropdown-menu">
                                             <li><a href="shop-grid.html">Shop Grid</a></li>
                                             <li><a href="shop-list.html">Shop List</a></li>
@@ -178,7 +179,7 @@
                                         </ul>
                                         -->
                                     </li>
-                                    <li class="wm-megamenu-li"><a href="{{url('/')}}">الرئيسية  </a>
+                                    <li class="wm-megamenu-li"><a href="{{url('/')}}" style="font-size: 110%">الرئيسية  </a>
   <!--
                                         <ul class="wm-megamenu">
                                             <li class="row">
