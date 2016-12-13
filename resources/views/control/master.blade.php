@@ -79,9 +79,12 @@
                                         
                                     </li>
 
-                                    <li><a href="{{route('coursecontrol.index')}}">الدوبلومات و الدورات</a>
+                                    <li><a href="{{route('coursecontrol.index')}}">الدورات الأون لين</a>
                                         <ul class="wm-dropdown-menu">
                                             <li><a href="{{route('video.index')}}">فديوهات الدورات</a></li>
+
+
+                                             <li><a href="{{route('offlinecontrol.index')}}">دورات في الفرع</a></li>
                                             
                                         </ul>
                                     </li>

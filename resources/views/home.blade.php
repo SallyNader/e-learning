@@ -6,7 +6,17 @@
 
 
 
+<style type="text/css">
+    
+.c{
 
+
+
+    font-size:110%;
+}
+
+
+</style>
 
 
 
@@ -20,16 +30,16 @@
                     <div class="wm-banner-one-for-layer"> <img src="{!!asset('extra-images/banner-view1-3.jpg')!!}" alt=""> </div>
                     <div class="wm-banner-one-for-layer"> <img src="{!!asset('extra-images/banner-view1-1.jpg')!!}" alt=""> </div>
                 </div>
-                <div class="wm-banner-one-nav">
-                    <div class="wm-banner-one-nav-layer">
-                        <h1>شخصية الشهر : أحمد عدوي</h1>
-                        <p>تقديم الدعم والاستشارات للسادة مستشاري التحكيم والسادة المحكمين وتقديم الاستشارة القانونية بشكل عام - و تباشر اللجنة مهامها من تعيين محكمين .</p>
-                        <a href="#" class="wm-banner-btn">لمزيد من التفاصيل</a>
+                <div class="wm-banner-one-nav c" style="text-align: left;">
+                    <div class="wm-banner-one-nav-layer c" style="text-align: left;">
+                        <h1>مركز القاهرة الإقليمي للتدريب و التحكيم</h1>
+                        <p>تقديم الدعم والاستشارات للسادة مستشاري التحكيم والسادة المحكمين وتقديم الاستشارة القانونية بشكل عام - و تباشر اللجنة مهامها من تعيين محكمين تقديم الدعم والاستشارات للسادة مستشاري التحكيم والسادة المحكمين وتقديم الاستشارة القانونية بشكل عام - و تباشر اللجنة مهامها من تعيين محكمين</p>
+                       
                         
                     </div>
-                    <div class="wm-banner-one-nav-layer">
-                        <h1>لماذا تختارنا</h1>
-                        <p>إن واجب المحكم هو إتباع قواعد العدالة والإنصاف الطبيعية، بينما يتبع القاضي نص القانون، ومن ثم فإن التحكيم استحدث أساساً لضمان تحقيق أكبر قدر من العدالة والإنصاف". (أرسطو) 
+                    <div class="wm-banner-one-nav-layer c" style="text-align: left;">
+                        <h1 style="text-align: left;">شخصية الشهر : أحمد عدوي</h1>
+                        <p style="text-align: left;"  >إن واجب المحكم هو إتباع قواعد العدالة والإنصاف الطبيعية، بينما يتبع القاضي نص القانون، ومن ثم فإن التحكيم استحدث أساساً لضمان تحقيق أكبر قدر من العدالة والإنصاف". (أرسطو) 
 في القول المقتطف أعلاه أوضح أرسطو الدور المتميز الذي يلعبه التحكيم في تحقيق العدالة. وبصفته سلطة عامة فان التحكيم يملأ الفراغات التي تنتج عن تطبيق التشريعات والنصوص، خصوصا تلك المتصلة بالوقت والنفقات. ومع ارتفاع تكلفة الدعاوى المدنية أمام المحاكم، أخذت القطاعات التجارية تلجأ أكثر فأكثر نحو تبني استراتيجيات متنوعة لتسوية نزاعاتها. وبوصفه وسيلة سريعة واقتصادية ينضمها القانون أصبح التحكيم بديلاً مفضلا لحل النزاعات التجارية.</p>
                         <a href="#" class="wm-banner-btn">لمزيد من التفاصيل</a>
                     </div>
@@ -426,11 +436,11 @@
                                 <div class="col-md-4">
                                     <div class="wm-event-latest-slider">
                                         <div class="wm-event-latest-layer">
-                                            <h6 class="wm-color">دوراتنل تؤهلك لسوق العمل فهي تشمل جميع المنهج المخصصة للعمل</h6>
+                                            <h6 class="wm-color c">دوراتنل تؤهلك لسوق العمل فهي تشمل جميع المنهج المخصصة للعمل</h6>
                                            <!-- <a href="#" class="wm-banner-btn">about us</a>-->
                                         </div>
                                         <div class="wm-event-latest-layer">
-                                            <h6 class="wm-color">نحن نحرص في دورتنا على أن يكون الطالب قد أستفاد بشكل كبير و فهم الدرس</h6>
+                                            <h6 class="wm-color c">نحن نحرص في دورتنا على أن يكون الطالب قد أستفاد بشكل كبير و فهم الدرس</h6>
                                          <!--   <a href="#" class="wm-banner-btn">about us</a>-->
                                         </div>
                                     </div>
@@ -448,7 +458,7 @@
                                                     <h6 style="text-align: center;"><a href="#" class="wm-color">{{$c->ca_name}}</a></h6>
                                                     <time datetime="2008-02-14 20:00" style="text-align: center;">{{ date('F d, Y', strtotime($c->created_at)) }}</time>
                                                     <p></p>
-                                                    <a href="{{route('category.index')}}" class="wm-banner-btn" style="text-align: center; margin-left: 60px">دورات القسم</a>
+                                                    <a href="{{route('category.show',$c->ca_id)}}" class="wm-banner-btn" style="text-align: center; margin-left: 60px">دورات القسم</a>
                                                 </div>
                                             </li>
                                         </ul>

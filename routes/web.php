@@ -124,3 +124,5 @@ Route::resource('articlecontrol','ArticlescontrolController');
 Route::resource('typecontrol','TypscontrolController');
 
 Route::resource('albumcontrol','AlbumscontrolController');
+
+Route::resource('offlinecontrol','OfflinescontrolController');

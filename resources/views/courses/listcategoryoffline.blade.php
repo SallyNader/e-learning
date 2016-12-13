@@ -43,7 +43,7 @@
                                         
                                         <label for="type1">
                                             <span></span>
-                                       <a href="{{route('offline.index')}}"> جميع الكورسات</a>   
+                                       <a href=""> جميع الكورسات</a>   
                                         </label>
                                     </li>
                                    
@@ -91,7 +91,7 @@
                                 @foreach($category->offlines as $c)
                                     <li class="col-md-12">
                                         <div class="wm-courses-popular-wrap">
-                                            <figure> <a href="{{route('course.show',$c->c_id)}}"><img src="../../{{$c->image}}" alt=""> <span class="wm-popular-hover"> <small>تفاصيل الدورة</small> </span> </a>
+                                            <figure> <a href="{{route('offline.show',$c->c_id)}}"><img src="../../{{$c->image}}" alt=""> <span class="wm-popular-hover"> <small>تفاصيل الدورة</small> </span> </a>
                                                 <figcaption>
 
                                                     <img style="width: 67px;height: 65px" src="../../extra-images/{{$c->teacher->path}}" alt="">

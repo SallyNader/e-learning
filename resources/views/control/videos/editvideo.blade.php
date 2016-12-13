@@ -81,6 +81,18 @@
 
 
 <p style="color:blue">{{$errors->first('duration')}}</p>
+											</li>
+
+
+											<li>
+<label>رقم الحلقة </label>
+
+
+
+											<input name="episode" type="text" value="{{$video->episode}}" >
+
+
+<p style="color:blue">{{$errors->first('episode')}}</p>
 											</li>	
 
 

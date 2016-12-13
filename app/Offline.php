@@ -8,7 +8,7 @@ class Offline extends Model
 {
    protected $primaryKey="c_id";
 
-   protected $fillable=['category_id','certificates','c_name','disc','image','price','syllabus','teacher_id','branch'];
+   protected $fillable=['category_id','certificates','c_name','disc','image','price','syllabus','teacher_id','branch','startDate','startClock','endClock','branchTelephone'];
 
 
 

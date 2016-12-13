@@ -316,7 +316,7 @@
                                                 <p>{{$c->disc,0,90}}...</p>
                                               
                                         
-                                                <div class="wm-courses-price"> <span>${{$c->price}}</span> </div>
+                                                <div class="wm-courses-price"> <span>{{$c->branch}}</span> </div>
                                                
                                                <!-- <ul>
                                                     <li><a href="#" class="wm-color"><i class="wmicon-social7"></i> 342</a></li>

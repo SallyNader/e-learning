@@ -195,6 +195,7 @@ $this->validate($request,[
 'date'=>'required|date',
 'disc'=>'required',
 'file'=>'required',
+'episode'=>'required',
 
 
 
@@ -222,7 +223,8 @@ Video::create([
 'startDate'=>$request->get('date'),
 'v_disc'=>$request->get('disc'),
 'v_name'=>$request->get('name'),
-'v_path'=>'videos/'.$filename
+'v_path'=>'videos/'.$filename,
+'episode'=>$request->get('episode'),
 
 
 
@@ -330,6 +332,7 @@ $courseNameRelated=$course_name[0];
 'duration'=>'required',
 'date'=>'required|date',
 'disc'=>'required',
+'episode'=>'required',
 
 
 
@@ -383,6 +386,7 @@ $file=$request->file('file');
          $video->v_disc=$request->get('disc');
          $video->startDate=$request->get('date');
          $video->duration=$request->get('duration');
+         $video->episode=$request->get('episode');
          $video->save();
 
          return redirect('video');

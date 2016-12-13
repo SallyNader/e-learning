@@ -61,17 +61,60 @@
                                     <h2 style="text-align: right;"></h2>
                                 </div>  
                                 <ul>
+
+                                <style>
+      #map {
+        height: 200px;
+        width: 50%;
+        margin-left: 270px;
+         margin-bottom:  120px;
+       }
+
+
+
+
+       #map5 {
+        height: 200px;
+        width: 50%;
+       margin-left: 270px;
+         margin-bottom:  120px;
+       }
+ #map6 {
+        height: 200px;
+        width: 50%;
+       margin-left: 270px;
+         margin-bottom:  120px;
+       }
+
+
+       #map2 {
+        height:200px;
+        width: 50%;
+        margin-left: 270px;
+         margin-bottom:  120px;
+
+
+               }
+
+
+       #map3 {
+        height: 200px;
+        width: 50%;
+        margin-left: 290px;
+        padding-bottom: 40px
+       }
+    </style>  
                                     <li>
                                         <div class="wm-author-detail wm-courses-authorinfo">
 <!--<figure>
                                                 <a href="#"><img src="extra-images/author-blog-2.jpg" alt=""></a>
                                             </figure>-->
-                                            <div class="wm-author-text">
+                                            <div class="wm-author-text" style="">
                                                 <h5><a href="#">   <strong> فرع تونس </strong>  </a></h5>
                                                 <span>مدير : أحمد محمد خالد </span>
                                                 <p>22-شارع أحمد-شارع تونس</p>
                                             </div> 
-                                            <div class="col-md-4" style="margin-left:230px" > <div class="wm-map" > <div id="map" style="width:190%;height:300px"></div> </div> </div>                             
+                                                              
                                         </div>
                                     </li>
                                     <li>
@@ -81,24 +124,31 @@
                                             </figure>-->
                                             <div class="wm-author-text">
                                                 <h5><a href="#"> <strong>فرع القاهرة</strong>    </a></h5>
-                                                <span>مديرة : سارة أحمد علي</span>
+                                                <span</span>
                                                 <p>22 شارع محمود حسن - الميرغني مصر الجديدة </p>
                                             </div> 
-                                             <div class="col-md-4" style="margin-left:230px" > <div class="wm-map" > <div id="map" style="width:190%;height:300px"></div> </div> </div>                                                          
+
+
+
+                                            
+
+
+                                                      
                                         </div>
                                     </li>
 
                                     <li>
-                                        <div class="wm-author-detail wm-courses-authorinfo">
+                                        <div class="wm-author-detail wm-courses-authorinfo" style="">
                                            <!-- <figure>
                                                 <a href="#"><img src="extra-images/lesson-list2.jpg" alt=""></a>
                                             </figure>-->
-                                            <div class="wm-author-text">
+                                            <div class="wm-author-text" style="padding-right: 0px">
                                                 <h5><a href="#"><strong>فرع الأردن</strong></a></h5>
                                                 <span>مدير : محمد جمال علي</span>
                                                 <p>24 شارع فهد الوسري - العبيكان الدولي </p>
                                             </div>  
-                                             <div class="col-md-4" style="margin-left:230px" > <div class="wm-map" > <div id="map" style="width:190%;height:300px"></div> </div> </div>                                                         
+                                                 
+
                                         </div>
                                     </li>
 
@@ -114,8 +164,10 @@
                                                 <h5><a href="#"><strong> فرع السعودية </strong>  </a></h5>
                                                 <span>مدير : تامر علي المهدي </span>
                                                 <p>14 شارع الدوحة - المنطقة الخامسة النسيم </p>
-                                            </div>   
-                                             <div class="col-md-4" style="margin-left:230px" > <div class="wm-map" > <div id="map" style="width:190%;height:300px"></div> </div> </div>                                                        
+                                            </div> 
+
+
+                                                                                            
                                         </div>
                                     </li>
                                 </ul>                       

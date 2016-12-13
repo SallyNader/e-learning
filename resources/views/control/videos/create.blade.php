@@ -83,6 +83,21 @@
 											</li>	
 
 
+
+
+
+											<li>
+<label>رقم الحلقة </label>
+
+
+
+											<input name="episode" type="text" value="{{old('episode')}}" >
+
+
+<p style="color:blue">{{$errors->first('episode')}}</p>
+											</li>	
+
+
 <li>
 <label>تحميل الفيديو </label>
 
