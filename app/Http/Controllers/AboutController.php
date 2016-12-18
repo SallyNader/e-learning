@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Teacher;
 class AboutController extends Controller
 {
+	public function tahkem(){
+
+
+		return view('about.tahkem');
+	}
    
 
    public function agraya(){

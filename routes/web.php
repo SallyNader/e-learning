@@ -77,6 +77,7 @@ Route::resource('video','VideosController');
 Route::get('agraya','AboutController@agraya');
 Route::get('momyzat','AboutController@momyzat');
 Route::get('branches','AboutController@branches');
+Route::get('tahkem','AboutController@tahkem');
 
 
 Route::get('signup',function(){
