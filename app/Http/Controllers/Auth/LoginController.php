@@ -19,17 +19,17 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
-    protected $redirectPath="/home";
+    protected $redirectPath="/";
 
     protected $loginPath="/auth/login";
-   protected $redirectAfterLogout = "home";
+   protected $redirectAfterLogout = "/";
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.

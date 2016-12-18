@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mail;
 use App\Article;
+use Auth;
+use DB;
 class ArticlesController extends Controller
 {
     /**
@@ -12,6 +14,113 @@ class ArticlesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function  vote(Request $request){
+
+        $id=$request->get('id');
+        $article=Article::find($id);
+
+if(!empty($request->get('star1'))){
+
+    DB::table('article_user')->insert([
+
+'article_id'=>$article->a_id,
+'user_id'=>Auth::user()->id
+
+        ]);
+
+$article->vote++;
+$rate=$article->vote;
+
+
+$article->save();
+
+
+
+}
+
+if(!empty($request->get('star2'))){
+    DB::table('article_user')->insert([
+
+'article_id'=>$article->a_id,
+'user_id'=>Auth::user()->id
+
+        ]);
+
+$rate=$article->vote;
+$rate=$rate+2;
+
+$article->vote=$rate;
+
+
+$article->save();
+
+
+
+}
+
+if(!empty($request->get('star3'))){
+    DB::table('article_user')->insert([
+
+'article_id'=>$article->a_id,
+'user_id'=>Auth::user()->id
+
+        ]);
+
+$rate=$article->vote;
+$rate=$rate+3;
+
+$article->vote=$rate;
+
+
+$article->save();
+
+
+
+}
+if(!empty($request->get('star4'))){
+    DB::table('article_user')->insert([
+
+'article_id'=>$article->a_id,
+'user_id'=>Auth::user()->id
+
+        ]);
+
+$rate=$article->vote;
+$rate=$rate+4;
+
+$article->vote=$rate;
+
+
+$article->save();
+
+
+
+}
+if(!empty($request->get('star5'))){
+    DB::table('article_user')->insert([
+
+'article_id'=>$article->a_id,
+'user_id'=>Auth::user()->id
+
+        ]);
+
+$rate=$article->vote;
+$rate=$rate+5;
+
+$article->vote=$rate;
+
+
+$article->save();
+
+
+
+}
+return redirect()->back();
+        
+
+        
+    }
     public function index()
     {
         $articles=Article::all();
@@ -79,9 +188,18 @@ return redirect()->back();
 
         $article=Article::where('a_id',$id)->get();
 
+        if(Auth::check()){
+        $exist=DB::table('article_user')->where('article_id',$id)->where('user_id',Auth::user()->id)->get();
+        if(count($exist) > 0)
+            $boolean='true';
+        else
+            $boolean='false';
+
+    }
 
 
-        return view('articles.detail',compact('article'));
+
+        return view('articles.detail',compact('article','boolean'));
     }
 
     /**

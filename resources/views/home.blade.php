@@ -578,7 +578,7 @@
                 <div class="container">
                     <div class="row">
                         
-                        <div class="col-md-12"> <div class="wm-fancy-title"> <h2>لماذا يفضلنا <span>الطلاب</span></h2> </div> </div>
+                        <div class="col-md-12"> <div class="wm-fancy-title"> <h2>لماذا يفضلنا <span>المتدربون</span></h2> </div> </div>
                         <div class="col-md-6"> <video src="build/echo-hereweare.mp4" poster="build/echo-hereweare.jpg" controls="controls" preload="none"></video> </div>
                         <div class="col-md-6">
                             <div class="wm-recent-list-slider wm-recent-list-slider-color">
@@ -628,7 +628,7 @@
                     <div class="row">
                         
                         <div class="col-md-12">
-                            <div class="wm-fancy-title"> <h2>أراء  <span>الناس</span></h2> <p>لا تأخذ في كلمتنا لذلك، ونرى ما يقول عملائنا رهيبة</p> </div>
+                            <div class="wm-fancy-title"> <h2>أراء  <span>خبراء القانون</span></h2> <p>لا تأخذ في كلمتنا لذلك، ونرى ما يقول عملائنا رهيبة</p> </div>
                             <div class="wm-testimonial-slider">
                                 <div class="wm-testimonial-slider-wrap">
                                     <p>اخترت لهم لأنه أعطاني مرونة. كنت أعمل بدوام كامل في نفس الوقت كنت أدرس، لذلك أعطاني OU أن المرونة. أيضا والدي، وأنا الدنماركية المنشأ.</p>
@@ -744,6 +744,7 @@
                             <div class="wm-fancy-title"> <h2>أشهر<span>المقالات</span></h2> <p></p> </div>
                             <div class="wm-news wm-news-grid">
                                 <ul class="row">
+
                                    
                                     @unless(empty($articles))
 
@@ -760,13 +761,37 @@
                                             <ul class="wm-post-options">
                                                 <li>{{ date('F d, Y', strtotime($a->created_at)) }}
 </li>
-                                                
+                                                <li>
+
+
+
+
+
+
+
+
+                                                @if($a->vote >= 1 and $a->vote <= 10)
+                            <img src="{!!asset('extra-images/star1.png')!!}" style="width:130px;height: 30px;"> 
+                            @elseif($a->vote >= 11 and $a->vote<=20)
+                            <img src="{!!asset('extra-images/star2.png')!!}" style="width:130px;height: 30px;"> 
+                            @elseif($a->vote >= 21 and $a->vote <=40)
+                            <img src="{!!asset('extra-images/star3.png')!!}" style="width:130px;height: 30px;"> 
+                            @elseif($a->vote >=41 and $a->vote <= 60)
+                            <img src="{!!asset('extra-images/star4.png')!!}" style="width:130px;height: 30px;"> 
+                            @elseif($a->vote >= 61 )
+                           <img src="{!!asset('extra-images/star.png')!!}" style="width:130px;height: 30px;"> 
+                            @endif
+                                                                            
+                              
+                                                </li>
                                             </ul>
                                             <h5><a href="#" class="wm-color">{{$a->a_title}}</a></h5>
                                             <p>..{{substr($a->a_article,0,99)}}
 </p>
                                             <a class="wm-banner-btn" href="{{route('article.show',$a->a_id)}}">لقرأة المقال كاملا</a>
+
                                         </div>
+
                                     </li>
 
 

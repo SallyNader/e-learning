@@ -6851,7 +6851,7 @@ aside .widget {
     top: 4px;
 }
 .wm-ourcourses-left .rating-box:before {
-    content: "\f006 \f006 \f006 \f006 \f006";
+    content: "\f006 \f006 \f006";
     font-family: FontAwesome;
     font-size: 13px;
     left: 0px;

@@ -7054,7 +7054,7 @@ button.close {
 }
 .wm-rating:before, .rating-box:before {
   color: #ebebeb;
-  content: "\f111 \f111 \f111";
+  content: "\f111 \f111";
   font-family: FontAwesome;
   font-size: 11px;
   left: 0;
@@ -7063,7 +7063,7 @@ button.close {
   top: 0;
 }
 .rating-box:before {
-  content: "\f111 \f111 \f111";
+  content: "\f111 \f111";
   color: #b99663;
 }
 .rating-box {

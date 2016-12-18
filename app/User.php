@@ -33,4 +33,13 @@ class User extends Authenticatable
 
         return belongsToMany('App\Course',"course_user","user_id","course_id");
     }
+
+
+
+
+    public function article(){
+
+
+return $this->belongsToMany('App\User',"article_user","user_id","article_id");
+    }
 }

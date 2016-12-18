@@ -16,7 +16,10 @@ use App\Offline;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//vote articles
 
+
+Route::post('article/vote','ArticlesController@vote');
 //category of offline courses
 
 Route::get('category/offline/{id}','CategoriesController@showOffline');
