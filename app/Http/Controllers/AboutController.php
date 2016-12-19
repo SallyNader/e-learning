@@ -7,6 +7,26 @@ use App\Teacher;
 use Mail;
 class AboutController extends Controller
 {
+
+
+
+
+public function person(){
+
+return view('about.personofmonth');
+}
+
+
+public function moreaboutcrc(){
+
+
+   return view('about.moreaboutcrc');
+}
+
+
+
+
+
 	public function tahkem(){
 
 

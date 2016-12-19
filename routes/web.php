@@ -16,6 +16,14 @@ use App\Offline;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//person of month
+
+Route::get('person','AboutController@person');
+//more about crc
+
+Route::get('moreaboutcrc','AboutController@moreaboutcrc');
+
+
 //send suggestion
 
 
