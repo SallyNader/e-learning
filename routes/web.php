@@ -16,6 +16,15 @@ use App\Offline;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//send suggestion
+
+
+Route::post('suggestion','AboutController@suggestion');
+
+//send astshara
+
+
+Route::post('astshara','AboutController@astshara');
 //vote articles
 
 

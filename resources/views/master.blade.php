@@ -8,7 +8,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Education Home Page1</title>
-     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+ <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="js/jssor.slider-22.0.6.mini.js" type="text/javascript"></script>
+
+         
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <!-- Css Files -->
     <link href="{!!asset('css/bootstrap.css')!!}" rel="stylesheet">
@@ -53,6 +73,7 @@
 
                             @if(Auth::check())
 <ul class="wm-adminuser-section">
+
                                 <li>
                                 <form action="{{url('logout')}}" method="POST">
                                 {!! csrf_field() !!}
@@ -68,6 +89,7 @@
                             </ul>
                             @else
                             <ul class="wm-adminuser-section">
+                            
                                 <li>
                                     <a href="{{url('login')}}" >تسجيل الدخول</a>
                                 </li>
@@ -77,6 +99,7 @@
                                 <li>
                                     <!--<a href="#" class="wm-search-btn" data-toggle="modal" data-target="#ModalSearch"><i class="wmicon-search"></i></a>-->
                                 </li>
+                                
                             </ul>
 
                             @endif
@@ -93,8 +116,8 @@
                         <div class="col-md-3"><a href="index-2.html" class="wm-logo"><img style="height: 90px;width:90px" src="{!!asset('images/crc.jpg')!!}" alt=""></a></div>
                         <div class="col-md-9">
                             <!--// Navigation \\-->
-                            <nav class="navbar navbar-default">
-                                <div class="navbar-header">
+                            <nav class="navbar navbar-default" >
+                                <div class="navbar-header" >
                                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="true">
                                     <span class="sr-only">Toggle navigation</span>
                                     <span class="icon-bar"></span>
@@ -102,12 +125,12 @@
                                     <span class="icon-bar"></span>
                                   </button>
                                 </div>
-                                <div class="collapse navbar-collapse" id="navbar-collapse-1" >
-                                  <ul class="nav navbar-nav" >
+                                <div class="collapse navbar-collapse" id="navbar-collapse-1"  >
+                                  <ul class="nav navbar-nav"  >
                                     <li class="active"><a href="{{url('branches')}}" style="font-size: 110%">فروعنا</a>
                                         
                                     </li>
-
+                                   
                                     <li style="text-align: right;"><a href="#" style="font-size: 110%" >الدوبلومات و الدورات</a>
                                         <ul class="wm-dropdown-menu">
                                             <li><a href="{{route('course.index')}}" style="font-size: 110%">جميع الدورات</a></li>
@@ -340,23 +363,34 @@
         <div class="modal-content">
           <div class="modal-body">
             
-            <div class="wm-modallogin-form wm-login-popup">
-                <span class="wm-color">Login to Your Account</span>
-                <form>
+            <div class="wm-modallogin-form wm-login-popup" style="text-align: right;">
+                <span class="wm-color">أرسل أستشارتك القانونية للبلد التي تريدها</span>
+                <form action="{{url('astshara')}}" method="POST">
+                {{ csrf_field() }}
                     <ul>
-                        <li> <input type="text" value="Your Username" onblur="if(this.value == '') { this.value ='Your Username'; }" onfocus="if(this.value =='Your Username') { this.value = ''; }"> </li>
-                        <li> <input type="password" value="password" onblur="if(this.value == '') { this.value ='password'; }" onfocus="if(this.value =='password') { this.value = ''; }"> </li>
-                        <li> <a href="#" class="wm-forgot-btn">Forgot Password?</a> </li>
-                        <li> <input type="submit" value="Sign In"> </li>
+                        <li> <input type="text" name="name" value="الأسم" onblur="if(this.value == '') { this.value ='الأسم'; }" onfocus="if(this.value =='Your Username') { this.value = ''; }"> </li>
+                        <li> <input type="text" name="telephone" value="الهاتف" onblur="if(this.value == '') { this.value ='الهاتف'; }" onfocus="if(this.value =='الهاتف') { this.value = ''; }"> </li>
+
+                         <li> <input type="text" name="email" value="البريد الألكترونية" onblur="if(this.value == '') { this.value ='البريد الألكترونية'; }" onfocus="if(this.value =='البريد الألكترونية') { this.value = ''; }"> </li>
+<li>
+                                            <div class="wm-select-two">
+                                                <select name="country">
+                                                    <option>مصر</option>
+                                                    <option>السعودية</option>
+                                                    <option>تونس</option>
+                                                    <option>ليبيا</option>
+                                                </select>
+                                            </div>
+                                        </li>
+
+                          <li> <input type="text" name="astshara" value="الأستشارة القانونية" onblur="if(this.value == '') { this.value ='الأستشارة القانونية'; }" onfocus="if(this.value =='الأستشارة القانونية') { this.value = ''; }"> </li>
+                        <li></li>
+                        <li> <input type="submit" value="أرسال"> </li>
                     </ul>
                 </form>
-                <span class="wm-color">or try our socials</span>
-                <ul class="wm-login-social-media">
-                    <li><a href="#"><i class="wmicon-social5"></i> Facebook</a></li>
-                    <li class="wm-twitter-color"><a href="#"><i class="wmicon-social4"></i> twitter</a></li>
-                    <li class="wm-googleplus-color"><a href="#"><i class="fa fa-google-plus-square"></i> Google+</a></li>
-                </ul>
-                <p>Not a member yet? <a href="#">Sign-up Now!</a></p>
+                <span class="wm-color"></span>
+               
+                <p><a href="#"></a></p>
             </div>
             <div class="wm-modallogin-form wm-register-popup">
                 <span class="wm-color">create Your Account today</span>

@@ -10,13 +10,10 @@
 			    <div class="row">
 				    <div class="col-md-12">
 				        <div class="wm-mini-title">
-				       		<h1>Typography & Elements</h1> 
+				       		<h1>المجلة الأعلامية</h1> 
 				        </div>
 				        <div class="wm-breadcrumb">
-				          	<ul>
-				          	 	<li><a href="index-2.html">Home</a></li>				          	 	
-				           		<li>Typography</li>
-				          	</ul>
+				          	
 				        </div>      
 				    </div>
 			    </div>
@@ -49,6 +46,18 @@
 						<div class="col-md-12" >
 							<div class="wm-title-typoelements" style="text-align: center">
 								<h2>الناشر : <span>{{$a->a_publisher}}</span></h2>
+								
+								 @if($a->vote >= 1 and $a->vote <= 10)
+                            <img src="{!!asset('images/star1.png')!!}" style="width:160px;height: 30px; margin-right: 670px"> 
+                            @elseif($a->vote >= 11 and $a->vote<=20)
+                            <img src="{!!asset('images/star2.png')!!}" style="width:160px;height: 30px;margin-right: 670px"> 
+                            @elseif($a->vote >= 21 and $a->vote <=40)
+                            <img src="{!!asset('images/star3.png')!!}" style="width:160px;height: 30px;margin-right: 670px"> 
+                            @elseif($a->vote >=41 and $a->vote <= 60)
+                            <img src="{!!asset('images/star4.png')!!}" style="width:160px;height: 30px;margin-right: 670px;"> 
+                            @elseif($a->vote >= 61 )
+                           <img src="{!!asset('images/star.png')!!}" style="width:160px;height: 30px;margin-right: 670px"> 
+                            @endif
 							</div>
 						</div>
 						<div class="col-md-9">
@@ -93,7 +102,7 @@ if(strlen($a->a_article)>400){
 
 						@endforeach
 						@endunless
-				
+				<!--
 						<div class="col-md-6">
 							<div class="wm-classic-heading">
 								<h2>Tabs</h2>
@@ -119,8 +128,8 @@ if(strlen($a->a_article)>400){
 								</div>
 							</div>			
 						</div>
-
-						
+-->
+						<!--
 						<div class="col-md-6">
 							<div class="wm-classic-heading">
 								<h2>Tour <span>Section</span></h2>
@@ -143,7 +152,8 @@ if(strlen($a->a_article)>400){
 									</div>
 								</div>
 							</div>			
-						</div>
+						</div>-->
+						<!--
 						<div class="col-md-12">
 							<div class="wm-classic-heading">
 								<h2>Lists</h2>
@@ -228,7 +238,8 @@ if(strlen($a->a_article)>400){
 									<li><span>Erat volutpat</span></li>
 								</ol>
 							</div>
-						</div>
+						</div>-->
+						<!--
 						<div class="col-md-12">
 							<div class="wm-classic-heading">
 								<h2>Tables</h2>
@@ -264,7 +275,8 @@ if(strlen($a->a_article)>400){
 									</ul>
 								</div>
 							</div>
-						</div>
+						</div>-->
+						<!--
 						<div class="col-md-6">
 							<div class="wm-table-horizontal">
 								<ul class="wm-table-head">
@@ -282,7 +294,8 @@ if(strlen($a->a_article)>400){
 									</ul>
 								</div>
 							</div>
-						</div>
+						</div>-->
+						<!--
 						<div class="col-md-12">
 							<div class="wm-classic-heading">
 								<h2>Forms</h2>
@@ -387,7 +400,8 @@ if(strlen($a->a_article)>400){
 									</div>
 								</div>
 							</div>
-						</div>
+						</div>-->
+						<!--
 						<div class="col-md-12">
 							<div class="wm-title-typoelements">
 								<h2>Pricing <span>Plans</span></h2>
@@ -526,7 +540,8 @@ if(strlen($a->a_article)>400){
 									</li>
 								</ul>
 							</div>							
-						</div>
+						</div>-->
+						<!--
 						<div class="col-md-6">
 							<div class="wm-title-typoelements">
 								<h2>Promo <span>Box</span></h2>
@@ -568,7 +583,8 @@ if(strlen($a->a_article)>400){
 									<p>Success! This would be a successful message.</p>
 								</div>
 							</div>
-						</div>
+						</div>-->
+						<!--
 						<div class="col-md-12">
 							<div class="wm-callaction-two-typo">
 								<span class="wm-typo-transparents-color"></span>
@@ -577,7 +593,7 @@ if(strlen($a->a_article)>400){
 									<a href="#">contact us today</a>
 								</div>								
 							</div>
-						</div>
+						</div>-->
 					</div>
 				</div>
 			</div>

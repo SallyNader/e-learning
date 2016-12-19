@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Teacher;
+use Mail;
 class AboutController extends Controller
 {
 	public function tahkem(){
@@ -35,5 +36,51 @@ $teachers=Teacher::limit(3)->get();
 $teachers=Teacher::limit(3)->get();
 
    	 	return view('about.branches',compact('teachers'));
+   }
+
+
+
+
+   public function astshara(Request $request){
+
+      $name=$request->get('name');
+      $telephone=$request->get('telephone');
+      $email=$request->get('email');
+      $country=$request->get('country');
+      $astshara=$request->get('astshara');
+
+Mail::send('template.astshara',['name'=>$name,'telephone'=>$telephone,'email'=>$email,'country'=>$country,'astshara'=>$astshara],function($message) use ($name,$telephone,$email,$country,$astshara){
+
+   $message->from('crc@info.com','Publisher');
+    $message->to('SALLY.NADER.AHMED@hotmail.com', 'sally')->subject('استشارة قانونية');
+});
+
+
+return redirect()->back();
+
+   }
+
+
+   public function suggestion(Request $request){
+
+
+
+
+      $name=$request->get('name');
+
+      $suggestion=$request->get('suggestion');
+
+      Mail::send('template.suggestion',['name'=>$name,'suggestion'=>$suggestion],function($message) use ($suggestion,$name){
+
+   $message->from('crc@info.com','Publisher');
+    $message->to('SALLY.NADER.AHMED@hotmail.com', 'sally')->subject('مقترح جديد');
+});
+
+
+return redirect()->back();
+
+
+
+
    }
 }
