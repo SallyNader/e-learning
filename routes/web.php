@@ -4,6 +4,7 @@ use App\Course;
 use App\Category;
 use App\Article;
 use App\Offline;
+use App\Teacher;
 
 
 /*
@@ -66,6 +67,9 @@ Route::get('o','CoursesController@o');
 Route::get('/',function(){
 
 
+	$latestCourse=Course::orderBy('startDate','DESC')->limit(3)->get();
+$teachers=Teacher::limit(4)->get();
+
 	$offlines=Offline::distinct()->select('branch')->get();
 	$offlineCourse=Offline::all();
 $courses=Course::limit(4)->get();
@@ -74,7 +78,7 @@ $courses=Course::limit(4)->get();
  $category=Category::limit(2)->get();
 $articles=Article::limit(3)->get();
  $cat=Category::all();
-    return view('home',compact('images','courses','category','cat','articles','offlines','offlineCourse'));
+    return view('home',compact('images','courses','category','cat','articles','offlines','offlineCourse','teachers','latestCourse'));
 });
 
 Route::resource('offline','OfflinesController', ['except' => ['index']]);

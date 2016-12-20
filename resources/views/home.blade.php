@@ -30,25 +30,86 @@
                     <div class="wm-banner-one-for-layer"> <img src="{!!asset('extra-images/banner-view1-3.jpg')!!}" alt=""> </div>
                     <div class="wm-banner-one-for-layer"> <img src="{!!asset('extra-images/banner-view1-1.jpg')!!}" alt=""> </div>
                 </div>
-                <div class="wm-banner-one-nav c" style="text-align: left;">
-                    <div class="wm-banner-one-nav-layer c" style="text-align: left;">
+                <div class="wm-banner-one-nav c" style="text-align: left;height: 300px">
+                    <div class="wm-banner-one-nav-layer c" style="text-align: left;height: 583px;padding-bottom: : 60px;padding-left: 160px">
                         <h1>مركز القاهرة الإقليمي للتدريب و التحكيم</h1>
-                        <p>تقديم الدعم والاستشارات للسادة مستشاري التحكيم والسادة المحكمين وتقديم الاستشارة القانونية بشكل عام - و تباشر اللجنة مهامها من تعيين محكمين تقديم الدعم والاستشارات للسادة مستشاري التحكيم والسادة المحكمين وتقديم الاستشارة القانونية بشكل عام - و تباشر اللجنة مهامها من تعيين محكمين</p>
+                        <p style="padding-top: 30px">تقديم الدعم والاستشارات للسادة مستشاري التحكيم والسادة المحكمين وتقديم الاستشارة القانونية بشكل عام - و تباشر اللجنة مهامها من تعيين محكمين تقديم الدعم والاستشارات للسادة مستشاري التحكيم والسادة المحكمين وتقديم الاستشارة القانونية بشكل عام - و تباشر اللجنة مهامها من تعيين محكمينتعيين محكمين تقديم الدعم والاستشارات للسادة مستشاري التحكيم والسادة المحكمين وتقديم الاستشارة القانونية بشكل عام - و تباشر اللجنة مهامها من تعيين محكمين</p>
                         <a href="{{url('moreaboutcrc')}}" class="wm-banner-btn" tabindex="0" style="font-size: 90%">لمزيد من المعلومات عن المركز</a>
                        
                         
                     </div>
-                    <div class="wm-banner-one-nav-layer c" style="text-align: left;">
-                        <h1 style="text-align: left;">شخصية الشهر : أحمد عدوي</h1>
-                        <p style="text-align: left;"  >إن واجب المحكم هو إتباع قواعد العدالة والإنصاف الطبيعية، بينما يتبع القاضي نص القانون، ومن ثم فإن التحكيم استحدث </p>
-                        <a href="{{url('person')}}" class="wm-banner-btn">لمزيد من التفاصيل</a>
-                    </div>
+                 
                    
                 </div>
+
             </div>
 
         </div>
         <!--// Main Banner \\-->
+
+
+           <!--// Main Section \\-->
+            <div class="wm-main-section wm-latest-event-full">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-md-12">
+                            <div class="wm-fancy-title-three">
+                                <div class="wm-fancy-title-inner">
+                                    <small class="wm-color-three"></small>
+                                    <span class="wm-color-three" style="margin-left: 180px">أحدث الدورات</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="wm-event wm-event-medium">
+                                <ul class="row">
+                                    
+                                   @unless(empty($latestCourse))
+                                   @foreach($latestCourse as $l)
+                                    <li class="col-md-12">
+                                        <div class="wm-event-medium-wrap">
+                                            <figure><a href="{{route('course.show',$l->c_id)}}"><img src="{{$l->image}}" alt="" style="height: 150px"></a> <figcaption class="wm-linkhover"><a href="{{route('course.show',$l->c_id)}}" class="wmicon-link wm-icon-link wm-color-three"></a></figcaption> </figure>
+                                            <div class="wm-eventmedium-text">
+                                                <h5 style="text-align:center;"><a href="{{route('course.show',$l->c_id)}}">{{$l->c_name}}</a></h5>
+                                                <p>{{$l->disc}}</p>
+                                                <time datetime="2008-02-14 20:00" class="wm-color-three"><i class="wmicon-clock2"></i>{{$l->branch}} -   {{ date('F d, Y', strtotime($l->startDate)) }}</time>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+@endforeach
+                                    @endunless
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="wm-event wm-event-featured wm-left-spacer">
+                                <ul class="row">
+                                    <li class="col-md-12">
+                                        <figure>
+                                            <a href="{{url('person')}}"><img src="extra-images/featured-image-1.jpg" alt=""></a>
+                                           
+                                            
+                                        </figure>
+                                        <div class="wm-event-featured-text" style="text-align: center;">
+                                            <h5 style="text-align: center;"><a href="{{url('person')}}">شخصية الشهر : صابر أحمد</a></h5>
+                                            <p style="text-align: right;">وتقديم الاستشارة القانونية بشكل عام - و تباشر اللجنة مهامها من تعيين محكمين تقديم الدعم والاستشارات للسادة مستشاري التحكيم والسادة المحكمين وتقديم الاستشارة القانونية بشكل عام </p>
+                                           
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                      
+
+                    </div>
+                </div>
+            </div>
+            <!--// Main Section \\-->
+
+
+
 
         <!--// Main Content \\-->
         <div class="wm-main-content">
@@ -502,9 +563,38 @@
 
 
 
+   <!--// Main Section \\-->
+            <div class="wm-main-section wm-tocolumn-spacer" style="width: 1700px;text-align: right;">
+                <div class="container" style="width: 1700px;margin-left: 270px">
+                    <div class="row" >
+                        
+                        <div class="col-md-6">
+                            <div class="wm-fancytitle-two wm-align-left" style="margin-left: 350px"> <h2>أشهر خبرائنا</h2> </div>
+                            <div class="wm-thumb-testimonial">
+                               
+                                  @unless(empty($teachers))
 
+                                  @foreach($teachers  as $t)
 
+                                <div class="wm-thumb-testimonial-layer">
+                                    <figure><a href="#"><img src="extra-images/{{$t->profile_image}}" alt="" style="height: 320px;width: 300px"></a></figure>
+                                    <div class="thumb-testimonial-text" style="height: 320px">
+                                        <h4><a href="#">{{$t->t_name}}</a></h4>
+                                        <span class="wm-color-two">{{$t->type->t_title}}</span>
+                                        <p>{{$t->t_experience}}</p>
+                                    </div>
+                                </div>
 
+@endforeach
+                                @endunless
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--// Main Section \\-->
 
 
 
