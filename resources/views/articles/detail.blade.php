@@ -111,15 +111,15 @@ label.star:before {
 							</div>
 
 							@if($a->vote >= 1 and $a->vote <= 10)
-							<div style="margin-left: 30px"><img src="{!!asset('extra-images/star1.png')!!}" style="width:130px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
+							<div style="margin-left: 30px"><img src="{!!asset('images/star1.png')!!}" style="width:170px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
 							@elseif($a->vote >= 11 and $a->vote<=20)
-							<div style="margin-left: 30px"><img src="{!!asset('extra-images/star2.png')!!}" style="width:130px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
+							<div style="margin-left: 30px"><img src="{!!asset('images/star2.png')!!}" style="width:170px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
 							@elseif($a->vote >= 21 and $a->vote <=40)
-							<div style="margin-left: 30px"><img src="{!!asset('extra-images/star3.png')!!}" style="width:130px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
+							<div style="margin-left: 30px"><img src="{!!asset('images/star3.png')!!}" style="width:170px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
 							@elseif($a->vote >=41 and $a->vote <= 60)
-							<div style="margin-left: 30px"><img src="{!!asset('extra-images/star4.png')!!}" style="width:130px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
+							<div style="margin-left: 30px"><img src="{!!asset('images/star4.png')!!}" style="width:170px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
 							@elseif($a->vote >= 61 )
-							<div style="margin-left: 30px"><img src="{!!asset('extra-images/star.png')!!}" style="width:130px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
+							<div style="margin-left: 30px"><img src="{!!asset('images/star.png')!!}" style="width:170px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
 							@endif
 
 
