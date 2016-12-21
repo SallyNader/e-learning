@@ -136,7 +136,13 @@
 											</li>
 
 
+<li>
+<label>تاريخ بدء الدورة</label>
+											<input name="startDate" type="text" value="{{$course->startDate}}" >
 
+
+<p style="color:blue">{{$errors->first('startDate')}}</p>
+											</li>
 
 
 <li>

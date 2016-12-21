@@ -67,7 +67,7 @@ Route::get('o','CoursesController@o');
 Route::get('/',function(){
 
 
-	$latestCourse=Course::orderBy('startDate','DESC')->limit(3)->get();
+	$latestCourse=Offline::orderBy('startDate','DESC')->limit(3)->get();
 $teachers=Teacher::limit(4)->get();
 
 	$offlines=Offline::distinct()->select('branch')->get();

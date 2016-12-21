@@ -41,7 +41,15 @@
                                             </form>
                                               
                                             </li>
-                                            <li>{{$u->accepted}}</li>
+                                            <li>@if($u->accepted == 1)
+                                                مقبول
+                                                @elseif($u->accepted == 0)
+                                                غير مقبول
+                                                @endif
+
+
+
+                                            </li>
                                             <li>{{$u->email}}</li>
                                             <li>{{$u->name}}</li>
                                               <br/><hr/>

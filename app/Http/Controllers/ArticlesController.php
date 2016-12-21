@@ -169,7 +169,7 @@ Mail::send('template.email', ['name' => $name,'address'=>$address,'mobile'=>$mob
 
 
 
-return redirect()->back();
+return redirect()->back()->withMessage('لقد تم أرسال المقال و سيتم مراجعتة لنشره');
 
 
     }

@@ -27,13 +27,20 @@
 
 											</li>
 											<li>
-<label>مقبول/غير مقبول</label>
-											<input name="accepted" type="text" value="{{$user->accepted}}" >
+<label>مقبول / غير مقبول</label>
+											<select name="accepted" style="text-align: right; width: 150px">
+												
 
 
-											<p style="color:blue">{{$errors->first('accepted')}}</p>
 
-											</li>																			 
+                          <option value="1">مقبول</option>
+
+                             <option value="0">غير مقبول</option>
+
+
+
+											</select>
+											</li>																		 
 		                                </ul>
 		                                <input class="btn btn-primary" type="submit" value="تعديل" name="">
 									</form>

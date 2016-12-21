@@ -82,7 +82,7 @@ $this->validate($request,[
 
 'name'=>'required',
 'email'=>'required|email',
-'accepted'=>'required'
+
 
 
 

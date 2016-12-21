@@ -63,6 +63,7 @@ $this->validate($request,[
 'sy'=>'required',
 'certificates'=>'required',
 'file'=>'required',
+'startDate'=>'required|date'
 
 
 
@@ -98,7 +99,8 @@ Course::create([
 'image'=>'extra-images/'.$filename,
 'price'=>$request->get('price'),
 'syllabus'=>$request->get('sy'),
-'teacher_id'=>$tID
+'teacher_id'=>$tID,
+'startDate'=>$request->get('startDate')
 
 
 
@@ -158,6 +160,7 @@ $this->validate($request,[
 'disc'=>'required',
 'sy'=>'required',
 'certificates'=>'required',
+'startDate'=>'required|date'
 
 
 
@@ -216,6 +219,7 @@ $course->price=$price;
 $course->disc=$disc;
 $course->syllabus=$sy;
 $course->certificates=$certificates;
+$course->startDate=$request->get('startDate');
 
 
 $course->save();

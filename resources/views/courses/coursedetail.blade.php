@@ -30,6 +30,10 @@
 					<div class="row">
 						<aside class="col-md-3">
 							<div class="widget widget_course-price">
+							@if(!Auth::user())
+<a href="{{url('register')}}" style="background-color: #b99663;color: white">للأشتراك في الدورة</a>
+
+								@endif
 							@if(Auth::check())
 								<div class="wm-widget-heading" style="text-align: center;" >
 
@@ -38,9 +42,10 @@
 								</div>
 								
 								<span><small></small>${{$course->price}}</span>
+								
 
 								@if($Boolean=='true' and $accepted==1)
-								<a href="{{url('addcourse/'.Auth::user()->id.'/'.$course->c_id)}}">الأشتراك في الدورة</a>
+								<a href="{{url('addcourse/'.Auth::user()->id.'/'.$course->c_id)}}" style="background-color: #b99663;color: white" >للأشتراك في الدورة</a>
 								@endif
 
 								@endif

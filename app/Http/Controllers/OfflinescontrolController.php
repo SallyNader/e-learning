@@ -163,7 +163,7 @@ return view('control.offlines.edit',compact('offline','teachers','categories'));
 
 $this->validate($request,[
 
-'name'=>'required|unique:courses,c_name',
+'name'=>'required',
 
 'price'=>'required',
 'disc'=>'required',

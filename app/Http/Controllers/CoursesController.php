@@ -33,7 +33,7 @@ class CoursesController extends Controller
       $categories=Category::all();
 
 
-      $courses=Course::all();
+      $courses=Course::paginate(4);
 
       return view('courses.courseslist',compact('courses','categories'));
     }

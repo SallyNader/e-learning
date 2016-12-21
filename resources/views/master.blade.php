@@ -52,7 +52,17 @@
     <![endif]-->
   </head>
   <body>
-  
+   @if(Session::has('message'))
+  <div class="wm-message wm-typography-element">
+                                <div class="wm-title-typoelements">
+                                <div class="message caution-message">
+                                    <i class="fa fa-warning"></i>
+                                    <p style="text-align: center;">{{Session::get('message')}}</p>
+                                </div>
+                               
+                            </div>
+
+                            @endif
     <!--// Main Wrapper \\-->
     <div class="wm-main-wrapper">
         
@@ -83,7 +93,8 @@
                                 </li>
                                 <li style="color: white">|</li>
                                  <li>
-                                    <a href="{{url('profile')}}" style="font-size: 120%">{{Auth::user()->name}}</a>
+
+                                    <a href="{{url('profile')}}" style="font-size: 120%; font-family: 'Lucida Bright', Georgia, serif;">{{Auth::user()->name}}</a>
                                 </li>
                                
                             </ul>
@@ -320,17 +331,14 @@
                             </ul>
                         </aside>
                         <aside class="widget widget_gallery col-md-3" style="margin-top: 150px">
-                            <div class="wm-footer-widget-title"> <h5 style="text-align: center;">أهم خبرائنا</h5> </div>
+                            <div class="wm-footer-widget-title"> <h5 style="text-align: center;">فروعنا</h5> </div>
                             <ul class="gallery">
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="{!!asset('extra-images/widget-galleryfull-1.jpg')!!}"><img src="{!!asset('extra-images/widget-gallery-1.jpg')!!}" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="{!!asset('extra-images/widget-galleryfull-2.jpg')!!}"><img src="{!!asset('extra-images/widget-gallery-2.jpg')!!}" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="{!!asset('extra-images/widget-galleryfull-3.jpg')!!}"><img src="{!!asset('extra-images/widget-gallery-3.jpg')!!}" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="{!!asset('extra-images/widget-galleryfull-4.jpg')!!}"><img src="{!!asset('extra-images/widget-gallery-4.jpg')!!}" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="{!!asset('extra-images/widget-galleryfull-5.jpg')!!}"><img src="{!!asset('extra-images/widget-gallery-5.jpg')!!}" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="{!!asset('extra-images/widget-galleryfull-6.jpg')!!}"><img src="{!!asset('extra-images/widget-gallery-6.jpg')!!}" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="{!!asset('extra-images/widget-galleryfull-7.jpg')!!}"><img src="{!!asset('extra-images/widget-gallery-7.jpg')!!}" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="{!!asset('extra-images/widget-galleryfull-8.jpg')!!}"><img src="{!!asset('extra-images/widget-gallery-8.jpg')!!}" alt=""></a></li>
-                                <li><a title="" data-rel="prettyPhoto[gallery1]" href="{!!asset('extra-images/widget-galleryfull-9.jpg')!!}"><img src="{!!asset('extra-images/widget-gallery-9.jpg')!!}" alt=""></a></li>
+                                <li><a  href="{{url('branch/القاهرة/test')}}"><img src="{!!asset('extra-images/eg.gif')!!}" alt=""></a></li>
+                                <li><a  href="{{url('branch/السعودية/test')}}"><img src="{!!asset('extra-images/sa.gif')!!}" alt=""></a></li>
+                                <li><a  href="{{url('branch/تونس/test')}}"><img src="{!!asset('extra-images/tn.gif')!!}" alt=""></a></li>
+                                <li><a href="{{url('branch/ليبيا/test')}}"><img src="{!!asset('extra-images/ly.gif')!!}" alt=""></a></li>
+                                
+                               
                             </ul>
                         </aside>
                     </div>

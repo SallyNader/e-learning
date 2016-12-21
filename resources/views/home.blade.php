@@ -69,9 +69,9 @@
                                    @foreach($latestCourse as $l)
                                     <li class="col-md-12">
                                         <div class="wm-event-medium-wrap">
-                                            <figure><a href="{{route('course.show',$l->c_id)}}"><img src="{{$l->image}}" alt="" style="height: 150px"></a> <figcaption class="wm-linkhover"><a href="{{route('course.show',$l->c_id)}}" class="wmicon-link wm-icon-link wm-color-three"></a></figcaption> </figure>
+                                            <figure><a href="{{route('offline.show',$l->c_id)}}"><img src="{{$l->image}}" alt="" style="height: 150px"></a> </figure>
                                             <div class="wm-eventmedium-text">
-                                                <h5 style="text-align:center;"><a href="{{route('course.show',$l->c_id)}}">{{$l->c_name}}</a></h5>
+                                                <h5 style="text-align:center;"><a href="{{route('offline.show',$l->c_id)}}">{{$l->c_name}}</a></h5>
                                                 <p>{{$l->disc}}</p>
                                                 <time datetime="2008-02-14 20:00" class="wm-color-three"><i class="wmicon-clock2"></i>{{$l->branch}} -   {{ date('F d, Y', strtotime($l->startDate)) }}</time>
                                             </div>
@@ -1097,7 +1097,7 @@
                     <div class="row">
                         
                         <div class="col-md-12">
-                            <div class="wm-simple-section-title wm-partners-title"> <h2> <span></span></h2> </div>
+                            <div class="wm-simple-section-title wm-partners-title" style="text-align: right;"> <h2> <span> رعاة المركز</span></h2> </div>
                             <div class="wm-partners-slider gallery">
                                 <div class="wm-partners-layer"> <a title="" data-rel="prettyPhoto[gallery1]" href="{!!asset('extra-images/university-partners-1.png')!!}"> <img src="{!!asset('extra-images/university-partners-1.png')!!}" alt=""> </a> </div>
                                 <div class="wm-partners-layer"> <a title="" data-rel="prettyPhoto[gallery1]" href="{!!asset('extra-images/university-partners-2.png')!!}"> <img src="{!!asset('extra-images/university-partners-2.png')!!}" alt=""> </a> </div>
@@ -1119,6 +1119,19 @@
 
 
 
+
+
+
+
+
+
+
+
+            <!--// Main Section \\-->
+            
+            <!--// Main Section \\-->
+
+        </div>
 
 
 
@@ -1256,19 +1269,6 @@
                 </div>
             </div>
             <!--// Main Section \\-->
-            <!--// Main Section \\-->
-            
-            <!--// Main Section \\-->
-
-        </div>
-
-
-
-
-
-
-
-
 
 
 @stop

@@ -69,7 +69,15 @@
                             </div>
                             <label for="password-confirm" class="col-md-4 control-label">تأكيد كلمة السر</label>
                         </div>
-
+<div class="form-group">
+                            <div class="col-md-6 col-md-offset-4" style="text-align: left;margin-left:  10px">
+                                <div class="checkbox">
+                                    <label>
+                                      <a href="{{url('login')}}"><b>اذا كنت مشترك و تريد تسجيل الدخول</b></a>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group" style="text-align: left;">
                          <br>
                                 <br/>
