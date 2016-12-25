@@ -41,7 +41,7 @@
 
                                         @foreach($album->images as $image)
                                                                         <li class="col-md-3 wordpress">
-                                        <figure><img src="../../public/extra-images/{{$image->path}}" alt="" style="width: 1000px;height:250px" > </figure>
+                                        <figure><a class="fancybox-thumbs" data-fancybox-group="thumb" href="../../public/extra-images/{{$image->path}}"><img src="../../public/extra-images/{{$image->path}}" alt="" style="width: 1000px;height:250px" > </a></figure>
 
 
                                        

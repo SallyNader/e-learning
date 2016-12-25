@@ -9,8 +9,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wm-mini-title">
-                            <h1>فروعنا
-                            </h1> 
+                            <h1>العضويات الدولية</h1> 
                         </div>
                             
                     </div>
@@ -56,190 +55,39 @@
             <!--// Main Section \\-->
             <div class="wm-main-section whowe-are-full">
                 <div class="container">
-                        <div class="wm-courses-author-info" style="text-align:center;">
-                                <div class="wm-title-full">
-                                    <h2 style="text-align: right;"></h2>
-                                </div>  
-                                <ul>
+                    <div class="row">
+                        
+                        <div class="col-md-6"> <figure class="wm-figure-thumb"><img src="extra-images/whowe-are-1.jpg" alt=""></figure> </div>
+                        <div class="col-md-6 wm-editore-text" style="text-align: right;">
+                            <h2 class="wm-left-border wm-color">العضويات الدولية</h2>
+                            <p>في تطبيق أحكام هذه اللائحة يكون للعبارات والكلمات التالية المعاني المبينة قرين كل منها ما لم يقتض السياق معنى آخر:
+المـــــــــــــــركـز : مركز القاهرة الاقليمي للتدريب والتحكيم .
+الــــــــــــلائحــــة : لائحة إجراءات التحكيم التجاري بالمركز.
+الأمـــــين العـــام : الأمين العام للمركز.
+الـــهــــــيئــــــــة : هيئة التحكيم المشكلة وفقاً لأحكام اللائحة .
+اتفاق التحكيـــم : اتفاق الأطراف كتابة على الالتجاء للتحكيم سواء قبل نشوء النزاع (شرط التحكيم) أو بعده (مشارطة التحكيم).
+القـــــــــــائمــــة : قائمة أسماء المحكمين بالمركز.</p>
+                            <ul>
+                                <li><!--<i class="wmicon-mark"></i>--> الاتفاق على التحكيم وفق أحكام هذه اللائحة أمام المركز يحول دون عرض النزاع أمام أي جهة أخرى أو الطعن لديها بحكم هيئة التحكيم.</li>
+                                <li> في حالة اللجوء الى التحكيم يقترح أن تضمن الصيغة التالية في اتفاق التحكيم</li>
+                                <li> تفترض صحة جميع الاتفاقات والمشارطات المقدمة للتحكيم أمام المركز مالم يقم الدليل على عدم صحتها.
+</li>
 
-                                <style>
-      #map {
-        height: 200px;
-        width: 50%;
-        margin-left: 270px;
-         margin-bottom:  20px;
-       }
+                                <li>كفل الهيئة بالمركز جميع حقوق الدفاع لأطراف النزاع، وتعاملهم على قدم المساواة وتتيح لكل منهم في جميع الإجراءات الفرصة الكاملة لعرض قضيته</li>
+                                <li> في جميع الأحوال يعتبر الحكم صادراً في المكان المعين للتحكيم وفي التاريخ المبين فيه.</li>
+                                <li> تشكل الهيئة من محكم واحد أو من ثلاثة محكمين بحسب اتفاق الطرفين، فإن لم يوجد اتفاق يشكل الأمين العام الهيئة من محكم واحد، ما لم ير أن طبيعة النزاع تتطلب تشكيلها من ثلاثة محكمين.
+</li>
+                                <li> في جميع الأحوال يعتبر الحكم صادراً في المكان المعين للتحكيم وفي التاريخ المبين فيه.</li>
+                            </ul>
+                        </div>
 
-
-
-
-       #map5 {
-        height: 200px;
-        width: 50%;
-       margin-left: 270px;
-         margin-bottom:  20px;
-       }
- #map6 {
-        height: 200px;
-        width: 50%;
-       margin-left: 270px;
-         margin-bottom:  20px;
-       }
-
-
-       #map2 {
-        height:200px;
-        width: 50%;
-        margin-left: 270px;
-         margin-bottom:  20px;
-
-
-               }
-
-
-       #map3 {
-        height: 200px;
-        width: 50%;
-        margin-left: 290px;
-        padding-bottom: 20px
-       }
-    </style>  
-                                    <li>
-                                        <div class="wm-author-detail wm-courses-authorinfo">
-<!--<figure>
-                                                <a href="#"><img src="extra-images/author-blog-2.jpg" alt=""></a>
-                                            </figure>-->
-                                            <div class="wm-author-text" style="">
-                                                <h5><a href="#">   <strong> فرع تونس </strong>  </a></h5>
-                                                <span>مدير : أحمد محمد خالد </span>
-                                                <p>22-شارع أحمد-شارع تونس</p>
-                                            </div> 
-                                                   <div id="map"></div>
-    <script>
-      function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>      
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUWLDgNSH5lzbiuUiAgN0xzaXCFEFGn_g&callback=initMap">
-    </script>     
-                                        </div>
-
-                                    </li>
-                                    <li>
-                                        <div class="wm-author-detail wm-courses-authorinfo">
-                                          <!--  <figure>
-                                                <a href="#"><img src="extra-images/author-blog-7.jpg" alt=""></a>
-                                            </figure>-->
-                                            <div class="wm-author-text">
-                                                <h5><a href="#"> <strong>فرع القاهرة</strong>    </a></h5>
-                                                <span</span>
-                                                <p>22 شارع محمود حسن - الميرغني مصر الجديدة </p>
-                                            </div> 
-
-
-
-                                            
-
-<div id="map5"></div>
-    <script>
-      function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map5'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>           
-                  
-                  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABSO5iwX5h7hIsmVvuk7n0zmAqzvWKXYw&callback=initMap">
-    </script>                                    
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="wm-author-detail wm-courses-authorinfo" style="">
-                                           <!-- <figure>
-                                                <a href="#"><img src="extra-images/lesson-list2.jpg" alt=""></a>
-                                            </figure>-->
-                                            <div class="wm-author-text" style="padding-right: 0px">
-                                                <h5><a href="#"><strong>فرع الأردن</strong></a></h5>
-                                                <span>مدير : محمد جمال علي</span>
-                                                <p>24 شارع فهد الوسري - العبيكان الدولي </p>
-                                            </div>  
-                                                 
-<div id="map2"></div>
-    <script>
-      function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map2'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>           
-                   
-                   <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABSO5iwX5h7hIsmVvuk7n0zmAqzvWKXYw&callback=initMap">
-    </script>                     </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="wm-author-detail wm-courses-authorinfo">
-                                            
-
-
-                                           <!-- <figure>
-                                                <a href="#"><img src="extra-images/news-grid-thumb-1.png" alt=""></a>
-                                            </figure>-->
-                                            <div class="wm-author-text">
-                                                <h5><a href="#"><strong> فرع السعودية </strong>  </a></h5>
-                                                <span>مدير : تامر علي المهدي </span>
-                                                <p>14 شارع الدوحة - المنطقة الخامسة النسيم </p>
-                                            </div> 
-
-
-                                               <div id="map3"></div>
-    <script>
-      function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map3'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>                                                        
-                                        </div>
-                                    </li>
-                                </ul>                       
-                            </div>
+                    </div>
                 </div>
             </div>
             <!--// Main Section \\-->
 
             <!--// Main Section \\-->
-             <div class="wm-main-section wm-parallexthree-full">
+            <div class="wm-main-section wm-parallexthree-full">
                 <span class="wm-light-transparent wm-more-light-blue"></span>
                 <div class="container">
                     <div class="row">
@@ -329,7 +177,7 @@
                                                 <a class="wmicon-social4" href="#"></a>
                                                 <a class="wmicon-logo" href="#"></a>
                                             </div>
-                                            <span>{{$teacher->type->t_title}}</span>
+                                            <span><p style="color:#ffb84d">{{$teacher->type->t_title}}</p></span>
                                         </div>
                                     </li>
                                     
@@ -344,12 +192,9 @@
                 </div>
             </div>
             <!--// Main Section \\-->
- <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABSO5iwX5h7hIsmVvuk7n0zmAqzvWKXYw&callback=initMap">
-    </script>
-        </div>
-        <!--// Main Content \\-->
 
-        <!--// Footer \\-->
+		</div>
+		<!--// Main Content \\-->
+
 		<!--// Footer \\-->
 @stop

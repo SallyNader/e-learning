@@ -112,11 +112,12 @@
                                     
                                     
                                  @endforeach
+                   
                                  @endunless
                                    
                                 </ul>
                             </div>
-                            <div class="wm-pagination">
+                           <!-- <div class="wm-pagination">
                                 <ul>
                                     <li><a href="#" aria-label="Previous"> <i class="wmicon-arrows4"></i> السابق</a></li>
                                     <li class="active"><a href="#">1</a></li>
@@ -126,7 +127,7 @@
                                     <li><a href="#">18</a></li>
                                     <li><a href="#" aria-label="Next"> <i class="wmicon-arrows4"></i> التالي</a></li>
                                 </ul>
-                            </div>
+                            </div>-->
                         </div>
 
                     </div>

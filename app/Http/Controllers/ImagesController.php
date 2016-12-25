@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Image;
 use App\Album;
+use Auth;
 class ImagesController extends Controller
 {
     /**
@@ -12,6 +13,11 @@ class ImagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+      public function __construct()
+{
+    $this->middleware('auth');
+} 
     public function index()
     {
     
@@ -19,7 +25,11 @@ class ImagesController extends Controller
 $images=Image::all();
 
 
+if(Auth::user()->flag == 'admin')
+
 return view('control.images.images',compact('images'));
+else
+    return redirect('album');
     
     }
 
@@ -31,7 +41,12 @@ return view('control.images.images',compact('images'));
     public function create()
     {
 $albums=Album::all();
+
+if(Auth::user()->flag == 'admin')
+
         return view('control.images.create',compact('albums'));
+    else
+    return redirect('album');
     }
 
     /**
@@ -117,7 +132,12 @@ return redirect('image');
          $image=Image::find($id);
          $albums=Album::all();
 
+if(Auth::user()->flag == 'admin')
+
+
          return view('control.images.editimage',compact('image','albums'));
+      else
+    return redirect('album');
     }
 
     /**

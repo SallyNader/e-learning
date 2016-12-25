@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Type;
+use Auth;
 class TypscontrolController extends Controller
 {
     /**
@@ -11,12 +12,22 @@ class TypscontrolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+{
+    $this->middleware('auth');
+} 
+
+
     public function index()
     {
         $types=Type::all();
 
+if(Auth::user()->flag == 'admin')
 
         return view('control.types.types',compact('types'));
+    else
+    return redirect('teacher');
 
 
     }
@@ -28,9 +39,12 @@ class TypscontrolController extends Controller
      */
     public function create()
     {
-       
+       if(Auth::user()->flag == 'admin')
+
 
        return view('control.types.create');
+   else
+    return redirect('teacher');
     }
 
     /**
@@ -75,10 +89,15 @@ class TypscontrolController extends Controller
      */
     public function edit($id)
     {
-       
+       if(Auth::user()->flag == 'admin')
+
 
        $type=Type::find($id);
+   if(Auth::user()->flag == 'admin')
+
        return view('control.types.edittype',compact('type'));
+       else
+    return redirect('teacher');
     }
 
     /**

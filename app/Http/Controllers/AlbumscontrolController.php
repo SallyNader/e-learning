@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Album;
+use Auth;
 class AlbumscontrolController extends Controller
 {
     /**
@@ -11,14 +12,20 @@ class AlbumscontrolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+{
+    $this->middleware('auth');
+}
 
   
     public function index()
     {
        $albums=Album::all();
 
-
+if(Auth::user()->flag == 'admin')
        return view('control.albums.albums',compact('albums'));
+   else 
+    return redirect('album');
     }
 
     /**
@@ -28,7 +35,14 @@ class AlbumscontrolController extends Controller
      */
     public function create()
     {
+
+        if(Auth::user()->flag == 'admin')
     return view('control.albums.create');
+
+
+else 
+    return redirect('album');
+
     }
 
     /**
@@ -101,9 +115,12 @@ if($file->move($path,$filename)){
     {
        $album=Album::find($id);
 
+  if(Auth::user()->flag == 'admin')
 
+    
        return view('control.albums.editalbum',compact('album'));
-
+else 
+    return redirect('album');
 
     }
 

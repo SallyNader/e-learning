@@ -16,8 +16,11 @@ class OfflinesController extends Controller
     public function index()
     {
      
-      // $categories=Category::all();
-      // return view('courses.listcategoryoffline',compact('categories'));
+      $offlines=Offline::paginate(4);
+
+      $categories=Category::all();
+
+      return view('courses.allofflines',compact('offlines','categories'));
     }
 
     /**

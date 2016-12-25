@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use Auth;
 class ArticlescontrolController extends Controller
 {
     /**
@@ -11,11 +12,25 @@ class ArticlescontrolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
+
+     public function __construct()
+{
+    $this->middleware('auth');
+}
+
+
     public function index()
     {
        $articles=Article::all();
 
+   if(Auth::user()->flag == 'admin')
+
        return view('control.articles.articles',compact('articles'));
+   else
+    return redirect('article');
     }
 
     /**
@@ -26,8 +41,10 @@ class ArticlescontrolController extends Controller
     public function create()
     {
        
-
+if(Auth::user()->flag == 'admin')
        return view('control.articles.create');
+else
+   return redirect('article');
     }
 
     /**
@@ -91,9 +108,11 @@ $this->validate($request,[
 
       $article=Article::find($id);
 
-
+if(Auth::user()->flag == 'admin')
 
       return view('control.articles.editarticle',compact('article'));
+  else
+   return redirect('article');
     }
 
     /**

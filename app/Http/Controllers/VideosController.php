@@ -7,6 +7,7 @@ use App\Video;
 use App\Course;
 use DB;
 use App\Article;
+use Auth;
 class VideosController extends Controller
 {
     /**
@@ -28,7 +29,10 @@ class VideosController extends Controller
 //     return $first."   ".$last;
 // }
 
-
+public function __construct()
+{
+    $this->middleware('auth');
+} 
     public function next($id,$episode){
 
  $video=Video::where('course_id',$id)->where('episode',$episode+1)->first();

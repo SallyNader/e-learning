@@ -17,6 +17,9 @@ use App\Teacher;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//adwyat dwlya
+
+Route::get('dwlya','AboutController@dwlya');
 //person of month
 
 Route::get('person','AboutController@person');
@@ -81,7 +84,7 @@ $articles=Article::limit(3)->get();
     return view('home',compact('images','courses','category','cat','articles','offlines','offlineCourse','teachers','latestCourse'));
 });
 
-Route::resource('offline','OfflinesController', ['except' => ['index']]);
+Route::resource('offline','OfflinesController');
 
 Route::resource('album','AlbumsController');
 Route::resource('course','CoursesController');

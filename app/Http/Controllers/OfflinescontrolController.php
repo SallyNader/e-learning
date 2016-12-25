@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Offline;
 use App\Teacher;
+use Auth;
 use App\Category;
 class OfflinescontrolController extends Controller
 {
@@ -13,12 +14,23 @@ class OfflinescontrolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function __construct()
+{
+    $this->middleware('auth');
+} 
+
+
     public function index()
     {
         $offlines=Offline::all();
 
-
+if(Auth::user()->flag == 'admin')
         return view('control.offlines.all',compact('offlines'));
+
+    else
+    return redirect('offline');
     }
 
     /**
@@ -31,8 +43,11 @@ class OfflinescontrolController extends Controller
      $teachers=Teacher::all();
 
 $categories=Category::all();
+if(Auth::user()->flag == 'admin')
 
      return view('control.offlines.create',compact('teachers','categories'));
+ else
+    return redirect('offline');
     }
 
     /**
@@ -140,8 +155,11 @@ Offline::create([
         $teachers=Teacher::all();
 
 $categories=Category::all();
+if(Auth::user()->flag == 'admin')
 
 return view('control.offlines.edit',compact('offline','teachers','categories'));
+else
+    return redirect('offline');
     }
 
     /**

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use  App\Course;
 
 use App\Category;
+use Auth;
 
 use App\Teacher;
 class CoursescontrolController extends Controller
@@ -15,12 +16,21 @@ class CoursescontrolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+      public function __construct()
+{
+    $this->middleware('auth');
+}
+
     public function index()
     {
         $courses=Course::all();
 
-
+if(Auth::user()->flag == 'admin')
         return view('control.courses.courses',compact('courses'));
+
+    else
+    return redirect('course');
     }
 
     /**
@@ -35,8 +45,10 @@ $teachers=Teacher::all();
 
 $categories=Category::all();
 
-
+if(Auth::user()->flag == 'admin')
         return view('control.courses.create',compact('teachers','categories'));
+        else
+    return redirect('course');
     }
 
     /**
@@ -139,8 +151,10 @@ Course::create([
       $teachers=Teacher::all();
 
 $categories=Category::all();
-
+if(Auth::user()->flag == 'admin')
       return view('control.courses.editcourse',compact('course','teachers','categories'));
+  else
+    return redirect('course');
     }
 
     /**

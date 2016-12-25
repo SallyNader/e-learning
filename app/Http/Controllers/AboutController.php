@@ -97,10 +97,21 @@ return redirect()->back();
 });
 
 
-return redirect()->back();
+return redirect()->back()->with('message','...لقد تم أرسال الأقتراح و سيتم مراجعته');
 
 
 
 
+   }
+
+
+
+   public function dwlya(){
+
+$teachers=Teacher::limit(3)->get();
+
+
+
+      return view('about.dwlya',compact('teachers'));
    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use Auth;
 class CategoriesController extends Controller
 {
     /**
@@ -11,13 +12,22 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+       public function __construct()
+{
+    $this->middleware('auth');
+} 
+
+
     public function index()
     {
        
 
        $cats=Category::all();
-
+if(Auth::user()->flag == 'admin')
        return view('control.categories.categories',compact('cats'));
+   else
+    return redirect('course');
     }
 
     /**
@@ -27,9 +37,11 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-       
+       if(Auth::user()->flag == 'admin')
 
        return view('control.categories.create');
+   else
+    return redirect('course');
     }
 
     /**
@@ -66,6 +78,7 @@ class CategoriesController extends Controller
     {
       
       $category=Category::find($id);
+      
       $categories=Category::all();
       return view('courses.listcategory',compact('category','categories'));
     }
@@ -86,8 +99,11 @@ public function showOffline($id)
     {
         
         $cat=Category::find($id);
+        if(Auth::user()->flag == 'admin')
 
         return view('control.categories.editcategory',compact('cat'));
+    else
+    return redirect('course');
     }
 
     /**

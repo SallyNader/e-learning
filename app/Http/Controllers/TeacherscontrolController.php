@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Teacher;
 use App\Type;
+use Auth;
 class TeacherscontrolController extends Controller
 {
     /**
@@ -12,13 +13,22 @@ class TeacherscontrolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function __construct()
+{
+    $this->middleware('auth');
+} 
+
     public function index()
     {
 $teachers=Teacher::all();
 
-
+if(Auth::user()->flag == 'admin')
 
 return view('control.teachers.teachers',compact('teachers'));
+else
+    return redirect('teacher');
 
     }
 
@@ -30,9 +40,12 @@ return view('control.teachers.teachers',compact('teachers'));
     public function create()
     {
         $types=Type::all();
-       
+       if(Auth::user()->flag == 'admin')
 
        return view('control.teachers.create',compact('types'));
+   else
+    return redirect('teacher');
+
     }
 
     /**
@@ -164,9 +177,12 @@ return redirect('teachercontrol');
 
 
 $teacher=Teacher::find($id);
-
+if(Auth::user()->flag == 'admin')
 
 return view('control.teachers.editteacher',compact('teacher','types'));
+else
+    return redirect('teacher');
+
 
     }
 

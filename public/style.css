@@ -5818,7 +5818,7 @@ aside .widget {
     line-height: 30px;
 }
 .wm-typo-columns,.wm-title-typoelements,.wm-typo-columns p, .wm-classic-heading,.wm-accordion,.wm-toggle-element,.wm-accordion .panel-default .panel-heading a,.wm-toggle-element .panel-default .panel-heading a {
-    float: left;
+    float: right;
     width: 100%;
 }
 .wm-typo-columns                                        {margin-bottom: 35px;}
@@ -6061,7 +6061,7 @@ aside .widget {
 }
 .wm-typography-element                                                               {margin-bottom: 50px;}
 .wm-pricesplan,.wm-price-plans,.wm-price-plans ul li,.wm-price-plans ul, .wm-pricesplan > ul > ul, .wm-price-plans h2,.wm-price-plans span,.wm-typography-element,.wm-table-horizontal .wm-table-content ul li,.wm-table-horizontal .wm-table-head li {
-    float: left;
+    float: right;
     width: 70%;
 }
 .wm-pricesplan ul li {
@@ -6170,7 +6170,7 @@ aside .widget {
     padding: 9px 27px 9px 24px;
 }
 .wm-message,.wm-promo-box,.wm-promo-box p,.wm-message .message,.wm-message .alert {
-    float: left;
+    float: right;
     width: 100%;
 }
 .wm-message .message{
@@ -6180,7 +6180,7 @@ aside .widget {
 }
 .wm-message .error-message {
     border-radius: 31px;
-    float: left;
+    float: right;
     position: relative;
 }
 .wm-message .error-message .close {
@@ -6212,12 +6212,12 @@ aside .widget {
 .wm-message .success-message i, .caution-message i, .information-message i {
     color: #ffffff;
     font-size: 18px;
-    float: left;
+    float: right;
     padding: 9px 22px 0px 3px;
 }
 .wm-message .success-message p, .caution-message p, .information-message p {
     color: #ffffff;
-    float: left;
+    float: right;
     font-size: 18px;
 }
 .wm-message .information-message                    {background-color: #83c6e4;}
