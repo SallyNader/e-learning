@@ -20,18 +20,18 @@
 
 
 
-        <!--// Main Banner \\-->
-        <div class="wm-main-banner">
+    <!--     
+        <div class="wm-main-banner" >
             
             <div class="wm-banner-one">
                 <div class="wm-banner-one-for">
                     <div class="wm-banner-one-for-layer"> <img src="{!!asset('extra-images/banner-view1-1.jpg')!!}" alt=""> </div>
                     <div class="wm-banner-one-for-layer"> <img src="{!!asset('extra-images/banner-view1-2.jpg')!!}" alt=""> </div>
                     <div class="wm-banner-one-for-layer"> <img src="{!!asset('extra-images/banner-view1-3.jpg')!!}" alt=""> </div>
-                    <div class="wm-banner-one-for-layer"> <img src="{!!asset('extra-images/banner-view1-1.jpg')!!}" alt=""> </div>
+                    <div class="wm-banner-one-for-layer"> <img src="{!!asset('extra-images/banner-view1-1.jpg')!!}" alt=""> </div> 
                 </div>
-                <div class="wm-banner-one-nav c" style="text-align: left;height: 300px">
-                    <div class="wm-banner-one-nav-layer c" style="text-align: left;height: 583px;padding-bottom: : 60px;padding-left: 160px">
+                <div class="wm-banner-one-nav c" style="text-align: left">
+                    <div class="wm-banner-one-nav-layer c" style="text-align: left;padding-bottom: : 60px;padding-left: 160px">
                         <h1>مركز القاهرة الإقليمي للتدريب و التحكيم</h1>
                         <p style="padding-top: 30px">تقديم الدعم والاستشارات للسادة مستشاري التحكيم والسادة المحكمين وتقديم الاستشارة القانونية بشكل عام - و تباشر اللجنة مهامها من تعيين محكمين تقديم الدعم والاستشارات للسادة مستشاري التحكيم والسادة المحكمين وتقديم الاستشارة القانونية بشكل عام - و تباشر اللجنة مهامها من تعيين محكمينتعيين محكمين تقديم الدعم والاستشارات للسادة مستشاري التحكيم والسادة المحكمين وتقديم الاستشارة القانونية بشكل عام - و تباشر اللجنة مهامها من تعيين محكمين</p>
                         <a href="{{url('moreaboutcrc')}}" class="wm-banner-btn" tabindex="0" style="font-size: 90%">لمزيد من المعلومات عن المركز</a>
@@ -45,12 +45,47 @@
             </div>
 
         </div>
+        -->
+    <!--// Main Banner \\-->
+        <div class="wm-main-banner" >
+            
+            <div class="wm-banner-one">
+                <div class="wm-banner-one-for">
+                    <div class="wm-banner-one-for-layer"> <img src="extra-images/banner-view1-1.jpg" alt=""> </div>
+                   <!--  <div class="wm-banner-one-for-layer"> <img src="extra-images/banner-view1-2.jpg" alt=""> </div>
+                    <div class="wm-banner-one-for-layer"> <img src="extra-images/banner-view1-3.jpg" alt=""> </div>
+                    <div class="wm-banner-one-for-layer"> <img src="extra-images/banner-view1-1.jpg" alt=""> </div> -->
+                </div>
+                <div class="wm-banner-one-nav">
+                    <div class="wm-banner-one-nav-layer"   >
+                        <h1 style="padding-left:90px">مركز القاهرة الإقليمي للتدريب و التحكيم</h1>
+                        <p class="c"  style="margin-left:90px" >تقديم الدعم والاستشارات للسادة مستشاري التحكيم والسادة المحكمين وتقديم الاستشارة القانونية بشكل عام - و تباشر اللجنة مهامها من تعيين محكمين تقديم الدعم والاستشار</p>
+                       <a  style="margin-left:90px" href="{{url('moreaboutcrc')}}" class="wm-banner-btn c" tabindex="0" style="font-size: 90%">لمزيد من المعلومات عن المركز</a>
+                    </div>
+                    <div class="wm-banner-one-nav-layer">
+                        <h1 style="margin-left:180px">مميزات العضوية لدينا</h1>
+                        <p class="c" style="margin-left:90px"> تباشر اللجنة مهامها من تعيين محكمين تقديم الدعم والاستشار تقديم الدعم والاستشارات للسادة مستشاري التحكيم والسادة المحكمين وتقديم الاستشارة القانونية</p>
+                        <a style="margin-left:90px;background-color: #b99663;color: white " href="{{url('momyzat')}}" class="wm-banner-btn c">لمعرفة المزيد عن مميزات العضوية</a>
+                    </div>
+                  <!--   <div class="wm-banner-one-nav-layer banner-bgcolor">
+                        <h1>Research & Business</h1>
+                        <p>The scientific community nominates CRISPR System, based on research developed at the UA.</p>
+                        <a href="#" class="wm-banner-btn">learn more</a>
+                    </div> -->
+                   <!--  <div class="wm-banner-one-nav-layer">
+                        <h1>International Programmes</h1>
+                        <p>The study programmes of the Enroll Campus University are open to people from all nationalities.</p>
+                        <a href="#" class="wm-banner-btn">learn more</a>
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
         <!--// Main Banner \\-->
 
-
            <!--// Main Section \\-->
-            <div class="wm-main-section wm-latest-event-full">
-                <div class="container">
+            <div class="wm-main-section wm-latest-event-full c"  >
+                <div class="container" >
                     <div class="row">
                         
                         <div class="col-md-12">
@@ -71,7 +106,7 @@
                                         <div class="wm-event-medium-wrap">
                                             <figure><a href="{{route('offline.show',$l->c_id)}}"><img src="{{$l->image}}" alt="" style="height: 150px"></a> </figure>
                                             <div class="wm-eventmedium-text">
-                                                <h5 style="text-align:center;"><a href="{{route('offline.show',$l->c_id)}}">{{$l->c_name}}</a></h5>
+                                                <h5 style="text-align:right;padding-left: 60px"><a href="{{route('offline.show',$l->c_id)}}">{{$l->c_name}}</a></h5>
                                                 <p>{{$l->disc}}</p>
                                                 <time datetime="2008-02-14 20:00" class="wm-color-three"><i class="wmicon-clock2"></i>{{$l->branch}} -   {{ date('F d, Y', strtotime($l->startDate)) }}</time>
                                             </div>
@@ -241,7 +276,7 @@
 
 
 
-   <div class="wm-main-section wm-ourhistory-full">
+   <div class="wm-main-section wm-ourhistory-full c">
                 <span class="wm-light-transparent"></span>
                 <div class="container">
                     <div class="row">
@@ -289,7 +324,7 @@
                         <div class="col-md-7">
                             <div class="wm-subscribe-form">
                                 <h2>من نحن ؟ و ماذا نقدم</h2>
-                                <p>نحن نساعد الطلاب ليس فقط الحصول على رسالة القبول </p>
+                               
                                 <p>يعمل لأكثر من 10 أعوام في مجال توظيف الطلاب الأجانب الذين يتوقون للدراسة في الجامعات الروسية والتحق أكثر من 11000 طالب من جميع أنحاء العالم. البعض منهم قد أنجزوا بالفعل دراستهم ويعملون في مجالات مختلفة مثل المتخصصين المؤهلين تأهيلا عاليا، والبعض الآخر ما زالوا يدرسون في الجامعةيعمل لأكثر من 10 أعوام في مجال توظيف الطلاب الأجانب الذين يتوقون للدراسة في الجامعات الروسية والتحق أكثر من 11000 طالب من جميع أنحاء العالم. البعض منهم قد أنجزوا بالفعل دراستهم ويعملون في مجالات مختلفة مثل المتخصصين المؤهلين تأهيلا عاليا، والبعض الآخر ما زالوا يدرسون في الجامعة</p>
                             </div>
                         </div>
@@ -314,6 +349,127 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="wm-form" style="width: 70%;margin-left: 170px;margin-top: 70px;position: relative;margin:0 auto ;">
+                                <div class="wm-widgettitle">
+                                    <h2 style="text-align: right;">أرسل أستشارتك القانونية للبلد التي تريدها</h2>
+                                </div>
+                                <form>
+                                    <ul>
+                                        <li><input type="text" value="Your Name" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>
+                                        <li>
+                                            <div class="wm-select-two">
+                                                <select>
+                                                    <option>1 Star Review</option>
+                                                    <option>1 Star Review1</option>
+                                                    <option>1 Star Review2</option>
+                                                    <option>1 Star Review3</option>
+                                                </select>
+                                            </div>
+                                        </li>
+                                        <li class="wm-full-form">
+                                            <textarea placeholder="Your Comment" ></textarea>
+                                        </li>
+                                        <li class="wm-full-form">
+                                            <input type="submit" value="Submit now">
+                                        </li>
+                                    </ul>
+                                </form>                                
+                            </div>      
+
+
+
+
+
+
+ -->
+
+
+
+
+
+
+
+    <!-- ModalLogin Box -->
+  
+        <div class="modal-content" style="margin-right: 19px" >
+          <div class="modal-body">
+            
+            <div class="wm-modallogin-form wm-login-popup " >
+                <span class="wm-color" style="text-align: right;padding-right: 80px">أرسل أستشارتك القانونية للبلد التي تريدها</span>
+                <form action="{{url('astshara')}}" method="POST" style="text-align: right;">
+                {{ csrf_field() }}
+                    <ul >
+                        <li  > <input type="text"  name="name" placeholder="االأسم" style="text-align: right;width: 400px;margin-right: 12px"  > </li>
+                        <li> <input type="text" name="telephone" value="االهاتف" onblur="if(this.value == '') { this.value ='االهاتف'; }" onfocus="if(this.value =='االهاتف') { this.value = ''; }" style="text-align: right;width: 400px"   > </li>
+
+                         <li> <input type="text" name="email" value="االبريد الألكترونية" onblur="if(this.value == '') { this.value ='االبريد الألكترونية'; }" onfocus="if(this.value =='االبريد الألكترونية') { this.value = ''; }" style="text-align: right;width: 400px" > </li>
+
+
+                         <!--  <li> <input type="text" name="astshara" value="الأستشارة القانونية" onblur="if(this.value == '') { this.value ='الأستشارة القانونية'; }" onfocus="if(this.value =='الأستشارة القانونية') { this.value = ''; }" style="text-align: right;" > </li> -->
+                         
+                        <li></li>
+                        <li style="" >
+                                                            <textarea name="astshara" placeholder="الأستشارة القانونية" style="text-align: right;font-size: 125%;font-weight: 30px;width: 400px;height: 200px;margin-right: 12px"></textarea>
+                                                        </li>
+                                                         <li style="margin-left:  15px">
+
+                                            <div class="wm-select-two" style="width: 97px ;">
+                                                <select name="country" style="text-align: center"  >
+                                                    <option>      مصر</option>
+                                                    <option>السعودية</option>
+                                                    <option>تونس</option>
+                                                    <option>ليبيا</option>
+                                                </select>
+                                            </div>
+                                            
+                                        </li>
+                        <li> <input type="submit" value="أرسال" class="c"> </li>
+                    </ul>
+                </form>
+                <span class="wm-color"></span>
+               
+                <p><a href="#"></a></p>
+            </div>
+            <div class="wm-modallogin-form wm-register-popup">
+                <span class="wm-color">create Your Account today</span>
+                <form>
+                    <ul>
+                        <li> <input type="text" value="Your Username" onblur="if(this.value == '') { this.value ='Your Username'; }" onfocus="if(this.value =='Your Username') { this.value = ''; }"> </li>
+                        <li> <input type="text" value="Your E-mail" onblur="if(this.value == '') { this.value ='Your E-mail'; }" onfocus="if(this.value =='Your E-mail') { this.value = ''; }"> </li>
+                        <li> <input type="password" value="password" onblur="if(this.value == '') { this.value ='password'; }" onfocus="if(this.value =='password') { this.value = ''; }"> </li>
+                        <li> <input type="text" value="Confirm Password" onblur="if(this.value == '') { this.value ='Confirm Password'; }" onfocus="if(this.value =='Confirm Password') { this.value = ''; }"> </li>
+                        <li> <input type="submit" value="Create Account"> </li>
+                    </ul>
+                </form>
+                <span class="wm-color">or signup with your socials:</span>
+                <ul class="wm-login-social-media">
+                    <li><a href="#"><i class="wmicon-social5"></i> Facebook</a></li>
+                    <li class="wm-twitter-color"><a href="#"><i class="wmicon-social4"></i> twitter</a></li>
+                    <li class="wm-googleplus-color"><a href="#"><i class="fa fa-google-plus-square"></i> Google+</a></li>
+                </ul>
+                <p>Already a member? <a href="#">Sign-in Here!</a></p>
+            </div>
+
+          </div>
+        </div>
+      <div class="clearfix"></div>
+          
+
+
+
+
+
+
 <style type="text/css">
     
 
@@ -332,7 +488,7 @@
 
 
 
-            <div class="wm-main-section wm-courses-popular-full">
+            <div class="wm-main-section wm-courses-popular-full c">
                 <div class="container">
                     <div class="row">
                         
@@ -358,7 +514,7 @@
                                                     <h6><a href="#">{{$c->teacher->t_name}}</a></h6>
                                                 </figcaption>
                                             </figure>
-                                            <div class="wm-popular-courses-text">
+                                            <div class="wm-popular-courses-text c">
                                                 <h6><a href="#">{{$c->c_name}}</a></h6>
                                                 <div class="wm-courses-price"><!-- <span>$50</span>--> </div>
                                                 <ul>
@@ -391,9 +547,8 @@
 
 
 
-
     <!--// Main Section \\-->
-            <div class="wm-main-section">
+            <div class="wm-main-section c">
                 <div class="container">
                     <div class="row">
                         
@@ -417,7 +572,7 @@
                                         </li>-->
                                         <li> 
 
-<div class="wm-apply-select"> 
+<div class="wm-apply-select c"> 
 <form action="{{url('search')}}">
 
 
@@ -434,11 +589,11 @@
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="wm-apply-select">
+                                            <div class="wm-apply-select c" style="text-align: right;" >
                                             @unless(empty($offlineCourse))
-                                                <select name="course">
+                                                <select name="course" style="text-align: right;">
                                                 @foreach($offlineCourse as $c)
-                                                    <option  value="{{$c->c_name}}" >{{$c->c_name}}</option>
+                                                    <option  value="{{$c->c_name}}" style="text-align: right;" >{{$c->c_name}}</option>
                                                    
                                                    @endforeach
                                                 </select>
@@ -446,7 +601,8 @@
                                                 @endunless
                                             </div>
                                         </li>
-                                        <li> <input type="submit" value="بحت"> </li>
+                                        <li> <input type="submit" value="بحث" style="background-color: #b99663
+;color: white;font-weight: 25px " > </li>
                                     </ul>
                                 </form>
                             </div>
@@ -487,71 +643,7 @@
 
 
 
-      <div class="wm-main-section wm-latestevents-full">
-                <div class="container">
-                    <div class="row">
-                        
-                        <div class="col-md-9 wm-top-spacer">
-                            <h2 class="wm-simple-title" style="text-align: right;">أشهر أقسام الدورات</h2>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="wm-event-latest-slider">
-                                        <div class="wm-event-latest-layer">
-                                            <h6 class="wm-color c">دوراتنل تؤهلك لسوق العمل فهي تشمل جميع المنهج المخصصة للعمل</h6>
-                                           <!-- <a href="#" class="wm-banner-btn">about us</a>-->
-                                        </div>
-                                        <div class="wm-event-latest-layer">
-                                            <h6 class="wm-color c">نحن نحرص في دورتنا على أن يكون الطالب قد أستفاد بشكل كبير و فهم الدرس</h6>
-                                         <!--   <a href="#" class="wm-banner-btn">about us</a>-->
-                                        </div>
-                                    </div>
-                                </div>
-                               
-                               @unless(empty($category))
-
-                               @foreach($category as $c)
-                                <div class="col-md-4">
-                                    <div class="wm-event wm-latest-event">
-                                        <ul class="row">
-                                            <li class="col-md-12">
-                                                <figure><a href="#"><img src="{!!asset('extra-images/latest-event-2.png')!!}" alt=""></a></figure>
-                                                <div class="wm-latest-event-text">
-                                                    <h6 style="text-align: center;"><a href="#" class="wm-color">{{$c->ca_name}}</a></h6>
-                                                    <time datetime="2008-02-14 20:00" style="text-align: center;">{{ date('F d, Y', strtotime($c->created_at)) }}</time>
-                                                    <p></p>
-                                                    <a href="{{route('category.show',$c->ca_id)}}" class="wm-banner-btn" style="text-align: center; margin-left: 60px">دورات القسم</a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                @endforeach
-
-@endunless
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="wm-counter wm-counter-simple">
-                                <ul class="row">
-                                    <li class="col-md-12">
-                                        <span class="word-count">5</span>
-                                        <h6>مركزنا يحتل المركز الخامس على مستوى الشرق الأوسط</h6>
-                                    </li>
-                                    <li class="col-md-12">
-                                        <span class="word-count">50</span>
-                                        <h6>طلبنا من مختلف أنحاء الدول العربية حوالي 50 دولة</h6>
-                                    </li>
-                                    <li class="col-md-12">
-                                        <span class="word-count">91</span>
-                                        <h6>نضم أمهر الخبراء علي مستوى الشرق الأوسط حوالي 91 خبير</h6>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+      
 
 
 
@@ -570,17 +662,17 @@
                         
                         <div class="col-md-6">
                             <div class="wm-fancytitle-two wm-align-left" style="margin-left: 350px"> <h2>أشهر خبرائنا</h2> </div>
-                            <div class="wm-thumb-testimonial">
+                            <div class="wm-thumb-testimonial" style="width: 900px" >
                                
                                   @unless(empty($teachers))
 
                                   @foreach($teachers  as $t)
 
                                 <div class="wm-thumb-testimonial-layer">
-                                    <figure><a href="#"><img src="extra-images/{{$t->profile_image}}" alt="" style="height: 320px;width: 300px"></a></figure>
+                                    <figure><a href="{{route('teacher.show',$t->t_id)}}"><img src="extra-images/{{$t->profile_image}}" alt="" style="height: 320px;width: 300px"></a></figure>
                                     <div class="thumb-testimonial-text" style="height: 320px">
-                                        <h4><a href="#">{{$t->t_name}}</a></h4>
-                                        <span class="wm-color-two">{{$t->type->t_title}}</span>
+                                        <h4><a href="{{route('teacher.show',$t->t_id)}}">{{$t->t_name}}</a></h4>
+                                        <span class="wm-color-two c" style="">{{$t->type->t_title}}</span>
                                         <p>{{$t->t_experience}}</p>
                                     </div>
                                 </div>
@@ -592,7 +684,9 @@
                         </div>
 
                     </div>
+
                 </div>
+
             </div>
             <!--// Main Section \\-->
 
@@ -601,6 +695,56 @@
 
 
 
+            <!--// Main Section \\-->
+            <div class="wm-main-section wm-upcoming-event-slider-full">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-md-12">
+                            <div class="wm-fancytitle-two"> <h2>المجلة الأعلامية</h2> </div>
+                           
+                            <div class="wm-upcoming-event-slider">
+
+                                <div class="wm-upcoming-event-layer">
+                                    <div class="wm-banner-addswrap">
+                                        <div class="wm-banner-adds-inner">
+                                            <time datetime="2008-02-14 20:00"><i class="wmicon-time2"></i> 24 April, 2016</time>
+                                            <h2>Convocation Recital</h2>
+                                            <p>We are pleased to offer a live-stream of this concert. The concert will not be archived for future viewing.</p>
+                                        </div>
+                                        <span>3220 Terry Lane Orlando, FL 32801</span>
+                                        <div class="wm-banner-adds-inner"> <a href="#" class="wm-classic-button wm-bgcolor-two">See Event</a> </div>
+                                    </div>
+                                </div>
+                              <!--   <div class="wm-upcoming-event-layer">
+                                    <div class="wm-banner-addswrap">
+                                        <div class="wm-banner-adds-inner">
+                                            <time datetime="2008-02-14 20:00"><i class="wmicon-time2"></i> 22 April, 2016</time>
+                                            <h2>Percussion Ensemble</h2>
+                                            <p>Performing contemporary works for percussion and marimba ensemble with a diverse array.</p>
+                                        </div>
+                                        <span>3198 Hill Street Wapakoneta, OH 45895</span>
+                                        <div class="wm-banner-adds-inner"> <a href="#" class="wm-classic-button wm-bgcolor-two">See Event</a> </div>
+                                    </div>
+                                </div> -->
+                              <!--   <div class="wm-upcoming-event-layer">
+                                    <div class="wm-banner-addswrap">
+                                        <div class="wm-banner-adds-inner">
+                                            <time datetime="2008-02-14 20:00"><i class="wmicon-time2"></i> 10 April, 2016</time>
+                                            <h2>Dean's Showcase Event</h2>
+                                            <p>Music students who've been selected by faculty to participate in the Dean's Showcase.</p>
+                                        </div>
+                                        <span>2013 Webster Street Woodbridge, NJ 07095</span>
+                                        <div class="wm-banner-adds-inner"> <a href="#" class="wm-classic-button wm-bgcolor-two">See Event</a> </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--// Main Section \\-->
 
 
 
@@ -628,15 +772,7 @@
 
 
 
-<div class="col-md-12">
-                            <div class="wm-callaction-two-typo">
-                                <span class="wm-typo-transparents-color"></span>
-                                <div class="wm-callaction-typo-text">
-                                    <h2>!هل ترغب في أرسال أستشاره قانونية لبلد معينة</h2>
-                                    <a href="#" data-toggle="modal" data-target="#ModalLogin" style="background-color: #b99663;color: white;font-size: 120%">أرسل أستشارتك القانونية</a>
-                                </div>                              
-                            </div>
-                        </div>
+
 
           
 
@@ -695,7 +831,7 @@
                         
                         <div class="col-md-12"> <div class="wm-fancy-title"> <h2>لماذا يفضلنا <span>المتدربون</span></h2> </div> </div>
                         <div class="col-md-6"> <video src="build/echo-hereweare.mp4" poster="build/echo-hereweare.jpg" controls="controls" preload="none"></video> </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 c">
                             <div class="wm-recent-list-slider wm-recent-list-slider-color">
                                 <div class="wm-recent-list-layer">
                                     <figure><a href="#"><img src="extra-images/recent-list-1.jpg" alt=""></a></figure>
@@ -743,8 +879,8 @@
                     <div class="row">
                         
                         <div class="col-md-12">
-                            <div class="wm-fancy-title"> <h2>أراء  <span>خبراء القانون</span></h2> <p>لا تأخذ في كلمتنا لذلك، ونرى ما يقول عملائنا رهيبة</p> </div>
-                            <div class="wm-testimonial-slider">
+                            <div class="wm-fancy-title"> <h2>أراء  <span>خبراء القانون</span></h2> <p class="c"></p> </div>
+                            <div class="wm-testimonial-slider c">
                                 <div class="wm-testimonial-slider-wrap">
                                     <p>اخترت لهم لأنه أعطاني مرونة. كنت أعمل بدوام كامل في نفس الوقت كنت أدرس، لذلك أعطاني OU أن المرونة. أيضا والدي، وأنا الدنماركية المنشأ.</p>
                                     <figure>
@@ -810,8 +946,9 @@
                 <div class="container">
                     <div class="row">
                         
-                        <div class="col-md-12">
-                            <div class="wm-fancy-title-four wm-fancy-title-left" style="text-align: center;" > <h2><small>&nbsp &nbsp صور المركز &nbsp &nbsp &nbsp </small></h2> <div class="clearfix"></div> <span>صور دوراتنا داخل المركز </span> </div>
+                        <div class="col-md-12 c">
+                            <div class="wm-fancy-title-four wm-fancy-title-left" style="text-align: center;" > <h2 ><small style="color: #b99663
+">&nbsp &nbsp صور المركز &nbsp &nbsp &nbsp </small></h2> <div class="clearfix"></div> <span> </span> </div>
 
 
                             <script type="text/javascript">
@@ -1007,6 +1144,155 @@
 
 
 
+<!-- <style>
+/*body { background: #E96D65; }*/
+
+#carousel {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  background: #b99663;
+}
+
+#slides {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+
+#slides ul {
+  list-style: none;
+  width: 100%;
+  height: 250px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#slides li {
+  width: 100%;
+  height: 250px;
+  float: left;
+  text-align: center;
+  position: relative;
+  font-family: lato, sans-serif;
+}
+
+/* Styling for prev and next buttons */
+
+.btn-bar {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  top: 40px;
+}
+
+#buttons {
+  padding: 0 0 5px 0;
+  float: right;
+}
+
+#buttons a {
+  text-align: center;
+  display: block;
+  font-size: 50px;
+  float: left;
+  outline: 0;
+  margin: 0 60px;
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 9px;
+  width: 35px;
+}
+
+a#prev:hover,
+a#next:hover {
+  color: #FFF;
+  text-shadow: .5px 0px #b14943;
+}
+
+.quote-phrase,
+.quote-author {
+  font-family: sans-serif;
+  font-weight: 300;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 5px 20px;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+}
+
+.quote-phrase {
+  height: 200px;
+  font-size: 24px;
+  color: #FFF;
+  font-style: italic;
+  text-shadow: .5px 0px #b14943;
+}
+
+.quote-marks {
+  font-size: 30px;
+  padding: 0 3px 3px;
+  position: inherit;
+}
+
+.quote-author {
+  font-style: normal;
+  font-size: 20px;
+  color: #b14943;
+  font-weight: 400;
+  height: 30px;
+}
+
+.quoteContainer,
+.authorContainer {
+  display: table;
+  width: 100%;
+}
+</style>
+ -->
+
+<!-- <div id="carousel">
+  <div class="btn-bar">
+    <div id="buttons"><a id="prev" href="#"><</a><a id="next" href="#">></a> </div>
+  </div>
+  <div id="slides">
+    <ul>
+      <li class="slide">
+        <div class="quoteContainer">
+          <p class="quote-phrase"><span class="quote-marks">"</span> I was literally BLOWN AWAY by Company A's work! They went above and beyond all of our expectations with design, usability. and branding, I will reccommend them to everyone I know!<span class="quote-marks">"</span> </p>
+        </div>
+        <div class="authorContainer">
+          <p class="quote-author">John Doe // Local Business Owner</p>
+        </div>
+      </li>
+      <li class="slide">
+        <div class="quoteContainer">
+          <p class="quote-phrase"><span class="quote-marks">"</span> I could not stop staring! Company A's Web Solutions are by far the most elegant solutions, you can't beat their quality and attention to detail! <span class="quote-marks">"</span> </p>
+        </div>
+        <div class="authorContainer">
+          <p class="quote-author">Andy Fakename // CEO: Andy's Camping Supplies</p>
+        </div>
+      </li>
+      <li class="slide">
+        <div class="quoteContainer">
+          <p class="quote-phrase"><span class="quote-marks">"</span>Carl Fakeguy, was the most helpful designer I've ever hired. He listened to my ideas and advised against things that could negatively affect my CEO. Company A is by far the most generous and helpful company, 5/5!<span class="quote-marks">"</span> </p>
+        </div>
+        <div class="authorContainer">
+          <p class="quote-author">Janice Falsename</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+ -->
 
 
 
@@ -1016,18 +1302,101 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+   <!--// Main Section \\-->
+                 <div class="wm-main-section wm-studentslove-full">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-md-12"> <div class="wm-fancy-title"> <h2>المجلة<span> الأعلامية</span></h2> </div> </div>
+                        <!-- <div class="col-md-6"> <video src="build/echo-hereweare.mp4" poster="build/echo-hereweare.jpg" controls="controls" preload="none"></video> </div> -->
+                        <div class="col-md-6 c" style="width:900px;text-align: right;">
+                            <div class="wm-recent-list-slider wm-recent-list-slider-color">
+                                    @unless(empty($articles))
+
+                                    @foreach($articles as $a)
+                                <div class="wm-recent-list-layer">
+                                   
+
+
+
+
+ @if($a->vote >= 1 and $a->vote <= 10)
+                            <img src="{!!asset('images/star1.png')!!}" style="width:165px;height: 30px;margin-left: 40px"> 
+                            @elseif($a->vote >= 11 and $a->vote<=20)
+                            <img src="{!!asset('images/star2.png')!!}" style="width:165px;height: 30px;margin-left: 40px"> 
+                            @elseif($a->vote >= 21 and $a->vote <=40)
+                            <img src="{!!asset('images/star3.png')!!}" style="width:165px;height: 30px;margin-left: 40px"> 
+                            @elseif($a->vote >=41 and $a->vote <= 60)
+                            <img src="{!!asset('images/star4.png')!!}" style="width:165px;height: 30px;margin-left: 40px"> 
+                            @elseif($a->vote >= 61 )
+                           <img src="{!!asset('images/star.png')!!}" style="width:165px;height: 30px;margin-left: 40px"> 
+                            @endif
+
+                                    <div class="wm-recent-list-text">
+                                        <p> “ 
+
+
+
+
+ {{substr($a->a_article,0,99)}}<a style="color:#b99663" href="{{route('article.show',$a->a_id)}}" class="wm-color c" style="color:#b99663;font-weight: 40px">....  لقرأة المقال كاملا</a>
+”</p>
+                                        <a href="#" class="wm-color-three">{{$a->a_publisher}}</a>
+                                    </div>
+                                </div>
+                                @endforeach
+                                    @endif
+                               <!--  <div class="wm-recent-list-layer">
+                                    <figure><a href="#"><img src="extra-images/recent-list-2.jpg" alt=""></a></figure>
+                                    <div class="wm-recent-list-text">
+                                        <p>“تسجل هي فريدة من نوعها للغاية من حيث البيئة الأكاديمية الاجتماعية”</p>
+                                        <a href="#" class="wm-color-three">محمد تامر</a>
+                                    </div>
+                                </div> -->
+                             <!--    <div class="wm-recent-list-layer">
+                                    <figure><a href="#"><img src="extra-images/recent-list-3.jpg" alt=""></a></figure>
+                                    <div class="wm-recent-list-text">
+                                        <p>“المعرفة المكتسبة في العديد من الدورات يمكن بسهولة أن تستخدم في مسؤولياتي وظيفة جديدة”</p>
+                                        <a href="#" class="wm-color-three">مجدي زين</a>
+                                    </div>
+                                </div> -->
+                             <!--    <div class="wm-recent-list-layer">
+                                    <figure><a href="#"><img src="extra-images/recent-list-2.jpg" alt=""></a></figure>
+                                    <div class="wm-recent-list-text">
+                                        <p>“تسجل هي فريدة من نوعها للغاية من حيث البيئة الأكاديمية الاجتماعية”</p>
+                                        <a href="#" class="wm-color-three">سالي نادر</a>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--// Main Section \\-->
 
 
             <!--// Main Section \\-->
 
             <!--// Main Section \\-->
-            <div class="wm-main-section wm-news-grid-full">
+           <!--  <div class="wm-main-section wm-news-grid-full">
                 <div class="container">
                     <div class="row">
                         
                         <div class="col-md-12">
                             <div class="wm-fancy-title"> <h2> <a href="{{url('article')}}">المجلة<span> الأعلامية</span></a></h2> <p></p> </div>
-                            <div class="wm-news wm-news-grid">
+                            <div class="wm-news wm-news-grid c">
                                 <ul class="row">
 
                                    
@@ -1037,14 +1406,14 @@
                                     <li class="col-md-4">
                                         <figure>
                                             <a href="#"><img src="{!!asset('extra-images/news-grid-3.png')!!}" alt=""></a>
-                                            <figcaption class="wm-bgcolor">
+                                            <figcaption class="wm-bgcolor c">
                                                 
-                                                <h6 style="text-align: right;">الناشر: <a href="#">{{$a->a_publisher}}</a></h6>
+                                                <h6 style="text-align: right;" class="c" >الناشر : <a href="#" class="c" >{{$a->a_publisher}}</a></h6>
                                             </figcaption>
                                         </figure>
                                         <div class="wm-newsgrid-text">
                                             <ul class="wm-post-options">
-                                                <li>{{ date('F d, Y', strtotime($a->created_at)) }}
+                                                <li>
 </li>
                                                 <li>
 
@@ -1056,24 +1425,24 @@
 
 
                                                 @if($a->vote >= 1 and $a->vote <= 10)
-                            <img src="{!!asset('images/star1.png')!!}" style="width:160px;height: 30px;"> 
+                            <img src="{!!asset('images/star1.png')!!}" style="width:165px;height: 30px;margin-left: 40px"> 
                             @elseif($a->vote >= 11 and $a->vote<=20)
-                            <img src="{!!asset('images/star2.png')!!}" style="width:160px;height: 30px;"> 
+                            <img src="{!!asset('images/star2.png')!!}" style="width:165px;height: 30px;margin-left: 40px"> 
                             @elseif($a->vote >= 21 and $a->vote <=40)
-                            <img src="{!!asset('images/star3.png')!!}" style="width:160px;height: 30px;"> 
+                            <img src="{!!asset('images/star3.png')!!}" style="width:165px;height: 30px;margin-left: 40px"> 
                             @elseif($a->vote >=41 and $a->vote <= 60)
-                            <img src="{!!asset('images/star4.png')!!}" style="width:160px;height: 30px;"> 
+                            <img src="{!!asset('images/star4.png')!!}" style="width:165px;height: 30px;margin-left: 40px"> 
                             @elseif($a->vote >= 61 )
-                           <img src="{!!asset('images/star.png')!!}" style="width:160px;height: 30px;"> 
+                           <img src="{!!asset('images/star.png')!!}" style="width:165px;height: 30px;margin-left: 40px"> 
                             @endif
                                                                             
                               
                                                 </li>
                                             </ul>
-                                            <h5><a href="#" class="wm-color">{{$a->a_title}}</a></h5>
-                                            <p>..{{substr($a->a_article,0,99)}}
+                                            <h5 style="text-align: right;color:#b99663" ><a href="#" class="wm-color c" style="color:#b99663;font-weight: 40px">{{$a->a_title}}</a></h5>
+                                            <p style="text-align: right;">{{substr($a->a_article,0,99)}}
 </p>
-                                            <a class="wm-banner-btn" href="{{route('article.show',$a->a_id)}}">لقرأة المقال كاملا</a>
+                                            <a class="wm-banner-btn c" href="{{route('article.show',$a->a_id)}}" style="background-color:#b99663;color: white ">لقرأة المقال كاملا</a>
 
                                         </div>
 
@@ -1088,7 +1457,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!--// Main Section \\-->
 
             <!--// Main Section \\-->
@@ -1193,7 +1562,7 @@
                                                             <i class="wmicon-web2"></i>
                                                             <textarea placeholder="المقال" name="article" style="text-align: right;" ></textarea>
                                                         </li>
-                                                        <li> <input type="submit" value="أرسال"> </li>
+                                                        <li class="c"> <input type="submit" value="أرسال" style="background-color:#b99663;color: white"> </li>
                                                     </ul>
                                                 </form>
                                             </div>
@@ -1225,7 +1594,7 @@
                                                             <i class="wmicon-web2"></i>
                                                             <textarea placeholder="المقترح" name="suggestion" style="text-align: right;" ></textarea>
                                                         </li>
-                                                        <li> <input type="submit" value="أرسال"> </li>
+                                                        <li class="c"> <input type="submit" value="أرسال" style="background-color:#b99663;color: white;" > </li>
                                                     </ul>
                                                 </form>
                                             </div>

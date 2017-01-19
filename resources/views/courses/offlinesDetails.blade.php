@@ -81,16 +81,16 @@
                                         <div class="panel-heading" role="tab" id="headingOne">
                                             <h4 class="panel-title">
                                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls=" collapseOne" style="font-size: 140%">
-                                              المدرب
+                                              المدرب <h3 style="color: black">{{$offlines->teacher->t_name}}</h3>
                                                </a>
                                             </h4>
                                         </div>
-                                          <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                         <!--  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                                            
                                             <div class="panel-body" style="font-size: 90%">
                                                {{$offlines->teacher->t_name}}
                                             </div>
-                                        </div>    
+                                        </div>     -->
                                     </div>
 
 
@@ -120,14 +120,15 @@
                                             <h4 class="panel-title">
                                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="font-size: 140%">
                                                 المنهج
+                                                <h3 style="color: black"> {{$offlines->syllabus}}</h3>
                                                 </a>
                                             </h4>
                                         </div>
-                                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                       <!--  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                                             <div class="panel-body" style="font-size: 90%">
                                                 {{$offlines->syllabus}}
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
 
 
@@ -143,14 +144,15 @@
                                             <h4 class="panel-title">
                                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive" style="font-size: 140%">
                                                 بعد أتمام الدورة ستكون مؤهلا في التالي
+                                                <h3 style="color: black">{{$offlines->certificates}}</h3>
                                                </a>
                                             </h4>
                                         </div>
-                                        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                     <!--    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                                             <div class="panel-body" style="font-size: 90%">
                                                  {{$offlines->certificates}}
                                             </div>
-                                        </div>    
+                                        </div>   -->  
                                     </div>
 
 
@@ -234,25 +236,10 @@
             </div>
             <!--// Main Section \\-->
 
-		</div>
+</div>
 		<!--// Main Content \\-->
 
 		<!--// Footer \\-->
-		<footer id="wm-footer" class="wm-footer-one">
-			
-            <!--// FooterNewsLatter \\-->
-            <div class="wm-footer-newslatter">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form>
-                                <i class="wmicon-interface2"></i>
-                                <input type="text" value="Enter your e-mail address" onblur="if(this.value == '') { this.value ='Enter your e-mail address'; }" onfocus="if(this.value =='Enter your e-mail address') { this.value = ''; }">
-                                <input type="submit" value="Subscribe to our newsletter">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+		
             <!--// FooterNewsLatter \\-->
 @stop

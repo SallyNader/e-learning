@@ -18,6 +18,22 @@
 
 
 
+<!-- 
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+ -->
+
+
+<!--flash message-->
+
+
+
+
+
+
+ 
+
+
+<!--end flash message-->
 
 
 
@@ -39,13 +55,7 @@
 
 
 
-
-
-
-
-
-
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 
 <script type="text/javascript" src="{!!asset('lib/jquery-1.10.1.min.js')!!}"></script>
@@ -244,13 +254,7 @@
 
         });
     </script>
-    <style type="text/css">
-        .fancybox-custom .fancybox-skin {
-            box-shadow: 0 0 50px #222;
-        }
-
-       
-    </style>
+   
 
 
 
@@ -270,7 +274,16 @@
 
 
 
+<style type="text/css">
+    
 
+
+    .c{
+
+
+        font-family: Arial,Helvetica,sans-serif;font-size: 15px;    font-weight: 700;
+    }
+</style>
 
 
 
@@ -309,25 +322,33 @@
     <![endif]-->
   </head>
   <body>
+
+   <style type="text/css">
+        .fancybox-custom .fancybox-skin {
+            box-shadow: 0 0 50px #222;
+        }
+
+       
+    </style>
   
     <!--// Main Wrapper \\-->
+     @if(Session::has('message'))
+
+
+
+     <div class="alert alert-warning" style="text-align: center;margin-bottom: 0px;font-size: 120%">
+    <strong>{{Session::get('message')}}</strong>  
+  </div>
+
+  
+                            @endif
     <div class="wm-main-wrapper">
 
         
         <!--// Header \\-->
+       
     <header id="wm-header" class="wm-header-one">
-     @if(Session::has('message'))
-  <div class="wm-message wm-typography-element" style="text-align: center;margin-left: 500px;margin-bottom: 0px">
-                                <div class="wm-title-typoelements" style="text-align: center;width: 350px">
-                                <div class="message caution-message" style="text-align: center;">
-                                    
-                                    <p style="text-align: center;margin-right: 20px;margin-top: 5px">{{Session::get('message')}}</p>
-                                    <i class="fa fa-warning"></i>
-                                </div>
-                               
-                            </div>
-</div>
-                            @endif
+     
 
             <!--// TopStrip \\-->
       <div class="wm-topstrip" style="margin-top: 0px">
@@ -337,19 +358,19 @@
 
                         <div class="col-md-12">
                             <div class="wm-language"> <ul> <li><a href="#"></a></li> <li><a href="#"></a></li> </ul> </div>
-                            <ul class="wm-stripinfo">
-                                <li><i class="wmicon-location"></i> 22 شارع محمود حسن - الميرغني مصر الجديدة </li>
-                                <li><i class="wmicon-technology4"></i> 22903214 - 002</li>
-                                <li><i class="wmicon-clock2"></i> فاكس: 22903416 - 002 </li>
+                            <ul class="wm-stripinfo c">
+                                <li ><i class="wmicon-location"></i> 22 شارع محمود حسن - الميرغني مصر الجديدة </li>
+                                <li><i class="wmicon-technology4"></i> 22903214  002</li>
+                                <li><i class="wmicon-clock2"></i> فاكس: 22903416  002 </li>
                             </ul>
 
                             @if(Auth::check())
-<ul class="wm-adminuser-section">
+<ul class="wm-adminuser-section c">
 
                                 <li>
                                 <form action="{{url('logout')}}" method="POST">
                                 {!! csrf_field() !!}
-                                    <input type="submit" name="" value="لتسجيل الخروج" style="background-color: #2d2d53;color: white;border-color:  #2d2d53;font-size: 120%  "> 
+                                    <input type="submit" name="" value="لتسجيل الخروج" style="background-color: #222845;color: white;border-color:  #2d2d53;font-size: 120%;border: none  "> 
 
                                     </form>
                                 </li>
@@ -358,16 +379,16 @@
 
                                     <a href="{{url('profile')}}" style="font-size: 120%; font-family: 'Lucida Bright', Georgia, serif;">{{Auth::user()->name}}</a>
                                 </li>
-                               
+
                             </ul>
                             @else
                             <ul class="wm-adminuser-section">
                             
                                 <li>
-                                    <a href="{{url('login')}}" >تسجيل الدخول</a>
+                                    <a href="{{url('login')}}" class="c" >تسجيل الدخول</a>
                                 </li>
                                 <li>
-                                    <a href="{{url('register')}}">للتسجيل في الموقع</a>
+                                    <a href="{{url('register')}}" class="c" >للتسجيل في الموقع</a>
                                 </li>
                                 <li>
                                     <!--<a href="#" class="wm-search-btn" data-toggle="modal" data-target="#ModalSearch"><i class="wmicon-search"></i></a>-->
@@ -386,7 +407,7 @@
             <div class="wm-main-header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3"><a href="index-2.html" class="wm-logo"><img style="height: 90px;width:90px" src="{!!asset('images/crc.jpg')!!}" alt=""></a></div>
+                        <div class="col-md-3"><a href="index-2.html" class="wm-logo"><img style="height: 90px;width:90px;margin-bottom: 0px;margin-top: 0px" src="{!!asset('images/crc.jpg')!!}" alt=""></a></div>
                         <div class="col-md-9">
                             <!--// Navigation \\-->
                             <nav class="navbar navbar-default" >
@@ -398,7 +419,7 @@
                                     <span class="icon-bar"></span>
                                   </button>
                                 </div>
-                                <div class="collapse navbar-collapse" id="navbar-collapse-1"  >
+                                <div class="collapse navbar-collapse" id="navbar-collapse-1"  style="margin-bottom: 1px;width: 1200px">
                                   <ul class="nav navbar-nav"  >
                                     <li class="active"><a href="{{url('branches')}}" style="font-size: 110%">فروعنا</a>
                                         
@@ -414,10 +435,13 @@
                                             
                                         </ul>
                                     </li>
+                                        <li class="wm-megamenu-li"><a href="{{url('tahkem')}}" style="font-size: 110%">أحكام التحكيم  </a>
+                                    </li>
                                     <li><a href="#" style="font-size: 110%">عن المركز</a>
-                                        <ul class="wm-dropdown-menu">
+                                        <ul class="wm-dropdown-menu" style="text-align: right;">
                                             <li><a href="{{url('agraya')}}" style="font-size: 110%">اللائحة اللأجرائية</a></li>
                                             <li><a href="{{url('momyzat')}}" style="font-size: 110%">مميزات العضوية</a></li>
+                                             
                                         </ul>
                                     </li>
                                     <li ><a href="{{url('dwlya')}}" style="font-size: 110%">العضويات الدولية</a>
@@ -475,6 +499,8 @@
                                             <li><a href="shop-single-product.html">Shop Detail</a></li>
                                         </ul>
                                         -->
+
+
                                     </li>
                                     <li class="wm-megamenu-li"><a href="{{url('/')}}" style="font-size: 110%">الرئيسية  </a>
   <!--
@@ -526,7 +552,17 @@
     <footer id="wm-footer" class="wm-footer-one">
             
             <!--// FooterNewsLatter \\-->
-            <div class="wm-footer-newslatter">
+
+            <div class="col-md-12">
+                            <div class="wm-callaction-two-typo">
+                                <span class="wm-typo-transparents-color"></span>
+                                <div class="wm-callaction-typo-text" >
+                                    <h2>!هل ترغب في أرسال أستشاره قانونية لبلد معينة</h2>
+                                    <a href="#" data-toggle="modal" data-target="#ModalLogin" style="background-color: #b99663;color: white;font-size: 160%">أرسل أستشارتك القانونية</a>
+                                </div>                              
+                            </div>
+                        </div>
+           <!-- <div class="wm-footer-newslatter">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -534,7 +570,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <!--// FooterNewsLatter \\-->
 
             <!--// FooterWidgets \\-->
@@ -565,7 +601,7 @@
                             </div>
                         </aside>
                         <aside class="widget widget_archive col-md-2" style="margin-top: 150px">
-                            <div class="wm-footer-widget-title"> <h5>بعض الروابط</h5> </div>
+                            <div class="wm-footer-widget-title"> <h5 style="color: #b99663;font-weight: 700">بعض الروابط</h5> </div>
                             <ul>
                                 <li><a href="{{route('album.index')}}">الألبومات</a></li>
                                 <li><a href="{{route('course.index')}}">الدورات و الدبلومات</a></li>
@@ -576,29 +612,29 @@
                             </ul>
                         </aside>
                         <aside class="widget widget_twitter col-md-4"  style="margin-top: 150px">
-                            <div class="wm-footer-widget-title"> <h5><i class="wmicon-social2"></i> @enrollcampus</h5> </div>
+                            <div class="wm-footer-widget-title"> <h5> </h5> </div>
                             <ul>
                                 <li>
-                                    <p>Check Youniverse - Multipurpose PSD Template @ThemeForest: <a href="#">pic.twitter.com/xcVlqJySjq</a></p>
-                                    <time datetime="2008-02-14 20:00" class="wm-color">2 hrs ago</time>
+                                    <p><a href="#"></a></p>
+                                    <time datetime="2008-02-14 20:00" class="wm-color"></time>
                                 </li>
                                 <li>
-                                    <p>Check out my New PSD:  FashionPlus - Fashion eCommerce: <a href="#">pic.twitter.com/xc445Ghyt</a></p>
-                                    <time datetime="2008-02-14 20:00" class="wm-color">4 hrs ago</time>
+                                    <p><a href="#"></a></p>
+                                    <time datetime="2008-02-14 20:00" class="wm-color"></time>
                                 </li>
                                 <li>
-                                    <p>MedicAid - Medical Template @ThemeForest: <a href="#">pic.twitter.com/xcVlq542wfER</a></p>
-                                    <time datetime="2008-02-14 20:00" class="wm-color">1 day ago</time>
+                                    <p></a></p>
+                                    <time datetime="2008-02-14 20:00" class="wm-color"></time>
                                 </li>
                             </ul>
                         </aside>
                         <aside class="widget widget_gallery col-md-3" style="margin-top: 150px">
-                            <div class="wm-footer-widget-title"> <h5 style="text-align: center;">فروعنا</h5> </div>
+                            <div class="wm-footer-widget-title"> <h5 style="color: #b99663;font-weight: 700;text-align: center;">فروعنا</h5> </div>
                             <ul class="gallery">
-                                <li><a  href="{{url('branch/القاهرة/test')}}"><img src="{!!asset('extra-images/eg.gif')!!}" alt=""></a></li>
-                                <li><a  href="{{url('branch/السعودية/test')}}"><img src="{!!asset('extra-images/sa.gif')!!}" alt=""></a></li>
-                                <li><a  href="{{url('branch/تونس/test')}}"><img src="{!!asset('extra-images/tn.gif')!!}" alt=""></a></li>
-                                <li><a href="{{url('branch/ليبيا/test')}}"><img src="{!!asset('extra-images/ly.gif')!!}" alt=""></a></li>
+                                <li><a  href="{{url('details-of-branch/مصر/14 شارع الدوحة - المنطقة الخامسة النسيم/2134787777/أحمد علي')}}"><img src="{!!asset('extra-images/eg.gif')!!}" alt=""></a></li>
+                                <li><a  href="{{url('details-of-branch/السعودية/14 شارع الدوحة - المنطقة الخامسة النسيم/2134787777/أحمد علي')}}"><img src="{!!asset('extra-images/sa.gif')!!}" alt=""></a></li>
+                                <li><a  href="{{url('details-of-branch/تونس/14 شارع الدوحة - المنطقة الخامسة النسيم/445545454/أحمد علي')}}"><img src="{!!asset('extra-images/tn.gif')!!}" alt=""></a></li>
+                                <li><a href="{{url('details-of-branch/ليبيا/شارع فهد الوسري - العبيكان الدولي/5454777/أحمد علي')}}"><img src="{!!asset('extra-images/ly.gif')!!}" alt=""></a></li>
                                 
                                
                             </ul>
@@ -633,29 +669,32 @@
         <div class="modal-content">
           <div class="modal-body">
             
-            <div class="wm-modallogin-form wm-login-popup" style="text-align: right;">
+            <div class="wm-modallogin-form wm-login-popup " style="text-align: right;">
                 <span class="wm-color">أرسل أستشارتك القانونية للبلد التي تريدها</span>
-                <form action="{{url('astshara')}}" method="POST">
+                <form action="{{url('astshara')}}" method="POST" style="text-align: right;">
                 {{ csrf_field() }}
-                    <ul>
-                        <li> <input type="text" name="name" value="الأسم" onblur="if(this.value == '') { this.value ='الأسم'; }" onfocus="if(this.value =='Your Username') { this.value = ''; }"> </li>
-                        <li> <input type="text" name="telephone" value="الهاتف" onblur="if(this.value == '') { this.value ='الهاتف'; }" onfocus="if(this.value =='الهاتف') { this.value = ''; }"> </li>
+                    <ul >
+                        <li> <input type="text" name="name" value="      االأسم" onblur="if(this.value == '') { this.value ='      االأسم'; }" onfocus="if(this.value =='Your Username') { this.value = ''; }" style="text-align: right;"  > </li>
+                        <li> <input type="text" name="telephone" value="االهاتف" onblur="if(this.value == '') { this.value ='االهاتف'; }" onfocus="if(this.value =='االهاتف') { this.value = ''; }" style="text-align: right;"   > </li>
 
-                         <li> <input type="text" name="email" value="البريد الألكترونية" onblur="if(this.value == '') { this.value ='البريد الألكترونية'; }" onfocus="if(this.value =='البريد الألكترونية') { this.value = ''; }"> </li>
-<li>
-                                            <div class="wm-select-two">
-                                                <select name="country">
-                                                    <option>مصر</option>
+                         <li> <input type="text" name="email" value="االبريد الألكترونية" onblur="if(this.value == '') { this.value ='االبريد الألكترونية'; }" onfocus="if(this.value =='االبريد الألكترونية') { this.value = ''; }" style="text-align: right;" > </li>
+
+
+                          <li> <input type="text" name="astshara" value="الأستشارة القانونية" onblur="if(this.value == '') { this.value ='الأستشارة القانونية'; }" onfocus="if(this.value =='الأستشارة القانونية') { this.value = ''; }" style="text-align: right;" > </li>
+                          <li>
+
+                                            <div class="wm-select-two" style="width: 97px ;margin-left:  290px">
+                                                <select name="country" style="text-align: center"  >
+                                                    <option>      مصر</option>
                                                     <option>السعودية</option>
                                                     <option>تونس</option>
                                                     <option>ليبيا</option>
                                                 </select>
                                             </div>
+                                            
                                         </li>
-
-                          <li> <input type="text" name="astshara" value="الأستشارة القانونية" onblur="if(this.value == '') { this.value ='الأستشارة القانونية'; }" onfocus="if(this.value =='الأستشارة القانونية') { this.value = ''; }"> </li>
                         <li></li>
-                        <li> <input type="submit" value="أرسال"> </li>
+                        <li> <input type="submit" value="أرسال" class="c"> </li>
                     </ul>
                 </form>
                 <span class="wm-color"></span>
@@ -711,6 +750,116 @@
       </div>
     </div>
     <!-- ModalSearch Box -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  -->
+<script>
+$(document).ready(function () {
+    //rotation speed and timer
+    var speed = 5000;
+    
+    var run = setInterval(rotate, speed);
+    var slides = $('.slide');
+    var container = $('#slides ul');
+    var elm = container.find(':first-child').prop("tagName");
+    var item_width = container.width();
+    var previous = 'prev'; //id of previous button
+    var next = 'next'; //id of next button
+    slides.width(item_width); //set the slides to the correct pixel width
+    container.parent().width(item_width);
+    container.width(slides.length * item_width); //set the slides container to the correct total width
+    container.find(elm + ':first').before(container.find(elm + ':last'));
+    resetSlides();
+    
+    
+    //if user clicked on prev button
+    
+    $('#buttons a').click(function (e) {
+        //slide the item
+        
+        if (container.is(':animated')) {
+            return false;
+        }
+        if (e.target.id == previous) {
+            container.stop().animate({
+                'left': 0
+            }, 1500, function () {
+                container.find(elm + ':first').before(container.find(elm + ':last'));
+                resetSlides();
+            });
+        }
+        
+        if (e.target.id == next) {
+            container.stop().animate({
+                'left': item_width * -2
+            }, 1500, function () {
+                container.find(elm + ':last').after(container.find(elm + ':first'));
+                resetSlides();
+            });
+        }
+        
+        //cancel the link behavior            
+        return false;
+        
+    });
+    
+    //if mouse hover, pause the auto rotation, otherwise rotate it    
+    container.parent().mouseenter(function () {
+        clearInterval(run);
+    }).mouseleave(function () {
+        run = setInterval(rotate, speed);
+    });
+    
+    
+    function resetSlides() {
+        //and adjust the container so current is in the frame
+        container.css({
+            'left': -1 * item_width
+        });
+    }
+    
+});
+//a simple function to click next link
+//a timer will call this function, and the rotation will begin
+
+function rotate() {
+    $('#next').click();
+}
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+
 
     <!-- jQuery (necessary for JavaScript plugins) -->
     <script type="text/javascript" src="{!!asset('script/jquery.js')!!}"></script>

@@ -165,8 +165,11 @@ foreach ($course as $key => $value) {
       
 
 
+if(Auth::user()->flag == 'admin')
 
       return view('control.videos.videos',compact('videos'));
+     else
+    return redirect("/");
     }
 
     /**
@@ -178,7 +181,11 @@ foreach ($course as $key => $value) {
     {
 
         $courses=Course::all();
+        if(Auth::user()->flag == 'admin')
+
         return view('control.videos.create',compact('courses'));
+       else
+    return redirect("/");
     }
 
     /**
@@ -314,8 +321,11 @@ foreach ($course as $key => $value) {
 $courseNameRelated=$course_name[0];
 
          $courses=Course::all();
+if(Auth::user()->flag == 'admin')
 
         return view('control.videos.editvideo',compact('video','courses','courseNameRelated'));
+       else
+    return redirect("/");
     }
 
     /**

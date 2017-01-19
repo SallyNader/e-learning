@@ -43,7 +43,7 @@
                                         
                                         <label for="type1">
                                             <span></span>
-                                       <a href="{{route('offline.index')}}"> جميع الكورسات</a>   
+                                       <a href="{{route('offline.index')}}" class="c" > جميع الكورسات</a>   
                                         </label>
                                     </li>
                                    
@@ -61,7 +61,7 @@
                                         
                                         <label for="type13">
                                             <span></span>
-                                        <a href="{{url('category/offline/'.$c->ca_id)}}"> {{$c->ca_name}}</a>   
+                                        <a href="{{url('category/offline/'.$c->ca_id)}}" class="c" > {{$c->ca_name}}</a>   
                                         </label>
                                     </li>
 
@@ -99,8 +99,8 @@
                                                 </figcaption>
                                             </figure>
                                             <div class="wm-popular-courses-text">
-                                                <h6><a href="#"><strong>{{$c->c_name}}</strong>  </a></h6>
-                                                <p>{{$c->disc,0,90}}...</p>
+                                                <h6 style="text-align: right;" ><a href="#"><strong>{{$c->c_name}}</strong>  </a></h6>
+                                                <p style="text-align: right;">{{$c->disc,0,90}}...</p>
 
                                                 
                                                 

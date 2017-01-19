@@ -74,11 +74,11 @@
 											<a href="{{route('teacher.show',$t->t_id)}}">لمشاهدة المزيد</a>											
 										</figcaption>											
 									</figure>
-									<div class="wm-team-info" style="text-align: left;">
-										<h5><a href="#"></a>{{$t->t_name}}</h5>										
+									<div class="wm-team-info" style="text-align: left;font-weight: 80px" class="c" >
+										<h5><a href="#" class="c"></a>{{$t->t_name}}</h5>										
 										<br>
 										@unless(empty($t->type))
-										<p style="color:#ffb84d" ><b>{{$t->type->t_title}}</b></p>
+										<p style="color:#b99663" ><b>{{$t->type->t_title}}</b></p>
 										@endunless
 										
 										

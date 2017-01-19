@@ -111,15 +111,15 @@ label.star:before {
 							</div>
 
 							@if($a->vote >= 1 and $a->vote <= 10)
-							<div style="margin-left: 30px"><img src="{!!asset('images/star1.png')!!}" style="width:170px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
+							<div style="margin-left: 30px"><img src="{!!asset('images/star1.png')!!}" style="width:200px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
 							@elseif($a->vote >= 11 and $a->vote<=20)
-							<div style="margin-left: 30px"><img src="{!!asset('images/star2.png')!!}" style="width:170px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
+							<div style="margin-left: 30px"><img src="{!!asset('images/star2.png')!!}" style="width:200px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
 							@elseif($a->vote >= 21 and $a->vote <=40)
-							<div style="margin-left: 30px"><img src="{!!asset('images/star3.png')!!}" style="width:170px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
+							<div style="margin-left: 30px"><img src="{!!asset('images/star3.png')!!}" style="width:200px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
 							@elseif($a->vote >=41 and $a->vote <= 60)
-							<div style="margin-left: 30px"><img src="{!!asset('images/star4.png')!!}" style="width:170px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
+							<div style="margin-left: 30px"><img src="{!!asset('images/star4.png')!!}" style="width:200px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
 							@elseif($a->vote >= 61 )
-							<div style="margin-left: 30px"><img src="{!!asset('images/star.png')!!}" style="width:170px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
+							<div style="margin-left: 30px"><img src="{!!asset('images/star.png')!!}" style="width:200px;height: 30px;"> {{$a->vote}} <strong>: التقيم </strong>  </div>
 							@endif
 
 
@@ -132,7 +132,7 @@ label.star:before {
 @if(Auth::check())
 
 @if($boolean == 'false')
-<div class="wm-average-rating" >
+<div class="wm-average-rating" style="margin-top: 17px" >
 								
 									<div class="wm-courses-average-rating" style="width: 400px">
 									
@@ -152,7 +152,7 @@ label.star:before {
     <label class="star star-2" for="star-2"></label>
     <input class="star star-1" id="star-1" type="radio" name="star1"/>
     <label class="star star-1" for="star-1"></label>
-<input type="submit" name="" class="btb btn-warning" value=" قيم المقال " style="margin-right:22px ;border: 0"> 
+<input type="submit" name=""  value=" قيم المقال " class="c" style="margin-right:22px ;border: 0;background-color: #b99663;color: white;border-radius: 12px; width: 80px;height: 30px"> 
   </form>
 </div>
 										

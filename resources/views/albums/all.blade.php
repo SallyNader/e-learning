@@ -61,29 +61,31 @@
                             </ul>-->
                         </div> 
                         <center> 
-                        <div class="wm-our-professors">
-                            <ul class="row" >
+                        <div class="wm-our-professors" style="text-align: right;margin-left: 470px">
+                            <ul class="row"  >
 
 
                             @unless(empty($albums))
 
                             @foreach($albums as $t)
                                 <li class="col-md-4 wordpress"  >
-                                    <figure  style=";margin-right: 170px">
+                                    <figure  >
                                         <a href="#"><img src="extra-images/{{$t->b_cover}} " alt=""></a>
                                         <figcaption>
-                                            <a href="{{route('album.show',$t->b_id)}}">لمشاهدة صور الألبوم</a>                                         
+                                            <a href="{{route('album.show',$t->b_id)}}" class="c">لمشاهدة صور الألبوم</a>                                         
                                         </figcaption>                                           
                                     </figure>
                                     <div class="wm-latest-event-text" style=";margin-right: 170px">
                                            
                                        
-                                    <div class="wm-team-info" style="text-align: left;">
-                                        <h5><a href="#"></a>{{$t->b_name}}</h5>                                     
+                                    <div class="wm-team-info c" style="text-align: right;">
+
+                                        <h5 ><a href="#" class="c" style="color:#b99663
+ ">ألبوم :  </a>   {{$t->b_name}}</h5>                                     
                                         <br>
                                         <p style="color:#ffb84d" ></p>
                                         
-                                        <time datetime="2008-02-14 20:00">{{ date('F d, Y', strtotime($t->created_at)) }}</time>
+                                      
                                     </div> </div>
                                 </li>
 

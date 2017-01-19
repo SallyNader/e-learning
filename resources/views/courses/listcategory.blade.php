@@ -43,7 +43,7 @@
                                         
                                         <label for="type1">
                                             <span></span>
-                                       <a href="{{route('course.index')}}"> جميع الكورسات</a>   
+                                       <a href="{{route('course.index')}}" class="c"> جميع الكورسات</a>   
                                         </label>
                                     </li>
                                    
@@ -61,7 +61,7 @@
                                         
                                         <label for="type13">
                                             <span></span>
-                                        <a href="{{route('category.show',$c->ca_id)}}"> {{$c->ca_name}}</a>   
+                                        <a href="{{route('category.show',$c->ca_id)}}" class="c" > {{$c->ca_name}}</a>   
                                         </label>
                                     </li>
 

@@ -18,7 +18,7 @@ use App\Teacher;
 |
 */
 //adwyat dwlya
-
+Route::get('details-of-branch/{name}/{location}/{phone}/{moderator}','AboutController@detailsOfBranch');
 Route::get('dwlya','AboutController@dwlya');
 //person of month
 
@@ -79,7 +79,7 @@ $courses=Course::limit(4)->get();
  $images=Image::limit(4)->get();
 
  $category=Category::limit(2)->get();
-$articles=Article::limit(3)->get();
+$articles=Article::all();
  $cat=Category::all();
     return view('home',compact('images','courses','category','cat','articles','offlines','offlineCourse','teachers','latestCourse'));
 });

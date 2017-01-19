@@ -8,7 +8,10 @@ use Mail;
 class AboutController extends Controller
 {
 
+public function detailsOfBranch($name,$location,$phone,$moderator){
 
+   return view('about.detailsofbranches',compact('name','location','phone','moderator'));
+}
 
 
 public function person(){
@@ -97,7 +100,7 @@ return redirect()->back();
 });
 
 
-return redirect()->back()->with('message','...لقد تم أرسال الأقتراح و سيتم مراجعته');
+return redirect("/")->withMessage('...لقد تم أرسال الأقتراح و سيتم مراجعته');
 
 
 

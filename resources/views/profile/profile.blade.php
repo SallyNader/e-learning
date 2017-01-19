@@ -102,14 +102,14 @@
 									<ul>
 										<li class="wm-courses-start">
 											<div class="wm-statement-started-text">
-												<h6><a href="#">{{$course->c_name}}</a></h6>
+												<h6><a href="#" class="c" >{{$course->c_name}}</a></h6>
 												<span><a href="#" class="wmicon-tag"></a>${{$course->price}}</span>
-												<span><a href="#" class="wmicon-time2"></a><time datetime="2017-02-14">{{ date('F d, Y', strtotime($course->created_at)) }}</time></span>		
+												<span><a href="#" class="wmicon-time2"></a><time datetime="2017-02-14">{{ date('F d, Y', strtotime($course->startDate)) }}</time></span>		
 											</div>
 										</li>
 										
 										<li style="text-align: center;">
-											<a class="btn btn-warning" href="{{route('course.show',$course->c_id)}}">لمشاهدة الدورة</a>
+											<a class="btn btn-warning" href="{{route('course.show',$course->c_id)}}" class="c">لمشاهدة الدورة</a>
 										</li>
 										<!--
 										<li>

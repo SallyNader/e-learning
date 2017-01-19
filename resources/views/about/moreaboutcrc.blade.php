@@ -44,8 +44,8 @@
 												<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 													<div class="panel panel-default">
 													    <div class="panel-heading" role="tab" id="headingOne">
-													        <h4 class="panel-title">
-													            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls=" collapseOne">
+													        <h4 class="panel-title c">
+													            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls=" collapseOne" style="padding-right: 25px">
 													            بإمكان الأعضاء الزملاء الاستفادة
 													            </a>
 													        </h4>
@@ -63,7 +63,7 @@
 												    <div class="panel panel-default">
 												        <div class="panel-heading" role="tab" id="headingTwo">
 												            <h4 class="panel-title">
-												                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+												                <a class="collapsed c" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="padding-right: 25px">
 												                 تقدم من أعضاء المركز أولوية في النشر في مجلة المركز
 												                </a>
 												            </h4>
@@ -84,7 +84,7 @@
 												    <div class="panel panel-default">
 												        <div class="panel-heading" role="tab" id="headingThree"> 
 												            <h4 class="panel-title">
-												               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+												               <a class="collapsed c" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="padding-right: 25px">
 												              استخدام مكتبة المركز الإلكترونية
 
 												               </a>
@@ -108,7 +108,7 @@
 												    <div class="panel panel-default">
 												        <div class="panel-heading" role="tab" id="headingFour">
 												            <h4 class="panel-title">
-												               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+												               <a class="collapsed c" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="padding-right: 25px">
 												               مجلة المركز هي مجلة سنوية تصدر باللغتين العربية 
 												               </a>
 												            </h4>
@@ -131,7 +131,7 @@
 												    <div class="panel panel-default">
 												        <div class="panel-heading" role="tab" id="headingFive">
 												            <h4 class="panel-title">
-												               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+												               <a class="collapsed c" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive" style="padding-right: 25px">
 												              استخدام منبر النق
 												               </a>
 												            </h4>
@@ -146,7 +146,7 @@
 												    <div class="panel panel-default">
 												        <div class="panel-heading" role="tab" id="headingSix">
 												            <h4 class="panel-title">
-												               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+												               <a class="collapsed c" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix" style="padding-right: 25px">
 												               معلومات عن فعاليات المركز 
 												               </a>
 												            </h4>
@@ -161,7 +161,7 @@
 												    <div class="panel panel-default">
 												        <div class="panel-heading" role="tab" id="headingSeven">
 												            <h4 class="panel-title">
-												               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+												               <a class="collapsed c" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" style="padding-right: 25px">
 												               المحكمين والخبراء المتخصصين
 												               </a>
 												            </h4>
@@ -176,7 +176,7 @@
 												    <div class="panel panel-default">
 												        <div class="panel-heading" role="tab" id="headingEieght">
 												            <h4 class="panel-title">
-												               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEirght" aria-expanded="false" aria-controls="collapseEirght">
+												               <a class="collapsed c" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEirght" aria-expanded="false" aria-controls="collapseEirght" style="padding-right: 25px">
 												               بالتحكيم التجاري الدولي
 												               </a>
 												            </h4>

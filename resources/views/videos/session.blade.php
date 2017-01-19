@@ -104,7 +104,7 @@
 									<h2 style="text-align: right;margin-left: 70px"><strong>عن المدرب</strong></h2>
 								</div>
 								<figure>
-									<a href="#"><img src="../../extra-images/{{$video->course->teacher->path}}" alt=""></a>
+									<a href="#"><img src="../extra-images/{{$video->course->teacher->path}}" alt=""></a>
 								</figure>
 								<div class="wm-Professor-info">
 									<h6><a href="#">{{$video->course->teacher->t_name}}</a></h6>

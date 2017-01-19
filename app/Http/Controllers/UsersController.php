@@ -22,7 +22,11 @@ class UsersController extends Controller
        
 
 $users=User::all();
+if(Auth::user()->flag == 'admin')
+
        return view('control.users.users',compact('users'));
+       else
+    return redirect("/");
     }
 
     /**
@@ -68,8 +72,11 @@ $users=User::all();
       $user=User::find($id);
 
 
+if(Auth::user()->flag == 'admin')
 
     return view('control.users.edituser',compact('user'));
+else
+    return redirect("/");
           }
 
     /**

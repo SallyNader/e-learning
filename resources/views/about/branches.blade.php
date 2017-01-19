@@ -33,15 +33,15 @@
                                 <ul class="row">
                                     <li class="col-md-4">
                                         <span>98%</span>
-                                        <h6>من المتدربين لدينا حصلت على وظيفة مرموقة</h6>
+                                        <h6 class="c">من المتدربين لدينا حصلت على وظيفة مرموقة</h6>
                                     </li>
                                     <li class="col-md-4">
                                         <span>91%</span>
-                                        <h6> افادة العضو بكافة الاصدارات للمركز سواء الشهرية او السنوية مجانا</h6>
+                                        <h6 class="c"> افادة العضو بكافة الاصدارات للمركز سواء الشهرية او السنوية مجانا</h6>
                                     </li>
                                     <li class="col-md-4">
                                         <span>35%</span>
-                                        <h6>الحصول بشكل دوري على معلومات حول آخر المستجدات وقائمة بالمؤتمرات الدولية التي تعقد في أنحاء العالم في مجال التحكيم التجاري الدولي</h6>
+                                        <h6 class="c">الحصول بشكل دوري على معلومات حول آخر المستجدات وقائمة بالمؤتمرات الدولية التي تعقد في أنحاء العالم في مجال التحكيم التجاري الدولي</h6>
                                     </li>
                                 </ul>
                             </div>
@@ -105,14 +105,14 @@
        }
     </style>  
                                     <li>
-                                        <div class="wm-author-detail wm-courses-authorinfo">
+                                        <div class="wm-author-detail wm-courses-authorinfo c">
 <!--<figure>
                                                 <a href="#"><img src="extra-images/author-blog-2.jpg" alt=""></a>
                                             </figure>-->
-                                            <div class="wm-author-text" style="">
-                                                <h5><a href="#">   <strong> فرع تونس </strong>  </a></h5>
+                                            <div class="wm-author-text" style="font-size: 40px">
+                                                <h5 class="c"><a href="#" style="color:#b99663;font-size: 20px ">    فرع تونس   </a></h5>
                                                 <span>مدير : أحمد محمد خالد </span>
-                                                <p>22-شارع أحمد-شارع تونس</p>
+                                                <p class="c">22-شارع أحمد-شارع تونس</p>
                                             </div> 
                                                    <div id="map"></div>
     <script>
@@ -140,9 +140,9 @@
                                                 <a href="#"><img src="extra-images/author-blog-7.jpg" alt=""></a>
                                             </figure>-->
                                             <div class="wm-author-text">
-                                                <h5><a href="#"> <strong>فرع القاهرة</strong>    </a></h5>
+                                                <h5 class="c"><a href="#" style="color:#b99663;font-size: 20px ">فرع القاهرة    </a></h5>
                                                 <span</span>
-                                                <p>22 شارع محمود حسن - الميرغني مصر الجديدة </p>
+                                                <p class="c">22 شارع محمود حسن - الميرغني مصر الجديدة </p>
                                             </div> 
 
 
@@ -176,9 +176,9 @@
                                                 <a href="#"><img src="extra-images/lesson-list2.jpg" alt=""></a>
                                             </figure>-->
                                             <div class="wm-author-text" style="padding-right: 0px">
-                                                <h5><a href="#"><strong>فرع الأردن</strong></a></h5>
+                                               <h5 class="c"><a href="#" style="color:#b99663;font-size: 20px ">فرع الأردن</a></h5>
                                                 <span>مدير : محمد جمال علي</span>
-                                                <p>24 شارع فهد الوسري - العبيكان الدولي </p>
+                                                <p class="c">24 شارع فهد الوسري - العبيكان الدولي </p>
                                             </div>  
                                                  
 <div id="map2"></div>
@@ -210,9 +210,9 @@
                                                 <a href="#"><img src="extra-images/news-grid-thumb-1.png" alt=""></a>
                                             </figure>-->
                                             <div class="wm-author-text">
-                                                <h5><a href="#"><strong> فرع السعودية </strong>  </a></h5>
+                                                <h5 class="c"><a href="#" style="color:#b99663;font-size: 20px "> فرع السعودية   </a></h5>
                                                 <span>مدير : تامر علي المهدي </span>
-                                                <p>14 شارع الدوحة - المنطقة الخامسة النسيم </p>
+                                                <p class="c">14 شارع الدوحة - المنطقة الخامسة النسيم </p>
                                             </div> 
 
 

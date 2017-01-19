@@ -10,12 +10,14 @@
     overflow: hidden;
     padding: 0;
     position: relative;
+
 }
 .slick-list:focus {
     outline: medium none;
 }
 .slick-list.dragging {
     cursor: pointer;
+    
 }
 .slick-slider .slick-track, .slick-slider .slick-list {
     transform: translate3d(0px, 0px, 0px);

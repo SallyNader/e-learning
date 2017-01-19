@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wm-mini-title">
-                            <h1> صور {{$album->b_name}}</h1> 
+                            <h1> صور ألبوم {{$album->b_name}}</h1> 
                         </div>
                            
                     </div>
@@ -41,14 +41,15 @@
 
                                         @foreach($album->images as $image)
                                                                         <li class="col-md-3 wordpress">
-                                        <figure><a class="fancybox-thumbs" data-fancybox-group="thumb" href="../../public/extra-images/{{$image->path}}"><img src="../../public/extra-images/{{$image->path}}" alt="" style="width: 1000px;height:250px" > </a></figure>
+                                        <figure><a class="fancybox-buttons" data-fancybox-group="button" href="../extra-images/{{$image->path}}"><img src="../../public/extra-images/{{$image->path}}" alt="" style="width: 1000px;height:250px" > </a></figure>
 
 
                                        
                                         <div class="wm-latest-event-text">
-                                            <h6><a href="#" class="wm-color">{{$image->i_name}}</a></h6>
+                                            <h6><a href="#" class="wm-color c" style="color:#b99663
+ ">{{$image->i_name}}</a></h6>
                                             <time datetime="2008-02-14 20:00">{{ date('F d, Y', strtotime($image->created_at)) }} </time>
-                                            <p>{{$image->i_disc}}</p>
+                                            <p class="c">{{$image->i_disc}}</p>
                                            
                                         </div>
 
@@ -58,6 +59,8 @@
                                      @endforeach
 
                                         @endunless
+
+
                                     
                                 </ul>
                             </div>

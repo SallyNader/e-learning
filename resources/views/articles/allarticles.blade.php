@@ -48,21 +48,21 @@
 								<h2>الناشر : <span>{{$a->a_publisher}}</span></h2>
 								
 								 @if($a->vote >= 1 and $a->vote <= 10)
-                            <img src="{!!asset('images/star1.png')!!}" style="width:160px;height: 30px; margin-right: 670px"> 
+                            <img src="{!!asset('images/star1.png')!!}" style="width:170px;height: 30px; margin-right: 670px"> 
                             @elseif($a->vote >= 11 and $a->vote<=20)
-                            <img src="{!!asset('images/star2.png')!!}" style="width:160px;height: 30px;margin-right: 670px"> 
+                            <img src="{!!asset('images/star2.png')!!}" style="width:170px;height: 30px;margin-right: 670px"> 
                             @elseif($a->vote >= 21 and $a->vote <=40)
-                            <img src="{!!asset('images/star3.png')!!}" style="width:160px;height: 30px;margin-right: 670px"> 
+                            <img src="{!!asset('images/star3.png')!!}" style="width:170px;height: 30px;margin-right: 670px"> 
                             @elseif($a->vote >=41 and $a->vote <= 60)
-                            <img src="{!!asset('images/star4.png')!!}" style="width:160px;height: 30px;margin-right: 670px;"> 
+                            <img src="{!!asset('images/star4.png')!!}" style="width:170px;height: 30px;margin-right: 670px;"> 
                             @elseif($a->vote >= 61 )
-                           <img src="{!!asset('images/star.png')!!}" style="width:160px;height: 30px;margin-right: 670px"> 
+                           <img src="{!!asset('images/star.png')!!}" style="width:170px;height: 30px;margin-right: 670px"> 
                             @endif
 							</div>
 						</div>
 						<div class="col-md-9">
 							<div class="wm-typo-columns" style="text-align: center;margin-bottom: 1px">
-								<p>
+								<p class="">
 
              <?php
 
@@ -77,7 +77,7 @@ if(strlen($a->a_article)>400){
 	?>
 
 	<div class="wm-button-left">
-									<a class="wm-read-button" href="{{route('article.show',$a->a_id)}}">لقرأة المزيد</a>
+									<a class="wm-read-button c" href="{{route('article.show',$a->a_id)}}" style="background-color:#b99663;color: white " >لقرأة المزيد</a>
 									
 								</div>	
 	

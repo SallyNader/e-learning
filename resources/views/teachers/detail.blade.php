@@ -54,7 +54,7 @@
                                                 <a href="#" style="text-align: right;" >{{$teacher->t_name}}</a>
 
 
-                                                <p style="color:#ffb84d" ><b>{{$teacher->type->t_title}}</b></p>
+                                                <p style="color:#b99663" ><b>{{$teacher->type->t_title}}</b></p>
                                                 <span></span>
                                             </figcaption>
                                         </figure>

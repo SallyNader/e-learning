@@ -23,17 +23,17 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
-    protected $redirectPath="/";
+    protected $redirectPath="index";
 
     protected $loginPath="/auth/login";
-  protected $redirectAfterLogout = "/";
+  protected $redirectAfterLogout = "index";
 
     /**
      * Where to redirect users after login / registration.
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = 'index';
 
     /**
      * Create a new controller instance.

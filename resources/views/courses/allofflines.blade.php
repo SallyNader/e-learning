@@ -38,12 +38,12 @@
                       
                             <div class="widget widget_check-box widget_scroll-box" style="text-align: center;">
                                 <h5><strong>القسم</strong> </h5>
-                                <ul>
+                                <ul class="c">
                                     <li>
                                         
                                         <label for="type1">
                                             <span></span>
-                                       <a href="{{route('offline.index')}}"> جميع الكورسات</a>   
+                                       <a href="{{route('offline.index')}}" class="c" > جميع الكورسات</a>   
                                         </label>
                                     </li>
                                    
@@ -61,7 +61,7 @@
                                         
                                         <label for="type13">
                                             <span></span>
-                                        <a href="{{url('category/offline/'.$c->ca_id)}}"> {{$c->ca_name}}</a>   
+                                        <a href="{{url('category/offline/'.$c->ca_id)}}" class="c" > {{$c->ca_name}}</a>   
                                         </label>
                                     </li>
 

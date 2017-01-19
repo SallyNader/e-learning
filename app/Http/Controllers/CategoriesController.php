@@ -55,7 +55,8 @@ if(Auth::user()->flag == 'admin')
  $this->validate($request,[
 
 
-'name'=>'required'
+'name'=>'required',
+'file'=>'required'
 
             ]);
 
