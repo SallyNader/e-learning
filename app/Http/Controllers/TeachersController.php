@@ -4,22 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Teacher;
-class TeachersController extends Controller
-{
+
+class TeachersController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
 
-        $teachers=Teacher::all();
-
+        $teachers = Teacher::all();
 
 
-        return view('teachers.allstaff',compact('teachers'));
-        
+
+        return view('teachers.allstaff', compact('teachers'));
     }
 
     /**
@@ -27,8 +26,7 @@ class TeachersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -38,8 +36,7 @@ class TeachersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
     }
 
@@ -49,14 +46,13 @@ class TeachersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        
+    public function show($id) {
 
 
-        $teacher=Teacher::find($id);
 
-        return view('teachers.detail',compact('teacher'));
+        $teacher = Teacher::find($id);
+
+        return view('teachers.detail', compact('teacher'));
     }
 
     /**
@@ -65,8 +61,7 @@ class TeachersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -77,8 +72,7 @@ class TeachersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -88,8 +82,8 @@ class TeachersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }

@@ -6,69 +6,46 @@ use Illuminate\Http\Request;
 use DB;
 use Auth;
 use App\Course;
-class ProfileController extends Controller
-{
-   
+
+class ProfileController extends Controller {
+
+    public function addCourseToAccount($userid, $courseid) {
 
 
 
 
+        DB::table('course_user')->insert([
+            'course_id' => $courseid,
+            'user_id' => $userid
+        ]);
 
-public function addCourseToAccount($userid,$courseid){
+        return redirect('profile');
+    }
 
-
-
-
-	DB::table('course_user')->insert([
-
-
-'course_id'=>$courseid,
-'user_id'=>$userid
-
-		]);
-
-	return redirect('profile');
+    public function myCourses() {
 
 
 
 
-
-}
-
-
-
-
-public function myCourses(){
+        $userID = Auth::user()->id;
 
 
 
 
-        $userID=Auth::user()->id;
+        $result = DB::table('course_user')->where('user_id', $userID)->pluck('course_id');
 
 
+        foreach ($result as $key => $value) {
 
 
-$result=DB::table('course_user')->where('user_id',$userID)->pluck('course_id');
+            $courses[] = Course::where('c_id', $value)->get();
 
 
-foreach ($result as $key => $value) {
+            # code...
+        }
 
 
-	$courses[]=Course::where('c_id',$value)->get();
-
-	
-	# code...
-}
-
-
-return view('profile.profile',compact('courses'));
-
-
-
-
-
-
-}
-
+        return view('profile.profile', compact('courses'));
+    }
 
 }

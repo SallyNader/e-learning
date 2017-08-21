@@ -5,28 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
-class UsersController extends Controller
-{
+
+class UsersController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct() {
+        $this->middleware('auth');
+    }
 
-    public function __construct()
-{
-    $this->middleware('auth');
-} 
-    public function index()
-    {
-       
+    public function index() {
 
-$users=User::all();
-if(Auth::user()->flag == 'admin')
 
-       return view('control.users.users',compact('users'));
-       else
-    return redirect("/");
+        $users = User::all();
+        if (Auth::user()->flag == 'admin')
+            return view('control.users.users', compact('users'));
+        else
+            return redirect("/");
     }
 
     /**
@@ -34,8 +32,7 @@ if(Auth::user()->flag == 'admin')
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -45,8 +42,7 @@ if(Auth::user()->flag == 'admin')
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
     }
 
@@ -56,8 +52,7 @@ if(Auth::user()->flag == 'admin')
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -67,17 +62,15 @@ if(Auth::user()->flag == 'admin')
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-      $user=User::find($id);
+    public function edit($id) {
+        $user = User::find($id);
 
 
-if(Auth::user()->flag == 'admin')
-
-    return view('control.users.edituser',compact('user'));
-else
-    return redirect("/");
-          }
+        if (Auth::user()->flag == 'admin')
+            return view('control.users.edituser', compact('user'));
+        else
+            return redirect("/");
+    }
 
     /**
      * Update the specified resource in storage.
@@ -86,31 +79,24 @@ else
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        
-
-$this->validate($request,[
+    public function update(Request $request, $id) {
 
 
-'name'=>'required',
-'email'=>'required|email',
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+        ]);
 
 
+        $name = $request->get('name');
+        $email = $request->get('email');
+        $accepted = $request->get('accepted');
 
+        $user = User::find($id);
 
-    ]);
-
-
-        $name=$request->get('name');
-        $email=$request->get('email');
-        $accepted=$request->get('accepted');
-
-        $user=User::find($id);
-
-        $user->name=$name;
-        $user->email=$email;
-        $user->accepted=$accepted;
+        $user->name = $name;
+        $user->email = $email;
+        $user->accepted = $accepted;
         $user->save();
 
 
@@ -123,13 +109,13 @@ $this->validate($request,[
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        
+    public function destroy($id) {
 
-        $user=User::find($id);
+
+        $user = User::find($id);
         $user->delete();
 
-    return redirect()->back();
+        return redirect()->back();
     }
+
 }

@@ -6,21 +6,20 @@ use Illuminate\Http\Request;
 use App\Offline;
 use App\Category;
 
-class OfflinesController extends Controller
-{
+class OfflinesController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-     
-      $offlines=Offline::paginate(4);
+    public function index() {
 
-      $categories=Category::all();
+        $offlines = Offline::paginate(4);
 
-      return view('courses.allofflines',compact('offlines','categories'));
+        $categories = Category::all();
+
+        return view('courses.allofflines', compact('offlines', 'categories'));
     }
 
     /**
@@ -28,8 +27,7 @@ class OfflinesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -39,8 +37,7 @@ class OfflinesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
     }
 
@@ -50,50 +47,36 @@ class OfflinesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function inBranch($branch) {
+
+        $offlines = Offline::where('branch', $branch)->get();
+        $categories = Category::all();
+
+        return view('courses.offlinesinBranch', compact('offlines', 'categories'));
+    }
+
+    public function search(Request $request) {
+
+        $branch = $request->get('branch');
+        $course = $request->get('course');
+
+
+
+        $getCourse = Offline::where('branch', $branch)->where('c_name', $course)->get();
 
 
 
 
-public function inBranch($branch){
-
-    $offlines=Offline::where('branch',$branch)->get();
-    $categories=Category::all();
-
-    return view('courses.offlinesinBranch',compact('offlines','categories'));
-
-
-}
-
-public function search(Request $request){
-
-$branch=$request->get('branch');
-$course=$request->get('course');
+        if (count($getCourse) > 0) {
+            $related = Offline::where('c_id', "!=", $getCourse[0]->c_id)->Where(function($query) use($branch, $course) {
+                        $query->where('branch', $branch)
+                        ->orWhere('c_name', $course);
+                    })
+                    ->get();
+        } elseif (!count($getCourse) > 0) {
 
 
-
-$getCourse=Offline::where('branch',$branch)->where('c_name',$course)->get();
-
-
-
-
-if(count($getCourse)>0)
-
-{
-    $related=Offline::where('c_id',"!=",$getCourse[0]->c_id)->Where(function($query) use($branch,$course)
-            {
-                $query->where('branch',$branch)
-                      ->orWhere('c_name',$course);
-            })
-            ->get();
-        }elseif(!count($getCourse)>0){
-
-
-            $related=Offline::where('branch',$branch)->orWhere('c_name',$course)->get();
-
-
-
-
-
+            $related = Offline::where('branch', $branch)->orWhere('c_name', $course)->get();
         }
 
 
@@ -112,30 +95,23 @@ if(count($getCourse)>0)
 
 
 
-return view('courses.searchResult',compact('getCourse','related'));
+        return view('courses.searchResult', compact('getCourse', 'related'));
+    }
+
+    public function show($id) {
 
 
-}
+        $offlines = Offline::find($id);
 
 
+        $sy = $offlines->syllabus;
+        $syllabus = explode(",", $sy);
 
-    public function show($id)
-    {
+        $ce = $offlines->certificates;
 
-        
-        $offlines=Offline::find($id);
+        $certificates = explode(',', $ce);
 
-
-        $sy=$offlines->syllabus;
-$syllabus=explode(",", $sy);
-
-$ce=$offlines->certificates;
-
-$certificates=explode(',', $ce);
-
-        return view('courses.offlinesDetails',compact('offlines','certificates','syllabus'));
-
-
+        return view('courses.offlinesDetails', compact('offlines', 'certificates', 'syllabus'));
     }
 
     /**
@@ -144,8 +120,7 @@ $certificates=explode(',', $ce);
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -156,8 +131,7 @@ $certificates=explode(',', $ce);
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -167,8 +141,8 @@ $certificates=explode(',', $ce);
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }

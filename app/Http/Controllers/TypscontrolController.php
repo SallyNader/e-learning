@@ -5,31 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Type;
 use Auth;
-class TypscontrolController extends Controller
-{
+
+class TypscontrolController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct() {
+        $this->middleware('auth');
+    }
 
-     public function __construct()
-{
-    $this->middleware('auth');
-} 
+    public function index() {
+        $types = Type::all();
 
-
-    public function index()
-    {
-        $types=Type::all();
-
-if(Auth::user()->flag == 'admin')
-
-        return view('control.types.types',compact('types'));
-    else
-    return redirect('teacher');
-
-
+        if (Auth::user()->flag == 'admin')
+            return view('control.types.types', compact('types'));
+        else
+            return redirect('teacher');
     }
 
     /**
@@ -37,14 +31,11 @@ if(Auth::user()->flag == 'admin')
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-       if(Auth::user()->flag == 'admin')
-
-
-       return view('control.types.create');
-   else
-    return redirect('teacher');
+    public function create() {
+        if (Auth::user()->flag == 'admin')
+            return view('control.types.create');
+        else
+            return redirect('teacher');
     }
 
     /**
@@ -53,21 +44,16 @@ if(Auth::user()->flag == 'admin')
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-       $this->validate($request,[
-
-
-'name'=>'required|unique:types,t_title'
+    public function store(Request $request) {
+        $this->validate($request, [
+            'name' => 'required|unique:types,t_title'
         ]);
 
-       Type::create([
-
-'t_title'=>$request->get('name')
-
+        Type::create([
+            't_title' => $request->get('name')
         ]);
 
-       return redirect('typecontrol');
+        return redirect('typecontrol');
     }
 
     /**
@@ -76,8 +62,7 @@ if(Auth::user()->flag == 'admin')
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -87,17 +72,13 @@ if(Auth::user()->flag == 'admin')
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-       if(Auth::user()->flag == 'admin')
-
-
-       $type=Type::find($id);
-   if(Auth::user()->flag == 'admin')
-
-       return view('control.types.edittype',compact('type'));
-       else
-    return redirect('teacher');
+    public function edit($id) {
+        if (Auth::user()->flag == 'admin')
+            $type = Type::find($id);
+        if (Auth::user()->flag == 'admin')
+            return view('control.types.edittype', compact('type'));
+        else
+            return redirect('teacher');
     }
 
     /**
@@ -107,21 +88,18 @@ if(Auth::user()->flag == 'admin')
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
 
-        $this->validate($request,[
-
-
-'name'=>'required'
+        $this->validate($request, [
+            'name' => 'required'
         ]);
-       
 
-       $type=Type::find($id);
 
-       $type->t_title=$request->get('name');
- $type->save();
-       return redirect('typecontrol');
+        $type = Type::find($id);
+
+        $type->t_title = $request->get('name');
+        $type->save();
+        return redirect('typecontrol');
     }
 
     /**
@@ -130,14 +108,14 @@ if(Auth::user()->flag == 'admin')
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-       
-       $type=Type::find($id);
+    public function destroy($id) {
 
-       $type->delete();
+        $type = Type::find($id);
+
+        $type->delete();
 
 
-       return redirect()->back();
+        return redirect()->back();
     }
+
 }

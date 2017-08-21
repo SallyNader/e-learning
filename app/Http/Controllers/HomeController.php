@@ -8,15 +8,15 @@ use App\Album;
 use App\Course;
 use App\Category;
 use App\Article;
-class HomeController extends Controller
-{
+
+class HomeController extends Controller {
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('auth');
     }
 
@@ -25,19 +25,19 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
 
 
-        
 
-       $courses=Course::limit(4)->get();
-       $images=Image::limit(4)->get();
 
-        $category=Category::limit(2)->get();
-        $cat=Category::all();
-        $articles=Article::limit(3)->get();
+        $courses = Course::limit(4)->get();
+        $images = Image::limit(4)->get();
 
-        return view('home.home',compact('images','courses','category','cat','articles'));
+        $category = Category::limit(2)->get();
+        $cat = Category::all();
+        $articles = Article::limit(3)->get();
+
+        return view('home.home', compact('images', 'courses', 'category', 'cat', 'articles'));
     }
+
 }

@@ -5,32 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 use Auth;
-class ArticlescontrolController extends Controller
-{
+
+class ArticlescontrolController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct() {
+        $this->middleware('auth');
+    }
 
+    public function index() {
+        $articles = Article::all();
 
-
-
-     public function __construct()
-{
-    $this->middleware('auth');
-}
-
-
-    public function index()
-    {
-       $articles=Article::all();
-
-   if(Auth::user()->flag == 'admin')
-
-       return view('control.articles.articles',compact('articles'));
-   else
-    return redirect('article');
+        if (Auth::user()->flag == 'admin')
+            return view('control.articles.articles', compact('articles'));
+        else
+            return redirect('article');
     }
 
     /**
@@ -38,13 +31,12 @@ class ArticlescontrolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-       
-if(Auth::user()->flag == 'admin')
-       return view('control.articles.create');
-else
-   return redirect('article');
+    public function create() {
+
+        if (Auth::user()->flag == 'admin')
+            return view('control.articles.create');
+        else
+            return redirect('article');
     }
 
     /**
@@ -53,36 +45,26 @@ else
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-       
-
-
-
-
-$this->validate($request,[
-
-'name'=>'required',
-'title'=>'required',
-'article'=>'required'
+    public function store(Request $request) {
 
 
 
 
 
-    ]);
-
-
-       Article::create([
-'a_title'=>$request->get('title'),
-'a_article'=>$request->get('article'),
-
-'a_publisher'=>$request->get('name')
-
-
+        $this->validate($request, [
+            'name' => 'required',
+            'title' => 'required',
+            'article' => 'required'
         ]);
 
-       return redirect('articlecontrol');
+
+        Article::create([
+            'a_title' => $request->get('title'),
+            'a_article' => $request->get('article'),
+            'a_publisher' => $request->get('name')
+        ]);
+
+        return redirect('articlecontrol');
     }
 
     /**
@@ -91,8 +73,7 @@ $this->validate($request,[
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -102,17 +83,15 @@ $this->validate($request,[
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-      
+    public function edit($id) {
 
-      $article=Article::find($id);
 
-if(Auth::user()->flag == 'admin')
+        $article = Article::find($id);
 
-      return view('control.articles.editarticle',compact('article'));
-  else
-   return redirect('article');
+        if (Auth::user()->flag == 'admin')
+            return view('control.articles.editarticle', compact('article'));
+        else
+            return redirect('article');
     }
 
     /**
@@ -122,35 +101,27 @@ if(Auth::user()->flag == 'admin')
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $this->validate($request,[
-
-'name'=>'required',
-'title'=>'required',
-'article'=>'required',
-'date'=>'required'
-
+    public function update(Request $request, $id) {
+        $this->validate($request, [
+            'name' => 'required',
+            'title' => 'required',
+            'article' => 'required',
+            'date' => 'required'
+        ]);
 
 
+        $article = Article::find($id);
+
+        $article->a_publisher = $request->get('name');
+        $article->a_title = $request->get('title');
+
+        $article->a_article = $request->get('article');
+        $article->created_at = $request->get('date');
+
+        $article->save();
 
 
-    ]);
-
-
-$article=Article::find($id);
-
-$article->a_publisher=$request->get('name');
-$article->a_title=$request->get('title');
-
-$article->a_article=$request->get('article');
-$article->created_at=$request->get('date');
-
-$article->save();
-
-
-return redirect('articlecontrol');
-
+        return redirect('articlecontrol');
     }
 
     /**
@@ -159,12 +130,12 @@ return redirect('articlecontrol');
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-       $article=Article::find($id);
+    public function destroy($id) {
+        $article = Article::find($id);
 
-       $article->delete();
+        $article->delete();
 
-       return redirect()->back();
+        return redirect()->back();
     }
+
 }

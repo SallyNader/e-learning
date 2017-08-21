@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Album extends Model
-{
-    protected $primaryKey='b_id';
+class Album extends Model {
 
-protected $fillable=['b_name','b_disc','b_cover'];
+    protected $primaryKey = 'b_id';
+    protected $fillable = ['b_name', 'b_disc', 'b_cover'];
 
-    public function images(){
+    public function images() {
 
 
-    	return $this->hasMany('App\Image');
+        return $this->hasMany('App\Image');
     }
+
 }

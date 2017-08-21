@@ -3,34 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use  App\Course;
-
+use App\Course;
 use App\Category;
 use Auth;
-
 use App\Teacher;
-class CoursescontrolController extends Controller
-{
+
+class CoursescontrolController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct() {
+        $this->middleware('auth');
+    }
 
-      public function __construct()
-{
-    $this->middleware('auth');
-}
+    public function index() {
+        $courses = Course::all();
 
-    public function index()
-    {
-        $courses=Course::all();
-
-if(Auth::user()->flag == 'admin')
-        return view('control.courses.courses',compact('courses'));
-
-    else
-    return redirect('course');
+        if (Auth::user()->flag == 'admin')
+            return view('control.courses.courses', compact('courses'));
+        else
+            return redirect('course');
     }
 
     /**
@@ -38,17 +33,16 @@ if(Auth::user()->flag == 'admin')
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        
-$teachers=Teacher::all();
+    public function create() {
 
-$categories=Category::all();
+        $teachers = Teacher::all();
 
-if(Auth::user()->flag == 'admin')
-        return view('control.courses.create',compact('teachers','categories'));
+        $categories = Category::all();
+
+        if (Auth::user()->flag == 'admin')
+            return view('control.courses.create', compact('teachers', 'categories'));
         else
-    return redirect('course');
+            return redirect('course');
     }
 
     /**
@@ -57,8 +51,7 @@ if(Auth::user()->flag == 'admin')
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
 
 
 
@@ -66,65 +59,49 @@ if(Auth::user()->flag == 'admin')
 
 
 
-$this->validate($request,[
+        $this->validate($request, [
+            'name' => 'required|unique:courses,c_name',
+            'price' => 'required',
+            'disc' => 'required',
+            'sy' => 'required',
+            'certificates' => 'required',
+            'file' => 'required',
+            'startDate' => 'required|date'
+        ]);
 
-'name'=>'required|unique:courses,c_name',
-
-'price'=>'required',
-'disc'=>'required',
-'sy'=>'required',
-'certificates'=>'required',
-'file'=>'required',
-'startDate'=>'required|date'
-
-
-
-    ]);
-
-$teacher=$request->get('teacher');
-$teacher_id=Teacher::where('t_name',$teacher)->first();
+        $teacher = $request->get('teacher');
+        $teacher_id = Teacher::where('t_name', $teacher)->first();
 
 
-$category=$request->get('category');
+        $category = $request->get('category');
 
-$category_id=Category::where('ca_name',$category)->first();
-$tID= $teacher_id->t_id;
+        $category_id = Category::where('ca_name', $category)->first();
+        $tID = $teacher_id->t_id;
 
-$caID=$category_id->ca_id;
+        $caID = $category_id->ca_id;
 
 
 
-        $file=$request->file('file');
-        $path=public_path().'/extra-images/';
+        $file = $request->file('file');
+        $path = public_path() . '/extra-images/';
 
-        $filename=time().rand(1111,9999).'.'.$file->getClientOriginalName();
+        $filename = time() . rand(1111, 9999) . '.' . $file->getClientOriginalName();
 
-        if($file->move($path,$filename)){
-Course::create([
-'category_id'=>$caID,
-
-'certificates'=>$request->get('certificates'),
-
-'c_name'=>$request->get('name'),
-'disc'=>$request->get('disc'),
-
-'image'=>'extra-images/'.$filename,
-'price'=>$request->get('price'),
-'syllabus'=>$request->get('sy'),
-'teacher_id'=>$tID,
-'startDate'=>$request->get('startDate')
-
-
-
-
-
+        if ($file->move($path, $filename)) {
+            Course::create([
+                'category_id' => $caID,
+                'certificates' => $request->get('certificates'),
+                'c_name' => $request->get('name'),
+                'disc' => $request->get('disc'),
+                'image' => 'extra-images/' . $filename,
+                'price' => $request->get('price'),
+                'syllabus' => $request->get('sy'),
+                'teacher_id' => $tID,
+                'startDate' => $request->get('startDate')
             ]);
-
-
         }
 
         return redirect('coursecontrol');
-        
     }
 
     /**
@@ -133,8 +110,7 @@ Course::create([
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -144,17 +120,16 @@ Course::create([
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-      $course=Course::find($id);
+    public function edit($id) {
+        $course = Course::find($id);
 
-      $teachers=Teacher::all();
+        $teachers = Teacher::all();
 
-$categories=Category::all();
-if(Auth::user()->flag == 'admin')
-      return view('control.courses.editcourse',compact('course','teachers','categories'));
-  else
-    return redirect('course');
+        $categories = Category::all();
+        if (Auth::user()->flag == 'admin')
+            return view('control.courses.editcourse', compact('course', 'teachers', 'categories'));
+        else
+            return redirect('course');
     }
 
     /**
@@ -164,86 +139,72 @@ if(Auth::user()->flag == 'admin')
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-$this->validate($request,[
+    public function update(Request $request, $id) {
+        $this->validate($request, [
+            'name' => 'required',
+            'price' => 'required',
+            'disc' => 'required',
+            'sy' => 'required',
+            'certificates' => 'required',
+            'startDate' => 'required|date'
+        ]);
 
-'name'=>'required',
+        $course = Course::find($id);
 
-'price'=>'required',
-'disc'=>'required',
-'sy'=>'required',
-'certificates'=>'required',
-'startDate'=>'required|date'
+        $file = $request->file('file');
 
-
-
-
-    ]);
-
-$course=Course::find($id);
-        
-$file=$request->file('file');
-
-        if(!empty($file)){
+        if (!empty($file)) {
 
 
- unlink(public_path()."/".$course->image);
+            unlink(public_path() . "/" . $course->image);
 
-            $path=public_path().'/extra-images/';
+            $path = public_path() . '/extra-images/';
 
-            $filename=time().rand(1111,9999).'.'.$file->getClientOriginalName();
-
-
-            if($file->move($path,$filename)){
+            $filename = time() . rand(1111, 9999) . '.' . $file->getClientOriginalName();
 
 
-               $course->image= 'extra-images/' .$filename;
+            if ($file->move($path, $filename)) {
 
 
+                $course->image = 'extra-images/' . $filename;
             }
         }
 
-$teacher=$request->get('teacher');
-$teacher_id=Teacher::where('t_name',$teacher)->first();
+        $teacher = $request->get('teacher');
+        $teacher_id = Teacher::where('t_name', $teacher)->first();
 
 
-$category=$request->get('category');
+        $category = $request->get('category');
 
-$category_id=Category::where('ca_name',$category)->first();
-$tID= $teacher_id->t_id;
+        $category_id = Category::where('ca_name', $category)->first();
+        $tID = $teacher_id->t_id;
 
-$caID=$category_id->ca_id;
+        $caID = $category_id->ca_id;
 
-$name=$request->get('name');
-$teacher=$tID;
-$category=$caID;
+        $name = $request->get('name');
+        $teacher = $tID;
+        $category = $caID;
 
-$price=$request->get('price');
-$disc=$request->get('disc');
-$sy=$request->get('sy');
-$certificates=$request->get('certificates');
-
-
-
-$course->c_name=$name;
-$course->teacher_id=$teacher;
-$course->category_id=$category;
-$course->price=$price;
-$course->disc=$disc;
-$course->syllabus=$sy;
-$course->certificates=$certificates;
-$course->startDate=$request->get('startDate');
-
-
-$course->save();
-
-return redirect('coursecontrol');
+        $price = $request->get('price');
+        $disc = $request->get('disc');
+        $sy = $request->get('sy');
+        $certificates = $request->get('certificates');
 
 
 
+        $course->c_name = $name;
+        $course->teacher_id = $teacher;
+        $course->category_id = $category;
+        $course->price = $price;
+        $course->disc = $disc;
+        $course->syllabus = $sy;
+        $course->certificates = $certificates;
+        $course->startDate = $request->get('startDate');
 
 
+        $course->save();
+
+        return redirect('coursecontrol');
     }
 
     /**
@@ -252,12 +213,12 @@ return redirect('coursecontrol');
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $course=Course::find($id);
- unlink(public_path()."/".$course->image);
+    public function destroy($id) {
+        $course = Course::find($id);
+        unlink(public_path() . "/" . $course->image);
         $course->delete();
 
         return redirect()->back();
     }
+
 }

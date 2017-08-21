@@ -5,23 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Album;
 use App\Image;
-class AlbumsController extends Controller
-{
+
+class AlbumsController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-    
-$albums=Album::all();
+    public function index() {
+
+        $albums = Album::all();
 
 
-return view('albums.all',compact('albums'));
-
-
-
+        return view('albums.all', compact('albums'));
     }
 
     /**
@@ -29,8 +26,7 @@ return view('albums.all',compact('albums'));
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -40,8 +36,7 @@ return view('albums.all',compact('albums'));
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
     }
 
@@ -51,11 +46,10 @@ return view('albums.all',compact('albums'));
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $album=Album::find($id);
-        
-        return view('albums.specific',compact('album'));
+    public function show($id) {
+        $album = Album::find($id);
+
+        return view('albums.specific', compact('album'));
     }
 
     /**
@@ -64,8 +58,7 @@ return view('albums.all',compact('albums'));
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -76,8 +69,7 @@ return view('albums.all',compact('albums'));
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -87,8 +79,8 @@ return view('albums.all',compact('albums'));
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }

@@ -10,32 +10,29 @@ use Auth;
 use App\User;
 use App\Video;
 use App\Article;
-class CoursesController extends Controller
-{
+
+class CoursesController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
- //    public function s(){
-
- // $ID=Course::select('c_id')->pluck('c_id');
- // $lastIndex=count($ID)-1;
- // echo $ID[$lastIndex];
-
- //    }
-    public function index()
-    {
+    //    public function s(){
+    // $ID=Course::select('c_id')->pluck('c_id');
+    // $lastIndex=count($ID)-1;
+    // echo $ID[$lastIndex];
+    //    }
+    public function index() {
 
 
-        
-      $categories=Category::all();
+
+        $categories = Category::all();
 
 
-      $courses=Course::paginate(4);
+        $courses = Course::paginate(4);
 
-      return view('courses.courseslist',compact('courses','categories'));
+        return view('courses.courseslist', compact('courses', 'categories'));
     }
 
     /**
@@ -43,8 +40,7 @@ class CoursesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -54,8 +50,7 @@ class CoursesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
     }
 
@@ -65,165 +60,142 @@ class CoursesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
-    public function o(){
-        
-
-$videos=Course::find(3)->videos->sortBy('episode');
+    public function o() {
 
 
-foreach ($videos as $key => $value) {
+        $videos = Course::find(3)->videos->sortBy('episode');
 
 
-    echo $value->v_name."<br/>";
-    # code...
-}
+        foreach ($videos as $key => $value) {
 
 
-
+            echo $value->v_name . "<br/>";
+            # code...
+        }
     }
-    public function show($id)
-    {
+
+    public function show($id) {
         // $Boolean=true;
 
 
-if(Auth::check()){
-          
-          $course=Course::find($id);
+        if (Auth::check()) {
 
-        $userID=Auth::user()->id;
+            $course = Course::find($id);
 
-        $checkedCourseID=$course->c_id;
+            $userID = Auth::user()->id;
 
-
-        $result=DB::table('course_user')->where('user_id',$userID)->where('course_id',$checkedCourseID)->get();
-
-$student=DB::table('course_user')->where('course_id',$checkedCourseID)->count();
-
-$sessions=Video::where('course_id',$checkedCourseID)->count();
-       
-
-$videos=Course::find($id)->videos->sortBy('episode');
+            $checkedCourseID = $course->c_id;
 
 
+            $result = DB::table('course_user')->where('user_id', $userID)->where('course_id', $checkedCourseID)->get();
 
-$user=User::find($userID);
+            $student = DB::table('course_user')->where('course_id', $checkedCourseID)->count();
 
-$accepted=$user->accepted;
+            $sessions = Video::where('course_id', $checkedCourseID)->count();
+
+
+            $videos = Course::find($id)->videos->sortBy('episode');
 
 
 
+            $user = User::find($userID);
 
-        if($result->count() > 0 ){
-
-       $Boolean='false';
-
-        }else{
+            $accepted = $user->accepted;
 
 
-            $Boolean='true';
-        }
 
 
-        // echo $Boolean;
+            if ($result->count() > 0) {
 
-      $ID=Course::select('c_id')->pluck('c_id');
-
-
-         $lastIndex=count($ID)-1;//7
-
-         $lastID=$ID[$lastIndex];
-
-         $firstID=$ID[0];
-
- // if (!($id ==0 and $id >= $ID[$lastIndex])){
-
-    $course=Course::find($id);
+                $Boolean = 'false';
+            } else {
 
 
-$sy=$course->syllabus;
-$syllabus=explode(",", $sy);
-
-$ce=$course->certificates;
-
-$certificates=explode(',', $ce);
-$articles=Article::limit(3)->get();
+                $Boolean = 'true';
+            }
 
 
-$relatedCourses=Course::where('c_id','<>',$id)->where('category_id',$course->category_id)->get();
-    return view('courses.coursedetail',compact('course','syllabus','certificates','lastID','firstID','Boolean','accepted','videos','student','sessions','articles','relatedCourses'));
-}
-else{
+            // echo $Boolean;
 
-   $course=Course::find($id);
-
-        // $userID=Auth::user()->id;
-
-        // $checkedCourseID=$course->c_id;
+            $ID = Course::select('c_id')->pluck('c_id');
 
 
-        // $result=DB::table('course_user')->where('user_id',$userID)->where('course_id',$checkedCourseID)->get();
+            $lastIndex = count($ID) - 1; //7
 
+            $lastID = $ID[$lastIndex];
+
+            $firstID = $ID[0];
+
+            // if (!($id ==0 and $id >= $ID[$lastIndex])){
+
+            $course = Course::find($id);
+
+
+            $sy = $course->syllabus;
+            $syllabus = explode(",", $sy);
+
+            $ce = $course->certificates;
+
+            $certificates = explode(',', $ce);
+            $articles = Article::limit(3)->get();
+
+
+            $relatedCourses = Course::where('c_id', '<>', $id)->where('category_id', $course->category_id)->get();
+            return view('courses.coursedetail', compact('course', 'syllabus', 'certificates', 'lastID', 'firstID', 'Boolean', 'accepted', 'videos', 'student', 'sessions', 'articles', 'relatedCourses'));
+        } else {
+
+            $course = Course::find($id);
+
+            // $userID=Auth::user()->id;
+            // $checkedCourseID=$course->c_id;
+            // $result=DB::table('course_user')->where('user_id',$userID)->where('course_id',$checkedCourseID)->get();
 // $student=DB::table('course_user')->where('course_id',$checkedCourseID)->count();
-
 // $sessions=Video::where('course_id',$checkedCourseID)->count();
 
-   $articles=Article::limit(3)->get();
-       $student=DB::table('course_user')->where('course_id',$id)->count();
+            $articles = Article::limit(3)->get();
+            $student = DB::table('course_user')->where('course_id', $id)->count();
 
 
-$videos=Course::find($id)->videos->sortBy('episode');
+            $videos = Course::find($id)->videos->sortBy('episode');
 
 
 
 // $user=User::find($userID);
-
 // $accepted=$user->accepted;
-
-
-
-
 //         if($result->count() > 0 ){
-
 //        $Boolean='false';
-
 //         }else{
-
-
 //             $Boolean='true';
 //         }
+            // echo $Boolean;
+
+            $ID = Course::select('c_id')->pluck('c_id');
 
 
-        // echo $Boolean;
+            $lastIndex = count($ID) - 1; //7
 
-      $ID=Course::select('c_id')->pluck('c_id');
+            $lastID = $ID[$lastIndex];
 
+            $firstID = $ID[0];
 
-         $lastIndex=count($ID)-1;//7
-
-         $lastID=$ID[$lastIndex];
-
-         $firstID=$ID[0];
-
- // if (!($id ==0 and $id >= $ID[$lastIndex])){
+            // if (!($id ==0 and $id >= $ID[$lastIndex])){
 
 
 
 
 
 
-    $course=Course::find($id);
-$relatedCourses=Course::where('c_id','<>',$id)->where('category_id',$course->category_id)->get();
+            $course = Course::find($id);
+            $relatedCourses = Course::where('c_id', '<>', $id)->where('category_id', $course->category_id)->get();
 
-$sy=$course->syllabus;
-$syllabus=explode(",", $sy);
+            $sy = $course->syllabus;
+            $syllabus = explode(",", $sy);
 
-$ce=$course->certificates;
+            $ce = $course->certificates;
 
-$certificates=explode(',', $ce);
-    return view('courses.coursedetail',compact('course','syllabus','certificates','lastID','firstID','Boolean','videos','student','sessions','articles','relatedCourses'));
-}
-
+            $certificates = explode(',', $ce);
+            return view('courses.coursedetail', compact('course', 'syllabus', 'certificates', 'lastID', 'firstID', 'Boolean', 'videos', 'student', 'sessions', 'articles', 'relatedCourses'));
+        }
     }
 
     /**
@@ -232,8 +204,7 @@ $certificates=explode(',', $ce);
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -244,8 +215,7 @@ $certificates=explode(',', $ce);
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -255,8 +225,8 @@ $certificates=explode(',', $ce);
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }

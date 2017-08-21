@@ -4,23 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
-{
-  
-  protected $primaryKey='ca_id';
-  protected $fillable=["ca_name"];
-   protected $table = 'categories';
+class Category extends Model {
 
-  public function courses(){
+    protected $primaryKey = 'ca_id';
+    protected $fillable = ["ca_name"];
+    protected $table = 'categories';
 
-
-  	return $this->hasMany('App\Course');
-  }
+    public function courses() {
 
 
-  public function offlines(){
+        return $this->hasMany('App\Course');
+    }
+
+    public function offlines() {
 
 
-  	return $this->hasMany('App\Offline');
-  }
+        return $this->hasMany('App\Offline');
+    }
+
 }

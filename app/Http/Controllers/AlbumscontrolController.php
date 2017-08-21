@@ -5,27 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Album;
 use Auth;
-class AlbumscontrolController extends Controller
-{
+
+class AlbumscontrolController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-{
-    $this->middleware('auth');
-}
+    public function __construct() {
+        $this->middleware('auth');
+    }
 
-  
-    public function index()
-    {
-       $albums=Album::all();
+    public function index() {
+        $albums = Album::all();
 
-if(Auth::user()->flag == 'admin')
-       return view('control.albums.albums',compact('albums'));
-   else 
-    return redirect('album');
+        if (Auth::user()->flag == 'admin')
+            return view('control.albums.albums', compact('albums'));
+        else
+            return redirect('album');
     }
 
     /**
@@ -33,16 +31,12 @@ if(Auth::user()->flag == 'admin')
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
 
-        if(Auth::user()->flag == 'admin')
-    return view('control.albums.create');
-
-
-else 
-    return redirect('album');
-
+        if (Auth::user()->flag == 'admin')
+            return view('control.albums.create');
+        else
+            return redirect('album');
     }
 
     /**
@@ -51,47 +45,36 @@ else
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
 
 
 
 
-$this->validate($request,[
-
-'name'=>'required|unique:albums,b_name',
-'disc'=>'required',
-'file'=>'required'
-
-
-
-
-    ]);
-
-
-$path=public_path().'/extra-images/';
-$file=$request->file('file');
-
-$filename=time().rand(1111,9999).'.'.$file->getClientOriginalName();
-if($file->move($path,$filename)){
-
-
-
-
-     Album::create([
-
-'b_name'=>$request->get('name'),
-
-'b_disc'=>$request->get('disc'),
-'b_cover'=>$filename
-
-
+        $this->validate($request, [
+            'name' => 'required|unique:albums,b_name',
+            'disc' => 'required',
+            'file' => 'required'
         ]);
-}
 
 
-      return redirect('albumcontrol');
+        $path = public_path() . '/extra-images/';
+        $file = $request->file('file');
 
+        $filename = time() . rand(1111, 9999) . '.' . $file->getClientOriginalName();
+        if ($file->move($path, $filename)) {
+
+
+
+
+            Album::create([
+                'b_name' => $request->get('name'),
+                'b_disc' => $request->get('disc'),
+                'b_cover' => $filename
+            ]);
+        }
+
+
+        return redirect('albumcontrol');
     }
 
     /**
@@ -100,8 +83,7 @@ if($file->move($path,$filename)){
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -111,17 +93,13 @@ if($file->move($path,$filename)){
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-       $album=Album::find($id);
+    public function edit($id) {
+        $album = Album::find($id);
 
-  if(Auth::user()->flag == 'admin')
-
-    
-       return view('control.albums.editalbum',compact('album'));
-else 
-    return redirect('album');
-
+        if (Auth::user()->flag == 'admin')
+            return view('control.albums.editalbum', compact('album'));
+        else
+            return redirect('album');
     }
 
     /**
@@ -131,66 +109,52 @@ else
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-       
-
-
-$this->validate($request,[
-
-'name'=>'required',
-'disc'=>'required',
+    public function update(Request $request, $id) {
 
 
 
-    ]);
+        $this->validate($request, [
+            'name' => 'required',
+            'disc' => 'required',
+        ]);
 
 
 
-        $album=Album::find($id);
+        $album = Album::find($id);
 
 
 
-        $file=$request->file('file');
+        $file = $request->file('file');
 
 
-           if( !empty($file)){
+        if (!empty($file)) {
 
-  unlink(public_path()."/extra-images/".$album->b_cover);
-
-
-$path=public_path().'/extra-images';
-$filename=rand(1111,9999).time().'.'.$file->getClientOriginalName();
+            unlink(public_path() . "/extra-images/" . $album->b_cover);
 
 
-if($file->move($path,$filename)){
-
- $album->b_cover=$filename;
-
+            $path = public_path() . '/extra-images';
+            $filename = rand(1111, 9999) . time() . '.' . $file->getClientOriginalName();
 
 
-}
+            if ($file->move($path, $filename)) {
 
-
-
-
-
+                $album->b_cover = $filename;
+            }
         }
 
-$album->b_name=$request->get('name');
+        $album->b_name = $request->get('name');
 
-$album->b_disc=$request->get('disc');
-
-
+        $album->b_disc = $request->get('disc');
 
 
 
 
-$album->save();
 
 
-return redirect('albumcontrol');
+        $album->save();
 
+
+        return redirect('albumcontrol');
     }
 
     /**
@@ -199,12 +163,12 @@ return redirect('albumcontrol');
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {  
+    public function destroy($id) {
 
-        $album=Album::find($id);
-        unlink(public_path()."/extra-images/".$album->b_cover);
+        $album = Album::find($id);
+        unlink(public_path() . "/extra-images/" . $album->b_cover);
         $album->delete();
         return redirect()->back();
     }
+
 }

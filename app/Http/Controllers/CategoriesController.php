@@ -5,29 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use Auth;
-class CategoriesController extends Controller
-{
+
+class CategoriesController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct() {
+        $this->middleware('auth');
+    }
 
-       public function __construct()
-{
-    $this->middleware('auth');
-} 
+    public function index() {
 
 
-    public function index()
-    {
-       
-
-       $cats=Category::all();
-if(Auth::user()->flag == 'admin')
-       return view('control.categories.categories',compact('cats'));
-   else
-    return redirect('course');
+        $cats = Category::all();
+        if (Auth::user()->flag == 'admin')
+            return view('control.categories.categories', compact('cats'));
+        else
+            return redirect('course');
     }
 
     /**
@@ -35,13 +32,11 @@ if(Auth::user()->flag == 'admin')
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-       if(Auth::user()->flag == 'admin')
-
-       return view('control.categories.create');
-   else
-    return redirect('course');
+    public function create() {
+        if (Auth::user()->flag == 'admin')
+            return view('control.categories.create');
+        else
+            return redirect('course');
     }
 
     /**
@@ -50,22 +45,15 @@ if(Auth::user()->flag == 'admin')
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
- $this->validate($request,[
-
-
-'name'=>'required',
-'file'=>'required'
-
-            ]);
+    public function store(Request $request) {
+        $this->validate($request, [
+            'name' => 'required',
+            'file' => 'required'
+        ]);
 
         Category::create([
-
-'ca_name'=>$request->get('name')
-
-
-            ]);
+            'ca_name' => $request->get('name')
+        ]);
         return redirect('category');
     }
 
@@ -75,36 +63,34 @@ if(Auth::user()->flag == 'admin')
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-      
-      $category=Category::find($id);
-      
-      $categories=Category::all();
-      return view('courses.listcategory',compact('category','categories'));
+    public function show($id) {
+
+        $category = Category::find($id);
+
+        $categories = Category::all();
+        return view('courses.listcategory', compact('category', 'categories'));
     }
-public function showOffline($id)
-    {
-      
-      $category=Category::find($id);
-      $categories=Category::all();
-      return view('courses.listcategoryoffline',compact('category','categories'));
+
+    public function showOffline($id) {
+
+        $category = Category::find($id);
+        $categories = Category::all();
+        return view('courses.listcategoryoffline', compact('category', 'categories'));
     }
+
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        
-        $cat=Category::find($id);
-        if(Auth::user()->flag == 'admin')
+    public function edit($id) {
 
-        return view('control.categories.editcategory',compact('cat'));
-    else
-    return redirect('course');
+        $cat = Category::find($id);
+        if (Auth::user()->flag == 'admin')
+            return view('control.categories.editcategory', compact('cat'));
+        else
+            return redirect('course');
     }
 
     /**
@@ -114,17 +100,13 @@ public function showOffline($id)
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $this->validate($request,[
+    public function update(Request $request, $id) {
+        $this->validate($request, [
+            'name' => 'required|unique:categories,ca_name'
+        ]);
+        $category = Category::find($id);
 
-
-'name'=>'required|unique:categories,ca_name'
-
-            ]);
-        $category=Category::find($id);
-
-        $category->ca_name=$request->get('name');
+        $category->ca_name = $request->get('name');
         $category->save();
 
         return redirect('category');
@@ -136,12 +118,12 @@ public function showOffline($id)
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $cat=Category::find($id);
-               
+    public function destroy($id) {
+        $cat = Category::find($id);
 
-  $cat->delete();
+
+        $cat->delete();
         return redirect()->back();
     }
+
 }
